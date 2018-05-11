@@ -1,0 +1,163 @@
+\documentclass[12 pt]{article}
+
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+\begin{document}
+
+
+\subsection{Produktübersicht}
+Was ist der Frost-Server?
+Weboberfläche zum einfachen Abspeichern von Sensordaten im FROST Server
+
+\subsection{Musskriterien}
+\begin{enumerate}
+\item Import von csv/xlsx dateien
+\item konvertierung von sensordaten von csv und xlsx in ISO format nach Vorgabe der SensorThings API (Format der Daten auf Sever)
+\item Konfiguration der Formate der Sensordaten
+\item erstellen, abspeichern, auslesen von Favoriten-konfigurationen
+\item Datentyptransformationen
+\item Verarbeiten von Sonderwerten (Magic Numbers)
+\item Import von Fremdquellen wie anderen webseiten
+\item Weitergabe von Fehlermeldungen an Nutzer, falls Import schief läuft
+\end{enumerate}
+
+\subsection{Wunschkriterien}
+\begin{enumerate}
+\item Bereitstellen einer vorauswahl (default)
+\item überprüfung auf Duplikate
+\item Erkennen und Rückgabe von Tipp- und Sinnfehlern bzw. Vorschläge für weiteres Vorgehen
+\item Rückgabe nicht bearbeiteter Datensätze in neuer CSV-Datei
+\item Docker-Container des Server-Programmes
+\item Auswahl komplexer Transformationen im Webinterface (Aggregationen (Zusammenlegen von Daten), Summe, Min/Max, Durchschnitt...)
+\item automatisierter regelmäßiger Download von entfernter Adresse
+\item Import kompletter Datensätze von anderem FROST-Server
+\item automatisierte Erkennung des Formats
+\item Erweiterungsmöglichkeit der Software für besondere Formate
+
+\end{enumerate}
+
+\subsection{Abgrenzungskriterien}
+keine verwaltung bestehender Sensordaten auf dem Server. Produkt dient nur zum Import von Sensordaten
+
+\subsection{Anwendungsbereiche}
+Überll wo Daten im CSV-Format verarbeitet werden müssen: \\
+\begin{itemize}
+\item Verarbeiten von neuen Sensordaten im CSV-Format
+\item Integration von bestehenden Sensordaten in den FROST-Server
+\end{itemize}
+
+\subsection{Zielgruppen}
+2 Zeilgruppen:
+\begin{itemize}
+\item Besitzer von Sensoren; Privatpersonen
+\item Personen ohne technisches Vorwissen bspw. Beamte
+\item Personen mit technischem know-how
+\end{itemize}
+
+\subsection{Betriebsbedingungen}
+Unterschieden wird zwischen Endgerät und Server. \\
+Die Betriebsbedingungen beschreiben die minimalen Anforderungen die die Software benötigt.
+\begin{itemize}
+	\item Browser
+	\item JavaScript
+	\item Verbindung zum FROST-Server und zum Programmserver
+\end{itemize}
+\begin{itemize}
+	\item Verbindung zum FROST-Server
+	\item Java JRE
+	\item Anbindung an Endgerät (zB Internet)
+\end{itemize}
+
+\subsection{Produktumgebung}
+Die Produktumgebung ist eine Instanz unter der die Software läuft. Diese erfüllt mindestens die Betriebsbedingungen.
+\begin{itemize}
+\item head-less Server
+\item Linux/Windows Server
+\item Java JRE
+\item SensorThings API
+\end{itemize}
+
+\subsection{Funktionale Anforderungen}
+\begin{itemize}
+\item to be added later on
+\end{itemize}
+
+
+\subsection{Produktdaten}
+\begin{itemize}
+\item Abspeichern der Konfigurationen
+\item Export der Konfigurationen als .cfg-Datei
+\item Speichern der Domain des FROST-Servers auf dem Server
+\item Speichern der Domain der entfernten CSV-Adresse auf dem Server
+\end{itemize}
+
+\subsection{Produktleistungen}
+\begin{itemize}
+\item Statusmeldungen an den Nutzer
+\item Schnelle Reaktionszeit auf Benutzer-Eingaben
+\item korrekte Übertragung der Daten
+\item Robustheit gegenüber falschen Formatangeben (Fehlermeldungen)
+\end{itemize}
+
+\subsection{Nichtfunktionale Anforderungen}
+einzuhaltende Gesetze, Normen, Urheber- und Markenrechte,
+Sicherheitsanforderungen, Plattformabhängigkeiten
+\begin{itemize}
+\item Genutzt wird der FROST-Server und die SensorThings API (beides Open-Source)
+\item Die Software ist Open-Source (GPLv3)
+\item Die Software ist abhängig von der Java-Plattform
+\item Robustheit gegenüber zu großen bzw. zu vielen Anfragen
+\item HTTPS-/SSL-Verschlüsselung
+\end{itemize}
+
+
+\subsection{Qualitätsanforderungen}
+In diesem Kapitel wird den Qualitätsmerkmalen Funktionalität, Zuverlässigkeit, Benutzbarkeit, Effizienz, Änderbarkeit und Übertragbarkeit je eine Qualitätsstufe aus sehr gut, gut, normal und nicht relevant zugeordnet.
+\begin{itemize}
+\item Die Software sollte zuverlässig auch über längere Zeiträume ohne Unterbrechung laufen sofern es die Produktumgebung zulässt
+\item Die Benutzbarkeit hat höchste Priorität, es soll auch Nutzern mit wenig Computerkentnissen möglich sein die Software zu bedienen
+\item Es soll einfach möglich sein, Änderungen und Erweiterungen an der Software vorzunehmen
+\item Die Software ist einfach zu übertragen, da sie auf der plattformunabhängigen Programmiersprache Java basiert, es wird nur eine Produktumgebung vorausgesetzt, die lediglich die Betreibsbedingungen erfüllt
+\end{itemize}
+
+
+\subsection{Globale Testfälle und Szenarien / Anwendungsfälle}
+\begin{itemize}
+\item to be added after the GUI design
+\end{itemize}
+
+
+\subsection{Zeitplanung}
+Beispielhafte Terminplanung: \\
+\begin{itemize}
+	\item 07.05. - 27.05.: Pflichtenheft
+	\item 28.05. - 24.06.: Entwurfsphase
+	\item 25.06. - 22.07.: Implementierung
+	\item 23.07. - 12.08.: Beispiel-Urlaubstermin (2 Wochen)
+	\item 13.08. - 02.09.: Qualitätssicherung
+	\item 03.09. - 09.09.: Terminfenster interne Abnahme
+	\item 10.09. - 17.09.: Terminfenster Abschlusspräsentation
+\end{itemize}
+
+
+
+
+Fragen:
+
+\begin{itemize}
+\item Anfragen an server für POST, PATCH, PUT,...
+\item Standard der Daten (wir abgespeichert?), Beispiel CSV Dateien,...
+\item welche Formate sind möglich?
+\item was sind komplexere Tranformationen?
+\item was passiert mit falschen Daten? (13. Monat)
+\end{itemize}
+
+
+Glossar:
+\begin{itemize}
+\item FROST
+\item SensorThings
+\end{itemize}
+
+
+\end{document}

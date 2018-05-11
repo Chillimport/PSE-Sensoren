@@ -1,0 +1,43 @@
+﻿Wunschkriterien:
+
+Beheben von Tippfehlern (falsche Daten)
+Beheben von Sinnfehern (13. Monat)
+Erkennen von Spezialwerten/Magic Numbers (zB 99999999 = NaN)
+Transformationen (Mittelwet, Summe, Zusammenrechnen von Daten zB Windstärke und -richtung, min, max) => extra observation-type
+Transformation auswählen im Web-GUI
+Duplikate => Server-Abfrage im Vorhinein
+default case: Kommatrennung zur Felder Trennung
+Automatischer Download von bestimmter Adresse (HTTP/FTP Request)
+Kopie von anderem FROST-Server
+Effizient = Nutzer-Effizient, nicht Zeit-Effizient
+
+Notizen:
+ISO Time Format
+Eingabedatum îst random (es gibt KEINEN Standard in der CSV)
+Zeitzonen Auswahl
+Logging!!!
+Teilweises imporiteren statt Fehlermeldung (wenn 20mio von 50mio einträge korrekt sind lieber diese importiernen statt abzubrechen)
+Konfiguration abspeichern als MUSS!!!
+Files bis teils über 100.000 Einträge
+
+Zielgruppen:
+Schwerpunkt Person ohne tieferes techn. Verständnis
+Besitzer von Sensoren
+Beamte (Wasserwerke, Strom, etc.)
+2 Gruppen: Technisch unbewandelte und Power-User mit techn. Wissen
+
+Produktumgebung:
+2 Umgebungen: Browser und Server
+
+Funktionale Anforderungen:
+
+Produktdaten:
+Datei-Import Konfiguration (als File Export)
+FROST-Domain (auf Server)
+FTP-Domain (auf Server)
+
+nicht-funk Anforderung:
+Reaktionszeit <1sek
+Progress Bar
+Notifications
+
