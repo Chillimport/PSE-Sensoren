@@ -79,7 +79,6 @@ Die Produktumgebung ist eine Instanz unter der die Software läuft. Diese erfül
 \item Java JRE
 \item SensorThings API
 \end{itemize}
-
 Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- und Speicherkapazität laufen. Des weiteren soll das Programm head-less ununterbrochen laufen. Der Server stellt das Java JRE zur Verfügung, auf dem die Software läuft. Die Software benötigt nur noch eine Verbindung zu einer FROST-Server-Instanz, welche ihm vom Nutzer in der Konfiguration gegeben wird.
 
 \subsection{Funktionale Anforderungen}
@@ -94,16 +93,22 @@ Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- un
 \item 
 \end{itemize}
 
-
+%TODO Nummerierung der Wunschkriterien in Fließtext
 \subsection{Produktdaten}
+Die gesicherten Daten der Software sind minimal, d.h. es wird nur ein Log-File gesichert. Die Konfiguration wird dem Nutzer per CFG-Datei zum Download bereitgestellt und nicht in der Software gespeichert.\\
+Wenn Kriterium [Wunsch: Automatischer Download] erfüllt ist, so muss die Adresse der entfernten Datei und die Adresse des zu nutzenden FROST-Servers in der Software gespeichert werden.
 \begin{itemize}
+\item Log-Datei
 \item Abspeichern der Konfigurationen
 \item Speichern der Domain des FROST-Servers auf dem Server
 \item Speichern der Domain der entfernten CSV-Adresse auf dem Server
 \end{itemize}
 
 \subsection{Produktleistungen}
+Die Software soll sämtliche Aktionen der Nutzer in einem Log-File speichern. Die Eingaben sollen möglichst direkt verarbeitet werden und die Reaktionszeit möglichst gering sein. Bei langsamen Operationen soll der Nutzer Feedback über eine Fortschrittsleiste und über das Log-Fenster kriegen. \\
+Die Daten sollen korrekt an den FROST-Server übermittelt werden, dazu gehört auch eine Robustheit der Anwendung gegenüber falschen Angaben. Bei falschen Angaben oder sonstigen Fehlern soll der Nutzer mittels einer Fehlermeldung benachrichtigt werden.
 \begin{itemize}
+\item Logging
 \item Statusmeldungen an den Nutzer
 \item Schnelle Reaktionszeit auf Benutzer-Eingaben
 \item korrekte Übertragung der Daten
