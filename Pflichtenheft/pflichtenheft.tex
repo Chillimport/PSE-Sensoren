@@ -37,7 +37,7 @@ Weboberfläche zum einfachen Abspeichern von Sensordaten im FROST Server
 \end{enumerate}
 
 \subsection{Abgrenzungskriterien}
-keine verwaltung bestehender Sensordaten auf dem Server. Produkt dient nur zum Import von Sensordaten
+keine Verwaltung bestehender Sensordaten auf dem Server. Produkt dient nur zum Import von Sensordaten
 
 \subsection{Anwendungsbereiche}
 Überll wo Daten im CSV-Format verarbeitet werden müssen: \\
@@ -56,11 +56,14 @@ keine verwaltung bestehender Sensordaten auf dem Server. Produkt dient nur zum I
 
 \subsection{Betriebsbedingungen}
 Unterschieden wird zwischen Endgerät und Server. \\
-Die Betriebsbedingungen beschreiben die minimalen Anforderungen die die Software benötigt.
+Die Betriebsbedingungen beschreiben die minimalen Anforderungen die die Software zur Ausführung benötigt. \\
+Das Ziel-Endgerät ist ein Computer/Tablet, wobei jedes Gerät mit einer Internetanbindung zum Programmserver, einem Webbrowser und aktiviertem JavaScript ausreichend ist.\\
+\ \\
+Der Programmserver benötigt nur eine Anbindung an den FROST-Server und das Endgerät und ein Java JRE.
 \begin{itemize}
 	\item Browser
 	\item JavaScript
-	\item Verbindung zum FROST-Server und zum Programmserver
+	\item Verbindung zum Programmserver
 \end{itemize}
 \begin{itemize}
 	\item Verbindung zum FROST-Server
@@ -77,10 +80,12 @@ Die Produktumgebung ist eine Instanz unter der die Software läuft. Diese erfül
 \item SensorThings API
 \end{itemize}
 
+Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- und Speicherkapazität laufen. Des weiteren soll das Programm head-less ununterbrochen laufen. Der Server stellt das Java JRE zur Verfügung, auf dem die Software läuft. Die Software benötigt nur noch eine Verbindung zu einer FROST-Server-Instanz, welche ihm vom Nutzer in der Konfiguration gegeben wird.
+
 \subsection{Funktionale Anforderungen}
 \begin{itemize}
 \item Datei laden: Durch Klick auf den "Datei auswählen"-Button öffnet sich der Datei-auswählen-Systemdialog, bei dem man die Datei auswählen kann. Im Systemdialog wird das Dateiformat auf entweder CSV oder XLS/XSLX begrenzt. Nachdem die Datei im Systemdialog ausgewählt wurde wird sie auf die Größe überprüft und bei erfolgreicher Prüfung  hochgeladen.
-\item Domain angeben: In das Textfeld wird die Domain des FROST-Servers eingegeben. Die Domain wird überprüft ( Verbindung? Zugriffsrechte? Ist es ein FROST-Server?) und durch einen Haken bestätigt
+\item Domain angeben: In das Textfeld wird die Domain des FROST-Servers eingegeben. Die Domain wird überprüft (Verbindung? Zugriffsrechte? Ist es ein FROST-Server?) und durch einen Haken bestätigt
 \item Konfiguration laden: Durch Klick auf "Config auswählen" öffnet sich der Datei-auswählen-Systemdialog in dem man die CFG-Konfigurationsdatei auswählen kann. Die Konfiguration wird geprüft und anschließend geladen.
 \item Konfiguration speichern: Durch Klick auf den Button wird der Download der aktuellen Konfiguration als CFG-Datei angestoßen
 \item Zurücksetzen: Dabei wird die derzeitige Konfiguration zurückgesetzt
