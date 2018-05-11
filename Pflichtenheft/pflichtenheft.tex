@@ -79,14 +79,20 @@ Die Produktumgebung ist eine Instanz unter der die Software läuft. Diese erfül
 
 \subsection{Funktionale Anforderungen}
 \begin{itemize}
-\item to be added later on
+\item Datei laden: Durch Klick auf den "Datei auswählen"-Button öffnet sich der Datei-auswählen-Systemdialog, bei dem man die Datei auswählen kann. Im Systemdialog wird das Dateiformat auf entweder CSV oder XLS/XSLX begrenzt. Nachdem die Datei im Systemdialog ausgewählt wurde wird sie auf die Größe überprüft und bei erfolgreicher Prüfung  hochgeladen.
+\item Domain angeben: In das Textfeld wird die Domain des FROST-Servers eingegeben. Die Domain wird überprüft ( Verbindung? Zugriffsrechte? Ist es ein FROST-Server?) und durch einen Haken bestätigt
+\item Konfiguration laden: Durch Klick auf "Config auswählen" öffnet sich der Datei-auswählen-Systemdialog in dem man die CFG-Konfigurationsdatei auswählen kann. Die Konfiguration wird geprüft und anschließend geladen.
+\item Konfiguration speichern: Durch Klick auf den Button wird der Download der aktuellen Konfiguration als CFG-Datei angestoßen
+\item Zurücksetzen: Dabei wird die derzeitige Konfiguration zurückgesetzt
+
+\item ?-Button / Help-Button: Durch Klick wird die README-Datei im Browser aufgerufen
+\item 
 \end{itemize}
 
 
 \subsection{Produktdaten}
 \begin{itemize}
 \item Abspeichern der Konfigurationen
-\item Export der Konfigurationen als .cfg-Datei
 \item Speichern der Domain des FROST-Servers auf dem Server
 \item Speichern der Domain der entfernten CSV-Adresse auf dem Server
 \end{itemize}
