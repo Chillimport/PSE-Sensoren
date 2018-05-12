@@ -1,5 +1,5 @@
 Wählen thing aus aus liste oder neu erstellen (name oder id?)
-wählen datastream aus -> existerit schon: sensor gegeben durch den stream -> kein problem
+wählen datastream aus -> existiert schon: Sensor gegeben durch den Stream -> kein Problem
 	existiert nicht -> neuer wird erstellt -> braucht sensor -> dropdown menü mit allen sensoren ODER neu erstellen
 
 angeben welche spalten datum enthalten -> format pro spalte mit TT.MM.JJJJ angeben
