@@ -10,7 +10,7 @@ datastream oder multistream? -> Auswahl automatisch über anzahl der spalten
 		-> alle streams wie multi (datastream = multi mit 1 spalte)
 		
 bestehender Stream -> Auswahl über Drop-down
-	-> jede Spalte zu einem value -> value unterscheidbar über name, id
+	-> jede Spalte zu einem Value -> value unterscheidbar über name, id
 		-> wenn ^Datastream -> nur 1 Spalte, aber Multistream 2...* Spalten (siehe Multidatastreams in FROST)
 		
 neuer stream -> anlegen
