@@ -1,0 +1,21 @@
+Wählen thing aus aus liste oder neu erstellen (name oder id?)
+wählen datastream aus -> existerit schon: sensor gegeben durch den stream -> kein problem
+	existiert nicht -> neuer wird erstellt -> braucht sensor -> dropdown menü mit allen sensoren ODER neu erstellen
+
+angeben welche spalten datum enthalten -> format pro spalte mit TT.MM.JJJJ angeben
+	-> datum ist über mehrere spalten verteilt -> spalte 1 enthält TT, spalte 2 MM, spalte 3 JJJ -> zusammenführen
+
+datastream oder multistream? -> Auswahl automatisch über anzahl der spalten
+	-> multistream hat min. 2 spalten, datastream hat max. 1 spalte
+		-> alle streams wie multi (datastream = multi mit 1 spalte)
+		
+bestehender Stream -> Auswahl über Drop-down
+	-> jede Spalte zu einem value -> value unterscheidbar über name, id
+		-> wenn ^Datastream -> nur 1 Spalte, aber Multistream 2...* Spalten (siehe Multidatastreams in FROST)
+		
+neuer stream -> anlegen
+	-> nur 1 value -> Datastream POST
+	-> 2...* values -> MultiDatastream POST
+	-> Auswahl von Sensor -> vielleicht neuer Sensor
+
+	
