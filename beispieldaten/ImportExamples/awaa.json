@@ -1,0 +1,110 @@
+# Fetch from http://88.34.116.194/WeSenseIt/WS_Measures.php?idstation={awaaId}&datefrom={startTime}&dateto={endTime}&iddatatype={obsPropName}&usr=wesenseit&pwd=wesenseit
+# e.g.: http://88.34.116.194/WeSenseIt/WS_Measures.php?idstation=106&iddatatype=2&datefrom=2017-06-28%2005:00:00Z&usr=wesenseit&pwd=wesenseit&dateto=2017-06-28T19:00:00Z&
+
+{
+  "cols": [{
+      "fieldName": "IDSTAZIONE",
+      "fieldType": "NUMBER"
+    }, {
+      "fieldName": "DATAORA",
+      "fieldType": "VARCHAR2"
+    }, {
+      "fieldName": "VALORE",
+      "fieldType": "NUMBER"
+    }, {
+      "fieldName": "UM",
+      "fieldType": "CHAR"
+    }],
+  "rows": [{
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 06:00:00",
+      "VALORE": "0",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 07:00:00",
+      "VALORE": "0",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 08:00:00",
+      "VALORE": "0",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 09:00:00",
+      "VALORE": "0",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 10:00:00",
+      "VALORE": "0",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 11:00:00",
+      "VALORE": "0",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 12:00:00",
+      "VALORE": "0",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 13:00:00",
+      "VALORE": "0",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 14:00:00",
+      "VALORE": ".4",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 15:00:00",
+      "VALORE": ".6",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 16:00:00",
+      "VALORE": "0",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 17:00:00",
+      "VALORE": "0",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 18:00:00",
+      "VALORE": "4.2",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 19:00:00",
+      "VALORE": "12.4",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 20:00:00",
+      "VALORE": ".2",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 21:00:00",
+      "VALORE": ".2",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 22:00:00",
+      "VALORE": "0",
+      "UM": "mm"
+    }, {
+      "IDSTAZIONE": "106",
+      "DATAORA": "2017-06-28 23:00:00",
+      "VALORE": "0",
+      "UM": "mm"
+    }]
+}
+
