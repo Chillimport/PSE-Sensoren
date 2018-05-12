@@ -23,6 +23,7 @@ Weboberfläche zum einfachen Abspeichern von Sensordaten im FROST Server
 
 \subsection{Wunschkriterien}
 \begin{enumerate}
+\item Sprachauswahl DE/ENG
 \item Bereitstellen einer vorauswahl (default)
 \item überprüfung auf Duplikate
 \item Erkennen und Rückgabe von Tipp- und Sinnfehlern bzw. Vorschläge für weiteres Vorgehen
@@ -83,14 +84,32 @@ Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- un
 
 \subsection{Funktionale Anforderungen}
 \begin{itemize}
-\item Datei laden: Durch Klick auf den "Datei auswählen"-Button öffnet sich der Datei-auswählen-Systemdialog, bei dem man die Datei auswählen kann. Im Systemdialog wird das Dateiformat auf entweder CSV oder XLS/XSLX begrenzt. Nachdem die Datei im Systemdialog ausgewählt wurde wird sie auf die Größe überprüft und bei erfolgreicher Prüfung  hochgeladen.
-\item Domain angeben: In das Textfeld wird die Domain des FROST-Servers eingegeben. Die Domain wird überprüft (Verbindung? Zugriffsrechte? Ist es ein FROST-Server?) und durch einen Haken bestätigt
-\item Konfiguration laden: Durch Klick auf "Config auswählen" öffnet sich der Datei-auswählen-Systemdialog in dem man die CFG-Konfigurationsdatei auswählen kann. Die Konfiguration wird geprüft und anschließend geladen.
-\item Konfiguration speichern: Durch Klick auf den Button wird der Download der aktuellen Konfiguration als CFG-Datei angestoßen
-\item Zurücksetzen: Dabei wird die derzeitige Konfiguration zurückgesetzt
+	
 
-\item ?-Button / Help-Button: Durch Klick wird die README-Datei im Browser aufgerufen
-\item 
+\item Hilfe-Button: Durch Klick wird die README-Datei im Browser aufgerufen
+\item Speichern-Button: Bei Klick auf diesen Button wird der Upload der Daten in die Datastreams/MultiDatastreams auf den FROST-Server angestoßen
+
+\item Radio-Boxen "Datei auswählen"/"Web-Adresse angeben": Durch Auswahl eines der Boxen wird entweder die Textbox zur Eingabe des Weblinks der entfernten Datei freigeschaltet oder der "Durchsuchen"-Button zur Auswahl einer lokalen
+\item Durchsuchen: Durch Klick auf den "Durchsuchen"-Button öffnet sich der Datei-auswählen-Systemdialog, bei dem man die Datei auswählen kann. Im Systemdialog wird das Dateiformat auf entweder CSV oder XLS/XSLX begrenzt. Nachdem die Datei im Systemdialog ausgewählt wurde wird sie auf die Größe überprüft und bei erfolgreicher Prüfung  hochgeladen.
+
+\item Textbox "Ziel": Hier wird die Adresse des FROST-Servers angegeben
+\item Button "AUswhlen": Durch Klick auf diesen Button wird die im Textfeld "Ziel" angegebene Adresse überprüft (Verbindung? Zugriffsrechte? Ist es ein FROST-Server?) und durch einen Haken und im Log bestätigt
+
+\item Konfiguration durchsuchen/laden: Durch Klick auf "Durchsuchen" öffnet sich der Datei-auswählen-Systemdialog in dem man die CFG-Konfigurationsdatei auswählen kann. Die Konfiguration wird geprüft und anschließend geladen.
+\item Konfiguration speichern: Durch Klick auf den Button "Speichern" wird der Download der aktuellen Konfiguration als CFG-Datei angestoßen
+\item Reset-Button: Bei Klick auf den Reset-Button wird die gesamte Konfiguration (Datums-/Zeitformat, Datastreams, Ziel) zurückgesetzt
+
+\item Thing / id -Dropdown-Menü: Ein existierendes Thing kann anhand des Namens der der ID aus einer Liste ausgewählt werden
+\item Button "Neu": Existiert ein Thing noch nicht so kann es durch den Button "neu" erstellt werden. Es öffnet sich eine Dislogbox, die es ermöglicht erst ein neues Thing zu erstellen
+
+\item Textfelder "Spalte": Hier kann durch Angabe der Spaltennummern eingestellt werden in welchen Spalten das Datum/die Uhrzeit zu finden ist
+\item Textfelder "Format": Hier wird per RegEx-String eingestellt, in welchem Format das Datum in den Spalten vorliegt
+\item Button "+": Hier können mehr Spalten, die das Datum beinhalten, ausgewählt werden
+
+\item "Name"-Dropdown-Menü: Hier kann der (Multi-)Datastream über seinen Namen oder seine ID aus einer Liste ausgewählt werden
+\item Spalten-Textfelder: Hier kann zu der davor stehenden Einheit die Spalte, die den Wert enthält, angegeben werden
+\item Button "Neu": Durch Klick auf den Button öffnet sich ein Dialogfenster, welches das erstellen eines neuen (Multi-)Datastreams ermöglicht
+\item Button "+": Durch klick auf den Button "+" wird eine neue Box von Feldern erstellt, in der man wieder Spalten auf Werte eines Datastreams abbilden kann
 \end{itemize}
 
 %TODO Nummerierung der Wunschkriterien in Fließtext
