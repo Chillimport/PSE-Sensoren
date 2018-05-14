@@ -23,17 +23,26 @@ Weboberfläche zum einfachen Abspeichern von Sensordaten im FROST Server
 
 \subsection{Wunschkriterien}
 \begin{enumerate}
-\item Sprachauswahl DE/ENG
-\item Bereitstellen einer vorauswahl (default)
-\item überprüfung auf Duplikate
-\item Erkennen und Rückgabe von Tipp- und Sinnfehlern bzw. Vorschläge für weiteres Vorgehen
-\item Rückgabe nicht bearbeiteter Datensätze in neuer CSV-Datei
-\item Docker-Container des Server-Programmes
-\item Auswahl komplexer Transformationen im Webinterface (Aggregationen (Zusammenlegen von Daten), Summe, Min/Max, Durchschnitt...)
-\item automatisierter regelmäßiger Download von entfernter Adresse
-\item Import kompletter Datensätze von anderem FROST-Server
-\item automatisierte Erkennung des Formats
-\item Erweiterungsmöglichkeit der Software für besondere Formate
+\item Sprachauswahl: Deutsch/Englisch
+\item Bereitstellen einer Vorauswahl (default-Konfiguration) \\
+	Dem Benutzer wird eine vorgefertigte Standard-Konfiguration bereitgestellt.
+\item Überprüfung auf Duplikate \\
+	Beim Upload der Daten auf den FROST-Server werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut hochgeladen.
+\item Korrektur von falschen Daten \\
+	Der Benutzer hat dei Möglichkeit Fehler in den Daten direkt korrigieren.
+\item Rückgabe nicht bearbeiteter Datensätze in neuer CSV-Datei \\
+	Bei (teilweise) fehlgeschlagener Übertragung zum FROST-Server werden die nicht übertragenen Daten in einer CSV-Datei an der Benutzer zurückgegeben.
+\item Docker-Container \\
+	Zur einfachen Installation steht das Programm als Docker-Container zur Verfügung
+\item Auswahl komplexer Transformationen Aggregationen (Zusammenlegen von Daten)
+	Aggregationen wie Summe, Minimum/Maximum, Durchschnitt, ... über ausgewählte Daten werden dem Benutzer in einem Webinterface bereitgestellt.
+\item automatisierte Daten-Aktualisierung \\
+	Bei Import von Daten von einer entfernten Adresse wird eine automatische regelmäßige Übertragung bereitgestellt.
+\item Import kompletter Datensätze von anderem FROST-Server \\
+	Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen FROST-Server 
+\item automatisierte Erkennung des Formats \\
+	Aus der CSV-/XLSX-Datei werden Formate automatisch erkannt.
+
 
 \end{enumerate}
 
