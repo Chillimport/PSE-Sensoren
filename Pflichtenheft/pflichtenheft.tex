@@ -11,14 +11,22 @@ Weboberfläche zum einfachen Abspeichern von Sensordaten im FROST Server
 
 \subsection{Musskriterien}
 \begin{enumerate}
-\item Import von csv/xlsx dateien
-\item konvertierung von sensordaten von csv und xlsx in ISO format nach Vorgabe der SensorThings API (Format der Daten auf Sever)
-\item Konfiguration der Formate der Sensordaten
-\item erstellen, abspeichern, auslesen von Favoriten-konfigurationen
-\item Datentyptransformationen
-\item Verarbeiten von Sonderwerten (Magic Numbers)
-\item Import von Fremdquellen wie anderen webseiten
-\item Weitergabe von Fehlermeldungen an Nutzer, falls Import schief läuft
+\item Import von Tabellen \\
+	Die Daten sollen aus Tabellen im CSV-/XSLX-Format importiert werden
+\item Konvertierung des Formats der Sensordaten \\
+	Die Daten sollen aus der Tabelle in eine einheitliches Format nach Vorgabe der SensorThings API konvertiert werden. Damit entsprechen sie dem Format der Daten auf einem FROST-Server.
+\item Erstellen, abspeichern, laden von Konfigurationen \\
+	Die Konfiguration der Software (ausgew. Thing, Server, Format) soll gespeichert und dem Nutzer via Download einer CFG-Datei bereitgestellt werden. Eine Konfiguration soll später auch wieder geladen werden können.
+\item Datentyptransformationen \\
+	Ein Wert als bspw. String soll nicht als String auf den FROST-Server übertragen werden sollen, sondern von der Software vorher in einen passenden Datentyp (bswp. Integer) umgewandelt werden
+\item Verarbeiten von Sonderwerten (Magic Numbers) \\
+	Diese Werte sollen von der Software ignoriert und gegen einen NULL-Wert (o.ä.) ausgetauscht werden, bevor sie auf den FROST-Server übertragen werden.
+\item Import von Fremdquellen wie anderen Webseiten \\
+	Es soll möglich sein als Quelldatei auch einen entfernten Speicherort -zum Beispiel einen Weblink- anzugeben.
+\item Weitergabe von Fehlermeldungen an Nutzer, falls Import schief läuft \\
+	Bei Fehlern in der Verarbeitung oder in der Übertragung soll der Nutzer eine Rückmeldung kriegen
+\item Logging \\
+	Sämtliche Eingaben und Interaktionen des Nutzers mit der Software sollen in einer Log-Datei gespeichert werden
 \end{enumerate}
 
 \subsection{Wunschkriterien}
@@ -47,15 +55,22 @@ Weboberfläche zum einfachen Abspeichern von Sensordaten im FROST Server
 \end{enumerate}
 
 \subsection{Abgrenzungskriterien}
-keine Verwaltung bestehender Sensordaten auf dem Server. Produkt dient nur zum Import von Sensordaten
+\begin{enumerate}
+\item Keine Verwaltung von Sensor-Daten auf dem FROST-Server \\
+	Die Software soll keine schon auf dem FROST-Server liegenden Daten verwalten, ändern oder löschen
+\end{enumerate}
+
 
 \subsection{Anwendungsbereiche}
-Überll wo Daten im CSV-Format verarbeitet werden müssen: \\
+Überall wo Daten im CSV-Format verarbeitet werden müssen: \\
+Sie Software soll überall dort eingesetzt werden wo Daten aus Tabellen importiert, konvertiert und auf den FROST-Server übertragen werden sollen. \\
+Hierzu zählt:
 \begin{itemize}
-\item Verarbeiten von neuen Sensordaten im CSV-Format
-\item Integration von bestehenden Sensordaten in den FROST-Server
+\item Der Import von neuen Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen, in den FROST-Server
+\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen, in den FROST-Server
 \end{itemize}
 
+%TODO Die zwei Zielgruppen genauer darstellen/abgrenzen
 \subsection{Zielgruppen}
 2 Zeilgruppen:
 \begin{itemize}
@@ -93,7 +108,9 @@ Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- un
 
 \subsection{Funktionale Anforderungen}
 \begin{itemize}
-	
+%TODO GUI-Design von Thing-/Datastream-Erstellung
+	%TODO Units Of Measurement bei Erstellung von Datastreams
+%TODO Funk. Anf. Thing-/Datastream-Erstellung
 
 \item Hilfe-Button: Durch Klick wird die README-Datei im Browser aufgerufen
 \item Speichern-Button: Bei Klick auf diesen Button wird der Upload der Daten in die Datastreams/MultiDatastreams auf den FROST-Server angestoßen
@@ -124,7 +141,7 @@ Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- un
 %TODO Nummerierung der Wunschkriterien in Fließtext
 \subsection{Produktdaten}
 Die gesicherten Daten der Software sind minimal, konkret heißt das es wird nur ein Log-File gesichert. Die Konfiguration wird dem Nutzer per CFG-Datei zum Download bereitgestellt und nicht Serverseitig gespeichert.\\
-Sollte das Kriterium [Wunsch: Automatischer Downloa] mit aufgenommen werden, so muss die Adresse der entfernten Datei und des zu nutzenden FROST-Servers auf dem Server gespeichert werden.
+Sollte das Kriterium [Wunsch: Automatischer Download] mit aufgenommen werden, so muss die Adresse der entfernten Datei und des zu nutzenden FROST-Servers auf dem Server gespeichert werden.
 \begin{itemize}
 \item Log-Datei
 \item Abspeichern der Konfigurationen
@@ -164,7 +181,7 @@ Sicherheitsanforderungen, Plattformabhängigkeiten)
 Das Programm sollte über lange Zeiträume auch ohne Unterbrechungen zuverlässig ausgeführt werden können, solange die Produktumgebung dies zulässt.
 Die Benutzbarkeit hat höchste Priorität, auch Nutzer ohne oder wenig technischem Vorwissen sollten in der Lage sein die Software zu bedienen.
 Außerdem soll es möglichst einfach sein die Software schnell und unkompliziert zu ändern oder zu erweitern.
-Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit Platformunabhängig ist. Es wird lediglich eine Produktumgebung vorrausgesetzt die Java bereitstellt.
+Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit Platformunabhängig ist. Es wird lediglich eine Produktumgebung vorausgesetzt die die Betriebsbedingungen erfüllt.
 
 (In diesem Kapitel wird den Qualitätsmerkmalen Funktionalität, Zuverlässigkeit, Benutzbarkeit, Effizienz, Änderbarkeit und Übertragbarkeit je eine Qualitätsstufe aus sehr gut, gut, normal und nicht relevant zugeordnet.)
 \begin{itemize}
@@ -177,6 +194,7 @@ Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit
 
 \subsection{Globale Testfälle und Szenarien / Anwendungsfälle}
 \begin{itemize}
+%TODO to be added after the GUI design
 \item to be added after the GUI design
 \end{itemize}
 
@@ -191,19 +209,6 @@ Beispielhafte Terminplanung: \\
 	\item 13.08. - 02.09.: Qualitätssicherung
 	\item 03.09. - 09.09.: Terminfenster interne Abnahme
 	\item 10.09. - 17.09.: Terminfenster Abschlusspräsentation
-\end{itemize}
-
-
-
-
-Fragen:
-
-\begin{itemize}
-\item Anfragen an server für POST, PATCH, PUT,...
-\item Standard der Daten (wir abgespeichert?), Beispiel CSV Dateien,...
-\item welche Formate sind möglich?
-\item was sind komplexere Tranformationen?
-\item was passiert mit falschen Daten? (13. Monat)
 \end{itemize}
 
 
