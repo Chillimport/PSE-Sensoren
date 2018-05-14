@@ -11,49 +11,70 @@ Weboberfläche zum einfachen Abspeichern von Sensordaten im FROST Server
 
 \subsection{Musskriterien}
 \begin{enumerate}
-\item Import von csv/xlsx dateien
-\item konvertierung von sensordaten von csv und xlsx in ISO format nach Vorgabe der SensorThings API (Format der Daten auf Sever)
-\item Konfiguration der Formate der Sensordaten
-\item erstellen, abspeichern, auslesen von Favoriten-konfigurationen
-\item Datentyptransformationen
-\item Verarbeiten von Sonderwerten (Magic Numbers)
-\item Import von Fremdquellen wie anderen webseiten
-\item Weitergabe von Fehlermeldungen an Nutzer, falls Import schief läuft
+\item Import von Tabellen \\
+	Die Daten sollen aus Tabellen im CSV-/XSLX-Format importiert werden
+\item Konvertierung des Formats der Sensordaten \\
+	Die Daten sollen aus der Tabelle in eine einheitliches Format nach Vorgabe der SensorThings API konvertiert werden. Damit entsprechen sie dem Format der Daten auf einem FROST-Server.
+\item Erstellen, abspeichern, laden von Konfigurationen \\
+	Die Konfiguration der Software (ausgew. Thing, Server, Format) soll gespeichert und dem Nutzer via Download einer CFG-Datei bereitgestellt werden. Eine Konfiguration soll später auch wieder geladen werden können.
+\item Datentyptransformationen \\
+	Ein Wert als bspw. String soll nicht als String auf den FROST-Server übertragen werden sollen, sondern von der Software vorher in einen passenden Datentyp (bswp. Integer) umgewandelt werden
+\item Verarbeiten von Sonderwerten (Magic Numbers) \\
+	Diese Werte sollen von der Software ignoriert und gegen einen NULL-Wert (o.ä.) ausgetauscht werden, bevor sie auf den FROST-Server übertragen werden.
+\item Import von Fremdquellen wie anderen Webseiten \\
+	Es soll möglich sein als Quelldatei auch einen entfernten Speicherort -zum Beispiel einen Weblink- anzugeben.
+\item Weitergabe von Fehlermeldungen an Nutzer, falls Import schief läuft \\
+	Bei Fehlern in der Verarbeitung oder in der Übertragung soll der Nutzer eine Rückmeldung kriegen
+\item Logging \\
+	Sämtliche Eingaben und Interaktionen des Nutzers mit der Software sollen in einer Log-Datei gespeichert werden
 \end{enumerate}
 
 \subsection{Wunschkriterien}
 \begin{enumerate}
-\item Sprachauswahl DE/ENG
-\item Bereitstellen einer vorauswahl (default)
-\item überprüfung auf Duplikate
-\item Erkennen und Rückgabe von Tipp- und Sinnfehlern bzw. Vorschläge für weiteres Vorgehen
-\item Rückgabe nicht bearbeiteter Datensätze in neuer CSV-Datei
-\item Docker-Container des Server-Programmes
-\item Auswahl komplexer Transformationen im Webinterface (Aggregationen (Zusammenlegen von Daten), Summe, Min/Max, Durchschnitt...)
-\item automatisierter regelmäßiger Download von entfernter Adresse
-\item Import kompletter Datensätze von anderem FROST-Server
-\item automatisierte Erkennung des Formats
-\item Erweiterungsmöglichkeit der Software für besondere Formate
+\item Sprachauswahl: Deutsch/Englisch
+\item Bereitstellen einer Vorauswahl (default-Konfiguration) \\
+	Dem Benutzer wird eine vorgefertigte Standard-Konfiguration bereitgestellt.
+\item Überprüfung auf Duplikate \\
+	Beim Upload der Daten auf den FROST-Server werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut hochgeladen.
+\item Korrektur von falschen Daten \\
+	Der Benutzer hat dei Möglichkeit Fehler in den Daten direkt korrigieren.
+\item Rückgabe nicht bearbeiteter Datensätze in neuer CSV-Datei \\
+	Bei (teilweise) fehlgeschlagener Übertragung zum FROST-Server werden die nicht übertragenen Daten in einer CSV-Datei an der Benutzer zurückgegeben.
+\item Docker-Container \\
+	Zur einfachen Installation steht das Programm als Docker-Container zur Verfügung
+\item Auswahl komplexer Transformationen Aggregationen (Zusammenlegen von Daten)
+	Aggregationen wie Summe, Minimum/Maximum, Durchschnitt, ... über ausgewählte Daten werden dem Benutzer in einem Webinterface bereitgestellt.
+\item automatisierte Daten-Aktualisierung \\
+	Bei Import von Daten von einer entfernten Adresse wird eine automatische regelmäßige Übertragung bereitgestellt.
+\item Import kompletter Datensätze von anderem FROST-Server \\
+	Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen FROST-Server 
+\item automatisierte Erkennung des Formats \\
+	Aus der CSV-/XLSX-Datei werden Formate automatisch erkannt.
+
 
 \end{enumerate}
 
 \subsection{Abgrenzungskriterien}
-keine Verwaltung bestehender Sensordaten auf dem Server. Produkt dient nur zum Import von Sensordaten
+\begin{enumerate}
+\item Keine Verwaltung von Sensor-Daten auf dem FROST-Server \\
+	Die Software soll keine schon auf dem FROST-Server liegenden Daten verwalten, ändern oder löschen
+\end{enumerate}
+
 
 \subsection{Anwendungsbereiche}
-Überll wo Daten im CSV-Format verarbeitet werden müssen: \\
+Überall wo Daten im CSV-Format verarbeitet werden müssen: \\
+Sie Software soll überall dort eingesetzt werden wo Daten aus Tabellen importiert, konvertiert und auf den FROST-Server übertragen werden sollen. \\
+Hierzu zählt:
 \begin{itemize}
-\item Verarbeiten von neuen Sensordaten im CSV-Format
-\item Integration von bestehenden Sensordaten in den FROST-Server
+\item Der Import von neuen Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen, in den FROST-Server
+\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen, in den FROST-Server
 \end{itemize}
 
+%TODO Die zwei Zielgruppen genauer darstellen/abgrenzen
 \subsection{Zielgruppen}
-2 Zeilgruppen:
-\begin{itemize}
-\item Besitzer von Sensoren; Privatpersonen
-\item Personen ohne technisches Vorwissen bspw. Beamte
-\item Personen mit technischem know-how
-\end{itemize}
+Die Software ist auf zwei Zielgruppen ausgelegt.\\
+Zum einen gibt es die Personen, welche einfach Sensordaten auf einen Frostserver laden möchten,  ohne die Konfigurationen zu ändern. Der Fokus liegt bei dieser Gruppe auf der einfachen Bedienung der Software.\\
+Zum anderen gibt es die Nutzergruppe welche ihre eigenen Konfigurationen erstellen. Für diese Nutzergruppe ist es wichtig, dass sie komplexe Einstellungsmöglichkeiten in den Konfigurationen nutzen können.
 
 \subsection{Betriebsbedingungen}
 Unterschieden wird zwischen Endgerät und Server. \\
@@ -84,38 +105,40 @@ Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- un
 
 \subsection{Funktionale Anforderungen}
 \begin{itemize}
-	
+%TODO GUI-Design von Thing-/Datastream-Erstellung
+	%TODO Units Of Measurement bei Erstellung von Datastreams
+%TODO Funk. Anf. Thing-/Datastream-Erstellung
 
 \item Hilfe-Button: Durch Klick wird die README-Datei im Browser aufgerufen
 \item Speichern-Button: Bei Klick auf diesen Button wird der Upload der Daten in die Datastreams/MultiDatastreams auf den FROST-Server angestoßen
 
-\item Radio-Boxen "Datei auswählen"/"Web-Adresse angeben": Durch Auswahl eines der Boxen wird entweder die Textbox zur Eingabe des Weblinks der entfernten Datei freigeschaltet oder der "Durchsuchen"-Button zur Auswahl einer lokalen
-\item Durchsuchen: Durch Klick auf den "Durchsuchen"-Button öffnet sich der Datei-auswählen-Systemdialog, bei dem man die Datei auswählen kann. Im Systemdialog wird das Dateiformat auf entweder CSV oder XLS/XSLX begrenzt. Nachdem die Datei im Systemdialog ausgewählt wurde wird sie auf die Größe überprüft und bei erfolgreicher Prüfung  hochgeladen.
+\item Radio-Boxen "Datei auswählen"/"Web-Adresse angeben": Durch Auswahl einer der Boxen wird entweder die Textbox zur Eingabe des Weblinks der entfernten Datei freigeschaltet oder der "Durchsuchen"-Button zur Auswahl einer lokalen
+\item Durchsuchen: Durch Klick auf den "Durchsuchen"-Button öffnet sich der Datei-auswählen-Systemdialog, bei dem man die Datei auswählen kann. Im Systemdialog wird das Dateiformat auf entweder CSV oder XLS/XSLX begrenzt. Nachdem die Datei im Systemdialog ausgewählt wurde, wird sie auf die Größe überprüft und bei erfolgreicher Prüfung hochgeladen.
 
 \item Textbox "Ziel": Hier wird die Adresse des FROST-Servers angegeben
-\item Button "AUswhlen": Durch Klick auf diesen Button wird die im Textfeld "Ziel" angegebene Adresse überprüft (Verbindung? Zugriffsrechte? Ist es ein FROST-Server?) und durch einen Haken und im Log bestätigt
+\item Button "Auswählen": Durch Klick auf diesen Button wird die im Textfeld "Ziel" angegebene Adresse überprüft und durch einen Haken und im Log bestätigt. (Es sollte überprüft werden ob eine Verbindung hergestellt werden kann,ob eventuell Zugriffsrechte benötigt werden und ob die Zieladresse überhaupt zu einem FROST-Server führt) 
 
 \item Konfiguration durchsuchen/laden: Durch Klick auf "Durchsuchen" öffnet sich der Datei-auswählen-Systemdialog in dem man die CFG-Konfigurationsdatei auswählen kann. Die Konfiguration wird geprüft und anschließend geladen.
-\item Konfiguration speichern: Durch Klick auf den Button "Speichern" wird der Download der aktuellen Konfiguration als CFG-Datei angestoßen
+\item Konfiguration speichern: Durch Klick auf den Button "Speichern" wird der Download der aktuellen Konfiguration als CFG-Datei gestartet
 \item Reset-Button: Bei Klick auf den Reset-Button wird die gesamte Konfiguration (Datums-/Zeitformat, Datastreams, Ziel) zurückgesetzt
 
-\item Thing / id -Dropdown-Menü: Ein existierendes Thing kann anhand des Namens der der ID aus einer Liste ausgewählt werden
-\item Button "Neu": Existiert ein Thing noch nicht so kann es durch den Button "neu" erstellt werden. Es öffnet sich eine Dislogbox, die es ermöglicht erst ein neues Thing zu erstellen
+\item Thing- / id-Dropdown-Menü: Ein existierendes Thing kann anhand des Namens oder der ID aus einer Liste ausgewählt werden
+\item Button "Neu": Existiert ein Thing noch nicht so kann es durch den Button "neu" erstellt werden. Es öffnet sich eine Dialogbox, die es ermöglicht ein neues Thing zu erstellen
 
 \item Textfelder "Spalte": Hier kann durch Angabe der Spaltennummern eingestellt werden in welchen Spalten das Datum/die Uhrzeit zu finden ist
 \item Textfelder "Format": Hier wird per RegEx-String eingestellt, in welchem Format das Datum in den Spalten vorliegt
 \item Button "+": Hier können mehr Spalten, die das Datum beinhalten, ausgewählt werden
 
-\item "Name"-Dropdown-Menü: Hier kann der (Multi-)Datastream über seinen Namen oder seine ID aus einer Liste ausgewählt werden
-\item Spalten-Textfelder: Hier kann zu der davor stehenden Einheit die Spalte, die den Wert enthält, angegeben werden
-\item Button "Neu": Durch Klick auf den Button öffnet sich ein Dialogfenster, welches das erstellen eines neuen (Multi-)Datastreams ermöglicht
-\item Button "+": Durch klick auf den Button "+" wird eine neue Box von Feldern erstellt, in der man wieder Spalten auf Werte eines Datastreams abbilden kann
+\item "Name"-Dropdown-Menü: Hier kann der (Multi-)Datastream über seinen Namen oder seiner ID aus einer Liste ausgewählt werden
+\item Spalten-Textfelder: Hier kann zu der vorangehenden Einheit die Spalte, die den Wert enthält, angegeben werden
+\item Button "Neu": Durch Klick auf den Button öffnet sich ein Dialogfenster, welches das Erstellen eines neuen (Multi-)Datastreams ermöglicht
+\item Button "+": Durch klick auf den Button "+" wird eine neue Box von Feldern erstellt, in der man Spalten auf Werte eines Datastreams abbilden kann
 \end{itemize}
 
 %TODO Nummerierung der Wunschkriterien in Fließtext
 \subsection{Produktdaten}
-Die gesicherten Daten der Software sind minimal, d.h. es wird nur ein Log-File gesichert. Die Konfiguration wird dem Nutzer per CFG-Datei zum Download bereitgestellt und nicht in der Software gespeichert.\\
-Wenn Kriterium [Wunsch: Automatischer Download] erfüllt ist, so muss die Adresse der entfernten Datei und die Adresse des zu nutzenden FROST-Servers in der Software gespeichert werden.
+Die gesicherten Daten der Software sind minimal, konkret heißt das es wird nur ein Log-File gesichert. Die Konfiguration wird dem Nutzer per CFG-Datei zum Download bereitgestellt und nicht Serverseitig gespeichert.\\
+Sollte das Kriterium [Wunsch: Automatischer Download] mit aufgenommen werden, so muss die Adresse der entfernten Datei und des zu nutzenden FROST-Servers auf dem Server gespeichert werden.
 \begin{itemize}
 \item Log-Datei
 \item Abspeichern der Konfigurationen
@@ -124,8 +147,8 @@ Wenn Kriterium [Wunsch: Automatischer Download] erfüllt ist, so muss die Adress
 \end{itemize}
 
 \subsection{Produktleistungen}
-Die Software soll sämtliche Aktionen der Nutzer in einem Log-File speichern. Die Eingaben sollen möglichst direkt verarbeitet werden und die Reaktionszeit möglichst gering sein. Bei langsamen Operationen soll der Nutzer Feedback über eine Fortschrittsleiste und über das Log-Fenster kriegen. \\
-Die Daten sollen korrekt an den FROST-Server übermittelt werden, dazu gehört auch eine Robustheit der Anwendung gegenüber falschen Angaben. Bei falschen Angaben oder sonstigen Fehlern soll der Nutzer mittels einer Fehlermeldung benachrichtigt werden.
+Die Software soll sämtliche Aktionen der Nutzer in einem Log-File speichern. Die Eingaben sollen möglichst direkt verarbeitet und die Reaktionszeit möglichst gering sein. Bei langsamen Operationen soll der Nutzer Feedback über eine Fortschrittsleiste und über das Log-Fenster bekommen. \\
+Die Daten müssen korrekt an den FROST-Server übermittelt werden, dazu gehört auch Robustheit der Anwendung gegenüber falschen Angaben. Bei falschen Angaben oder sonstigen Fehlern soll der Nutzer mittels einer Fehlermeldung benachrichtigt werden.
 \begin{itemize}
 \item Logging
 \item Statusmeldungen an den Nutzer
@@ -135,19 +158,29 @@ Die Daten sollen korrekt an den FROST-Server übermittelt werden, dazu gehört a
 \end{itemize}
 
 \subsection{Nichtfunktionale Anforderungen}
-einzuhaltende Gesetze, Normen, Urheber- und Markenrechte,
-Sicherheitsanforderungen, Plattformabhängigkeiten
+Die Software ist Open-Source und benötigt einen erreichbaren FROST-Server.Sie basiert auf der SensorThings-API welche wie der FROST-Server ebenfalls Open-Source ist.
+Das Programm wird in Java geschrieben und hängt dementsprechend von einer Java-Umgebung ab.
+Um Sicherheit zu gewährleisten sollte das Programm robust gegenüber schädlichen Anfragen sein, vor allem zu große oder zu viele Anfragen sollten dementsprechend abgelehnt werden um eine Überlastung des Servers zu vermeiden.
+Außerdem sollten die daten HTTPS-/SSL-Verschlüsselt werden um Abfangen der daten zu verhindern.
+
+(einzuhaltende Gesetze, Normen, Urheber- und Markenrechte,
+Sicherheitsanforderungen, Plattformabhängigkeiten)
 \begin{itemize}
 \item Genutzt wird der FROST-Server und die SensorThings API (beides Open-Source)
 \item Die Software ist Open-Source (GPLv3)
 \item Die Software ist abhängig von der Java-Plattform
-\item Robustheit gegenüber zu großen bzw. zu vielen Anfragen
-\item HTTPS-/SSL-Verschlüsselung
+\item Robustheit gegenüber zu großen bzw. zu vielen Anfragen 		
+\item HTTPS-/SSL-Verschlüsselung								
 \end{itemize}
 
 
 \subsection{Qualitätsanforderungen}
-In diesem Kapitel wird den Qualitätsmerkmalen Funktionalität, Zuverlässigkeit, Benutzbarkeit, Effizienz, Änderbarkeit und Übertragbarkeit je eine Qualitätsstufe aus sehr gut, gut, normal und nicht relevant zugeordnet.
+Das Programm sollte über lange Zeiträume auch ohne Unterbrechungen zuverlässig ausgeführt werden können, solange die Produktumgebung dies zulässt.
+Die Benutzbarkeit hat höchste Priorität, auch Nutzer ohne oder wenig technischem Vorwissen sollten in der Lage sein die Software zu bedienen.
+Außerdem soll es möglichst einfach sein die Software schnell und unkompliziert zu ändern oder zu erweitern.
+Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit Platformunabhängig ist. Es wird lediglich eine Produktumgebung vorausgesetzt die die Betriebsbedingungen erfüllt.
+
+(In diesem Kapitel wird den Qualitätsmerkmalen Funktionalität, Zuverlässigkeit, Benutzbarkeit, Effizienz, Änderbarkeit und Übertragbarkeit je eine Qualitätsstufe aus sehr gut, gut, normal und nicht relevant zugeordnet.)
 \begin{itemize}
 \item Die Software sollte zuverlässig auch über längere Zeiträume ohne Unterbrechung laufen sofern es die Produktumgebung zulässt
 \item Die Benutzbarkeit hat höchste Priorität, es soll auch Nutzern mit wenig Computerkentnissen möglich sein die Software zu bedienen
@@ -158,6 +191,7 @@ In diesem Kapitel wird den Qualitätsmerkmalen Funktionalität, Zuverlässigkeit
 
 \subsection{Globale Testfälle und Szenarien / Anwendungsfälle}
 \begin{itemize}
+%TODO to be added after the GUI design
 \item to be added after the GUI design
 \end{itemize}
 
@@ -172,19 +206,6 @@ Beispielhafte Terminplanung: \\
 	\item 13.08. - 02.09.: Qualitätssicherung
 	\item 03.09. - 09.09.: Terminfenster interne Abnahme
 	\item 10.09. - 17.09.: Terminfenster Abschlusspräsentation
-\end{itemize}
-
-
-
-
-Fragen:
-
-\begin{itemize}
-\item Anfragen an server für POST, PATCH, PUT,...
-\item Standard der Daten (wir abgespeichert?), Beispiel CSV Dateien,...
-\item welche Formate sind möglich?
-\item was sind komplexere Tranformationen?
-\item was passiert mit falschen Daten? (13. Monat)
 \end{itemize}
 
 
