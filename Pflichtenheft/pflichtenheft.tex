@@ -2,6 +2,7 @@
 
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
+
 \begin{document}
 
 
@@ -104,10 +105,33 @@ Die Produktumgebung ist eine Instanz unter der die Software läuft. Diese erfül
 Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- und Speicherkapazität laufen. Des weiteren soll das Programm head-less ununterbrochen laufen. Der Server stellt das Java JRE zur Verfügung, auf dem die Software läuft. Die Software benötigt nur noch eine Verbindung zu einer FROST-Server-Instanz, welche ihm vom Nutzer in der Konfiguration gegeben wird.
 
 \subsection{Funktionale Anforderungen}
+
+%Vorschlag:
+
+\begin{itemize}
+\item Kurzanleitung auf der Weboberfläche: Auf der Weboberfläche existiert die Möglichkeit, eine Anleitung angezeigt zu bekommen. Diese soll kurz beschreiben, wie der Konfigurator und die Weboberfläche an sich funktionieren.
+\item Auswahlmöglichkeit des Zielservers: Auf der Weboberfläche soll ein ereichbarer Frost-Server zum Hinterlegen der Daten einstellbar sein
+\item Auswahlmöglichkeit der Datenquelle: Auf der Weboberfläche lässt sich auswählen, ob eine Datei (.csv/.xlsx) hochgeladen, eine entfernte Web-Adresse als Quelle dient oder Daten aus einem schon bestehenden Server importiert werden sollen.
+\item Auswahlmöglichkeit einer Konfiguration: Auf der Weboberfläche besteht die Möglichkeit eine Konfigation abzuspeichern und eine abgespeicherte Konfiguration erneut zu laden.
+\item Bereitstellen einer Default-Konfiguration
+\item Konfiguration zum Laden der Daten auf den Frost-Server: Auf der Weboberfläche lassen sich das Format der hochzuladenden Daten einstellen. Dazu wird die Auswahl bzw. das Neuanlegen eines Things und zugehörigen Datastreams ermöglicht. Außerdem lässt sich das Datumsformat in der Daten in der Quelldatei festlegen.
+\item Hochladen der Daten auf den Frost-Server
+\item Formatieren der Daten: Vor dem Abspeichern auf dem Frost-Server werden die Daten formatiert, sodass sie dem OGC SensorThings API Standard enstprechen.
+\item Anlegen einer Log-Datei: Während der Nutzung der Weboberfläche wird eine Log-Datei erstellt, die sämtliche Aktionen des Nutzers sowie Weboberfäche/Server-Interaktionen aufzeichnet, um Fehlererkennung und -verfolgung zu erleichtern.
+\item Sprachauswahl
+\item Auswahlmöglichkeit komplexer Operationen auf Daten: Auf der Weboberfläche lassen sich komplexere Datentransformationen auswählen. Diese sollen das Abspeichern von Datenaggregationen wie Summe, MIn, Max und Durchschnitt des Datensatzes ermöglichen
+\item Duplikaterkennung: Bevor Daten auf den Frost-Server hochgeladen werden, wird überprüft, ob diese schon existieren, um redundante Daten zu vermeiden.
+\item Fehlermeldungen: Kommt es bei der Verarbeitung der Daten zu Problemen, ermöglichen aussagekräftige Fehlermeldungen eine effiziente Korrektur.
+\item Rückgabe nicht verarbeiteter Daten: Können Teile des Datensatzes nicht verarbeitet werden, wird eine csv-Datei mit allen fehlerhaften Daten erstellt und an den Nutzer zurückgegeben.
+\end{itemize}
+
+\newpage
+
 \begin{itemize}
 %TODO GUI-Design von Thing-/Datastream-Erstellung
 	%TODO Units Of Measurement bei Erstellung von Datastreams
 %TODO Funk. Anf. Thing-/Datastream-Erstellung
+
 
 \item Hilfe-Button: Durch Klick wird die README-Datei im Browser aufgerufen
 \item Speichern-Button: Bei Klick auf diesen Button wird der Upload der Daten in die Datastreams/MultiDatastreams auf den FROST-Server angestoßen
@@ -158,7 +182,7 @@ Die Daten müssen korrekt an den FROST-Server übermittelt werden, dazu gehört 
 \end{itemize}
 
 \subsection{Nichtfunktionale Anforderungen}
-Die Software ist Open-Source und benötigt einen erreichbaren FROST-Server.Sie basiert auf der SensorThings-API welche wie der FROST-Server ebenfalls Open-Source ist.
+Die Software ist Open-Source und benötigt einen erreichbaren FROST-Server. Sie basiert auf der SensorThings-API, welche wie der FROST-Server ebenfalls Open-Source ist.
 Das Programm wird in Java geschrieben und hängt dementsprechend von einer Java-Umgebung ab.
 Um Sicherheit zu gewährleisten sollte das Programm robust gegenüber schädlichen Anfragen sein, vor allem zu große oder zu viele Anfragen sollten dementsprechend abgelehnt werden um eine Überlastung des Servers zu vermeiden.
 Außerdem sollten die daten HTTPS-/SSL-Verschlüsselt werden um Abfangen der daten zu verhindern.
@@ -186,6 +210,14 @@ Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit
 \item Die Benutzbarkeit hat höchste Priorität, es soll auch Nutzern mit wenig Computerkentnissen möglich sein die Software zu bedienen
 \item Es soll einfach möglich sein, Änderungen und Erweiterungen an der Software vorzunehmen
 \item Die Software ist einfach zu übertragen, da sie auf der plattformunabhängigen Programmiersprache Java basiert, es wird nur eine Produktumgebung vorausgesetzt, die lediglich die Betreibsbedingungen erfüllt
+\end{itemize}
+
+\subsection{Anwendungsszenarien}
+Ideen für ANwendungsszenarien:
+\begin{itemize}
+\item Nutzer ohne technische Kenntnisse des Frost Server Aufbaus besitzt einen Frost Server und einen Sensor, der schon auf dem Frost Server abgespeichert ist. Außerdem hat er eine csv-Datei mit Daten vom Sensor, der einen schon bestehenden Datensatz des Sensors auf dem Server erweitern soll. Er navigiert in seinem Browser zur Web-oberfläche und stellt seine Datei als Quelle und den Frost Server als Ziel ein. Dann wählt er eine Favoritenkonfiguration aus, die zu seinem Sensor passt und lädt seine Daten durch Klick des "Upload"-Buttons hoch. Die Daten werden formatiert und auf dem Server abgrspeichert.
+\item das gleiche mit einem erfahrenen Nutzer, der ein neues Thing, einen Sensor und zugehörigen Datastream erstellt
+\item Szenario zum Abspeichern einer Konfiguration
 \end{itemize}
 
 
