@@ -46,14 +46,19 @@ Weboberfläche zum einfachen Abspeichern von Sensordaten im FROST Server
 \end{enumerate}
 
 \subsection{Abgrenzungskriterien}
-keine Verwaltung bestehender Sensordaten auf dem Server. Produkt dient nur zum Import von Sensordaten.
+\begin{enumerate}
+\item Keine Verwaltung von Sensor-Daten auf dem FROST-Server \\
+	Die Software soll keine schon auf dem FROST-Server liegenden Daten verwalten, ändern oder löschen
+\end{enumerate}
 
-%TODO Umformulieren
+
 \subsection{Anwendungsbereiche}
-Überll wo Daten im CSV-Format verarbeitet werden müssen: \\
+Überall wo Daten im CSV-Format verarbeitet werden müssen: \\
+Sie Software soll überall dort eingesetzt werden wo Daten aus Tabellen importiert, konvertiert und auf den FROST-Server übertragen werden sollen. \\
+Hierzu zählt:
 \begin{itemize}
-\item Verarbeiten von neuen Sensordaten im CSV-Format
-\item Integration von bestehenden Sensordaten in den FROST-Server
+\item Der Import von neuen Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen, in den FROST-Server
+\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen, in den FROST-Server
 \end{itemize}
 
 %TODO Die zwei Zielgruppen genauer darstellen/abgrenzen
@@ -195,19 +200,6 @@ Beispielhafte Terminplanung: \\
 	\item 13.08. - 02.09.: Qualitätssicherung
 	\item 03.09. - 09.09.: Terminfenster interne Abnahme
 	\item 10.09. - 17.09.: Terminfenster Abschlusspräsentation
-\end{itemize}
-
-
-
-
-Fragen:
-
-\begin{itemize}
-\item Anfragen an server für POST, PATCH, PUT,...
-\item Standard der Daten (wir abgespeichert?), Beispiel CSV Dateien,...
-\item welche Formate sind möglich?
-\item was sind komplexere Tranformationen?
-\item was passiert mit falschen Daten? (13. Monat)
 \end{itemize}
 
 
