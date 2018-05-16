@@ -15,82 +15,81 @@
 \subsection{Produktübersicht}
 
 Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server des Fraunhofer IOSB ist eine Open-Source-Implementierung des SensorThings-Standards des OGC und unter https://github.com/FraunhoferIOSB/FROST-Server downloadbar. Der FROST-Server dient der Speicherung und Verwaltung von Sensordaten.\\
-Unsere Software stellt zu diesem Server eine einfache und dennoch stark konfigurierbare Weboberfläche bereit, die es ermöglicht Sensordaten aus einer Tabelle einzulesen, zu konvertieren und auf einen FROST-Server zu übertragen. Die Software läuft in einem Java JRE und das zugehörige Webinterface soll über einen herkömmlichen PC, einen Laptop oder ein Tablet erreichbar sein.\\
+Unsere Software stellt zu diesem Server eine einfache und dennoch stark konfigurierbare Weboberfläche bereit, die es ermöglicht Sensordaten aus einer Tabelle einzulesen, zu konvertieren und auf einen FROST-Server zu übertragen. Die Software läuft in einer Java JRE und das zugehörige Webinterface soll über einen herkömmlichen PC, einen Laptop oder ein Tablet erreichbar sein.\\
 
 
 \subsection{Musskriterien}
 \begin{enumerate}
-\item Import von Tabellen \\
+	\item Import von Tabellen \\
 	Die Daten sollen aus Tabellen im CSV-/XLSX-Format importiert werden
-\item Konvertierung des Formats der Sensordaten \\
-	Die Daten sollen aus der Tabelle in eine einheitliches Format nach Vorgabe der SensorThings API konvertiert werden. Damit entsprechen sie dem Format der Daten auf einem FROST-Server.
-\item Erstellen, abspeichern, laden von Konfigurationen \\
+	\item Konvertierung des Formats der Sensordaten \\
+	Die Daten sollen aus der Tabelle in ein einheitliches Format nach Vorgabe der SensorThings API konvertiert werden. Damit entsprechen sie dem Format der Daten auf einem FROST-Server.
+	\item Erstellen, abspeichern, laden von Konfigurationen \\
 	Die Konfiguration der Software (ausgew. Thing, Server, Format) soll gespeichert und dem Nutzer via Download einer CFG-Datei bereitgestellt werden. Eine Konfiguration soll später auch wieder geladen werden können.
-\item Datentyptransformationen \\
+	\item Datentyptransformationen \\
 	Ein Wert als bspw. String soll nicht als String auf den FROST-Server übertragen werden sollen, sondern von der Software vorher in einen passenden Datentyp (bspw. Integer) umgewandelt werden
-\item Verarbeiten von Sonderwerten (Magic Numbers) \\
+	\item Verarbeiten von Sonderwerten (Magic Numbers) \\
 	Diese Werte sollen von der Software ignoriert und gegen einen NULL-Wert (o.ä.) ausgetauscht werden, bevor sie auf den FROST-Server übertragen werden.
-\item Import von Fremdquellen wie anderen Webseiten \\
-	Es soll möglich sein als Quelldatei auch einen entfernten Speicherort -zum Beispiel einen Weblink- anzugeben.
-\item Weitergabe von Fehlermeldungen an Nutzer, falls Import schief läuft \\
+	\item Import von Fremdquellen wie anderen Webseiten \\
+	Es soll möglich sein als Quelldatei auch einen entfernten Speicherort, zum Beispiel einen Weblink  anzugeben.
+	\item Weitergabe von Fehlermeldungen an den Nutzer, falls Import schief läuft \\
 	Bei Fehlern in der Verarbeitung oder in der Übertragung soll der Nutzer eine Rückmeldung kriegen
-\item Logging \\
+	\item Logging \\
 	Sämtliche Eingaben und Interaktionen des Nutzers mit der Software sollen in einer Log-Datei gespeichert werden
 \end{enumerate}
 
 \subsection{Wunschkriterien}
 \begin{enumerate}
-\item Sprachauswahl: Deutsch/Englisch
-\item Bereitstellen einer Vorauswahl \\
+	\item Sprachauswahl: Deutsch/Englisch
+	\item Bereitstellen einer Vorauswahl \\
 	Dem Benutzer wird eine vorgefertigte Standard-Konfiguration bereitgestellt.
-\item Überprüfung auf Duplikate \\
-	Beim Upload der Daten auf den FROST-Server werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut hochgeladen.
-\item Korrektur von falschen Daten \\
-	Der Benutzer hat dei Möglichkeit Fehler in den Daten direkt korrigieren.
-\item Rückgabe nicht bearbeiteter Datensätze in neuer CSV-Datei \\
-	Bei (teilweise) fehlgeschlagener Übertragung zum FROST-Server werden die nicht übertragenen Daten in einer CSV-Datei an der Benutzer zurückgegeben.
-\item Docker-Container \\
+	\item Überprüfung auf Duplikate \\
+	Beim Upload der Daten auf den FROST-Server werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut gespeichert.
+	\item Korrektur von falschen Daten \\
+	Der Benutzer hat die Möglichkeit Fehler in den Daten direkt zu korrigieren.
+	\item Rückgabe nicht bearbeiteter Datensätze in neuer CSV-Datei \\
+	Bei (teilweise) fehlgeschlagener Übertragung zum FROST-Server werden die nicht übertragenen Daten in einer CSV-Datei an den Benutzer zurückgegeben.
+	\item Docker-Container \\
 	Zur einfachen Installation steht das Programm als Docker-Container zur Verfügung
-\item Auswahl komplexer Transformationen Aggregationen (Zusammenlegen von Daten)
-	Aggregationen wie Summe, Minimum/Maximum, Durchschnitt, ... über ausgewählte Daten werden dem Benutzer in einem Webinterface bereitgestellt.
-\item automatisierte Daten-Aktualisierung \\
-	Bei Import von Daten von einer entfernten Adresse wird eine automatische regelmäßige Übertragung bereitgestellt.
-\item Import kompletter Datensätze von anderem FROST-Server \\
-	Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen FROST-Server 
-\item automatisierte Erkennung des Formats \\
+	\item Auswahl komplexer Transformationen/Aggregationen (Zusammenlegen von Daten) wie Summe, Minimum/Maximum, Durchschnitt etc.\\ 
+	Zusätzliche Informationen über ausgewählte Daten werden dem Benutzer in einem Webinterface bereitgestellt.
+	\item Automatisierte Daten-Aktualisierung \\
+	Bei Import von Daten von einer entfernten Adresse wird eine automatische, regelmäßige Übertragung angeboten.
+	\item Import kompletter Datensätze von anderem FROST-Server \\
+	Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen FROST-Server zu kopieren
+	\item Automatisierte Erkennung des Formats \\
 	Aus der CSV-/XLSX-Datei werden Formate automatisch erkannt.
-
-
+	
+	
 \end{enumerate}
 
 \subsection{Abgrenzungskriterien}
 \begin{enumerate}
-\item Keine Verwaltung von Sensor-Daten auf dem FROST-Server \\
+	\item Keine Verwaltung von Sensor-Daten auf dem FROST-Server \\
 	Die Software soll keine schon auf dem FROST-Server liegenden Daten verwalten, ändern oder löschen
 \end{enumerate}
 
 
 \subsection{Anwendungsbereiche}
 Überall wo Daten im CSV-Format verarbeitet werden müssen: \\
-Sie Software soll überall dort eingesetzt werden wo Daten aus Tabellen importiert, konvertiert und auf den FROST-Server übertragen werden sollen. \\
+Die Software soll überall dort eingesetzt werden, wo Daten aus Tabellen importiert, konvertiert und auf den FROST-Server übertragen werden sollen. \\
 Hierzu zählt:
 \begin{itemize}
-\item Der Import von neuen Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen, in den FROST-Server
-\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XLSX-Tabellen-Form vorliegen, in den FROST-Server
+	\item Der Import von neuen Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen
+	\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XLSX-Tabellen-Form vorliegen
 \end{itemize}
 
 %TODO Die zwei Zielgruppen genauer darstellen/abgrenzen
 \subsection{Zielgruppen}
 Die Software ist auf zwei Zielgruppen ausgelegt.\\
-Zum einen gibt es die Personen, welche einfach Sensordaten auf einen Frostserver laden möchten,  ohne die Konfigurationen zu ändern. Der Fokus liegt bei dieser Gruppe auf der einfachen Bedienung der Software.\\
-Zum anderen gibt es die Nutzergruppe welche ihre eigenen Konfigurationen erstellen. Für diese Nutzergruppe ist es wichtig, dass sie komplexe Einstellungsmöglichkeiten in den Konfigurationen nutzen können.
+Zum einen gibt es die Personen, welche einfach Sensordaten auf einen Frostserver laden möchten,  ohne die Konfigurationen zu ändern. \\Der Fokus liegt bei dieser Gruppe auf der einfachen Bedienung der Software.\\
+Zum Anderen gibt es die Nutzergruppe die ihre eigenen Konfigurationen erstellt. Für diese Nutzergruppe ist es wichtig, dass sie komplexe Einstellungsmöglichkeiten in den Konfigurationen nutzen kann.
 
 \subsection{Betriebsbedingungen}
 Unterschieden wird zwischen Endgerät und Server. \\
-Die Betriebsbedingungen beschreiben die minimalen Anforderungen die die Software zur Ausführung benötigt. \\
-Das Ziel-Endgerät ist ein Computer/Tablet, wobei jedes Gerät mit einer Internetanbindung zum Programmserver, einem Webbrowser und aktiviertem JavaScript ausreichend ist.\\
+Das Ziel-Endgerät ist ein Computer, wobei jedes Gerät mit einer Internetanbindung zum Programmserver, einem Webbrowser und aktiviertem JavaScript ausreichend ist.\\
 \ \\
-Der Programmserver benötigt nur eine Anbindung an den FROST-Server und das Endgerät und ein Java JRE.
+Der Programmserver benötigt eine Anbindung an den FROST-Server und das Endgerät sowie eine Java JRE.
 \begin{itemize}
 	\item Browser
 	\item JavaScript
@@ -103,14 +102,14 @@ Der Programmserver benötigt nur eine Anbindung an den FROST-Server und das Endg
 \end{itemize}
 
 \subsection{Produktumgebung}
-Die Produktumgebung ist eine Instanz unter der die Software läuft. Diese erfüllt mindestens die Betriebsbedingungen.
+Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- und Speicherkapazität laufen. Des weiteren soll das Programm head-less ununterbrochen funktionieren.\\ Der Server stellt die Java JRE zur Verfügung, auf dem die Software läuft. Die Software benötigt nur noch eine Verbindung zu einer FROST-Server-Instanz, welche ihm vom Nutzer in der Konfiguration gegeben wird.
+
 \begin{itemize}
-\item head-less Server
-\item Linux/Windows Server
-\item Java JRE
-\item SensorThings API
+	\item head-less Server
+	\item Linux/Windows Server
+	\item Java JRE
+	\item SensorThings API
 \end{itemize}
-Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- und Speicherkapazität laufen. Des weiteren soll das Programm head-less ununterbrochen laufen. Der Server stellt das Java JRE zur Verfügung, auf dem die Software läuft. Die Software benötigt nur noch eine Verbindung zu einer FROST-Server-Instanz, welche ihm vom Nutzer in der Konfiguration gegeben wird.
 
 \subsection{Seitenentwürfe}
 
