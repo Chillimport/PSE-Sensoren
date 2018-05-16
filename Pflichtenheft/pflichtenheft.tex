@@ -107,6 +107,38 @@ Die Produktumgebung ist eine Instanz unter der die Software läuft. Diese erfül
 \end{itemize}
 Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- und Speicherkapazität laufen. Des weiteren soll das Programm head-less ununterbrochen laufen. Der Server stellt das Java JRE zur Verfügung, auf dem die Software läuft. Die Software benötigt nur noch eine Verbindung zu einer FROST-Server-Instanz, welche ihm vom Nutzer in der Konfiguration gegeben wird.
 
+\subsection{Seitenentwürfe}
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=0.4, angle=90]{images/gui}
+\caption{\label{fig:guiMain}Hauptseite der Weboberfläche}
+
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=1]{images/create_thing}
+\caption{\label{fig:thing}Dialogfenster zum Erstellen eines Things.}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=1]{images/create_datastream}
+\caption{\label{fig:ds}Dialogfenster zum Erstellen eines Datastreams.}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=1]{images/create_sensor}
+\caption{\label{fig:sensor}Dialogfenster zum Erstellen eines Sensors.}
+\end{figure}
+
+\begin{figure}[ht]
+\centering
+\includegraphics[scale=1]{images/create_observedproperty}
+\caption{\label{fig:obsProp}Dialogfenster zum Erstellen eines Things.}
+\end{figure}
+
 \subsection{Funktionale Anforderungen}
 
 \begin{itemize}
@@ -230,42 +262,66 @@ Ideen für Anwendungsszenarien:
 
 
 \subsection{Testfälle}
-\criterium{Beschränkte Länge}{crt:length}
 \test{Default Case zum }{}
-Testfall 1 [Grundlage] ;	Stand : Offenes Browserfenster
-									   Aktion : Der Nutzer ruft die Website auf
-									   Reaktion: Die Weboberfläche wird angeziegt
-									   
-									   
-Testfall 2 [Default-Case] ;   
 
-										   Stand: Radio Box "Upload File" wird angezeigt.
-										   Aktion: Button "Brwose"
-										   Reaktion: Systemdialog öffnet sich, csv-datei ausgewählt und hochgeladen
+\test{Anzeigen der Weboberfläche}{}
+\ \\
+\teststep{Der Nutzer hat einen Browser geöffnet.}{Der Nutzer navigiert auf die Webseite.}{Die Webseite wird angezeigt wie in \cref{fig:guiMain} dargestellt.}
+\ \\
+\test{Datei als Quelle wählen}{}
+\ \\
+\teststep{Dem Nutzer wird die Webseite angezeigt.}{Der Nutzer wählt die Radio-Box "{Upload File}".}{Es wird ein Textfeld und ein "Browse"-Knopf angezeigt, um die hochzuladende Datei festzulegen.}
+\ \\
+\teststep{}{Der Nutzer drückt den "{Browse}"{-Knopf}.}{Es öffnet sich ein Dateimanager zum Auswählen der Datei.}
+\ \\
+\teststep{}{Der Nutzer wählt seine Datei aus.}{Der Dateipfad erscheint im Textfeld.}
+\ \\
+\test{Entfernte Webseite als Quelle wählen}{}
+\ \\
+\teststep{Dem Nutzer wird die Webseite angezeigt.}{Der Nutzer wählt die Radio-Box "{Choose Website}".}{Es wird ein Textfeld angezeigt, um die URL der entfernten Webseite festzulegen.}
+\ \\
+\teststep{}{Der Nutzer gibt eine URL ein.}{Die URL wird auf Gültigkeit überprüft und die zu ladende Datei auf dem Server der Weboberfläche zwischengespeichert.}
+\ \\
+\test{Zielserver wählen}{}
+\ \\
+\teststep{Dem Nutzer wird die Webseite angezeigt. Insbesondere existiert ein Textfeld zur Eingabe des Zielservers.}{Der Nutzer gibt einen FROST-Server als Ziel in das Textfeld ein und drückt den "{Submit}"{-Knopf}.}{Der Server wird auf Gültigkeit überprüft und bei Korrektheit erscheint ein Konfigurator zum Einstellen des Formats der Daten in der Quelldatei. Im Konfigurator ist der Default-Case voreingestellt.}
+\ \\
+\test{Konfiguration zurücksetzen}{}
+\ \\
+\teststep{Der Nutzer befindet sich auf der Webseite und es wird der Konfigurator angezeigt.}{Der Nutzer drückt den "{Reset}"{-Knopf}.}{Alle eingestellten Konfigurationen werden auf den Default-Case zurückgesetzt.}
+\ \\
+\test{Hilfe anfordern}{}
+\ \\
+\teststep{Der Nutzer befindet sich auf der Webseite.}{Der Nutzer drückt den "{Hilfe}"{-Knopf}.}{Es wird eine Anleitung für den Gebrauch der Weboberfläche angezeigt.}
+\ \\
+\test{Konfiguration abspeichern}{}
+\ \\
+\teststep{Der Nutzer hat eine Konfiguration erstellt.}{Der Nutzer drückt den "{Save}"{-Knopf}.}{Es wird eine cfg-Datei der Konfiguration erstellt und der Download der Datei wird angestoßen.}
+\ \\
+\test{Konfiguration laden}{}
+\ \\
+\teststep{Der Nutzer befindet sich auf der Webseite und hat eine gültige Quelldatei und einen gültigen Zielserver angegeben. Es wird ein Konfigurator angezeigt.}{Der Nutzer drückt den "{Browse}"{-Knopf}.}{Es öffnet sich ein Dateimanager.}
+\ \\
+\teststep{}{Der Nutzer wählt eine cfg-Datei.}{Die Datei wird auf Korrektheit überprüft und im Erfolgsfall ist der Konfigurator entsprechend der Datei eingestellt.}
 
-										   Stand : Datei ist ausgewählt und hochgeladen.
-										   Aktion : Der Nutzer gibt die Zieladresse (FROST-Server) an.
-										   Reaktion : Das Programm überprüft die Adresse und hinterlegt die Textbox grün(Funktioniert)/rot(Funktioniert nicht)
-										   
-										   Stand : Grundlage
-										   Aktion : Der Nutzer drückt auf Upload.
-										   Reaktion : Das File wird hochgeladen.
-										   
-										   
-										   
-Testfall 3 [CFG-File laden] ;    Stand : Grundlage
-											   Aktion : Der Nutzer drückt auf "Browse" und wählt eine Config-Datei aus.
-											   Reaktion : Die Konfigurationen werden geladen.
-											   
-Testfall 4 [Einstellen ohne Neues] ;    Stand : Grundlage
-														  Aktion : Der Nutzer füllt die Textfelder "Spalte" für das Datum und die Zeit aus.
-														  			   Dann stellt er durch Klick auf den "+" Button eine zweite Spalte ein und füllt
-														  			   im Textfeld "Format" das RegEx für das Datum aus.
-														  			   Er wählt im Thing-Dropdown Menü ein Thing aus und fügt einen Data- und einen Multi-
-														  			   datastream hinzu. Beide werden ebenfalls durch ein Dropdown Menü ausgewählt.
-														  			   Nun wählt er die zugehörigen Spalten aus.
-														  			   
-														  			   
+\ \\
+\test{Sensor erstellen}{}
+\ \\
+\teststep{Der Nutzer erstellt gerade einen Datastream (sieht den Dialog \ref{fig:ds}) und der zugehörige Sensor existiert noch nicht.}{Der Nutzer drückt den "{Create Sensor}"{-Knopf}.}{Es öffnet sich das Dialogfenster zum Erstellen eines Sensors (vgl \ref{fig:sensor}).}
+\ \\
+\teststep{}{Der Nutzer füllt alle Textfelder aus und drückt den "{Create}"{-Knopf}.}{Die Daten werden überprüft und ein neuer Sensor wird angelegt. Das Dialogfenster wird geschlossen.}
+
+\ \\
+\test{ObervedProperty erstellen}{}
+\ \\
+\teststep{Der Nutzer erstellt gerade einen Datastream (sieht den Dialog \ref{fig:ds}) und eine ObservedProperty für einen Datensatz existiert noch nicht.}{Der Nutzer drückt den "{Create Property}"{-Knopf}.}{Es öffnet sich das Dialogfenster zum Erstellen einer ObservedProperty (vgl \ref{fig:obsProp}).}
+\ \\
+\teststep{}{Der Nutzer füllt alle Textfelder aus und drückt den "{Create}"{-Knopf}.}{Die Daten werden überprüft und ein neue ObservedProperty wird angelegt. Das Dialogfenster wird geschlossen.}
+\ \\
+
+\test{Einen Datensatz zu einem Datastream hinzufügen}{}
+\ \\
+\teststep{Der Nutzer erstellt gerade einen Datastream (sieht den Dialog \ref{fig:ds}).}{Der Nutzer drückt den "{Add unit}"{-Knopf}.}{Es wird eine neue leere Zeile in der Tabelle für die zum Datastream gehörigen Units of Measurement angelegt.}														  			   
 														  			   
 \test{Einstellen nichts neu}{}
 \teststep{Der Nutzer hat Quelle und Ziel eingegeben und bestätigt}{Der Nutzer füllt die Datums-/Uhrzeits-Spalte aus}{Die Software überprüft die Korrektheit der Spalten (Wurde eine Spalte angegeben, die nicht existiert?)}
@@ -291,6 +347,9 @@ Testfall 4 [Einstellen ohne Neues] ;    Stand : Grundlage
 \test{Neuen (Multi)DataStream erstellen}{}
 \teststep{Die Datei und FROST-Server wurden angegeben und ein Thing ausgewählt}{Der User klickt auf den "{Create DS}"{-Button}}{Es öffnet sich der "{Create New DataStream}"{-Dialog} indem der User einen neuen DataStream oder MultiDataStream formulieren und erstellen kann}
 \teststep{Der User sieht das Dialogfenster zum erstellen eines DataStreams}{der User trägt Name und Beschreibung in die Textfelder ein, wählt Observation Type und Sensor aus den Dropdown-Menüs aus, trägt eine oder mehrere Units Of Measurement ein und klickt abschließend auf "{Create}"}{Die Software unterscheidet zwischen DataStream und MultiDataStream und legt den entsprechenden Stream mit den angegeben Daten im FROST-Server an}
+
+
+
 \subsection{Zeitplanung}
 Beispielhafte Terminplanung: \\
 \begin{itemize}
