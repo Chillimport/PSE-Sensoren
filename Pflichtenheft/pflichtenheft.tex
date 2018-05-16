@@ -230,18 +230,38 @@ Ideen für Anwendungsszenarien:
 
 \subsection{Testfälle}
 
-Testfall 1: Nutzer will Tabelle hochladen und nutzt bestehende Konfiguration:
-	-> entfernte Datei statt lokale Datei
-Testfall 2: Nutzer will Tabelle hochladen und konfiguriert selber
-	-> Konfiguration herunterladen
-Testfall 3: Nutzer erstellt neues Thing/Datastream
-Testfall 4: Nutzer ruft Hilfe auf
-Randtestfälle: Nutzer lädt keine Tabelle hoch, Nutzer lädt kaputte CFG-Datei hoch, Nutzer erstellt fehlerhaftes Thing/Datastream
-Randtestfälle: Angabe falscher Spaltennummern 
-%Max
+Testfall 1 [Grundlage] ;	Stand : Offenes Browserfenster
+									   Aktion : Der Nutzer ruft die Website auf
+									   Reaktion: Die Weboberfläche wird angeziegt
+									   
+									   
+Testfall 2 [Default-Case] ;   
 
+										   Stand: Radio Box "Upload File" wird angezeigt.
+										   Aktion: Button "Brwose"
+										   Reaktion: Systemdialog öffnet sich, csv-datei ausgewählt und hochgeladen
 
-
+										   Stand : Datei ist ausgewählt und hochgeladen.
+										   Aktion : Der Nutzer gibt die Zieladresse (FROST-Server) an.
+										   Reaktion : Das Programm überprüft die Adresse und hinterlegt die Textbox grün(Funktioniert)/rot(Funktioniert nicht)
+										   
+										   Stand : Grundlage
+										   Aktion : Der Nutzer drückt auf Upload.
+										   Reaktion : Das File wird hochgeladen.
+										   
+										   
+										   
+Testfall 3 [CFG-File laden] ;    Stand : Grundlage
+											   Aktion : Der Nutzer drückt auf "Browse" und wählt eine Config-Datei aus.
+											   Reaktion : Die Konfigurationen werden geladen.
+											   
+Testfall 4 [Einstellen ohne Neues] ;    Stand : Grundlage
+														  Aktion : Der Nutzer füllt die Textfelder "Spalte" für das Datum und die Zeit aus.
+														  			   Dann stellt er durch Klick auf den "+" Button eine zweite Spalte ein und füllt
+														  			   im Textfeld "Format" das RegEx für das Datum aus.
+														  			   Er wählt im Thing-Dropdown Menü ein Thing aus und fügt einen Data- und einen Multi-
+														  			   datastream hinzu. Beide werden ebenfalls durch ein Dropdown Menü ausgewählt.
+														  			   Nun wählt er die zugehörigen Spalten aus.
 \subsection{Zeitplanung}
 Beispielhafte Terminplanung: \\
 \begin{itemize}
