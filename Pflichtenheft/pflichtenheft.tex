@@ -2,58 +2,82 @@
 
 \usepackage[ngerman]{babel}
 \usepackage[utf8]{inputenc}
+
 \begin{document}
 
-
+%TODO
 \subsection{Produktübersicht}
-Was ist der Frost-Server?
-Weboberfläche zum einfachen Abspeichern von Sensordaten im FROST Server
+Unsere Software stellt ein Webinterface zum einfachen Import von Sensordaten aus Tabellen auf einen FROST-Server bereit. \\
+Der FROST-Server vom Fraunhofer IOSB ist eine Open-Source-Implementierung des SensorThings-Standards des OGC und unter %TODO Github Link
+downloadbar. Unsere Software stellt zu diesem 
+
 
 \subsection{Musskriterien}
 \begin{enumerate}
-\item Import von csv/xlsx dateien
-\item konvertierung von sensordaten von csv und xlsx in ISO format nach Vorgabe der SensorThings API (Format der Daten auf Sever)
-\item Konfiguration der Formate der Sensordaten
-\item erstellen, abspeichern, auslesen von Favoriten-konfigurationen
-\item Datentyptransformationen
-\item Verarbeiten von Sonderwerten (Magic Numbers)
-\item Import von Fremdquellen wie anderen webseiten
-\item Weitergabe von Fehlermeldungen an Nutzer, falls Import schief läuft
+\item Import von Tabellen \\
+	Die Daten sollen aus Tabellen im CSV-/XSLX-Format importiert werden
+\item Konvertierung des Formats der Sensordaten \\
+	Die Daten sollen aus der Tabelle in eine einheitliches Format nach Vorgabe der SensorThings API konvertiert werden. Damit entsprechen sie dem Format der Daten auf einem FROST-Server.
+\item Erstellen, abspeichern, laden von Konfigurationen \\
+	Die Konfiguration der Software (ausgew. Thing, Server, Format) soll gespeichert und dem Nutzer via Download einer CFG-Datei bereitgestellt werden. Eine Konfiguration soll später auch wieder geladen werden können.
+\item Datentyptransformationen \\
+	Ein Wert als bspw. String soll nicht als String auf den FROST-Server übertragen werden sollen, sondern von der Software vorher in einen passenden Datentyp (bswp. Integer) umgewandelt werden
+\item Verarbeiten von Sonderwerten (Magic Numbers) \\
+	Diese Werte sollen von der Software ignoriert und gegen einen NULL-Wert (o.ä.) ausgetauscht werden, bevor sie auf den FROST-Server übertragen werden.
+\item Import von Fremdquellen wie anderen Webseiten \\
+	Es soll möglich sein als Quelldatei auch einen entfernten Speicherort -zum Beispiel einen Weblink- anzugeben.
+\item Weitergabe von Fehlermeldungen an Nutzer, falls Import schief läuft \\
+	Bei Fehlern in der Verarbeitung oder in der Übertragung soll der Nutzer eine Rückmeldung kriegen
+\item Logging \\
+	Sämtliche Eingaben und Interaktionen des Nutzers mit der Software sollen in einer Log-Datei gespeichert werden
 \end{enumerate}
 
 \subsection{Wunschkriterien}
 \begin{enumerate}
-\item Sprachauswahl DE/ENG
-\item Bereitstellen einer vorauswahl (default)
-\item überprüfung auf Duplikate
-\item Erkennen und Rückgabe von Tipp- und Sinnfehlern bzw. Vorschläge für weiteres Vorgehen
-\item Rückgabe nicht bearbeiteter Datensätze in neuer CSV-Datei
-\item Docker-Container des Server-Programmes
-\item Auswahl komplexer Transformationen im Webinterface (Aggregationen (Zusammenlegen von Daten), Summe, Min/Max, Durchschnitt...)
-\item automatisierter regelmäßiger Download von entfernter Adresse
-\item Import kompletter Datensätze von anderem FROST-Server
-\item automatisierte Erkennung des Formats
-\item Erweiterungsmöglichkeit der Software für besondere Formate
+\item Sprachauswahl: Deutsch/Englisch
+\item Bereitstellen einer Vorauswahl (default-Konfiguration) \\
+	Dem Benutzer wird eine vorgefertigte Standard-Konfiguration bereitgestellt.
+\item Überprüfung auf Duplikate \\
+	Beim Upload der Daten auf den FROST-Server werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut hochgeladen.
+\item Korrektur von falschen Daten \\
+	Der Benutzer hat dei Möglichkeit Fehler in den Daten direkt korrigieren.
+\item Rückgabe nicht bearbeiteter Datensätze in neuer CSV-Datei \\
+	Bei (teilweise) fehlgeschlagener Übertragung zum FROST-Server werden die nicht übertragenen Daten in einer CSV-Datei an der Benutzer zurückgegeben.
+\item Docker-Container \\
+	Zur einfachen Installation steht das Programm als Docker-Container zur Verfügung
+\item Auswahl komplexer Transformationen Aggregationen (Zusammenlegen von Daten)
+	Aggregationen wie Summe, Minimum/Maximum, Durchschnitt, ... über ausgewählte Daten werden dem Benutzer in einem Webinterface bereitgestellt.
+\item automatisierte Daten-Aktualisierung \\
+	Bei Import von Daten von einer entfernten Adresse wird eine automatische regelmäßige Übertragung bereitgestellt.
+\item Import kompletter Datensätze von anderem FROST-Server \\
+	Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen FROST-Server 
+\item automatisierte Erkennung des Formats \\
+	Aus der CSV-/XLSX-Datei werden Formate automatisch erkannt.
+
 
 \end{enumerate}
 
 \subsection{Abgrenzungskriterien}
-keine Verwaltung bestehender Sensordaten auf dem Server. Produkt dient nur zum Import von Sensordaten
+\begin{enumerate}
+\item Keine Verwaltung von Sensor-Daten auf dem FROST-Server \\
+	Die Software soll keine schon auf dem FROST-Server liegenden Daten verwalten, ändern oder löschen
+\end{enumerate}
+
 
 \subsection{Anwendungsbereiche}
-Überll wo Daten im CSV-Format verarbeitet werden müssen: \\
+Überall wo Daten im CSV-Format verarbeitet werden müssen: \\
+Sie Software soll überall dort eingesetzt werden wo Daten aus Tabellen importiert, konvertiert und auf den FROST-Server übertragen werden sollen. \\
+Hierzu zählt:
 \begin{itemize}
-\item Verarbeiten von neuen Sensordaten im CSV-Format
-\item Integration von bestehenden Sensordaten in den FROST-Server
+\item Der Import von neuen Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen, in den FROST-Server
+\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen, in den FROST-Server
 \end{itemize}
 
+%TODO Die zwei Zielgruppen genauer darstellen/abgrenzen
 \subsection{Zielgruppen}
-2 Zeilgruppen:
-\begin{itemize}
-\item Besitzer von Sensoren; Privatpersonen
-\item Personen ohne technisches Vorwissen bspw. Beamte
-\item Personen mit technischem know-how
-\end{itemize}
+Die Software ist auf zwei Zielgruppen ausgelegt.\\
+Zum einen gibt es die Personen, welche einfach Sensordaten auf einen Frostserver laden möchten,  ohne die Konfigurationen zu ändern. Der Fokus liegt bei dieser Gruppe auf der einfachen Bedienung der Software.\\
+Zum anderen gibt es die Nutzergruppe welche ihre eigenen Konfigurationen erstellen. Für diese Nutzergruppe ist es wichtig, dass sie komplexe Einstellungsmöglichkeiten in den Konfigurationen nutzen können.
 
 \subsection{Betriebsbedingungen}
 Unterschieden wird zwischen Endgerät und Server. \\
@@ -83,8 +107,33 @@ Die Produktumgebung ist eine Instanz unter der die Software läuft. Diese erfül
 Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- und Speicherkapazität laufen. Des weiteren soll das Programm head-less ununterbrochen laufen. Der Server stellt das Java JRE zur Verfügung, auf dem die Software läuft. Die Software benötigt nur noch eine Verbindung zu einer FROST-Server-Instanz, welche ihm vom Nutzer in der Konfiguration gegeben wird.
 
 \subsection{Funktionale Anforderungen}
+
+%Vorschlag:
+
 \begin{itemize}
-	
+\item Kurzanleitung auf der Weboberfläche: Auf der Weboberfläche existiert die Möglichkeit, eine Anleitung angezeigt zu bekommen. Diese soll kurz beschreiben, wie der Konfigurator und die Weboberfläche an sich funktionieren.
+\item Auswahlmöglichkeit des Zielservers: Auf der Weboberfläche soll ein ereichbarer Frost-Server zum Hinterlegen der Daten einstellbar sein
+\item Auswahlmöglichkeit der Datenquelle: Auf der Weboberfläche lässt sich auswählen, ob eine Datei (.csv/.xlsx) hochgeladen, eine entfernte Web-Adresse als Quelle dient oder Daten aus einem schon bestehenden Server importiert werden sollen.
+\item Auswahlmöglichkeit einer Konfiguration: Auf der Weboberfläche besteht die Möglichkeit eine Konfigation abzuspeichern und eine abgespeicherte Konfiguration erneut zu laden.
+\item Bereitstellen einer Default-Konfiguration
+\item Konfiguration zum Laden der Daten auf den Frost-Server: Auf der Weboberfläche lassen sich das Format der hochzuladenden Daten einstellen. Dazu wird die Auswahl bzw. das Neuanlegen eines Things und zugehörigen Datastreams ermöglicht. Außerdem lässt sich das Datumsformat in der Daten in der Quelldatei festlegen.
+\item Hochladen der Daten auf den Frost-Server
+\item Formatieren der Daten: Vor dem Abspeichern auf dem Frost-Server werden die Daten formatiert, sodass sie dem OGC SensorThings API Standard enstprechen.
+\item Anlegen einer Log-Datei: Während der Nutzung der Weboberfläche wird eine Log-Datei erstellt, die sämtliche Aktionen des Nutzers sowie Weboberfäche/Server-Interaktionen aufzeichnet, um Fehlererkennung und -verfolgung zu erleichtern.
+\item Sprachauswahl
+\item Auswahlmöglichkeit komplexer Operationen auf Daten: Auf der Weboberfläche lassen sich komplexere Datentransformationen auswählen. Diese sollen das Abspeichern von Datenaggregationen wie Summe, MIn, Max und Durchschnitt des Datensatzes ermöglichen
+\item Duplikaterkennung: Bevor Daten auf den Frost-Server hochgeladen werden, wird überprüft, ob diese schon existieren, um redundante Daten zu vermeiden.
+\item Fehlermeldungen: Kommt es bei der Verarbeitung der Daten zu Problemen, ermöglichen aussagekräftige Fehlermeldungen eine effiziente Korrektur.
+\item Rückgabe nicht verarbeiteter Daten: Können Teile des Datensatzes nicht verarbeitet werden, wird eine csv-Datei mit allen fehlerhaften Daten erstellt und an den Nutzer zurückgegeben.
+\end{itemize}
+
+\newpage
+
+\begin{itemize}
+%TODO GUI-Design von Thing-/Datastream-Erstellung
+	%TODO Units Of Measurement bei Erstellung von Datastreams
+%TODO Funk. Anf. Thing-/Datastream-Erstellung
+
 
 \item Hilfe-Button: Durch Klick wird die README-Datei im Browser aufgerufen
 \item Speichern-Button: Bei Klick auf diesen Button wird der Upload der Daten in die Datastreams/MultiDatastreams auf den FROST-Server angestoßen
@@ -135,7 +184,7 @@ Die Daten müssen korrekt an den FROST-Server übermittelt werden, dazu gehört 
 \end{itemize}
 
 \subsection{Nichtfunktionale Anforderungen}
-Die Software ist Open-Source und benötigt einen erreichbaren FROST-Server.Sie basiert auf der SensorThings-API welche wie der FROST-Server ebenfalls Open-Source ist.
+Die Software ist Open-Source und benötigt einen erreichbaren FROST-Server. Sie basiert auf der SensorThings-API, welche wie der FROST-Server ebenfalls Open-Source ist.
 Das Programm wird in Java geschrieben und hängt dementsprechend von einer Java-Umgebung ab.
 Um Sicherheit zu gewährleisten sollte das Programm robust gegenüber schädlichen Anfragen sein, vor allem zu große oder zu viele Anfragen sollten dementsprechend abgelehnt werden um eine Überlastung des Servers zu vermeiden.
 Außerdem sollten die daten HTTPS-/SSL-Verschlüsselt werden um Abfangen der daten zu verhindern.
@@ -155,7 +204,7 @@ Sicherheitsanforderungen, Plattformabhängigkeiten)
 Das Programm sollte über lange Zeiträume auch ohne Unterbrechungen zuverlässig ausgeführt werden können, solange die Produktumgebung dies zulässt.
 Die Benutzbarkeit hat höchste Priorität, auch Nutzer ohne oder wenig technischem Vorwissen sollten in der Lage sein die Software zu bedienen.
 Außerdem soll es möglichst einfach sein die Software schnell und unkompliziert zu ändern oder zu erweitern.
-Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit Platformunabhängig ist. Es wird lediglich eine Produktumgebung vorrausgesetzt die Java bereitstellt.
+Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit Platformunabhängig ist. Es wird lediglich eine Produktumgebung vorausgesetzt die die Betriebsbedingungen erfüllt.
 
 (In diesem Kapitel wird den Qualitätsmerkmalen Funktionalität, Zuverlässigkeit, Benutzbarkeit, Effizienz, Änderbarkeit und Übertragbarkeit je eine Qualitätsstufe aus sehr gut, gut, normal und nicht relevant zugeordnet.)
 \begin{itemize}
@@ -165,9 +214,18 @@ Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit
 \item Die Software ist einfach zu übertragen, da sie auf der plattformunabhängigen Programmiersprache Java basiert, es wird nur eine Produktumgebung vorausgesetzt, die lediglich die Betreibsbedingungen erfüllt
 \end{itemize}
 
+\subsection{Anwendungsszenarien}
+Ideen für ANwendungsszenarien:
+\begin{itemize}
+\item Nutzer ohne technische Kenntnisse des Frost Server Aufbaus besitzt einen Frost Server und einen Sensor, der schon auf dem Frost Server abgespeichert ist. Außerdem hat er eine csv-Datei mit Daten vom Sensor, der einen schon bestehenden Datensatz des Sensors auf dem Server erweitern soll. Er navigiert in seinem Browser zur Web-oberfläche und stellt seine Datei als Quelle und den Frost Server als Ziel ein. Dann wählt er eine Favoritenkonfiguration aus, die zu seinem Sensor passt und lädt seine Daten durch Klick des "Upload"-Buttons hoch. Die Daten werden formatiert und auf dem Server abgrspeichert.
+\item das gleiche mit einem erfahrenen Nutzer, der ein neues Thing, einen Sensor und zugehörigen Datastream erstellt
+\item Szenario zum Abspeichern einer Konfiguration
+\end{itemize}
+
 
 \subsection{Globale Testfälle und Szenarien / Anwendungsfälle}
 \begin{itemize}
+%TODO to be added after the GUI design
 \item to be added after the GUI design
 \end{itemize}
 
@@ -185,23 +243,28 @@ Beispielhafte Terminplanung: \\
 \end{itemize}
 
 
-
-
-Fragen:
-
-\begin{itemize}
-\item Anfragen an server für POST, PATCH, PUT,...
-\item Standard der Daten (wir abgespeichert?), Beispiel CSV Dateien,...
-\item welche Formate sind möglich?
-\item was sind komplexere Tranformationen?
-\item was passiert mit falschen Daten? (13. Monat)
-\end{itemize}
-
-
 Glossar:
 \begin{itemize}
 \item FROST
 \item SensorThings
+\item CSV-/XSLX-Dateien
+\item CFG-Datei
+\item Thing
+\item Integer
+\item NULL
+\item Magic Numbers
+\item Log-Datei
+\item Docker
+\item JavaScript
+\item Java JRE
+\item head-less Server
+\item OGC
+\item README
+\item Datastram
+\item Regex
+\item HTTPS/SSL
+\item GPLv3
+\item GUI 
 \end{itemize}
 
 
