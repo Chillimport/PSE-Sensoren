@@ -206,7 +206,7 @@
 	
 	%TODO Nummerierung der Wunschkriterien in Fließtext
 	\subsection{Produktdaten}
-	Die gesicherten Daten der Software sind minimal, konkret heißt das es wird nur ein Log-File gesichert. Die Konfiguration wird dem Nutzer per CFG-Datei zum Download bereitgestellt und nicht Serverseitig gespeichert.\\
+	Die gesicherten Daten der Software sind minimal, konkret heißt das, es wird nur ein Log-File gesichert. \\Die Konfiguration wird dem Nutzer per CFG-Datei zum Download bereitgestellt und nicht Serverseitig gespeichert.\\
 	Sollte das Kriterium [Wunsch: Automatischer Download] mit aufgenommen werden, so muss die Adresse der entfernten Datei und des zu nutzenden FROST-Servers auf dem Server gespeichert werden.
 	\begin{itemize}
 		\item Log-Datei
@@ -216,8 +216,8 @@
 	\end{itemize}
 	
 	\subsection{Produktleistungen}
-	Die Software soll sämtliche Aktionen der Nutzer in einem Log-File speichern. Die Eingaben sollen möglichst direkt verarbeitet und die Reaktionszeit möglichst gering sein. Bei langsamen Operationen soll der Nutzer Feedback über eine Fortschrittsleiste und über das Log-Fenster bekommen. \\
-	Die Daten müssen korrekt an den FROST-Server übermittelt werden, dazu gehört auch Robustheit der Anwendung gegenüber falschen Angaben. Bei falschen Angaben oder sonstigen Fehlern soll der Nutzer mittels einer Fehlermeldung benachrichtigt werden.
+	Die Software soll sämtliche Aktionen der Nutzer in einem Log-File speichern. Die Eingaben sollen möglichst direkt verarbeitet und die Reaktionszeit möglichst gering sein. \\Bei langsamen Operationen soll der Nutzer Feedback über eine Fortschrittsleiste und über das Log-Fenster bekommen. \\
+	Die Daten müssen korrekt an den FROST-Server übermittelt werden, dazu gehört auch Robustheit der Anwendung gegenüber falschen Angaben. \\Bei falschen Angaben oder sonstigen Fehlern soll der Nutzer mittels einer Fehlermeldung benachrichtigt werden.
 	\begin{itemize}
 		\item Logging
 		\item Statusmeldungen an den Nutzer
@@ -228,12 +228,10 @@
 	
 	\subsection{Nichtfunktionale Anforderungen}
 	Die Software ist Open-Source und benötigt einen erreichbaren FROST-Server. Sie basiert auf der SensorThings-API, welche wie der FROST-Server ebenfalls Open-Source ist.
-	Das Programm wird in Java geschrieben und hängt dementsprechend von einer Java-Umgebung ab.
-	Um Sicherheit zu gewährleisten sollte das Programm robust gegenüber schädlichen Anfragen sein, vor allem zu große oder zu viele Anfragen sollten dementsprechend abgelehnt werden um eine Überlastung des Servers zu vermeiden.
-	Außerdem sollten die daten HTTPS-/SSL-Verschlüsselt werden um Abfangen der daten zu verhindern.
+	\\Das Programm wird in Java geschrieben und hängt dementsprechend von einer Java-Umgebung ab.
+	\\Um Sicherheit zu gewährleisten sollte das Programm robust gegenüber schädlichen Anfragen sein, vor allem zu große oder zu viele Anfragen sollten dementsprechend abgelehnt werden um eine Überlastung des Servers zu vermeiden.
+	\\Außerdem sollten die daten HTTPS-/SSL-Verschlüsselt werden um Abfangen der daten zu verhindern.
 	
-	(einzuhaltende Gesetze, Normen, Urheber- und Markenrechte,
-	Sicherheitsanforderungen, Plattformabhängigkeiten)
 	\begin{itemize}
 		\item Genutzt wird der FROST-Server und die SensorThings API (beides Open-Source)
 		\item Die Software ist Open-Source (GPLv3)
@@ -246,10 +244,10 @@
 	\subsection{Qualitätsanforderungen}
 	Das Programm sollte über lange Zeiträume auch ohne Unterbrechungen zuverlässig ausgeführt werden können, solange die Produktumgebung dies zulässt.
 	Die Benutzbarkeit hat höchste Priorität, auch Nutzer ohne oder wenig technischem Vorwissen sollten in der Lage sein die Software zu bedienen.
-	Außerdem soll es möglichst einfach sein die Software schnell und unkompliziert zu ändern oder zu erweitern.
-	Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit Platformunabhängig ist. Es wird lediglich eine Produktumgebung vorausgesetzt die die Betriebsbedingungen erfüllt.
+	\\Außerdem soll es möglichst einfach sein die Software schnell und unkompliziert zu ändern oder zu erweitern.
+	\\Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit Platformunabhängig ist. 
+	\\Es wird lediglich eine Produktumgebung vorausgesetzt die die Betriebsbedingungen erfüllt.
 	
-	(In diesem Kapitel wird den Qualitätsmerkmalen Funktionalität, Zuverlässigkeit, Benutzbarkeit, Effizienz, Änderbarkeit und Übertragbarkeit je eine Qualitätsstufe aus sehr gut, gut, normal und nicht relevant zugeordnet.)
 	\begin{itemize}
 		\item Die Software sollte zuverlässig auch über längere Zeiträume ohne Unterbrechung laufen sofern es die Produktumgebung zulässt
 		\item Die Benutzbarkeit hat höchste Priorität, es soll auch Nutzern mit wenig Computerkentnissen möglich sein die Software zu bedienen
@@ -272,11 +270,11 @@
 	
 	\test{Anzeigen der Weboberfläche}{}
 	\ \\
-	\teststep{Der Nutzer hat einen Browser geöffnet.}{Der Nutzer navigiert auf die Webseite.}{Die Webseite wird angezeigt wie in \cref{fig:guiMain} dargestellt.}
+	\teststep{Der Nutzer hat einen Browser geöffnet.}{Der Nutzer navigiert auf die Webseite.}{Die Webseite wird wie in \cref{fig:guiMain} dargestellt.}
 	\ \\
 	\test{Datei als Quelle wählen}{}
 	\ \\
-	\teststep{Dem Nutzer wird die Webseite angezeigt.}{Der Nutzer wählt die Radio-Box "{Upload File}".}{Es wird ein Textfeld und ein "Browse"-Knopf angezeigt, um die hochzuladende Datei festzulegen.}
+	\teststep{Dem Nutzer wird die Webseite angezeigt.}{Der Nutzer wählt die Radio-Box "{Upload File}".}{Es wird ein Textfeld und ein "Browse\string"\string-Knopf angezeigt, um die hochzuladende Datei festzulegen.}
 	\ \\
 	\teststep{}{Der Nutzer drückt den "{Browse}"{-Knopf}.}{Es öffnet sich ein Dateimanager zum Auswählen der Datei.}
 	\ \\
