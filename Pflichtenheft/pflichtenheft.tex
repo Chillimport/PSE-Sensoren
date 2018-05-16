@@ -7,13 +7,9 @@
 
 %TODO
 \subsection{Produktübersicht}
-Unsere Software stellt ein Webinterface zum einfachen Import von Sensordaten aus Tabellen auf einen FROST-Server bereit. \\
-Der FROST-Server vom Fraunhofer IOSB ist eine Open-Source-Implementierung des SensorThings-Standards des OGC und unter https://github.com/FraunhoferIOSB/FROST-Server downloadbar. Der FROST-Server dient der Speicherung und Verwaltung von Sensordaten.\\
+
+Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server des Fraunhofer IOSB ist eine Open-Source-Implementierung des SensorThings-Standards des OGC und unter https://github.com/FraunhoferIOSB/FROST-Server downloadbar. Der FROST-Server dient der Speicherung und Verwaltung von Sensordaten.\\
 Unsere Software stellt zu diesem Server eine einfache und dennoch stark konfigurierbare Weboberfläche bereit, die es ermöglicht Sensordaten aus einer Tabelle einzulesen, zu konvertieren und auf einen FROST-Server zu übertragen. Die Software läuft in einem Java JRE und das zugehörige Webinterface soll über einen herkömmlichen PC, einen Laptop oder ein Tablet erreichbar sein.\\
-
-
-
-
 
 
 \subsection{Musskriterien}
@@ -223,7 +219,7 @@ Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit
 \end{itemize}
 
 \subsection{Anwendungsszenarien}
-Ideen für ANwendungsszenarien:
+Ideen für Anwendungsszenarien:
 %TODO Anwendungsfalldiagramm
 \begin{itemize}
 \item Nutzer ohne technische Kenntnisse des Frost Server Aufbaus besitzt einen Frost Server und einen Sensor, der schon auf dem Frost Server abgespeichert ist. Außerdem hat er eine csv-Datei mit Daten vom Sensor, der einen schon bestehenden Datensatz des Sensors auf dem Server erweitern soll. Er navigiert in seinem Browser zur Web-oberfläche und stellt seine Datei als Quelle und den Frost Server als Ziel ein. Dann wählt er eine Favoritenkonfiguration aus, die zu seinem Sensor passt und lädt seine Daten durch Klick des "Upload"-Buttons hoch. Die Daten werden formatiert und auf dem Server abgrspeichert.
@@ -233,7 +229,7 @@ Ideen für ANwendungsszenarien:
 
 
 \subsection{Testfälle}
-\begin{itemize}
+
 Testfall 1: Nutzer will Tabelle hochladen und nutzt bestehende Konfiguration:
 	-> entfernte Datei statt lokale Datei
 Testfall 2: Nutzer will Tabelle hochladen und konfiguriert selber
@@ -243,7 +239,7 @@ Testfall 4: Nutzer ruft Hilfe auf
 Randtestfälle: Nutzer lädt keine Tabelle hoch, Nutzer lädt kaputte CFG-Datei hoch, Nutzer erstellt fehlerhaftes Thing/Datastream
 Randtestfälle: Angabe falscher Spaltennummern 
 %Max
-\end{itemize}
+
 
 
 \subsection{Zeitplanung}
@@ -264,7 +260,7 @@ Glossar:
 \item FROST \\
 	Der \textbf{FR}auenhofer \textbf{O}penSource \textbf{S}ensor\textbf{T}hings-Server ist die erste komplette quelloffene Implementierung der OGC SensorThings API
 \item OGC \\
-	Das Open Geospatial Consortium (OGC) ist eine gemeinnützige Organisation, die sich zum Ziel gesetzt hat, die Entwicklung von raumbezogener Informationsverarbeitung (insbesondere Geodaten) auf Basis allgemeingültiger Standards festzulegen.
+	Das \textbf{O}pen \textbf{G}eospatial \textbf{C}onsortium ist eine gemeinnützige Organisation, die sich zum Ziel gesetzt hat, die Entwicklung von raumbezogener Informationsverarbeitung (insbesondere Geodaten) auf Basis allgemeingültiger Standards festzulegen.
 \item SensorThings API \\
 	Allgemeiner einheitlicher Standard um Verbindung zwischen Sensoren, deren Ort und Umgebung und den von ihnen erzeugten Daten herzustellen.
 \item CSV-/XLSX-Dateien \\
@@ -286,9 +282,9 @@ Glossar:
 \item Docker \\
 	Docker ist eine Software zur Isolierung von Anwendungen. Docker vereinfacht die Bereitstellung von Anwendungen, weil sich sog. Container, die alle nötigen Pakete enthalten, leicht als Dateien transportieren und installieren lassen.
 \item GUI \\
-	Ein Grafische Benutzeroberfläche (engl. graphical user interface, GUI) hat die Aufgabe, eine Anwendungssoftware auf einem Rechner mittels grafischer Symbole und Steuerelemente für den Benutzer bedienbar zu machen.
+	Ein Grafische Benutzeroberfläche (engl. \textbf{G}raphical \textbf{U}ser \textbf{I}nterface) hat die Aufgabe, eine Anwendungssoftware auf einem Rechner mittels grafischer Symbole und Steuerelemente für den Benutzer bedienbar zu machen.
 \item (Java) JRE \\
-	Mit der Java-Laufzeitumgebung (Java Runtime Environment, JRE) werden Programme (Java-Anwendungen) weitgehend unabhängig vom darunter liegenden Betriebssystem ausgeführt.
+	Mit der Java-Laufzeitumgebung (\textbf{J}ava \textbf{R}untime \textbf{E}nvironment) werden Programme (Java-Anwendungen) weitgehend unabhängig vom darunter liegenden Betriebssystem ausgeführt.
 \item JavaScript \\
 	JavaScript ist eine Programmiersprache, die hauptsächlich auf Webbrowsern Anwendung findet.
 \item headless Server \\
@@ -297,13 +293,13 @@ Glossar:
 \item README \\
 	Als README (deutsch: Liesmich) wird eine Datei bezeichnet, die üblicherweise mit Software mitgeliefert wird und diverse, oft wichtige Informationen über die Software enthält.
 \item Regex \\
-	Regular Expressions (Regex, regulärer Ausdrucke) dienen der Beschreibung von Zeichenketten mit ähnlichem Format.
+	\textbf{Reg}ular \textbf{Ex}pressions (Regex, regulärer Ausdrucke) dienen der Beschreibung von Zeichenketten mit ähnlichem Format.
 	Sie können als Filterkriterien in der Textsuche verwendet werden, indem der Text mit dem Muster des regulären Ausdrucks verglichen wird.
 \item HTTPS/SSL \\
-	Hypertext Transfer Protocol Secure (HTTPS) ist ein sicheres Hypertext-Übertragungsprotokoll, das SSL benutzt.
-	SSL steht für Secure Sockets Layer und ist die Standardtechnologie für die Absicherung von Internetverbindungen und den Schutz sensibler Daten, die zwischen zwei Systemen übertragen werden.
-\item GPLv3
-	GPLv3 ist die aktuelle Versioon von GPL. Diese General Public License (allgemeine Veröffentlichungsgenehmigung) ist die am weitesten verbreitete Softwarelizenz,
+	\textbf{H}yper\textbf{T}ext \textbf{T}ransfer \textbf{P}rotocol \textbf{S}ecure (HTTPS) ist ein sicheres Hypertext-Übertragungsprotokoll, das SSL benutzt.
+	SSL steht für \textbf{S}ecure \textbf{S}ockets \textbf{L}ayer und ist die Standardtechnologie für die Absicherung von Internetverbindungen und den Schutz sensibler Daten, die zwischen zwei Systemen übertragen werden.
+\item GPLv3 \\
+	GPLv3 ist die aktuelle Version von GPL. Diese \textbf{G}eneral \textbf{P}ublic \textbf{L}icense (allgemeine Veröffentlichungsgenehmigung) ist die am weitesten verbreitete Softwarelizenz,
 	die einem gewährt, die Software auszuführen, zu studieren, zu ändern und zu verbreiten.
 \end{itemize}
 
