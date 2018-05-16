@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.24)  14 MAY 2018 14:14
+=======
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.20)  14 MAY 2018 17:23
+>>>>>>> ced189645f6fab5754c4ac4672d7c252a5014ea8
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -275,6 +279,58 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
  [1
 
+<<<<<<< HEAD
+{C:/Users/Max/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Underfull \hbox (badness 10000) in paragraph at lines 46--47
+
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 48.
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 48.
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--67
+
+ []
+
+[2]
+Overfull \hbox (7.92505pt too wide) in paragraph at lines 86--87
+\OT1/cmr/m/n/12 Die Soft-wa-re soll platt-for-mu-n-abh[]angig auf ei-nem Ser-ve
+r mit mi-ni-ma-ler Rechen-
+ []
+
+[3]
+Overfull \hbox (4.39175pt too wide) in paragraph at lines 103--104
+[]\OT1/cmr/m/n/12 Konfiguration durch-su-chen/laden: Durch Klick auf "Durch-su-
+chen"[]offnet
+ []
+
+
+Overfull \hbox (48.3427pt too wide) in paragraph at lines 103--104
+\OT1/cmr/m/n/12 sich der Datei-ausw[]ahlen-Systemdialog in dem man die CFG-Konf
+igurationsdatei
+ []
+
+[4] [5]
+Overfull \hbox (16.57219pt too wide) in paragraph at lines 143--147
+\OT1/cmr/m/n/12 Die Soft-wa-re ist Open-Source und ben[]otigt einen er-reich-ba
+-ren FROST-Server.Sie
+ []
+
+
+Overfull \hbox (9.78752pt too wide) in paragraph at lines 160--164
+\OT1/cmr/m/n/12 verl[]assig aus-gef[]uhrt wer-den k[]onnen, so-lan-ge die Pro-d
+uk-tum-ge-bung dies zul[]asst.
+ []
+
+[6]
+Overfull \hbox (35.04143pt too wide) in paragraph at lines 165--166
+[]\OT1/cmr/m/n/12 (In die-sem Ka-pi-tel wird den Qua-lit[]atsmerkmalen Funk-tio
+-na-lit[]at, Zu-verl[]assigkeit,
+=======
 {/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 70.
 
@@ -292,6 +348,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 81--86
 Overfull \hbox (7.92505pt too wide) in paragraph at lines 105--106
 \OT1/cmr/m/n/12 Die Soft-wa-re soll platt-for-mu-n-abh[]angig auf ei-nem Ser-ve
 r mit mi-ni-ma-ler Rechen-
+>>>>>>> ced189645f6fab5754c4ac4672d7c252a5014ea8
  []
 
 [4] [5] [6]
@@ -324,13 +381,39 @@ Overfull \hbox (35.04143pt too wide) in paragraph at lines 207--208
 -na-lit[]at, Zu-verl[]assigkeit,
  []
 
+<<<<<<< HEAD
+Overfull \hbox (8.52116pt too wide) in paragraph at lines 174--174
+=======
 [10]
 Overfull \hbox (8.52116pt too wide) in paragraph at lines 224--224
+>>>>>>> ced189645f6fab5754c4ac4672d7c252a5014ea8
 []\OT1/cmr/bx/n/14.4 Globale Testf[]alle und Sze-na-ri-en / An-wen-dungsf[]alle
  
  []
 
 
+<<<<<<< HEAD
+Underfull \hbox (badness 10000) in paragraph at lines 182--183
+
+ []
+
+[7] [8] (pflichtenheft.aux) ) 
+Here is how much of TeX's memory you used:
+ 1103 strings out of 493307
+ 13266 string characters out of 3138828
+ 76483 words of memory out of 3000000
+ 4696 multiletter control sequences out of 15000+200000
+ 4800 words of font info for 18 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 27i,4n,23p,415b,198s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmr12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.
+pfb>
+Output written on pflichtenheft.pdf (8 pages, 62103 bytes).
+PDF statistics:
+ 41 PDF objects out of 1000 (max. 8388607)
+=======
 Underfull \hbox (badness 10000) in paragraph at lines 232--233
 
  []
@@ -352,6 +435,7 @@ Output written on pflichtenheft.pdf (11 pages, 63934 bytes).
 PDF statistics:
  52 PDF objects out of 1000 (max. 8388607)
  35 compressed objects within 1 object stream
+>>>>>>> ced189645f6fab5754c4ac4672d7c252a5014ea8
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

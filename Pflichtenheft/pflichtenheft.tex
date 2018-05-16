@@ -5,10 +5,16 @@
 
 \begin{document}
 
-
+%TODO
 \subsection{Produktübersicht}
-Was ist der Frost-Server?
-Weboberfläche zum einfachen Abspeichern von Sensordaten im FROST Server
+Unsere Software stellt ein Webinterface zum einfachen Import von Sensordaten aus Tabellen auf einen FROST-Server bereit. \\
+Der FROST-Server vom Fraunhofer IOSB ist eine Open-Source-Implementierung des SensorThings-Standards des OGC und unter https://github.com/FraunhoferIOSB/FROST-Server downloadbar. Der FROST-Server dient der Speicherung und Verwaltung von Sensordaten.\\
+Unsere Software stellt zu diesem Server eine einfache und dennoch stark konfigurierbare Weboberfläche bereit, die es ermöglicht Sensordaten aus einer Tabelle einzulesen, zu konvertieren und auf einen FROST-Server zu übertragen. Die Software läuft in einem Java JRE und das zugehörige Webinterface soll über einen herkömmlichen PC, einen Laptop oder ein Tablet erreichbar sein.\\
+
+
+
+
+
 
 \subsection{Musskriterien}
 \begin{enumerate}
@@ -19,7 +25,7 @@ Weboberfläche zum einfachen Abspeichern von Sensordaten im FROST Server
 \item Erstellen, abspeichern, laden von Konfigurationen \\
 	Die Konfiguration der Software (ausgew. Thing, Server, Format) soll gespeichert und dem Nutzer via Download einer CFG-Datei bereitgestellt werden. Eine Konfiguration soll später auch wieder geladen werden können.
 \item Datentyptransformationen \\
-	Ein Wert als bspw. String soll nicht als String auf den FROST-Server übertragen werden sollen, sondern von der Software vorher in einen passenden Datentyp (bswp. Integer) umgewandelt werden
+	Ein Wert als bspw. String soll nicht als String auf den FROST-Server übertragen werden sollen, sondern von der Software vorher in einen passenden Datentyp (bspw. Integer) umgewandelt werden
 \item Verarbeiten von Sonderwerten (Magic Numbers) \\
 	Diese Werte sollen von der Software ignoriert und gegen einen NULL-Wert (o.ä.) ausgetauscht werden, bevor sie auf den FROST-Server übertragen werden.
 \item Import von Fremdquellen wie anderen Webseiten \\
@@ -33,7 +39,7 @@ Weboberfläche zum einfachen Abspeichern von Sensordaten im FROST Server
 \subsection{Wunschkriterien}
 \begin{enumerate}
 \item Sprachauswahl: Deutsch/Englisch
-\item Bereitstellen einer Vorauswahl (default-Konfiguration) \\
+\item Bereitstellen einer Vorauswahl \\
 	Dem Benutzer wird eine vorgefertigte Standard-Konfiguration bereitgestellt.
 \item Überprüfung auf Duplikate \\
 	Beim Upload der Daten auf den FROST-Server werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut hochgeladen.
@@ -106,8 +112,6 @@ Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- un
 
 \subsection{Funktionale Anforderungen}
 
-%Vorschlag:
-
 \begin{itemize}
 \item Kurzanleitung auf der Weboberfläche: Auf der Weboberfläche existiert die Möglichkeit, eine Anleitung angezeigt zu bekommen. Diese soll kurz beschreiben, wie der Konfigurator und die Weboberfläche an sich funktionieren.
 \item Auswahlmöglichkeit des Zielservers: Auf der Weboberfläche soll ein ereichbarer Frost-Server zum Hinterlegen der Daten einstellbar sein
@@ -131,8 +135,6 @@ Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- un
 %TODO GUI-Design von Thing-/Datastream-Erstellung
 	%TODO Units Of Measurement bei Erstellung von Datastreams
 %TODO Funk. Anf. Thing-/Datastream-Erstellung
-
-
 \item Hilfe-Button: Durch Klick wird die README-Datei im Browser aufgerufen
 \item Speichern-Button: Bei Klick auf diesen Button wird der Upload der Daten in die Datastreams/MultiDatastreams auf den FROST-Server angestoßen
 
@@ -157,7 +159,15 @@ Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- un
 \item Spalten-Textfelder: Hier kann zu der vorangehenden Einheit die Spalte, die den Wert enthält, angegeben werden
 \item Button "Neu": Durch Klick auf den Button öffnet sich ein Dialogfenster, welches das Erstellen eines neuen (Multi-)Datastreams ermöglicht
 \item Button "+": Durch klick auf den Button "+" wird eine neue Box von Feldern erstellt, in der man Spalten auf Werte eines Datastreams abbilden kann
+
+\item Textfeld "Name": Hier kann der Name des neuen Things eingegeben werden. Dieser kann frei gewählt werden, darf aber nicht leer sein.
+\item Textfeld "Description": Hier kann eine Beschreibung des Thing in einem oder mehreren Worten eingegeben werden. Die Beschreibung kann auch ausgelassen werden.
+\item Textfeld "Property" (bsph. belegt durch property1): Hier kann der Name einer Property (siehe SensorThings API -> Things -> Properties) eingetragen werden
+\item Textfeld "Value" (bsph. belegt durch value1): Hier kann zur Property der Wert eingetragen werden. Werte "true"/"false" werden automatisch zu Boolean umgewandelt, Zahlenwerte zu Integer/Float und Textwerte zu Strings
+\item Button "Add Property": Hier wird ein neues Textfeld-Paar Property/Value zum Interface hinzugefügt, damit mehrere Properties eingetrage werden können
+\item Dropdown-Menü "Location": Hier ann der derzeitge ort des Things aus einer Liste aus Orten ausgewählt
 \end{itemize}
+
 
 %TODO Nummerierung der Wunschkriterien in Fließtext
 \subsection{Produktdaten}
@@ -214,6 +224,7 @@ Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit
 
 \subsection{Anwendungsszenarien}
 Ideen für ANwendungsszenarien:
+%TODO Anwendungsfalldiagramm
 \begin{itemize}
 \item Nutzer ohne technische Kenntnisse des Frost Server Aufbaus besitzt einen Frost Server und einen Sensor, der schon auf dem Frost Server abgespeichert ist. Außerdem hat er eine csv-Datei mit Daten vom Sensor, der einen schon bestehenden Datensatz des Sensors auf dem Server erweitern soll. Er navigiert in seinem Browser zur Web-oberfläche und stellt seine Datei als Quelle und den Frost Server als Ziel ein. Dann wählt er eine Favoritenkonfiguration aus, die zu seinem Sensor passt und lädt seine Daten durch Klick des "Upload"-Buttons hoch. Die Daten werden formatiert und auf dem Server abgrspeichert.
 \item das gleiche mit einem erfahrenen Nutzer, der ein neues Thing, einen Sensor und zugehörigen Datastream erstellt
@@ -221,10 +232,17 @@ Ideen für ANwendungsszenarien:
 \end{itemize}
 
 
-\subsection{Globale Testfälle und Szenarien / Anwendungsfälle}
+\subsection{Testfälle}
 \begin{itemize}
-%TODO to be added after the GUI design
-\item to be added after the GUI design
+Testfall 1: Nutzer will Tabelle hochladen und nutzt bestehende Konfiguration:
+	-> entfernte Datei statt lokale Datei
+Testfall 2: Nutzer will Tabelle hochladen und konfiguriert selber
+	-> Konfiguration herunterladen
+Testfall 3: Nutzer erstellt neues Thing/Datastream
+Testfall 4: Nutzer ruft Hilfe auf
+Randtestfälle: Nutzer lädt keine Tabelle hoch, Nutzer lädt kaputte CFG-Datei hoch, Nutzer erstellt fehlerhaftes Thing/Datastream
+Randtestfälle: Angabe falscher Spaltennummern 
+%Max
 \end{itemize}
 
 
@@ -245,6 +263,24 @@ Glossar:
 \begin{itemize}
 \item FROST
 \item SensorThings
+\item CSV-/XSLX-Dateien
+\item CFG-Datei
+\item Thing
+\item Integer
+\item NULL
+\item Magic Numbers
+\item Log-Datei
+\item Docker
+\item JavaScript
+\item Java JRE
+\item head-less Server
+\item OGC
+\item README
+\item Datastram
+\item Regex
+\item HTTPS/SSL
+\item GPLv3
+\item GUI 
 \end{itemize}
 
 
