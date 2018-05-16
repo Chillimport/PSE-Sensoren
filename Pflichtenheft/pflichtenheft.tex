@@ -7,13 +7,9 @@
 
 %TODO
 \subsection{Produktübersicht}
-Unsere Software stellt ein Webinterface zum einfachen Import von Sensordaten aus Tabellen auf einen FROST-Server bereit. \\
-Der FROST-Server vom Fraunhofer IOSB ist eine Open-Source-Implementierung des SensorThings-Standards des OGC und unter https://github.com/FraunhoferIOSB/FROST-Server downloadbar. Der FROST-Server dient der Speicherung und Verwaltung von Sensordaten.\\
+
+Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server des Fraunhofer IOSB ist eine Open-Source-Implementierung des SensorThings-Standards des OGC und unter https://github.com/FraunhoferIOSB/FROST-Server downloadbar. Der FROST-Server dient der Speicherung und Verwaltung von Sensordaten.\\
 Unsere Software stellt zu diesem Server eine einfache und dennoch stark konfigurierbare Weboberfläche bereit, die es ermöglicht Sensordaten aus einer Tabelle einzulesen, zu konvertieren und auf einen FROST-Server zu übertragen. Die Software läuft in einem Java JRE und das zugehörige Webinterface soll über einen herkömmlichen PC, einen Laptop oder ein Tablet erreichbar sein.\\
-
-
-
-
 
 
 \subsection{Musskriterien}
@@ -223,7 +219,7 @@ Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit
 \end{itemize}
 
 \subsection{Anwendungsszenarien}
-Ideen für ANwendungsszenarien:
+Ideen für Anwendungsszenarien:
 %TODO Anwendungsfalldiagramm
 \begin{itemize}
 \item Nutzer ohne technische Kenntnisse des Frost Server Aufbaus besitzt einen Frost Server und einen Sensor, der schon auf dem Frost Server abgespeichert ist. Außerdem hat er eine csv-Datei mit Daten vom Sensor, der einen schon bestehenden Datensatz des Sensors auf dem Server erweitern soll. Er navigiert in seinem Browser zur Web-oberfläche und stellt seine Datei als Quelle und den Frost Server als Ziel ein. Dann wählt er eine Favoritenkonfiguration aus, die zu seinem Sensor passt und lädt seine Daten durch Klick des "Upload"-Buttons hoch. Die Daten werden formatiert und auf dem Server abgrspeichert.
@@ -233,7 +229,7 @@ Ideen für ANwendungsszenarien:
 
 
 \subsection{Testfälle}
-\begin{itemize}
+
 Testfall 1: Nutzer will Tabelle hochladen und nutzt bestehende Konfiguration:
 	-> entfernte Datei statt lokale Datei
 Testfall 2: Nutzer will Tabelle hochladen und konfiguriert selber
@@ -243,7 +239,7 @@ Testfall 4: Nutzer ruft Hilfe auf
 Randtestfälle: Nutzer lädt keine Tabelle hoch, Nutzer lädt kaputte CFG-Datei hoch, Nutzer erstellt fehlerhaftes Thing/Datastream
 Randtestfälle: Angabe falscher Spaltennummern 
 %Max
-\end{itemize}
+
 
 
 \subsection{Zeitplanung}
