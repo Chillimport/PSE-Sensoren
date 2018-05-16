@@ -1,6 +1,55 @@
-Pflichtenheft/Pflichtenheft Vorlage IPD/
-beispieldaten/
-Pflichtenheft/pflichtenheft.aux
-Pflichtenheft/pflichtenheft.pdf
-Pflichtenheft/pflichtenheft.log
-Pflichtenheft/pflichtenheft.synctex.gz
+Pflichtenheft/*.pdf
+.log
+.synctex.gz
+Pflichtenheft/Pflichtenheft Vorlage IPD/**
+
+#Apple
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+
+#Win
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
