@@ -1,503 +1,929 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.20)  16 MAY 2018 15:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.5.16)  16 MAY 2018 19:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **pflichtenheft.tex
 (./pflichtenheft.tex
-LaTeX2e <2015/01/01>
-Babel <3.9l> and hyphenation patterns for 79 languages loaded.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/size12.clo
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/inputenc.sty
-Package: inputenc 2015/03/17 v1.2c Input encoding file
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/inputenc.sty
+Package: inputenc 2018/04/06 v1.3b Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/utf8.def
-File: utf8.def 2014/09/29 v1.1m UTF-8 support for inputenc
-Now handling font encoding OML ...
-... no UTF-8 mapping file for font encoding OML
-Now handling font encoding T1 ...
-... processing UTF-8 mapping file for font encoding T1
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/t1enc.dfu
-File: t1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00AB (decimal 171)
-   defining Unicode char U+00BB (decimal 187)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C0 (decimal 192)
-   defining Unicode char U+00C1 (decimal 193)
-   defining Unicode char U+00C2 (decimal 194)
-   defining Unicode char U+00C3 (decimal 195)
-   defining Unicode char U+00C4 (decimal 196)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00C7 (decimal 199)
-   defining Unicode char U+00C8 (decimal 200)
-   defining Unicode char U+00C9 (decimal 201)
-   defining Unicode char U+00CA (decimal 202)
-   defining Unicode char U+00CB (decimal 203)
-   defining Unicode char U+00CC (decimal 204)
-   defining Unicode char U+00CD (decimal 205)
-   defining Unicode char U+00CE (decimal 206)
-   defining Unicode char U+00CF (decimal 207)
-   defining Unicode char U+00D0 (decimal 208)
-   defining Unicode char U+00D1 (decimal 209)
-   defining Unicode char U+00D2 (decimal 210)
-   defining Unicode char U+00D3 (decimal 211)
-   defining Unicode char U+00D4 (decimal 212)
-   defining Unicode char U+00D5 (decimal 213)
-   defining Unicode char U+00D6 (decimal 214)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00D9 (decimal 217)
-   defining Unicode char U+00DA (decimal 218)
-   defining Unicode char U+00DB (decimal 219)
-   defining Unicode char U+00DC (decimal 220)
-   defining Unicode char U+00DD (decimal 221)
-   defining Unicode char U+00DE (decimal 222)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E0 (decimal 224)
-   defining Unicode char U+00E1 (decimal 225)
-   defining Unicode char U+00E2 (decimal 226)
-   defining Unicode char U+00E3 (decimal 227)
-   defining Unicode char U+00E4 (decimal 228)
-   defining Unicode char U+00E5 (decimal 229)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00E7 (decimal 231)
-   defining Unicode char U+00E8 (decimal 232)
-   defining Unicode char U+00E9 (decimal 233)
-   defining Unicode char U+00EA (decimal 234)
-   defining Unicode char U+00EB (decimal 235)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F0 (decimal 240)
-   defining Unicode char U+00F1 (decimal 241)
-   defining Unicode char U+00F2 (decimal 242)
-   defining Unicode char U+00F3 (decimal 243)
-   defining Unicode char U+00F4 (decimal 244)
-   defining Unicode char U+00F5 (decimal 245)
-   defining Unicode char U+00F6 (decimal 246)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+00F9 (decimal 249)
-   defining Unicode char U+00FA (decimal 250)
-   defining Unicode char U+00FB (decimal 251)
-   defining Unicode char U+00FC (decimal 252)
-   defining Unicode char U+00FD (decimal 253)
-   defining Unicode char U+00FE (decimal 254)
-   defining Unicode char U+00FF (decimal 255)
-   defining Unicode char U+0102 (decimal 258)
-   defining Unicode char U+0103 (decimal 259)
-   defining Unicode char U+0104 (decimal 260)
-   defining Unicode char U+0105 (decimal 261)
-   defining Unicode char U+0106 (decimal 262)
-   defining Unicode char U+0107 (decimal 263)
-   defining Unicode char U+010C (decimal 268)
-   defining Unicode char U+010D (decimal 269)
-   defining Unicode char U+010E (decimal 270)
-   defining Unicode char U+010F (decimal 271)
-   defining Unicode char U+0110 (decimal 272)
-   defining Unicode char U+0111 (decimal 273)
-   defining Unicode char U+0118 (decimal 280)
-   defining Unicode char U+0119 (decimal 281)
-   defining Unicode char U+011A (decimal 282)
-   defining Unicode char U+011B (decimal 283)
-   defining Unicode char U+011E (decimal 286)
-   defining Unicode char U+011F (decimal 287)
-   defining Unicode char U+0130 (decimal 304)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0132 (decimal 306)
-   defining Unicode char U+0133 (decimal 307)
-   defining Unicode char U+0139 (decimal 313)
-   defining Unicode char U+013A (decimal 314)
-   defining Unicode char U+013D (decimal 317)
-   defining Unicode char U+013E (decimal 318)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0143 (decimal 323)
-   defining Unicode char U+0144 (decimal 324)
-   defining Unicode char U+0147 (decimal 327)
-   defining Unicode char U+0148 (decimal 328)
-   defining Unicode char U+014A (decimal 330)
-   defining Unicode char U+014B (decimal 331)
-   defining Unicode char U+0150 (decimal 336)
-   defining Unicode char U+0151 (decimal 337)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+0154 (decimal 340)
-   defining Unicode char U+0155 (decimal 341)
-   defining Unicode char U+0158 (decimal 344)
-   defining Unicode char U+0159 (decimal 345)
-   defining Unicode char U+015A (decimal 346)
-   defining Unicode char U+015B (decimal 347)
-   defining Unicode char U+015E (decimal 350)
-   defining Unicode char U+015F (decimal 351)
-   defining Unicode char U+0160 (decimal 352)
-   defining Unicode char U+0161 (decimal 353)
-   defining Unicode char U+0162 (decimal 354)
-   defining Unicode char U+0163 (decimal 355)
-   defining Unicode char U+0164 (decimal 356)
-   defining Unicode char U+0165 (decimal 357)
-   defining Unicode char U+016E (decimal 366)
-   defining Unicode char U+016F (decimal 367)
-   defining Unicode char U+0170 (decimal 368)
-   defining Unicode char U+0171 (decimal 369)
-   defining Unicode char U+0178 (decimal 376)
-   defining Unicode char U+0179 (decimal 377)
-   defining Unicode char U+017A (decimal 378)
-   defining Unicode char U+017B (decimal 379)
-   defining Unicode char U+017C (decimal 380)
-   defining Unicode char U+017D (decimal 381)
-   defining Unicode char U+017E (decimal 382)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201A (decimal 8218)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
-   defining Unicode char U+201E (decimal 8222)
-   defining Unicode char U+2030 (decimal 8240)
-   defining Unicode char U+2031 (decimal 8241)
-   defining Unicode char U+2039 (decimal 8249)
-   defining Unicode char U+203A (decimal 8250)
-   defining Unicode char U+2423 (decimal 9251)
 )
-Now handling font encoding OT1 ...
-... processing UTF-8 mapping file for font encoding OT1
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2018/02/14 3.18 The Babel package
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ot1enc.dfu
-File: ot1enc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
-   defining Unicode char U+00A1 (decimal 161)
-   defining Unicode char U+00A3 (decimal 163)
-   defining Unicode char U+00B8 (decimal 184)
-   defining Unicode char U+00BF (decimal 191)
-   defining Unicode char U+00C5 (decimal 197)
-   defining Unicode char U+00C6 (decimal 198)
-   defining Unicode char U+00D8 (decimal 216)
-   defining Unicode char U+00DF (decimal 223)
-   defining Unicode char U+00E6 (decimal 230)
-   defining Unicode char U+00EC (decimal 236)
-   defining Unicode char U+00ED (decimal 237)
-   defining Unicode char U+00EE (decimal 238)
-   defining Unicode char U+00EF (decimal 239)
-   defining Unicode char U+00F8 (decimal 248)
-   defining Unicode char U+0131 (decimal 305)
-   defining Unicode char U+0141 (decimal 321)
-   defining Unicode char U+0142 (decimal 322)
-   defining Unicode char U+0152 (decimal 338)
-   defining Unicode char U+0153 (decimal 339)
-   defining Unicode char U+2013 (decimal 8211)
-   defining Unicode char U+2014 (decimal 8212)
-   defining Unicode char U+2018 (decimal 8216)
-   defining Unicode char U+2019 (decimal 8217)
-   defining Unicode char U+201C (decimal 8220)
-   defining Unicode char U+201D (decimal 8221)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/switch.def
+File: switch.def 2018/02/14 3.18 Babel switching mechanism
 )
-Now handling font encoding OMS ...
-... processing UTF-8 mapping file for font encoding OMS
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel-german/ngerman.ldf
+Language: ngerman 2018/03/29 v2.10 German support for babel (post-1996 orthogra
+phy)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omsenc.dfu
-File: omsenc.dfu 2014/09/29 v1.1m UTF-8 support for inputenc
-   defining Unicode char U+00A7 (decimal 167)
-   defining Unicode char U+00B6 (decimal 182)
-   defining Unicode char U+00B7 (decimal 183)
-   defining Unicode char U+2020 (decimal 8224)
-   defining Unicode char U+2021 (decimal 8225)
-   defining Unicode char U+2022 (decimal 8226)
-)
-Now handling font encoding OMX ...
-... no UTF-8 mapping file for font encoding OMX
-Now handling font encoding U ...
-... no UTF-8 mapping file for font encoding U
-   defining Unicode char U+00A9 (decimal 169)
-   defining Unicode char U+00AA (decimal 170)
-   defining Unicode char U+00AE (decimal 174)
-   defining Unicode char U+00BA (decimal 186)
-   defining Unicode char U+02C6 (decimal 710)
-   defining Unicode char U+02DC (decimal 732)
-   defining Unicode char U+200C (decimal 8204)
-   defining Unicode char U+2026 (decimal 8230)
-   defining Unicode char U+2122 (decimal 8482)
-   defining Unicode char U+2423 (decimal 9251)
-))
-(/usr/local/texlive/2015/texmf-dist/tex/generic/babel/babel.sty
-Package: babel 2014/09/25 3.9l The Babel package
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel-german/ngermanb.ldf
+Language: ngermanb 2018/03/29 v2.10 German support for babel (post-1996 orthogr
+aphy)
 
-(/usr/local/texlive/2015/texmf-dist/tex/generic/babel-german/ngerman.ldf
-Language: ngerman 2013/12/13 v2.7 German support for babel (new orthography)
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/babel-german/ngermanb.ldf
-Language: ngermanb 2013/12/13 v2.7 German support for babel (new orthography)
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/babel/babel.def
-File: babel.def 2014/09/25 3.9l Babel common definitions
-\babel@savecnt=\count87
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2018/02/14 3.18 Babel common definitions
+\babel@savecnt=\count88
 \U@D=\dimen103
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/babel/txtbabel.def)
+\bbl@dirlevel=\count89
 )
-\l@naustrian = a dialect from \language\l@ngerman 
-\l@nswissgerman = a dialect from \language\l@ngerman 
-Package babel Info: Making " an active character on input line 88.
+Package babel Info: Making " an active character on input line 121.
 )))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
+)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+)
+\@linkdim=\dimen104
+\Hy@linkcounter=\count90
+\Hy@pagecounter=\count91
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count92
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4762.
+\c@Hy@tempcnt=\count93
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5115.
+\XeTeXLinkMargin=\dimen105
+\Fld@menulength=\count94
+\Field@Width=\dimen106
+\Fld@charsize=\dimen107
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring OFF on input line 6389.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
+\Hy@abspage=\count95
+\c@Item=\count96
+\c@Hfootnote=\count97
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
+\Fld@listcount=\count98
+\c@bookmark@seq@number=\count99
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip43
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/cleveref/cleveref.sty
+Package: cleveref 2018/03/03 v0.21.3 Intelligent cross-referencing
+Package cleveref Info: `hyperref' support loaded on input line 2234.
+LaTeX Info: Redefining \cref on input line 2234.
+LaTeX Info: Redefining \Cref on input line 2234.
+LaTeX Info: Redefining \crefrange on input line 2234.
+LaTeX Info: Redefining \Crefrange on input line 2234.
+LaTeX Info: Redefining \cpageref on input line 2234.
+LaTeX Info: Redefining \Cpageref on input line 2234.
+LaTeX Info: Redefining \cpagerefrange on input line 2234.
+LaTeX Info: Redefining \Cpagerefrange on input line 2234.
+LaTeX Info: Redefining \labelcref on input line 2234.
+LaTeX Info: Redefining \labelcpageref on input line 2234.
+Package cleveref Info: include cross-reference names in hyperlinks on input lin
+e 7700.
+Package cleveref Info: include cross-reference names in hyperlinks on input lin
+e 7716.
+)
 (./pflichtenheft.sty
 Package: pflichtenheft 
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
-Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count88
-)
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
-Package xcolor Info: Model `RGB' extended on input line 1353.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1348.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1352.
+Package xcolor Info: Model `RGB' extended on input line 1364.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1366.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1367.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
 (./rdfref-user.sty
 Package: rdfref-user 
  (./rdfref-core.sty
 Package: rdfref-core 
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
-\etb@tempcnta=\count89
+(/usr/local/texlive/2018/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2018/02/11 v2.5e e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count100
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/xstring/xstring.sty
-(/usr/local/texlive/2015/texmf-dist/tex/generic/xstring/xstring.tex
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/xstring/xstring.tex
 \@xs@message=\write3
-\integerpart=\count90
-\decimalpart=\count91
+\integerpart=\count101
+\decimalpart=\count102
 )
 Package: xstring 2013/10/13  v1.7c  String manipulations (C Tellechea)
 ))
-(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/refcount.sty
-Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
-\KV@toks@=\toks16
-)
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
-
-(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-Package etexcmds Info: Could not find \expanded.
-(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
-(etexcmds)             that some package has redefined \expanded.
-(etexcmds)             In the latter case, load this package earlier.
-))))
-\c@section@level=\count92
-LaTeX Info: Redefining \ref on input line 353.
-LaTeX Info: Redefining \pageref on input line 353.
+\c@section@level=\count103
 )
 \exportfile=\write4
-\rdf@blank@cnt=\count93
-\undercat=\count94
+\rdf@blank@cnt=\count104
+\undercat=\count105
 )
 (./rdfref-query.sty
 Package: rdfref-query 
 )
-\c@criterium=\count95
-\c@criteriumOpt=\count96
-\c@criteriumNot=\count97
-\c@functionality=\count98
-\c@nonfunctionality=\count99
-\c@test=\count100
-\c@teststep=\count101
-) (./pflichtenheft.aux)
+\c@criterium=\count106
+\c@criteriumOpt=\count107
+\c@criteriumNot=\count108
+\c@functionality=\count109
+\c@nonfunctionality=\count110
+\c@test=\count111
+\c@teststep=\count112
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/svg/svg.sty
+Package: svg 2017/11/29 v2.01 (include SVG pictures)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrbase.sty
+Package: scrbase 2018/03/30 v3.25 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/koma-script/scrlfile.sty
+Package: scrlfile 2018/03/30 v3.25 KOMA-Script package (loading files)
+))
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/shellesc.sty
+Package: shellesc 2016/06/07 v0.02a unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 69.
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+)
+\Gin@req@height=\dimen108
+\Gin@req@width=\dimen109
+)
+\c@svg@param@lastpage=\count113
+\c@svg@param@currpage=\count114
+)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/transparent.sty
+Package: transparent 2016/05/16 v1.1 Transparency via pdfTeX's color stack (HO)
+
+)
+(./pflichtenheft.aux
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+
+LaTeX Warning: Label `' multiply defined.
+
+)
 \openout1 = `pflichtenheft.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 7.
-LaTeX Font Info:    ... okay on input line 7.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+\AtBeginShipoutBox=\box26
+Package hyperref Info: Link coloring OFF on input line 12.
+LaTeX Info: Redefining \ref on input line 12.
+LaTeX Info: Redefining \pageref on input line 12.
+LaTeX Info: Redefining \nameref on input line 12.
+ (./pflichtenheft.out) (./pflichtenheft.out)
+\@outlinefile=\write5
+\openout5 = `pflichtenheft.out'.
 
-(/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
+
+(/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count102
-\scratchdimen=\dimen104
-\scratchbox=\box26
-\nofMPsegments=\count103
-\nofMParguments=\count104
+\scratchcounter=\count115
+\scratchdimen=\dimen110
+\scratchbox=\box27
+\nofMPsegments=\count116
+\nofMParguments=\count117
 \everyMPshowfont=\toks17
-\MPscratchCnt=\count105
-\MPscratchDim=\dimen105
-\MPnumerator=\count106
-\makeMPintoPDFobject=\count107
+\MPscratchCnt=\count118
+\MPscratchDim=\dimen111
+\MPnumerator=\count119
+\makeMPintoPDFobject=\count120
 \everyMPtoPDFconversion=\toks18
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
-Overfull \hbox (3.18207pt too wide) in paragraph at lines 12--14
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 15.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 15.
+
+Overfull \hbox (3.18207pt too wide) in paragraph at lines 17--19
 \OT1/cmr/m/n/12 un-ter https://github.com/FraunhoferIOSB/FROST-Server dow-n-loa
 d-bar. Der
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 12--14
+Underfull \hbox (badness 10000) in paragraph at lines 17--19
 
  []
 
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 21.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 21.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 35.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 35.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 35.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 35.
 [1
 
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 41.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 41.
+
+Overfull \hbox (0.54456pt too wide) in paragraph at lines 54--56
+[]\OT1/cmr/m/n/12 Auswahl kom-ple-xer Trans-for-ma-tio-nen/Aggregationen (Zu-sa
+m-men-le-gen
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 56.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 56.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 56.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 56.
 [2]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 73.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 66.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 66.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 73.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 73.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 78.
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 73.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 78.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 83.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 83.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 87.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 87.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 87.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 87.
  [3]
-Underfull \hbox (badness 10000) in paragraph at lines 84--89
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 88.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 88.
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--93
 
  []
 
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 104.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 104.
 
-Overfull \hbox (7.92505pt too wide) in paragraph at lines 108--109
+Overfull \hbox (7.92505pt too wide) in paragraph at lines 105--106
 \OT1/cmr/m/n/12 Die Soft-wa-re soll platt-for-mu-n-abh[]angig auf ei-nem Ser-ve
 r mit mi-ni-ma-ler Rechen-
  []
 
-[4] [5] [6]
-Overfull \hbox (4.39175pt too wide) in paragraph at lines 144--145
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 114.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 114.
+<images/gui.png, id=111, 1229.59375pt x 681.54625pt>
+File: images/gui.png Graphic file (type png)
+<use images/gui.png>
+Package pdftex.def Info: images/gui.png  used on input line 119.
+(pdftex.def)             Requested size: 491.8288pt x 272.61366pt.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 121.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 121.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 121.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 121.
+[4]
+<images/create_thing.png, id=117, 451.6875pt x 331.2375pt>
+File: images/create_thing.png Graphic file (type png)
+<use images/create_thing.png>
+Package pdftex.def Info: images/create_thing.png  used on input line 125.
+(pdftex.def)             Requested size: 451.68639pt x 331.23668pt.
+
+Overfull \hbox (61.68639pt too wide) in paragraph at lines 125--126
+ [][] 
+ []
+
+<images/create_datastream.png, id=118, 493.845pt x 436.63126pt>
+File: images/create_datastream.png Graphic file (type png)
+<use images/create_datastream.png>
+Package pdftex.def Info: images/create_datastream.png  used on input line 131.
+(pdftex.def)             Requested size: 493.84378pt x 436.63019pt.
+
+Overfull \hbox (103.84378pt too wide) in paragraph at lines 131--132
+ [][] 
+ []
+
+<images/create_sensor.png, id=119, 371.3875pt x 260.975pt>
+File: images/create_sensor.png Graphic file (type png)
+<use images/create_sensor.png>
+Package pdftex.def Info: images/create_sensor.png  used on input line 137.
+(pdftex.def)             Requested size: 371.38658pt x 260.97437pt.
+<images/create_observedproperty.png, id=120, 355.3275pt x 200.75pt>
+File: images/create_observedproperty.png Graphic file (type png)
+<use images/create_observedproperty.png>
+Package pdftex.def Info: images/create_observedproperty.png  used on input line
+ 143.
+(pdftex.def)             Requested size: 355.32661pt x 200.7495pt.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 147.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 147.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 160.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 160.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 160.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 160.
+[5]
+Overfull \hbox (25.5457pt too wide) in paragraph at lines 163--164
+\OT1/cmr/m/n/12 Datei mit al-len feh-ler-haf-ten Da-ten er-stellt und an den Nu
+t-zer zur[]uckgegeben. 
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 166.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 166.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 166.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 166.
+[6]
+Overfull \hbox (14.33064pt too wide) in paragraph at lines 176--177
+\OT1/cmr/m/n/12 Im Sys-tem-dia-log wird das Da-tei-for-mat auf ent-we-der CSV o
+der XLS/XLSX
+ []
+
+
+Overfull \hbox (4.39175pt too wide) in paragraph at lines 182--183
 []\OT1/cmr/m/n/12 Konfiguration durch-su-chen/laden: Durch Klick auf "Durch-su-
 chen"[]offnet
  []
 
 
-Overfull \hbox (48.3427pt too wide) in paragraph at lines 144--145
+Overfull \hbox (48.3427pt too wide) in paragraph at lines 182--183
 \OT1/cmr/m/n/12 sich der Datei-ausw[]ahlen-Systemdialog in dem man die CFG-Konf
 igurationsdatei
  []
 
-[7] [8] [9]
-Overfull \hbox (1.55846pt too wide) in paragraph at lines 192--196
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 188.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 188.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 188.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 188.
+[7]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 203.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 203.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 203.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 203.
+ [8]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 208.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 208.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 218.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 218.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 227.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 227.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 227.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 227.
+ [9]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 229.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 229.
+
+Overfull \hbox (1.55846pt too wide) in paragraph at lines 230--234
 \OT1/cmr/m/n/12 Die Soft-wa-re ist Open-Source und ben[]otigt einen er-reich-ba
 -ren FROST-Server.
  []
 
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 246.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 246.
 
-Overfull \hbox (9.78752pt too wide) in paragraph at lines 209--213
+Overfull \hbox (9.78752pt too wide) in paragraph at lines 247--251
 \OT1/cmr/m/n/12 verl[]assig aus-gef[]uhrt wer-den k[]onnen, so-lan-ge die Pro-d
 uk-tum-ge-bung dies zul[]asst.
  []
 
 
-Overfull \hbox (35.04143pt too wide) in paragraph at lines 214--215
+Overfull \hbox (35.04143pt too wide) in paragraph at lines 252--253
 []\OT1/cmr/m/n/12 (In die-sem Ka-pi-tel wird den Qua-lit[]atsmerkmalen Funk-tio
 -na-lit[]at, Zu-verl[]assigkeit,
  []
 
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 255.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 255.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 255.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 255.
 [10]
-Package rdfref error: unknown type of reference crt:length :crt:
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 260.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 260.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 270.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 270.
+
 Package rdfref error: unknown type of reference  ::
-
-LaTeX Warning: Marginpar on page 11 moved.
-
+Package rdfref error: unknown type of reference  ::
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 276.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 276.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 276.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 276.
 [11]
-Underfull \hbox (badness 10000) in paragraph at lines 268--269
+Underfull \hbox (badness 10000) in paragraph at lines 276--277
 
  []
 
-[12] [13]
-Overfull \hbox (39.10541pt too wide) in paragraph at lines 315--317
+Package rdfref error: unknown type of reference  ::
+
+Underfull \hbox (badness 10000) in paragraph at lines 284--285
+
+ []
+
+Package rdfref error: unknown type of reference  ::
+
+Underfull \hbox (badness 10000) in paragraph at lines 290--291
+
+ []
+
+Package rdfref error: unknown type of reference  ::
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 292.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 292.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 292.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 292.
+[12]
+Underfull \hbox (badness 10000) in paragraph at lines 294--295
+
+ []
+
+Package rdfref error: unknown type of reference  ::
+
+Underfull \hbox (badness 10000) in paragraph at lines 298--299
+
+ []
+
+Package rdfref error: unknown type of reference  ::
+
+Underfull \hbox (badness 10000) in paragraph at lines 302--303
+
+ []
+
+Package rdfref error: unknown type of reference  ::
+
+Underfull \hbox (badness 10000) in paragraph at lines 306--307
+
+ []
+
+Package rdfref error: unknown type of reference  ::
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 307.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 307.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 307.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 307.
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 313--314
+
+ []
+
+Package rdfref error: unknown type of reference  ::
+
+Underfull \hbox (badness 10000) in paragraph at lines 320--321
+
+ []
+
+Package rdfref error: unknown type of reference  ::
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 325.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 325.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 325.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 325.
+[14]
+Underfull \hbox (badness 10000) in paragraph at lines 326--327
+
+ []
+
+Package rdfref error: unknown type of reference  ::
+Package rdfref error: unknown type of reference  ::
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 338.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 338.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 338.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 338.
+[15]
+Package rdfref error: unknown type of reference  ::
+Package rdfref error: unknown type of reference  ::
+Package rdfref error: unknown type of reference  ::
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 349.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 349.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 349.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 349.
+[16]
+Package rdfref error: unknown type of reference  ::
+Package rdfref error: unknown type of reference  ::
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 359.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 359.
+
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
+
+ []
+
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 362.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 362.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 362.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 362.
+[17]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 372.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 372.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 384.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 384.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 384.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 384.
+ [18]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 400.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 400.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 400.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 400.
+ [19]
+Overfull \hbox (39.10541pt too wide) in paragraph at lines 407--409
 \OT1/cmr/m/n/12 Als READ-ME (deutsch: Lies-mich) wird ei-ne Da-tei be-zeich-net
 , die []ublicherweise
  []
 
-[14]
-Overfull \hbox (1.9672pt too wide) in paragraph at lines 317--320
+
+Overfull \hbox (1.9672pt too wide) in paragraph at lines 409--412
 \OT1/cmr/bx/n/12 Reg\OT1/cmr/m/n/12 ular \OT1/cmr/bx/n/12 Ex\OT1/cmr/m/n/12 pre
 ssions (Reg-ex, re-gul[]arer Aus-dru-cke) die-nen der Be-schrei-
  []
 
 
-Overfull \hbox (14.51303pt too wide) in paragraph at lines 320--323
+Overfull \hbox (14.51303pt too wide) in paragraph at lines 412--415
 \OT1/cmr/bx/n/12 H\OT1/cmr/m/n/12 yper\OT1/cmr/bx/n/12 T\OT1/cmr/m/n/12 ext \OT
 1/cmr/bx/n/12 T\OT1/cmr/m/n/12 ransfer \OT1/cmr/bx/n/12 P\OT1/cmr/m/n/12 rotoco
 l \OT1/cmr/bx/n/12 S\OT1/cmr/m/n/12 ecure (HTT-PS) ist ein si-che-res Hypertext
 -
  []
 
-[15] (./pflichtenheft.aux)
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 418.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 418.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 418.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 418.
+[20]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 421.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 421.
+ [21]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 421.
+ [22 <./images/gui.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 421.
+ [23 <./images/create_thing.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 421.
+ [24 <./images/create_datastream.png>]
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "|
+(babel)             in language append on input line 421.
+Package babel Info: Redefining ngerman shorthand "~
+(babel)             in language append on input line 421.
+ [25 <./images/create_sensor.png> <./images/create_observedproperty.png>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 421.
+ (./pflichtenheft.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 421.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 421.
+Package rerunfilecheck Info: File `pflichtenheft.out' has not changed.
+(rerunfilecheck)             Checksum: 5BB5EDD3D82DFB9C88219FE62A47E4B4;1043.
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 421.
  ) 
 Here is how much of TeX's memory you used:
- 3204 strings out of 493089
- 41829 string characters out of 6134842
- 120886 words of memory out of 5000000
- 6669 multiletter control sequences out of 15000+600000
+ 9001 strings out of 492649
+ 144877 string characters out of 6129622
+ 278260 words of memory out of 5000000
+ 12736 multiletter control sequences out of 15000+600000
  5107 words of font info for 19 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,6n,37p,828b,209s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on pflichtenheft.pdf (15 pages, 74535 bytes).
+ 39i,9n,42p,944b,432s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
+></usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><
+/usr/local/texlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on pflichtenheft.pdf (25 pages, 232886 bytes).
 PDF statistics:
- 65 PDF objects out of 1000 (max. 8388607)
- 44 compressed objects within 1 object stream
- 0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 256 PDF objects out of 1000 (max. 8388607)
+ 213 compressed objects within 3 object streams
+ 68 named destinations out of 1000 (max. 500000)
+ 170 words of extra memory for PDF output out of 10000 (max. 10000000)
 
