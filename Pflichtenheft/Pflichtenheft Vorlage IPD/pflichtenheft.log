@@ -1,4 +1,7 @@
 <<<<<<< HEAD
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.20)  15 MAY 2018 15:47
+=======
+<<<<<<< HEAD
 This is pdfTeX, Version 3.14159265-2.6-1.40.18 (MiKTeX 2.9.6500 64-bit) (preloaded format=pdflatex 2018.1.24)  14 MAY 2018 14:12
 entering extended mode
 **./pflichtenheft.tex
@@ -32,6 +35,7 @@ Package tocbasic Info: omitting babel extension for `toc'
 (tocbasic)             for `toc' on input line 134.
 =======
 This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.2.20)  14 MAY 2018 17:17
+>>>>>>> 5952c06d4c44c1b75f16c37fd88e58171a739667
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2153,7 +2157,7 @@ r/local/texlive/2015/texmf-dist/fonts/type1/google/roboto/Roboto-Bold.pfb></usr
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
 /usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
 sr/local/texlive/2015/texmf-dist/fonts/type1/public/cm-super/sftt1095.pfb>
-Output written on pflichtenheft.pdf (9 pages, 178705 bytes).
+Output written on pflichtenheft.pdf (9 pages, 178615 bytes).
 PDF statistics:
  160 PDF objects out of 1000 (max. 8388607)
  136 compressed objects within 2 object streams

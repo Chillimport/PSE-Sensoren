@@ -15,7 +15,7 @@ Unsere Software stellt zu diesem Server eine einfache und dennoch stark konfigur
 \subsection{Musskriterien}
 \begin{enumerate}
 \item Import von Tabellen \\
-	Die Daten sollen aus Tabellen im CSV-/XSLX-Format importiert werden
+	Die Daten sollen aus Tabellen im CSV-/XLSX-Format importiert werden
 \item Konvertierung des Formats der Sensordaten \\
 	Die Daten sollen aus der Tabelle in eine einheitliches Format nach Vorgabe der SensorThings API konvertiert werden. Damit entsprechen sie dem Format der Daten auf einem FROST-Server.
 \item Erstellen, abspeichern, laden von Konfigurationen \\
@@ -70,7 +70,7 @@ Sie Software soll überall dort eingesetzt werden wo Daten aus Tabellen importie
 Hierzu zählt:
 \begin{itemize}
 \item Der Import von neuen Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen, in den FROST-Server
-\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen, in den FROST-Server
+\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XLSX-Tabellen-Form vorliegen, in den FROST-Server
 \end{itemize}
 
 %TODO Die zwei Zielgruppen genauer darstellen/abgrenzen
@@ -135,7 +135,7 @@ Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- un
 \item Speichern-Button: Bei Klick auf diesen Button wird der Upload der Daten in die Datastreams/MultiDatastreams auf den FROST-Server angestoßen
 
 \item Radio-Boxen "Datei auswählen"/"Web-Adresse angeben": Durch Auswahl einer der Boxen wird entweder die Textbox zur Eingabe des Weblinks der entfernten Datei freigeschaltet oder der "Durchsuchen"-Button zur Auswahl einer lokalen
-\item Durchsuchen: Durch Klick auf den "Durchsuchen"-Button öffnet sich der Datei-auswählen-Systemdialog, bei dem man die Datei auswählen kann. Im Systemdialog wird das Dateiformat auf entweder CSV oder XLS/XSLX begrenzt. Nachdem die Datei im Systemdialog ausgewählt wurde, wird sie auf die Größe überprüft und bei erfolgreicher Prüfung hochgeladen.
+\item Durchsuchen: Durch Klick auf den "Durchsuchen"-Button öffnet sich der Datei-auswählen-Systemdialog, bei dem man die Datei auswählen kann. Im Systemdialog wird das Dateiformat auf entweder CSV oder XLS/XLSX begrenzt. Nachdem die Datei im Systemdialog ausgewählt wurde, wird sie auf die Größe überprüft und bei erfolgreicher Prüfung hochgeladen.
 
 \item Textbox "Ziel": Hier wird die Adresse des FROST-Servers angegeben
 \item Button "Auswählen": Durch Klick auf diesen Button wird die im Textfeld "Ziel" angegebene Adresse überprüft und durch einen Haken und im Log bestätigt. (Es sollte überprüft werden ob eine Verbindung hergestellt werden kann,ob eventuell Zugriffsrechte benötigt werden und ob die Zieladresse überhaupt zu einem FROST-Server führt) 
@@ -257,26 +257,50 @@ Beispielhafte Terminplanung: \\
 
 Glossar:
 \begin{itemize}
-\item FROST
-\item SensorThings
-\item CSV-/XSLX-Dateien
-\item CFG-Datei
-\item Thing
-\item Integer
-\item NULL
-\item Magic Numbers
-\item Log-Datei
-\item Docker
-\item JavaScript
-\item Java JRE
-\item head-less Server
-\item OGC
-\item README
-\item Datastram
-\item Regex
-\item HTTPS/SSL
-\item GPLv3
-\item GUI 
+\item FROST \\
+	Der \textbf{FR}auenhofer \textbf{O}penSource \textbf{S}ensor\textbf{T}hings-Server ist die erste komplette quelloffene Implementierung der OGC SensorThings API
+\item OGC \\
+	Das \textbf{O}pen \textbf{G}eospatial \textbf{C}onsortium ist eine gemeinnützige Organisation, die sich zum Ziel gesetzt hat, die Entwicklung von raumbezogener Informationsverarbeitung (insbesondere Geodaten) auf Basis allgemeingültiger Standards festzulegen.
+\item SensorThings API \\
+	Allgemeiner einheitlicher Standard um Verbindung zwischen Sensoren, deren Ort und Umgebung und den von ihnen erzeugten Daten herzustellen.
+\item CSV-/XLSX-Dateien \\
+	CSV (Comma Seperated Value, .csv) und Excel (.xlsx) sind gängige Dateiformate zum Speichern von Daten (hier speziell: Sensor-Daten) in Tabellenform.
+\item CFG-Datei \\
+	Konfigurationsdateien(kurz: CFG-Dateien) sind Textdateien, die speziell zur Speicherung bestimmter Einstellungen (Konfigurationen) dienen.
+\item Thing \\
+	Ein Thing (deutsch: Ding) ist nach Definition der SensorThings API ein Objekt der physischen oder virtuellen Welt. Es benötigt einen Namen und eine Beschreibung. Es können sich ein oder mehrere Datastreams auf ein Thing beziehen.
+\item Datastream \\
+	Ein Datastream ist eine fortlaufende Sammlung von Messungen (Observations) des selben Sensors.
+\item Integer \\
+	Mit Integer wird in der Informatik ein Datentyp bezeichnet, der ganzzahlige Werte speichert.
+\item NULL \\
+	Als Nullwert (kurz NULL) bezeichnet man in der Informatik einen Zustand, der das Fehlen eines Wertes anzeigen soll.
+\item Magic Numbers \\
+	Deutsch: Magische Zahl. Ein im Quellcode eines Programms auftauchender Zahlenwert, dessen Bedeutung sich nicht unmittelbar erkennen lässt.
+\item Log-Datei \\
+	Eine Log-Datei, auch Protokoll-Datei, enthält das automatisch geführte Protokoll aller oder bestimmter Aktionen von Prozessen auf einem Computersystem.
+\item Docker \\
+	Docker ist eine Software zur Isolierung von Anwendungen. Docker vereinfacht die Bereitstellung von Anwendungen, weil sich sog. Container, die alle nötigen Pakete enthalten, leicht als Dateien transportieren und installieren lassen.
+\item GUI \\
+	Ein Grafische Benutzeroberfläche (engl. \textbf{G}raphical \textbf{U}ser \textbf{I}nterface) hat die Aufgabe, eine Anwendungssoftware auf einem Rechner mittels grafischer Symbole und Steuerelemente für den Benutzer bedienbar zu machen.
+\item (Java) JRE \\
+	Mit der Java-Laufzeitumgebung (\textbf{J}ava \textbf{R}untime \textbf{E}nvironment) werden Programme (Java-Anwendungen) weitgehend unabhängig vom darunter liegenden Betriebssystem ausgeführt.
+\item JavaScript \\
+	JavaScript ist eine Programmiersprache, die hauptsächlich auf Webbrowsern Anwendung findet.
+\item headless Server \\
+	Als headless (kopflos) bezeichnet man Computer, meist Serversysteme, die über keinen Bildschirm oder sonstige grafische Ausgabe verfügen.
+	Diese Systeme haben als Steuerungsmöglichkeit in vielen Fällen eine Netzwerkverbindung.
+\item README \\
+	Als README (deutsch: Liesmich) wird eine Datei bezeichnet, die üblicherweise mit Software mitgeliefert wird und diverse, oft wichtige Informationen über die Software enthält.
+\item Regex \\
+	\textbf{Reg}ular \textbf{Ex}pressions (Regex, regulärer Ausdrucke) dienen der Beschreibung von Zeichenketten mit ähnlichem Format.
+	Sie können als Filterkriterien in der Textsuche verwendet werden, indem der Text mit dem Muster des regulären Ausdrucks verglichen wird.
+\item HTTPS/SSL \\
+	\textbf{H}yper\textbf{T}ext \textbf{T}ransfer \textbf{P}rotocol \textbf{S}ecure (HTTPS) ist ein sicheres Hypertext-Übertragungsprotokoll, das SSL benutzt.
+	SSL steht für \textbf{S}ecure \textbf{S}ockets \textbf{L}ayer und ist die Standardtechnologie für die Absicherung von Internetverbindungen und den Schutz sensibler Daten, die zwischen zwei Systemen übertragen werden.
+\item GPLv3 \\
+	GPLv3 ist die aktuelle Version von GPL. Diese \textbf{G}eneral \textbf{P}ublic \textbf{L}icense (allgemeine Veröffentlichungsgenehmigung) ist die am weitesten verbreitete Softwarelizenz,
+	die einem gewährt, die Software auszuführen, zu studieren, zu ändern und zu verbreiten.
 \end{itemize}
 
 
