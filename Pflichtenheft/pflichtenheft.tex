@@ -27,7 +27,7 @@
 		\item Erstellen, abspeichern, laden von Konfigurationen \\
 		Die Konfiguration der Software (ausgew. Thing, Server, Format) soll gespeichert und dem Nutzer via Download einer CFG-Datei bereitgestellt werden. Eine Konfiguration soll später auch wieder geladen werden können.
 		\item Datentyptransformationen \\
-		Ein Wert als bspw. String soll nicht als String auf den FROST-Server übertragen werden sollen, sondern von der Software vorher in einen passenden Datentyp (bspw. Integer) umgewandelt werden
+		Alle Werte sind in der Quelldatei nur als String vorhanden und müssen bevor sie auf den FROST-Server geladen werden in das passende Format (bspw. Integer) umgewandelt werden.
 		\item Verarbeiten von Sonderwerten (Magic Numbers) \\
 		Diese Werte sollen von der Software ignoriert und gegen einen NULL-Wert (o.ä.) ausgetauscht werden, bevor sie auf den FROST-Server übertragen werden.
 		\item Import von Fremdquellen wie anderen Webseiten \\
