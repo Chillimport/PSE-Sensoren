@@ -264,6 +264,33 @@ Testfall 4 [Einstellen ohne Neues] ;    Stand : Grundlage
 														  			   Er wählt im Thing-Dropdown Menü ein Thing aus und fügt einen Data- und einen Multi-
 														  			   datastream hinzu. Beide werden ebenfalls durch ein Dropdown Menü ausgewählt.
 														  			   Nun wählt er die zugehörigen Spalten aus.
+														  			   
+														  			   
+														  			   
+\test{Einstellen nichts neu}{}
+\teststep{Der Nutzer hat Quelle und Ziel eingegeben und bestätigt}{Der Nutzer füllt die Datums-/Uhrzeits-Spalte aus}{Die Software überprüft die Korrektheit der Spalten (Wurde eine Spalte angegeben, die nicht existiert?)}
+\teststep{Die Spalten wurden korrekt angegeben}{Der Benutzer gibt via RegEx das Format des Datums/der Uhrzeit in dem dazugehörigen Textfeld an}{Die Korrektheit des RegEx wird anhand der Werte der Tabellendatei auf Fehler geprüft}
+\teststep{Das Datum / die Uhrzeit wurde korrekt ausgefüllt}{Der Nutzer wählt das Thing aus dem Dropdown-Menü, welches alle Things enthält, aus}{Das Datastream-Dropdown-Menü wird mit den zum gewählten Thing gehörenden Data-/MultiData-Streams aktualisiert}
+\teststep{Thing wurde ausgewählt}{Der Anwender wählt den Datastream aus dem Datastream-Dropdown-Menü aus}{Das System lädt die zum Datastream/MultiDataStream gehörenden Messeinheiten neben die Textfelder zum eintragen}
+\teststep{Messdaten geladen}{Der Nutzer trägt die Spalten mit den Messwerten neben die Messeinheiten ein}{Die Korrektheit der Eintragung wird wieder durch die Software geprüft}
+\teststep{Alle Textfelder ausgefüllt}{der User klickt auf den Button "{Upload}"}{Die Daten in den angegebenen Spalten werden eingelesen, konvertiert und auf den FROST-Server übertragen}
+
+\test{Neue Datums-/Zeit-Spalte erstellen}{}
+\teststep{Der Nutzer hat die Datei geladen und den Server angegeben, es wird keine CFG-Datei genutzt (Ende von Test 1-fach)}{Der Benutzer drückt den "+"-Button, um eine neue Datums-/Zeit-Spalte anzulegen}{Die Software erstellt zwei neue Textfelder mit "Spalte" und "Format" im Interface, sodass sich die Datums- und Zeitnagabe über mehrere Spalten erstrecken kann}
+
+\test{Datastream hinzufügen}{}
+\teststep{Ein Thing wurde ausgewählt, die Datastreams wurden in das Dropdown-Menü geladen}{Der Nutzer klickt auf den "{Add DS}"{-Button}}{Das Webinterface wird aktualisiert und rechts vom letzten Datastream wird ein neues Dropdown-Menü für einen neuen Datastream und neue Textfelder hinzugefügt}
+
+\test{Neues Thing erstellen}{}
+\teststep{Die Datei und die FROST-Server-Domain wurden angegeben/hochgeladen}{Der Nutzer klickt auf den "{Create Thing}"{-Button}}{es öffnet sich der "{Create New Thing}"{-Dialog}}
+\teststep{Das Dialogfenster ist offen, Name und Beschreibung des Things wurden in die Textfelder eingetragen, die Location wurde aus dem Dropdown-Menü ausgewählt}{Der Nutzer klickt auf "{Create}"}{Das Thing wird auf dem FROST-Server erstellt und in dem Hauptinterface dem Dropdown-Menü hinzugefügt}
+
+\test{Properties hinzufügen}{}
+\teststep{Der "{Create New Thing}"{-Dialog} ist offen}{Der Nutzer klickt einmal oder mehrfach auf den "{Add Property}"{-Button}{es werden ein oder mehrere Textfeld-Paare im Interface erstellt in denen der Nutzer die Eigenschaft (Property) und den Wert (Value) des Things einstellen kann}
+	
+\test{Neuen (Multi)DataStream erstellen}{}
+\teststep{Die Datei und FROST-Server wurden angegeben und ein Thing ausgewählt}{Der User klickt auf den "{Create DS}"{-Button}}{Es öffnet sich der "{Create New DataStream}"{-Dialog} indem der User einen neuen DataStream oder MultiDataStream formulieren und erstellen kann}
+\teststep{Der User sieht das Dialogfenster zum erstellen eines DataStreams}{der User trägt Name und Beschreibung in die Textfelder ein, wählt Observation Type und Sensor aus den Dropdown-Menüs aus, trägt eine oder mehrere Units Of Measurement ein und klickt abschließend auf "{Create}"}{Die Software unterscheidet zwischen DataStream und MultiDataStream und legt den entsprechenden Stream mit den angegeben Daten im FROST-Server an}
 \subsection{Zeitplanung}
 Beispielhafte Terminplanung: \\
 \begin{itemize}
