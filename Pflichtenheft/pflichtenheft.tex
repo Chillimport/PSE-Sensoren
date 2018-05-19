@@ -16,7 +16,12 @@
 	
 	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server des Fraunhofer IOSB ist eine Open-Source-Implementierung des SensorThings-Standards des OGC und unter https://github.com/FraunhoferIOSB/FROST-Server downloadbar. Der FROST-Server dient der Speicherung und Verwaltung von Sensordaten.\\
 	Unsere Software stellt zu diesem Server eine einfache und dennoch stark konfigurierbare Weboberfläche bereit, die es ermöglicht Sensordaten aus einer Tabelle einzulesen, zu konvertieren und auf einen FROST-Server zu übertragen. Die Software läuft in einer Java JRE und das zugehörige Webinterface soll über einen herkömmlichen PC, einen Laptop oder ein Tablet erreichbar sein.\\
-	
+	Sie ist ebenfalls Open-Source und soll überall dort eingesetzt werden, wo Daten aus Tabellen importiert, konvertiert und auf den FROST-Server übertragen werden sollen. \\
+	Hierzu zählt:
+	\begin{itemize}
+		\item Der Import von neuen Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen
+		\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XLSX-Tabellen-Form vorliegen
+	\end{itemize}
 	
 	\subsection{Musskriterien}
 	\begin{enumerate}
@@ -68,16 +73,7 @@
 		\item Keine Verwaltung von Sensor-Daten auf dem FROST-Server \\
 		Die Software soll keine schon auf dem FROST-Server liegenden Daten verwalten, ändern oder löschen
 	\end{enumerate}
-	
-	
-	\subsection{Anwendungsbereiche}
-	Überall wo Daten im CSV-Format verarbeitet werden müssen: \\
-	Die Software soll überall dort eingesetzt werden, wo Daten aus Tabellen importiert, konvertiert und auf den FROST-Server übertragen werden sollen. \\
-	Hierzu zählt:
-	\begin{itemize}
-		\item Der Import von neuen Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen
-		\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XLSX-Tabellen-Form vorliegen
-	\end{itemize}
+
 	
 	%TODO Die zwei Zielgruppen genauer darstellen/abgrenzen
 	\subsection{Zielgruppen}
@@ -102,7 +98,7 @@
 	\end{itemize}
 	
 	\subsection{Produktumgebung}
-	Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- und Speicherkapazität laufen. Des Weiteren soll das Programm head-less ununterbrochen funktionieren.\\ Der Server stellt die Java JRE zur Verfügung, auf dem die Software läuft. Die Software benötigt nur noch eine Verbindung zu einer FROST-Server-Instanz, welche ihm vom Nutzer in der Konfiguration gegeben wird.
+	Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- und Speicherkapazität laufen. Des Weiteren soll das Programm headless ununterbrochen funktionieren.\\ Der Server stellt die Java JRE zur Verfügung, auf dem die Software läuft. Die Software benötigt nur noch eine Verbindung zu einer FROST-Server-Instanz, welche ihm vom Nutzer in der Konfiguration gegeben wird.
 	
 	\begin{itemize}
 		\item head-less Server
@@ -206,60 +202,42 @@
 	
 	%TODO Nummerierung der Wunschkriterien in Fließtext
 	\subsection{Produktdaten}
-	Die gesicherten Daten der Software sind minimal, konkret heißt das, es wird nur ein Log-File gesichert. \\Die Konfiguration wird dem Nutzer per CFG-Datei zum Download bereitgestellt und nicht Serverseitig gespeichert.\\
-	Sollte das Kriterium [Wunsch: Automatischer Download] mit aufgenommen werden, so muss die Adresse der entfernten Datei und des zu nutzenden FROST-Servers auf dem Server gespeichert werden.
+	
 	\begin{itemize}
-		\item Log-Datei
-		\item Abspeichern der Konfigurationen
-		\item Speichern der Domain des FROST-Servers auf dem Server
-		\item Speichern der Domain der entfernten CSV-Adresse auf dem Server
+		\item Die Software speichert ein Log-File um Fehlerbehebung zu erleichtern.
+		\item Die Programmkonfiguration kann Serverseitig gespeichert und heruntergeladen werden.
+		\item Die Zieladresse (FROST-Server) wird einmalig konfiguriert und Serverseitig gespeichert. Sie kann danach wieder geändert werden.
 	\end{itemize}
 	
 	\subsection{Produktleistungen}
-	Die Software soll sämtliche Aktionen der Nutzer in einem Log-File speichern. Die Eingaben sollen möglichst direkt verarbeitet und die Reaktionszeit möglichst gering sein. \\Bei langsamen Operationen soll der Nutzer Feedback über eine Fortschrittsleiste und über das Log-Fenster bekommen. \\
-	Die Daten müssen korrekt an den FROST-Server übermittelt werden, dazu gehört auch Robustheit der Anwendung gegenüber falschen Angaben. \\Bei falschen Angaben oder sonstigen Fehlern soll der Nutzer mittels einer Fehlermeldung benachrichtigt werden.
 	\begin{itemize}
-		\item Logging
-		\item Statusmeldungen an den Nutzer
-		\item Schnelle Reaktionszeit auf Benutzer-Eingaben
-		\item korrekte Übertragung der Daten
-		\item Robustheit gegenüber falschen Formatangeben (Fehlermeldungen)
-	\end{itemize}
-	
-	\subsection{Nichtfunktionale Anforderungen}
-	Die Software ist Open-Source und benötigt einen erreichbaren FROST-Server. Sie basiert auf der SensorThings-API, welche wie der FROST-Server ebenfalls Open-Source ist.
-	\\Das Programm wird in Java geschrieben und hängt dementsprechend von einer Java-Umgebung ab.
-	\\Um Sicherheit zu gewährleisten sollte das Programm robust gegenüber schädlichen Anfragen sein, vor allem zu große oder zu viele Anfragen sollten dementsprechend abgelehnt werden um eine Überlastung des Servers zu vermeiden.
-	\\Außerdem sollten die daten HTTPS-/SSL-Verschlüsselt werden um Abfangen der daten zu verhindern.
-	
-	\begin{itemize}
-		\item Genutzt wird der FROST-Server und die SensorThings API (beides Open-Source)
-		\item Die Software ist Open-Source (GPLv3)
-		\item Die Software ist abhängig von der Java-Plattform
-		\item Robustheit gegenüber zu großen bzw. zu vielen Anfragen 		
-		\item HTTPS-/SSL-Verschlüsselung								
+		\item Die Software dokumentiert Fehler jeglicher Art und das starten b.z.w abschließen von Uploads.
+		\item Die Eingaben werden direkt verarbeitet. Dem Nutzer wird sofort Feedback über eine Fortschrittsleiste gegeben, sollte die Anfrage länger als eine Sekunde dauern.
+		\item Die Daten werden korrekt an den FROST-Server übermittelt, dazu gehört auch Robustheit der Anwendung gegenüber falschen Angaben.
+		\item Der Nutzer erhält bei falschen Angaben oder Fehlern eine Rückmeldung.
 	\end{itemize}
 	
 	
 	\subsection{Qualitätsanforderungen}
-	Das Programm sollte über lange Zeiträume auch ohne Unterbrechungen zuverlässig ausgeführt werden können, solange die Produktumgebung dies zulässt.
-	Die Benutzbarkeit hat höchste Priorität, auch Nutzer ohne oder wenig technischem Vorwissen sollten in der Lage sein die Software zu bedienen.
-	\\Außerdem soll es möglichst einfach sein die Software schnell und unkompliziert zu ändern oder zu erweitern.
-	\\Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit Platformunabhängig ist. 
-	\\Es wird lediglich eine Produktumgebung vorausgesetzt die die Betriebsbedingungen erfüllt.
-	
+	Backend-Anforderungen (Software) :
 	\begin{itemize}
-		\item Die Software sollte zuverlässig auch über längere Zeiträume ohne Unterbrechung laufen sofern es die Produktumgebung zulässt
-		\item Die Benutzbarkeit hat höchste Priorität, es soll auch Nutzern mit wenig Computerkentnissen möglich sein die Software zu bedienen
-		\item Es soll einfach möglich sein, Änderungen und Erweiterungen an der Software vorzunehmen
-		\item Die Software ist einfach zu übertragen, da sie auf der plattformunabhängigen Programmiersprache Java basiert, es wird nur eine Produktumgebung vorausgesetzt, die lediglich die Betreibsbedingungen erfüllt
+	\item Das Programm soll über lange Zeiträume auch ohne Unterbrechungen zuverlässig ausgeführt werden können, solange die Produktumgebung dies zulässt.
+	\item Interaktion oder Beobachtung durch den Nutzer werden nicht vorrausgesetzt.
+	\item Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit Platformunabhängig ist. 
+	\item Zu große oder zu viele Anfragen werden abgelehnt um Sicherheit zu gewährleisten und einer Überlastung des Servers vorzubeugen.
+	\item Es soll möglichst einfach sein die Software schnell und unkompliziert zu ändern oder zu erweitern.
+	\end{itemize}
+	Frontend-Anforderungen (Weboberfläche) :
+	\begin{itemize}
+	\item Die Benutzbarkeit hat höchste Priorität, auch Nutzer ohne oder wenig technischem Vorwissen sollen in der Lage sein die Software zu bedienen.
+	\item Die Daten sollten HTTPS-/SSL-Verschlüsselt werden um Abfangen der Daten zu verhindern.
 	\end{itemize}
 	
 	\subsection{Anwendungsszenarien}
 	Ideen für Anwendungsszenarien:
 	%TODO Anwendungsfalldiagramm
 	\begin{itemize}
-		\item Nutzer ohne technische Kenntnisse des Frost Server Aufbaus besitzt einen Frost Server und einen Sensor, der schon auf dem Frost Server abgespeichert ist. Außerdem hat er eine csv-Datei mit Daten vom Sensor, der einen schon bestehenden Datensatz des Sensors auf dem Server erweitern soll. Er navigiert in seinem Browser zur Web-oberfläche und stellt seine Datei als Quelle und den Frost Server als Ziel ein. Dann wählt er eine Favoritenkonfiguration aus, die zu seinem Sensor passt und lädt seine Daten durch Klick des "Upload"-Buttons hoch. Die Daten werden formatiert und auf dem Server abgrspeichert.
+		\item Nutzer ohne technische Kenntnisse des Frost Server Aufbaus besitzt einen Frost Server und einen Sensor, der schon auf dem Frost Server abgespeichert ist. Außerdem hat er eine csv-Datei mit Daten vom Sensor, der einen schon bestehenden Datensatz des Sensors auf dem Server erweitern soll. Er navigiert in seinem Browser zur Web-oberfläche und stellt seine Datei als Quelle und den Frost Server als Ziel ein. Dann wählt er eine Favoritenkonfiguration aus, die zu seinem Sensor passt und lädt seine Daten durch Klick des "Upload"-Buttons hoch. Die Daten werden formatiert und auf dem Server abgespeichert.
 		\item das gleiche mit einem erfahrenen Nutzer, der ein neues Thing, einen Sensor und zugehörigen Datastream erstellt
 		\item Szenario zum Abspeichern einer Konfiguration
 	\end{itemize}
