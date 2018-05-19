@@ -1,6 +1,8 @@
 Pflichtenheft/*.pdf
-.log
-.synctex.gz
+Pflichtenheft/*.log
+Pflichtenheft/*.synctex.gz
+Pflichtenheft/*.aux
+Pflichtenheft/*.out
 Pflichtenheft/Pflichtenheft Vorlage IPD/**
 
 #Apple
