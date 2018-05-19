@@ -112,38 +112,75 @@
 		\item SensorThings API
 	\end{itemize}
 	
-	\subsection{Seitenentwürfe}
-	
-	
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[scale=0.4, angle=90]{images/gui}
-		\caption{\label{fig:guiMain}Hauptseite der Weboberfläche}
-	\end{figure}
-	
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[scale=1]{images/create_thing}
-		\caption{\label{fig:thing}Dialogfenster zum Erstellen eines Things.}
-	\end{figure}
-	
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[scale=1]{images/create_datastream}
-		\caption{\label{fig:ds}Dialogfenster zum Erstellen eines Datastreams.}
-	\end{figure}
-	
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[scale=1]{images/create_sensor}
-		\caption{\label{fig:sensor}Dialogfenster zum Erstellen eines Sensors.}
-	\end{figure}
-	
-	\begin{figure}[ht]
-		\centering
-		\includegraphics[scale=1]{images/create_observedproperty}
-		\caption{\label{fig:obsProp}Dialogfenster zum Erstellen eines Things.}
-	\end{figure}
+\subsection{Seitenentwürfe}
+
+\subsection{Hauptseite}
+Die Software stellt eine Weboberfläche zum Einfügen von Sensor-Datensätzen auf einen FROST-Server zur Verfügung. 
+Dieser Zielserver wird einmalig beim erstmaligen Aufsetzen der Software eingestellt und ist nicht über das Webinterface einstellbar. 
+Ein Entwurf für die Hauptseite der Weboberfläche ist in \cref{fig:guiMain} (siehe Anhang \cref{fig:guiMainA} für vergrößerte Darstellung) zu sehen.
+\\
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.4]{images/gui}
+\caption{\label{fig:guiMain}Hauptseite der Weboberfläche}
+\end{figure}
+Beim Aufrufen der Weboberfläche ist zu Beginn nur der Bereich zum Auswählen der Quelldatei sichtbar. 
+Nach dem Einstellen der Quelle wird das Dateiformat überprüft und ein passender Konfigurator für das Spaltenformat der Datei und das Format der Daten in den Spalten wird sichtbar. \\
+
+Über das Log werden eventuelle Fehlermeldungen und Übertragungsfortschritte angezeigt. Unter "{Choose Configuration}" lässt sich eine auf dem Server gespeicherte Konfigurationsdatei auswählen. Dort bieten sich folgende Möglichkeiten:
+\begin{itemize}
+\item Unter "{Configuration}" kann eingestellt werden, in welcher Form die Daten in der Quelldatei angespeichert sind, um diese dann in den vom FROST-Server verwendeten OGC-Standard zu konvertieren.
+\item Zuerst ist das Trennsymbol für die Spalten in der Quelldatei und die Anzahl der Kopfzeilen (nicht zum Datensatz gehörige Zeilen) anzugeben. 
+\item Dann kann das zu den Daten gehörige Thing von schon auf dem FROST-Server existierenden Things ausgewählt werden. Falls es benötigt wird, lässt sich über den "{Create Thing}"{-Button} ein neues Thing erstellen. (siehe \cref{fig:thing})
+\item Unter "{DateTime}"{ ist} das Datumsfomat einstellbar. Erst wird die Zeitzone eingegeben und danach lassen sich das Format für das Datum bzw. die Zeit als RegEx und die zugehörige Spaltennummer angeben.
+\item Abschließend lassen sich ein oder mehrere (Multi-)Datastreams auswählen. Existiert der (Multi-)Datastream noch nicht, kann er über "{Create DS}"{ erstellt} werden. Mit Hilfe des "{Add DS}"{-Buttons} lassen sich weitere (Multi-)Datastreams hinzufügen. Anschließend lassen sich wieder die zu den Daten gehörigen Spalten in der Quelldatei einstellen.
+\item Außerdem bietet die Weboberfläche über den "{Save}"{-Button} die Möglichkeit, eine bestehende Konfiguration auf dem Server abzuspeichern bzw. über den "{Reset}"{-Button} auf die Standard-Konfiguration zurückzusetzen.
+\item Über den "{Upload}"{-Button} werden die Daten auf den FROST-Server hochgeladen.
+\item Der "{Help}"{-Button} ermöglicht den Zugriff auf eine Kurzanleitung für das Webinterface.
+\end{itemize}
+
+\subsection{Thing erstellen}
+Wie in \cref{fig:thing} dargestellt, müssen Name, Beschreibung und Eigenschaften gewählt werden, um ein Thing zu erstellen. Über den "{Add property}"{-Button} kann eine weitere Eigenschaft als Key-Value-Paar hinzugefügt werden. Abschließend muss eine bestehende Location gewählt werden bzw. eine neue erstellt werden (siehe \cref{fig:loc}).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=1]{images/thing}
+\caption{\label{fig:thing}Dialogfenster zum Erstellen eines Things.}
+\end{figure}
+
+
+\subsection{Datastream erstellen}
+\cref{fig:ds} zeigt das Dialogfenster zum Erstellen eines (Multi-)Datastreams. Es müssen erst Name, Beschreibung, Observation Type und ein Sensor gewählt werden. Soll dafür ein neuer Sensor angelegt werden, existiert der "{Create Sensor}"{-Button} (siehe \cref{fig:sensor}).\\
+
+Im unteren Teil lassen sich die gemessenen Größen für eine Messwertreihe festlegen. Existiert eine solche Größe noch nicht, lässt sie sich über den "{Create Property}"{-Button} anlegen (siehe \cref{fig:oprop}). Mit dem "{Add unit}"{-Button} kann eine weitere Messwertreihe hinzugefügt werden. Hat ein Datastream mehr als eine solche Größe, wird er als MultiDatastream verwaltet.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=1]{images/datastream}
+\caption{\label{fig:ds}Dialogfenster zum Erstellen eines Datastreams.}
+\end{figure}
+
+\subsection{Sensor, ObservedProperty oder Location erstellen}
+Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (siehe \cref{fig:oprop}) oder einer Location (siehe \cref{fig:loc}) verläuft, indem alle Textfelder des jeweiligen Dialogfeldes passend ausgefüllt werden und anschließend der "{Create}"{-Button} gedrückt wird.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=1]{images/sensor}
+\caption{\label{fig:sensor}Dialogfenster zum Erstellen eines Sensors.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=1]{images/oprop}
+\caption{\label{fig:oprop}Dialogfenster zum Erstellen eines Things.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=1]{images/loc}
+\caption{\label{fig:loc}Dialogfenster zum Erstellen einer Location.}
+\end{figure}
 	
 	\subsection{Erforderliche Funktionale Anforderungen}
 	
@@ -416,5 +453,15 @@
 		die einem gewährt, die Software auszuführen, zu studieren, zu ändern und zu verbreiten.
 	\end{itemize}
 	
+\newpage
+\subsection{Anhang}
+
+\begin{textblock*}{\paperwidth}(0mm,0.2\paperheight)
+\begin{figure}[t]
+\centering
+\noindent\includegraphics[scale=0.5, angle=90]{images/gui}
+\caption{\label{fig:guiMainA}Hauptseite der Weboberfläche}
+\end{figure}
+\end{textblock*}
 	
 \end{document}
