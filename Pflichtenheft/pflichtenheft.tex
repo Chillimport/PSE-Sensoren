@@ -24,55 +24,58 @@
 	\end{itemize}
 	
 	\subsection{Musskriterien}
-	\begin{enumerate}
-		\item Import von Tabellen \\
-		Die Daten sollen aus Tabellen im CSV-/XLSX-Format importiert werden
-		\item Konvertierung des Formats der Sensordaten \\
-		Die Daten sollen aus der Tabelle in ein einheitliches Format nach Vorgabe der SensorThings API konvertiert werden. Damit entsprechen sie dem Format der Daten auf einem FROST-Server.
-		\item Erstellen, abspeichern, laden von Konfigurationen \\
-		Die Konfiguration der Software (ausgew. Thing, Server, Format) soll gespeichert und dem Nutzer via Download einer CFG-Datei bereitgestellt werden. Eine Konfiguration soll später auch wieder geladen werden können.
-		\item Datentyptransformationen \\
-		Alle Werte sind in der Quelldatei nur als String vorhanden und müssen bevor sie auf den FROST-Server geladen werden in das passende Format (bspw. Integer) umgewandelt werden.
-		\item Verarbeiten von Sonderwerten (Magic Numbers) \\
-		Diese Werte sollen von der Software ignoriert und gegen einen NULL-Wert (o.ä.) ausgetauscht werden, bevor sie auf den FROST-Server übertragen werden.
-		\item Import von Fremdquellen wie anderen Webseiten \\
-		Es soll möglich sein als Quelldatei auch einen entfernten Speicherort, zum Beispiel einen Weblink  anzugeben.
-		\item Weitergabe von Fehlermeldungen an den Nutzer, falls Import schief läuft \\
-		Bei Fehlern in der Verarbeitung oder in der Übertragung soll der Nutzer eine Rückmeldung kriegen
-		\item Logging \\
-		Sämtliche Eingaben und Interaktionen des Nutzers mit der Software sollen in einer Log-Datei gespeichert werden
-	\end{enumerate}
+\begin{enumerate}
+	\item Import von Daten \\
+	Die Daten sollen aus Tabellen im CSV-/Excel-Dateiformat importiert werden
+	\item Konvertierung des Formats der Sensordaten \\
+	Die Daten sollen aus den beliebigen Datenformaten und Anordnungen innerhalb der Quelldatei in den einheitlichen Standard der SensorThings API konvertiert werden.
+	Damit entsprechen sie dem Standard der Daten auf einem FROST-Server.
+	\item Erstellen, Abspeichern und Laden von Konfigurationen \\
+	Der Benutzer soll Spaltenformat, Datenformat und insbesondere Datums- und Zeitformat einstellen und als Konfiguration abspeichern können.
+	Diese Konfigurationen sollen später auch wieder geladen werden können.
+	\item Datentyptransformationen \\
+	Alle Werte sind in der Quelldatei als String vorhanden und müssen, bevor sie auf den FROST-Server geladen werden, in den passenden Datentyp (bspw. Integer) umgewandelt werden.
+	Sonderwerte (Magic Numbers) sollen nicht auf den FROST-Server geladen, sondern separat behandelt werden.
+\end{enumerate}
+
+\subsection{Wunschkriterien}
+\begin{enumerate}
+	\item Standard-Konfiguration \\
+	Dem Benutzer wird eine vorgefertigte Konfiguration bestehend aus Spaltenformat, Datenformat und Datums- und Zeitformat bereitgestellt.
+	\item Überprüfung auf Duplikate \\
+	Beim Upload der Daten auf den FROST-Server werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut gespeichert.
+	\item Rückgabe nicht bearbeiteter Datensätze in neuer CSV-Datei \\
+	Bei (teilweise) fehlgeschlagener Übertragung zum FROST-Server werden die nicht übertragenen Daten in einer CSV-Datei an den Benutzer zurückgegeben.
+	\item Korrektur von falschen Daten \\
+	Der Benutzer hat die Möglichkeit Fehler in den Daten direkt zu korrigieren.
+	\item Import von Fremdquellen wie anderen Webseiten \\
+	Es soll möglich sein als Quelldatei auch einen entfernten Speicherort, zum Beispiel einen Weblink  anzugeben.
+	\item Automatisierte Daten-Aktualisierung \\
+	Bei Import von Daten von einer entfernten Adresse wird eine automatische, regelmäßige Übertragung angeboten.
+	\item Import kompletter Datensätze von anderem FROST-Server \\
+	Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen FROST-Server zu kopieren
+	\item Auswahl komplexer Transformationen/Aggregationen (Zusammenlegen von Daten) wie Summe, Minimum/Maximum, Durchschnitt etc.\\ 
+	Zusätzliche Informationen über ausgewählte Daten werden dem Benutzer in einem Webinterface bereitgestellt.
+	\item Automatische Formaterkennung \\
+	Aus der Quelldatei werden Spaltenformat, Datenformat und Datums- und Zeitformat automatisch erkannt und eine entsprechende Konfiguration generiert.
+	Diese Konfiguration ersetzt die Standard-Konfiguration.
+	\item automatische Sprachauswahl \\
+	Die Anwendung übernimmt automatisch die in Browser eingestellte Sprache.
 	
-	\subsection{Wunschkriterien}
-	\begin{enumerate}
-		\item Sprachauswahl: Deutsch/Englisch
-		\item Bereitstellen einer Vorauswahl \\
-		Dem Benutzer wird eine vorgefertigte Standard-Konfiguration bereitgestellt.
-		\item Überprüfung auf Duplikate \\
-		Beim Upload der Daten auf den FROST-Server werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut gespeichert.
-		\item Korrektur von falschen Daten \\
-		Der Benutzer hat die Möglichkeit Fehler in den Daten direkt zu korrigieren.
-		\item Rückgabe nicht bearbeiteter Datensätze in neuer CSV-Datei \\
-		Bei (teilweise) fehlgeschlagener Übertragung zum FROST-Server werden die nicht übertragenen Daten in einer CSV-Datei an den Benutzer zurückgegeben.
-		\item Docker-Container \\
-		Zur einfachen Installation steht das Programm als Docker-Container zur Verfügung
-		\item Auswahl komplexer Transformationen/Aggregationen (Zusammenlegen von Daten) wie Summe, Minimum/Maximum, Durchschnitt etc.\\ 
-		Zusätzliche Informationen über ausgewählte Daten werden dem Benutzer in einem Webinterface bereitgestellt.
-		\item Automatisierte Daten-Aktualisierung \\
-		Bei Import von Daten von einer entfernten Adresse wird eine automatische, regelmäßige Übertragung angeboten.
-		\item Import kompletter Datensätze von anderem FROST-Server \\
-		Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen FROST-Server zu kopieren
-		\item Automatisierte Erkennung des Formats \\
-		Aus der CSV-/XLSX-Datei werden Formate automatisch erkannt.
-		
-		
-	\end{enumerate}
 	
-	\subsection{Abgrenzungskriterien}
-	\begin{enumerate}
-		\item Keine Verwaltung von Sensor-Daten auf dem FROST-Server \\
-		Die Software soll keine schon auf dem FROST-Server liegenden Daten verwalten, ändern oder löschen
-	\end{enumerate}
+	
+\end{enumerate}
+
+\subsection{Abgrenzungskriterien}
+\begin{enumerate}
+	\item Keine Verwaltung des FROST-Servers \\
+	Die Software soll keine schon auf dem FROST-Server liegenden Daten verwalten, ändern oder löschen.
+	\item Keine Benutzer-Verwaltung \\
+	Es wird keine Benutzer-Verwaltung mit verschiedenen Benutzerkonten bereitgestellt.
+	Jeder Benutzer kann somit die gespeicherten Konfigurationen aller Benutzer sehen und verwenden.
+	\item Keine mobilen Endgeräte \\
+	Die Software muss nicht auf mobilen Endgräten laufen können.
+\end{enumerate}
 
 	
 	%TODO Die zwei Zielgruppen genauer darstellen/abgrenzen
