@@ -14,7 +14,7 @@
 \begin{document}
 	
 	%TODO
-	\subsection{Produktübersicht}
+	\section{Produktübersicht}
 	
 	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server des Fraunhofer IOSB ist eine Open-Source-Implementierung des SensorThings-Standards des OGC und unter https://github.com/FraunhoferIOSB/FROST-Server downloadbar.
 	\\ \\ Der FROST-Server dient der Speicherung und Verwaltung von Sensordaten.\\
@@ -27,7 +27,7 @@
 		\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XLSX-Tabellen-Form vorliegen
 	\end{itemize}
 	
-	\subsection{Musskriterien}
+	\section{Musskriterien}
 \begin{enumerate}
 	\item Import von Daten \\
 	Die Daten sollen aus Tabellen im CSV-/Excel-Dateiformat importiert werden
@@ -42,7 +42,7 @@
 	Sonderwerte (Magic Numbers) sollen nicht auf den FROST-Server geladen, sondern separat behandelt werden.
 \end{enumerate}
 
-\subsection{Wunschkriterien}
+\section{Wunschkriterien}
 \begin{enumerate}
 	\item Standard-Konfiguration \\
 	Dem Benutzer wird eine vorgefertigte Konfiguration bestehend aus Spaltenformat, Datenformat und Datums- und Zeitformat bereitgestellt.
@@ -70,7 +70,7 @@
 	
 \end{enumerate}
 
-\subsection{Abgrenzungskriterien}
+\section{Abgrenzungskriterien}
 \begin{enumerate}
 	\item Keine Verwaltung des FROST-Servers \\
 	Die Software soll keine schon auf dem FROST-Server liegenden Daten verwalten, ändern oder löschen.
@@ -83,12 +83,12 @@
 
 	
 	%TODO Die zwei Zielgruppen genauer darstellen/abgrenzen
-	\subsection{Zielgruppen}
+	\section{Zielgruppen}
 	Die Software ist auf zwei Zielgruppen ausgelegt.\\
 	Zum einen gibt es Personen, welche einfach Sensordaten auf einen FROST-Server laden möchten, ohne die Konfigurationen zu ändern. \\Der Fokus liegt bei dieser Gruppe auf der einfachen Bedienung der Software.\\
 	\\Zum Anderen gibt es die Nutzergruppe die ihre eigenen Konfigurationen erstellt. Für diese Nutzergruppe ist es wichtig, dass sie komplexe Einstellungsmöglichkeiten in den Konfigurationen nutzen kann.
 	
-	\subsection{Betriebsbedingungen}
+	\section{Betriebsbedingungen}
 	Unterschieden wird zwischen Endgerät und Server. \\
 	Das Ziel-Endgerät ist ein Computer, wobei jedes Gerät mit einer Internetanbindung zum Programmserver, einem Webbrowser und aktiviertem JavaScript ausreichend ist.\\
 	\ \\
@@ -104,7 +104,7 @@
 		\item Anbindung an Endgerät (zB Internet)
 	\end{itemize}
 	
-	\subsection{Produktumgebung}
+	\section{Produktumgebung}
 	Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- und Speicherkapazität laufen. Des Weiteren soll das Programm headless ununterbrochen funktionieren.\\ Der Server stellt die Java JRE zur Verfügung, auf dem die Software läuft. Die Software benötigt nur noch eine Verbindung zu einer FROST-Server-Instanz, welche ihm vom Nutzer in der Konfiguration gegeben wird.
 	
 	\begin{itemize}
@@ -114,7 +114,7 @@
 		\item SensorThings API
 	\end{itemize}
 	
-\subsection{Seitenentwürfe}
+\section{Seitenentwürfe}
 
 \subsection{Hauptseite}
 Die Software stellt eine Weboberfläche zum Einfügen von Sensor-Datensätzen auf einen FROST-Server zur Verfügung. 
@@ -184,7 +184,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 \caption{\label{fig:loc}Dialogfenster zum Erstellen einer Location.}
 \end{figure}
 	
-	\subsection{Erforderliche Funktionale Anforderungen}
+	\section{Erforderliche Funktionale Anforderungen}
 	
 	\begin{enumerate}
 		\item Auswahlmöglichkeit der Datenquelle
@@ -237,7 +237,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 		\item Kurzanleitung auf der Weboberflächen.
 	\end{enumerate}
 	
-	\subsection{Gewünschte Funktionale Anforderungen}
+	\section{Gewünschte Funktionale Anforderungen}
 	\begin{enumerate}
 		\item Duplikaterkennung um Datenredundanz zu vermeiden
 		
@@ -254,7 +254,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	\end{enumerate}
 
 	%TODO Nummerierung der Wunschkriterien in Fließtext
-	\subsection{Produktdaten}
+	\section{Produktdaten}
 	
 	Bei den Daten die auf dem Server gespeichert werden müssen wird unterschieden zwischen Nutzerdaten und Systemdaten.
 	
@@ -271,7 +271,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	\end{itemize}
 \end{itemize}
 	
-	\subsection{Produktleistungen}
+	\section{Produktleistungen}
 	\begin{itemize}
 		\item Die Software dokumentiert Fehler jeglicher Art und das starten b.z.w abschließen von Uploads.
 		\item Die Eingaben werden direkt verarbeitet. Dem Nutzer wird sofort Feedback über eine Fortschrittsleiste gegeben, sollte die Anfrage länger als eine Sekunde dauern.
@@ -280,7 +280,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	\end{itemize}
 	
 	
-	\subsection{Qualitätsanforderungen}
+	\section{Qualitätsanforderungen}
 	Backend-Anforderungen (Software) :
 	\begin{itemize}
 	\item Das Programm soll über lange Zeiträume auch ohne Unterbrechungen zuverlässig ausgeführt werden können, solange die Produktumgebung dies zulässt.
@@ -295,7 +295,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	\item Die Daten sollten HTTPS-/SSL-Verschlüsselt werden um Abfangen der Daten zu verhindern.
 	\end{itemize}
 	
-	\subsection{Anwendungsszenarien}
+	\section{Anwendungsszenarien}
 	Ideen für Anwendungsszenarien:
 	%TODO Anwendungsfalldiagramm
 	\begin{itemize}
@@ -305,7 +305,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	\end{itemize}
 	
 	
-	\subsection{Testfälle}
+	\section{Testfälle}
 	\test{Default Case zum }{}
 	
 	\test{Anzeigen der Weboberfläche}{}
@@ -394,7 +394,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	\teststep{Der User sieht das Dialogfenster zum erstellen eines DataStreams}{der User trägt Name und Beschreibung in die Textfelder ein, wählt Observation Type und Sensor aus den Dropdown-Menüs aus, trägt eine oder mehrere Units Of Measurement ein und klickt abschließend auf "{Create}"}{Die Software unterscheidet zwischen DataStream und MultiDataStream und legt den entsprechenden Stream mit den angegeben Daten im FROST-Server an}
 	
 	
-	\subsection{Zeitplanung}
+	\section{Zeitplanung}
 	Beispielhafte Terminplanung: \\
 	\begin{itemize}
 		\item 07.05. - 27.05.: Pflichtenheft
@@ -407,7 +407,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	\end{itemize}
 	
 	
-	\subsection{Glossar}
+	\section{Glossar}
 	\begin{itemize}
 		\item FROST \\
 		Der \textbf{FR}auenhofer \textbf{O}penSource \textbf{S}ensor\textbf{T}hings-Server ist die erste komplette quelloffene Implementierung der OGC SensorThings API
@@ -456,7 +456,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	\end{itemize}
 	
 \newpage
-\subsection{Anhang}
+\section{Anhang}
 
 \begin{textblock*}{\paperwidth}(0mm,0.2\paperheight)
 \begin{figure}[t]
