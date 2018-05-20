@@ -1,7 +1,10 @@
-\documentclass[12 pt]{article}
+\documentclass[a4paper, 12 pt]{article}
+
+\setlength{\voffset}{-0.5cm}
+
 
 \usepackage[utf8]{inputenc}
-\usepackage[ngerman]{babel}
+\usepackage[german]{babel}
 
 \usepackage{graphicx}
 \usepackage[absolute]{textpos}
@@ -11,10 +14,20 @@
 \crefname{figure}{Abb.}{Abb.}
 
 \usepackage{pflichtenheft}
+
+
+\author{Fabian Nguyen \and Andreas Wieland \and Maximilian Göckel \and Adrian Cierpka \and Frithjof Marquardt}
+\title{Management von Sensordaten}
+
+
+
 \begin{document}
-	
+
+\maketitle
+\newpage
 \tableofcontents
-	
+\newpage
+
 	%TODO
 	\section{Produktübersicht}
 
@@ -132,9 +145,9 @@ Hierzu zählt:
 	
 \section{Betriebsbedingungen}
 \begin{itemize}
-	\item die Software soll dauerhaft laufen. Geplante Betriebspausen oder Wartungszeiten sind nicht vorgesehen
+	\item Die Software soll dauerhaft laufen. Geplante Betriebspausen oder Wartungszeiten sind nicht vorgesehen
 	\item Die Software soll auf einem Webserver laufen, jedoch ist nicht sichergestellt dass die Laufzeit des Servers unterbrechungsfrei ist. Unter anderem kann die Stromversorgung plötzlich ausfallen oder der Server wird ausgeschaltet ohne vorher heruntergefahren zu werden
-	\item Die Software soll längere Zeit ohne Überwachung laufen denn gerade bei längeren Uploads kann es sein dass der Nutzer nicht immer anwesend ist.
+	\item Die Software soll längere Zeit ohne Überwachung laufen, denn gerade bei längeren Uploads kann es sein dass der Nutzer nicht immer anwesend ist.
 	\item Ein Zugriff auf das Interface der Software von einem Mobilgerät aus ist nicht vorgesehen
 \end{itemize}
 	
@@ -236,8 +249,9 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 \includegraphics[scale=1]{images/loc}
 \caption{\label{fig:loc}Dialogfenster zum Erstellen einer Location.}
 \end{figure}
-	
-	\section{Erforderliche Funktionale Anforderungen}
+
+\section{Funktionale Anforderungen}
+\subsection{Erforderliche Funktionale Anforderungen}
 	
 	\begin{enumerate}
 		\item Auswahlmöglichkeit der Datenquelle
@@ -291,7 +305,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 		\item Kurzanleitung auf der Weboberflächen.
 	\end{enumerate}
 	
-	\section{Gewünschte Funktionale Anforderungen}
+	\subsection{Gewünschte Funktionale Anforderungen}
 	\begin{enumerate}
 		\item Duplikaterkennung um Datenredundanz zu vermeiden
 		
@@ -361,7 +375,6 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	
 	
 	\section{Testfälle}
-	\test{Default Case zum }{}
 	
 	\test{Anzeigen der Weboberfläche}{}
 	\ \\
@@ -422,44 +435,62 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	\ \\
 	\teststep{Der Nutzer erstellt gerade einen Datastream (sieht den Dialog \ref{fig:ds}).}{Der Nutzer drückt den "{Add unit}"{-Knopf}.}{Es wird eine neue leere Zeile in der Tabelle für die zum Datastream gehörigen Units of Measurement angelegt.}														  			   
 	
-	
+		\ \\
 	\test{Einstellen nichts neu}{}
+		\ \\
 	\teststep{Der Nutzer hat Quelle und Ziel eingegeben und bestätigt}{Der Nutzer füllt die Datums-/Uhrzeits-Spalte aus}{Die Software überprüft die Korrektheit der Spalten (Wurde eine Spalte angegeben, die nicht existiert?)}
+		\ \\
 	\teststep{Die Spalten wurden korrekt angegeben}{Der Benutzer gibt via RegEx das Format des Datums/der Uhrzeit in dem dazugehörigen Textfeld an}{Die Korrektheit des RegEx wird anhand der Werte der Tabellendatei auf Fehler geprüft}
+		\ \\
 	\teststep{Das Datum / die Uhrzeit wurde korrekt ausgefüllt}{Der Nutzer wählt das Thing aus dem Dropdown-Menü, welches alle Things enthält, aus}{Das Datastream-Dropdown-Menü wird mit den zum gewählten Thing gehörenden Data-/MultiData-Streams aktualisiert}
+		\ \\
 	\teststep{Thing wurde ausgewählt}{Der Anwender wählt den Datastream aus dem Datastream-Dropdown-Menü aus}{Das System lädt die zum Datastream/MultiDataStream gehörenden Messeinheiten neben die Textfelder zum eintragen}
+		\ \\
 	\teststep{Messdaten geladen}{Der Nutzer trägt die Spalten mit den Messwerten neben die Messeinheiten ein}{Die Korrektheit der Eintragung wird wieder durch die Software geprüft}
+		\ \\
 	\teststep{Alle Textfelder ausgefüllt}{der User klickt auf den Button "{Upload}"}{Die Daten in den angegebenen Spalten werden eingelesen, konvertiert und auf den FROST-Server übertragen}
-	
+		\ \\
+		
 	\test{Neue Datums-/Zeit-Spalte erstellen}{}
+		\ \\
 	\teststep{Der Nutzer hat die Datei geladen und den Server angegeben, es wird keine CFG-Datei genutzt (Ende von Test 1-fach)}{Der Benutzer drückt den "+"-Button, um eine neue Datums-/Zeit-Spalte anzulegen}{Die Software erstellt zwei neue Textfelder mit "Spalte" und "Format" im Interface, sodass sich die Datums- und Zeitnagabe über mehrere Spalten erstrecken kann}
-	
+		\ \\
+		
 	\test{Datastream hinzufügen}{}
+		\ \\
 	\teststep{Ein Thing wurde ausgewählt, die Datastreams wurden in das Dropdown-Menü geladen}{Der Nutzer klickt auf den "{Add DS}"{-Button}}{Das Webinterface wird aktualisiert und rechts vom letzten Datastream wird ein neues Dropdown-Menü für einen neuen Datastream und neue Textfelder hinzugefügt}
+		\ \\
 	
 	\test{Neues Thing erstellen}{}
+		\ \\
 	\teststep{Die Datei und die FROST-Server-Domain wurden angegeben/hochgeladen}{Der Nutzer klickt auf den "{Create Thing}"{-Button}}{es öffnet sich der "{Create New Thing}"{-Dialog}}
+		\ \\
 	\teststep{Das Dialogfenster ist offen, Name und Beschreibung des Things wurden in die Textfelder eingetragen, die Location wurde aus dem Dropdown-Menü ausgewählt}{Der Nutzer klickt auf "{Create}"}{Das Thing wird auf dem FROST-Server erstellt und in dem Hauptinterface dem Dropdown-Menü hinzugefügt}
+		\ \\
 	
 	\test{Properties hinzufügen}{}
+		\ \\
 	\teststep{Der "{Create New Thing}"{-Dialog} ist offen}{Der Nutzer klickt einmal oder mehrfach auf den "{Add Property}"{-Button}}{es werden ein oder mehrere Textfeld-Paare im Interface erstellt in denen der Nutzer die Eigenschaft (Property) und den Wert (Value) des Things einstellen kann}
+		\ \\
 	
 	\test{Neuen (Multi)DataStream erstellen}{}
+		\ \\
 	\teststep{Die Datei und FROST-Server wurden angegeben und ein Thing ausgewählt}{Der User klickt auf den "{Create DS}"{-Button}}{Es öffnet sich der "{Create New DataStream}"{-Dialog} indem der User einen neuen DataStream oder MultiDataStream formulieren und erstellen kann}
+		\ \\
 	\teststep{Der User sieht das Dialogfenster zum erstellen eines DataStreams}{der User trägt Name und Beschreibung in die Textfelder ein, wählt Observation Type und Sensor aus den Dropdown-Menüs aus, trägt eine oder mehrere Units Of Measurement ein und klickt abschließend auf "{Create}"}{Die Software unterscheidet zwischen DataStream und MultiDataStream und legt den entsprechenden Stream mit den angegeben Daten im FROST-Server an}
 	
 	
-	\section{Zeitplanung}
-	Beispielhafte Terminplanung: \\
-	\begin{itemize}
-		\item 07.05. - 27.05.: Pflichtenheft
-		\item 28.05. - 24.06.: Entwurfsphase
-		\item 25.06. - 22.07.: Implementierung
-		\item 23.07. - 12.08.: Beispiel-Urlaubstermin (2 Wochen)
-		\item 13.08. - 02.09.: Qualitätssicherung
-		\item 03.09. - 09.09.: Terminfenster interne Abnahme
-		\item 10.09. - 17.09.: Terminfenster Abschlusspräsentation
-	\end{itemize}
+%	\section{Zeitplanung}
+%	Beispielhafte Terminplanung: \\
+%	\begin{itemize}
+%		\item 07.05. - 27.05.: Pflichtenheft
+%		\item 28.05. - 24.06.: Entwurfsphase
+%		\item 25.06. - 22.07.: Implementierung
+%		\item 23.07. - 12.08.: Beispiel-Urlaubstermin (2 Wochen)
+%		\item 13.08. - 02.09.: Qualitätssicherung
+%		\item 03.09. - 09.09.: Terminfenster interne Abnahme
+%		\item 10.09. - 17.09.: Terminfenster Abschlusspräsentation
+%	\end{itemize}
 	
 	
 	\section{Glossar}
@@ -513,7 +544,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 \newpage
 \section{Anhang}
 
-\begin{textblock*}{\paperwidth}(0mm,0.2\paperheight)
+\begin{textblock*}{\paperwidth}(0\paperwidth ,0.2\paperheight)
 \begin{figure}[t]
 \centering
 \noindent\includegraphics[scale=0.5, angle=90]{images/gui}
