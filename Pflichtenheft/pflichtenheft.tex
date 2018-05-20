@@ -16,6 +16,27 @@
 
 \usepackage{pflichtenheft}
 
+%für Glossar
+\usepackage[nonumberlist, section]{glossaries}
+
+%Glossareinträge
+\makenoidxglossaries
+
+	\newglossaryentry{IoT}{
+		name={Internet der Dinge},description={Das Internet der Dinge (Internet of Things, IoT) ist ein Sammelbegriff für Technologien der globalen Infrastruktur, die es ermöglicht, physische und virtuelle Gegenstände miteinander zu vernetzen und sie zusammenarbeiten zu lassen}
+	}
+
+	\newglossaryentry{ogc}{
+		name={OGC},description={Das \textbf{O}pen \textbf{G}eospatial \textbf{C}onsortium ist eine gemeinnützige Organisation, die sich zum Ziel gesetzt hat, die Entwicklung von raumbezogener Informationsverarbeitung (insbesondere Geodaten) auf Basis allgemeingültiger Standards festzulegen}
+	}
+
+	\newglossaryentry{stApi}{
+		name={SenosorThings API},description={Allgemeiner einheitlicher Standard um Verbindung zwischen Sensoren, deren Ort und Umgebung und den von ihnen erzeugten Daten herzustellen}
+	}
+
+	\newglossaryentry{frost}{
+		name={FROST-Server},description={Der \textbf{FR}auenhofer \textbf{O}penSource \textbf{S}ensor\textbf{T}hings-Server ist die erste komplette quelloffene Implementierung der \gls{ogc} \gls{stApi}}
+	}
 
 \author{Fabian Nguyen \and Andreas Wieland \and Maximilian Göckel \and Adrian Cierpka \and Frithjof Marquardt}
 \title{Management von Sensordaten}
@@ -33,13 +54,13 @@
 	\section{Produktübersicht}
 
 	%Max
-	Eines der wichtigsten Themen im "{Internet der Dinge}" (IoT) sind Sensordaten. Mit ihnen lassen sich Informationen über die Dinge um uns herum herausfinden. Sensordaten werden schon seit Jahren aufgenommen, gesammelt, und verarbeitet. Ein Ziel des IoT ist es, mit mehr Sensoren mehr Daten aufzunehmen. \\
+	Eines der wichtigsten Themen im \gls{IoT} (IoT) sind Sensordaten. Mit ihnen lassen sich Informationen über die Dinge um uns herum herausfinden. Sensordaten werden schon seit Jahren aufgenommen, gesammelt, und verarbeitet. Ein Ziel des IoT ist es, mit mehr Sensoren mehr Daten aufzunehmen. \\
 
-	Damit diese Massen von Sensordaten in ihrer eigenen Vielfalt effizient verarbeitet werden können, bedarf es einem einheitlichen Standard. Das Open Geospartial Consortium (OGC) stellt als Standardisierungsgremium dazu die SensorThings API \footnote{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html} bereit, welche die durch jahrelange Erfahrung im Arbeiten mit Sensordaten entstandenen Konzepte an die Anforderungen und Möglichkeiten neuer Schnittstellen anpasst. \\
+	Damit diese Massen von Sensordaten in ihrer eigenen Vielfalt effizient verarbeitet werden können, bedarf es einem einheitlichen Standard. Das \gls{ogc} stellt als Standardisierungsgremium dazu die \gls{stApi} \footnote{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html} bereit, welche die durch jahrelange Erfahrung im Arbeiten mit Sensordaten entstandenen Konzepte an die Anforderungen und Möglichkeiten neuer Schnittstellen anpasst. \\
 
-	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server\footnote{https://www.iosb.fraunhofer.de/servlet/is/80113/} des Fraunhofer IOSB ist eine Implementierung des SensorThings-Standards. Der Server will die SensorThings API ressourcenschonend und mit hoher Leistungsfähigkeit bereitstellen. Das Institut hat sich direkt von Anfang dazu entschlossen, die Software erreichbarer zu machen und entwickelte den Server von Anfang als Open Source Software\footnote{https://github.com/FraunhoferIOSB/FROST-Server}. \\
+	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server (\gls{frost})\footnote{https://www.iosb.fraunhofer.de/servlet/is/80113/} des Fraunhofer IOSB ist eine Implementierung des SensorThings-Standards. Der Server will die \gls{stApi} ressourcenschonend und mit hoher Leistungsfähigkeit bereitstellen. Das Institut hat sich direkt von Anfang dazu entschlossen, die Software erreichbarer zu machen und entwickelte den Server von Anfang als Open Source Software\footnote{https://github.com/FraunhoferIOSB/FROST-Server}. \\
 
-	Neben dem FROST-Server stellt das Fraunhofer auch den FROST-Client bereit, eine Bibliothek, die hilft auf die SensorThings API zuzugreifen\footnote{https://github.com/FraunhoferIOSB/FROST-Client}. \\
+	Neben dem \gls{frost} stellt das Fraunhofer auch den FROST-Client bereit, eine Bibliothek, die hilft auf die \gls{stApi} zuzugreifen\footnote{https://github.com/FraunhoferIOSB/FROST-Client}. \\
 	\ \\
 	CHILLImport stellt zu dem FROST-Server eine Webseite bereit, die es Nutzern ermöglicht, Daten aus Tabellen (beispielsweise einer Excel-Tabelle) in ein SensorThings-freundliches Format zu konvertieren und auf eine FROST-Server-Instanz hochzuladen. Die Software soll auf der einen Seite so einfach zu bedienen sein, dass auch technisch unerfahrene Nutzer die Grundfunktionen nutzen können. Auf der anderen Seite soll sie stark konfigurierbar sein, um auch erfahrene Nutzer mit hohen Ansprüchen zufrieden zu stellen.\\
 
@@ -550,6 +571,9 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 		GPLv3 ist die aktuelle Version von GPL. Diese \textbf{G}eneral \textbf{P}ublic \textbf{L}icense (allgemeine Veröffentlichungsgenehmigung) ist die am weitesten verbreitete Softwarelizenz,
 		die einem gewährt, die Software auszuführen, zu studieren, zu ändern und zu verbreiten.
 	\end{itemize}
+
+	%Automatisch generiertes Glossar, obiges Glossar wird später gelöscht
+	\printnoidxglossaries
 	
 \newpage
 \section{Anhang}
