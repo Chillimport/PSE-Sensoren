@@ -84,9 +84,40 @@
 		name={HTTPS},description={\textbf{H}yper\textbf{T}ext \textbf{T}ransfer \textbf{P}rotocol \textbf{S}ecure (HTTPS) ist ein sicheres Hypertext-Übertragungsprotokoll, das \gls{ssl} benutzt}
 	}
 
+	\newglossaryentry{regex}{
+		name={RegEx},description={\textbf{Reg}ular \textbf{Ex}pressions (Regex, regulärer Ausdrucke) dienen der Beschreibung von Zeichenketten mit ähnlichem Format.
+			Sie können als Filterkriterien in der Textsuche verwendet werden, indem der Text mit dem Muster des regulären Ausdrucks verglichen wird}
+	}
+
 	\newglossaryentry{iosb}{
 		name={Fraunhofer IOSB},description={Das Fraunhofer-Institut für Optronik, Systemtechnik und Bildauswertung ist in der angewandten Forschung und Entwicklung im Fach Ingenieurwissenschaften auf dem Gebiet der Informations- und Kommunikationstechnologie aktiv. So entwickelten sie unter anderem den \gls{frost}, der in diesem Projekt die zentrale Rolle spielt}
 	}
+
+	\newglossaryentry{thing}{
+		name={Thing},plural={Things},description={Ein Thing (deutsch: Gegenstand/Ding) ist nach Definition der SensorThings API ein Objekt der physischen oder virtuellen Welt. Es benötigt einen Namen und eine Beschreibung. Es können sich ein oder mehrere Datastreams auf ein Thing beziehen}
+	}
+
+	\newglossaryentry{ds}{
+		name={(Datastream)},plural={Datastreams},description={Ein Datastream ist eine fortlaufende Sammlung von Messungen (Observations) des selben Sensors und der selben ObservedProperty. Multi-Datastreams haben mehrere ObservedProperties}
+	}
+	
+	\newglossaryentry{obsprop}{
+		name={ObservedProperty},plural={ObservedProperties},description={beobachtete Eigenschaft: Spezifiziert das Phänomen einer Beobachtung (Observation)}
+	}
+
+	\newglossaryentry{location}{
+		name={Location},plural={Locations},description={Beschreibt den Ort eines oder mehrerer Things}
+	}
+
+	\newglossaryentry{obs}{
+		name={Observation},plural={Observations},description={Beobachtung: Die Aktion des Messens eines Wertes einer Eigenschaft}
+	}
+
+	\newglossaryentry{sensor}{
+		name={Sensor},description={Misst eine Eigenschaft um eine Approximation des Wertes der Eigenschaft zurückzugeben}
+	}
+
+	
 
 	
 
@@ -124,7 +155,7 @@
 	
 	\item Thing (Gegenstand): ein Objekt aus der realen Welt (physisches Thing) oder ein virtuelles Thing.
 	\item Locations (Orte): Beschreiben den Ort eines oder mehrerer Things.
-	\item HistoricalLocations (historische Orte): Beschreibt die zuletzt bekannte und vergangene Orte des/der Thing/s zusammen mit ihrem Zeitpunkt.
+	\item HistoricalLocations (historische Orte): Beschreibt die zuletzt bekannte und vergangene Orte des/der Things zusammen mit ihrem Zeitpunkt.
 	\item Sensor: Misst eine Eigenschaft um eine Approximation des Wertes der Eigenschaft zurückzugeben
 	\item Observation (Beobachtung): Die Aktion des Messens eines Wertes einer Eigenschaft
 	\item ObservedProperty (beobachtete Eigenschaft): Spezifiziert das Phänomen einer Beobachtung
@@ -264,7 +295,7 @@ Server:
 \section{Seitenentwürfe}
 
 \subsection{Hauptseite}
-Die Software stellt eine Weboberfläche zum Einfügen von Sensor-Datensätzen auf einen FROST-Server zur Verfügung. 
+Die Software stellt eine Weboberfläche zum Einfügen von Sensor-Datensätzen auf einen \gls{frost} zur Verfügung. 
 Dieser Zielserver wird einmalig beim erstmaligen Aufsetzen der Software eingestellt und ist nicht über das Webinterface einstellbar. 
 Ein Entwurf für die Hauptseite der Weboberfläche ist in \cref{fig:guiMain} (siehe Anhang \cref{fig:guiMainA} für vergrößerte Darstellung) zu sehen.
 \\
@@ -279,18 +310,18 @@ Nach dem Einstellen der Quelle wird das Dateiformat überprüft und ein passende
 
 Über das Log werden eventuelle Fehlermeldungen und Übertragungsfortschritte angezeigt. Unter "{Choose Configuration}" lässt sich eine auf dem Server gespeicherte Konfigurationsdatei auswählen. Dort bieten sich folgende Möglichkeiten:
 \begin{itemize}
-\item Unter "{Configuration}" kann eingestellt werden, in welcher Form die Daten in der Quelldatei angespeichert sind, um diese dann in den vom FROST-Server verwendeten OGC-Standard zu konvertieren.
+\item Unter "{Configuration}" kann eingestellt werden, in welcher Form die Daten in der Quelldatei angespeichert sind, um diese dann in den vom \gls{frost} verwendeten \gls{ogc}-Standard zu konvertieren.
 \item Zuerst ist das Trennsymbol für die Spalten in der Quelldatei und die Anzahl der Kopfzeilen (nicht zum Datensatz gehörige Zeilen) anzugeben. 
-\item Dann kann das zu den Daten gehörige Thing von schon auf dem FROST-Server existierenden Things ausgewählt werden. Falls es benötigt wird, lässt sich über den "{Create Thing}"{-Button} ein neues Thing erstellen. (siehe \cref{fig:thing})
-\item Unter "{DateTime}"{ ist} das Datumsfomat einstellbar. Erst wird die Zeitzone eingegeben und danach lassen sich das Format für das Datum bzw. die Zeit als RegEx und die zugehörige Spaltennummer angeben.
-\item Abschließend lassen sich ein oder mehrere (Multi-)Datastreams auswählen. Existiert der (Multi-)Datastream noch nicht, kann er über "{Create DS}"{ erstellt} werden. Mit Hilfe des "{Add DS}"{-Buttons} lassen sich weitere (Multi-)Datastreams hinzufügen. Anschließend lassen sich wieder die zu den Daten gehörigen Spalten in der Quelldatei einstellen.
+\item Dann kann das zu den Daten gehörige \gls{thing} von schon auf dem \gls{frost} existierenden \glspl{thing} ausgewählt werden. Falls es benötigt wird, lässt sich über den "{Create Thing}"{-Button} ein neues \gls{thing} erstellen. (siehe \cref{fig:thing})
+\item Unter "{DateTime}"{ ist} das Datumsfomat einstellbar. Erst wird die Zeitzone eingegeben und danach lassen sich das Format für das Datum bzw. die Zeit als \gls{regex} und die zugehörige Spaltennummer angeben.
+\item Abschließend lassen sich ein oder mehrere (Multi-)\glspl{ds} auswählen. Existiert der (Multi-)\gls{ds} noch nicht, kann er über "{Create DS}"{ erstellt} werden. Mit Hilfe des "{Add DS}"{-Buttons} lassen sich weitere (Multi-)\glspl{ds} hinzufügen. Anschließend lassen sich wieder die zu den Daten gehörigen Spalten in der Quelldatei einstellen.
 \item Außerdem bietet die Weboberfläche über den "{Save}"{-Button} die Möglichkeit, eine bestehende Konfiguration auf dem Server abzuspeichern bzw. über den "{Reset}"{-Button} auf die Standard-Konfiguration zurückzusetzen.
-\item Über den "{Upload}"{-Button} werden die Daten auf den FROST-Server hochgeladen.
+\item Über den "{Upload}"{-Button} werden die Daten auf den \gls{frost} hochgeladen.
 \item Der "{Help}"{-Button} ermöglicht den Zugriff auf eine Kurzanleitung für das Webinterface.
 \end{itemize}
 
 \subsection{Thing erstellen}
-Wie in \cref{fig:thing} dargestellt, müssen Name, Beschreibung und Eigenschaften gewählt werden, um ein Thing zu erstellen. Über den "{Add property}"{-Button} kann eine weitere Eigenschaft als Key-Value-Paar hinzugefügt werden. Abschließend muss eine bestehende Location gewählt werden bzw. eine neue erstellt werden (siehe \cref{fig:loc}).
+Wie in \cref{fig:thing} dargestellt, müssen Name, Beschreibung und Eigenschaften gewählt werden, um ein \gls{thing} zu erstellen. Über den "{Add property}"{-Button} kann eine weitere Eigenschaft als Key-Value-Paar hinzugefügt werden. Abschließend muss eine bestehende \gls{location} gewählt bzw. eine neue erstellt werden (siehe \cref{fig:loc}).
 
 \begin{figure}[htbp]
 \centering
@@ -306,14 +337,14 @@ Wie in \cref{fig:thing} dargestellt, müssen Name, Beschreibung und Eigenschafte
 \includegraphics[scale=0.8]{images/datastream}
 \caption{\label{fig:ds}Dialogfenster zum Erstellen eines Datastreams.}
 \end{figure}
-Es müssen erst Name, Beschreibung, Observation Type und ein Sensor gewählt werden. Soll dafür ein neuer Sensor angelegt werden, existiert der "{Create Sensor}"{-Button} (siehe \cref{fig:sensor}).\\
+Es müssen erst Name, Beschreibung, Observation Type und ein \gls{sensor} gewählt werden. Soll dafür ein neuer \gls{sensor} angelegt werden, existiert der "{Create Sensor}"{-Button} (siehe \cref{fig:sensor}).\\
 
-Im unteren Teil lassen sich die gemessenen Größen für eine Messwertreihe festlegen. Existiert eine solche Größe noch nicht, lässt sie sich über den "{Create Property}"{-Button} anlegen (siehe \cref{fig:oprop}). Mit dem "{Add unit}"{-Button} kann eine weitere Messwertreihe hinzugefügt werden. Hat ein Datastream mehr als eine solche Größe, wird er als MultiDatastream verwaltet.
+Im unteren Teil lassen sich die gemessenen Größen für eine Messwertreihe festlegen. Existiert eine solche Größe noch nicht, lässt sie sich über den "{Create Property}"{-Button} anlegen (siehe \cref{fig:oprop}). Mit dem "{Add unit}"{-Button} kann eine weitere Messwertreihe hinzugefügt werden. Hat ein \gls{ds} mehr als eine solche Größe, wird er als Multi-\gls{ds} verwaltet.
 
 
 
 \subsection{Sensor, ObservedProperty oder Location erstellen}
-Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (siehe \cref{fig:oprop}) oder einer Location (siehe \cref{fig:loc}) verläuft, indem alle Textfelder des jeweiligen Dialogfeldes passend ausgefüllt werden und anschließend der "{Create}"{-Button} gedrückt wird.
+Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop} (siehe \cref{fig:oprop}) oder einer \gls{location} (siehe \cref{fig:loc}) verläuft, indem alle Textfelder des jeweiligen Dialogfeldes passend ausgefüllt werden und anschließend der "{Create}"{-Button} gedrückt wird.
 
 \begin{figure}[htbp]
 \centering
