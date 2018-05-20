@@ -510,15 +510,15 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 		\ \\
 	\teststep{Der Nutzer hat Quelle und Ziel eingegeben und bestätigt}{Der Nutzer füllt die Datums-/Uhrzeits-Spalte aus}{Die Software überprüft die Korrektheit der Spalten (Wurde eine Spalte angegeben, die nicht existiert?)}
 		\ \\
-	\teststep{Die Spalten wurden korrekt angegeben}{Der Benutzer gibt via RegEx das Format des Datums/der Uhrzeit in dem dazugehörigen Textfeld an}{Die Korrektheit des RegEx wird anhand der Werte der Tabellendatei auf Fehler geprüft}
+	\teststep{Die Spalten wurden korrekt angegeben}{Der Benutzer gibt via \gls{regex} das Format des Datums/der Uhrzeit in dem dazugehörigen Textfeld an}{Die Korrektheit des \gls{regex} wird anhand der Werte der Tabellendatei auf Fehler geprüft}
 		\ \\
-	\teststep{Das Datum / die Uhrzeit wurde korrekt ausgefüllt}{Der Nutzer wählt das Thing aus dem Dropdown-Menü, welches alle Things enthält, aus}{Das Datastream-Dropdown-Menü wird mit den zum gewählten Thing gehörenden Data-/MultiData-Streams aktualisiert}
+	\teststep{Das Datum / die Uhrzeit wurde korrekt ausgefüllt}{Der Nutzer wählt das \gls{thing} aus dem Dropdown-Menü, welches alle \glspl{thing} enthält, aus}{Das \gls{ds}-Dropdown-Menü wird mit den zum gewählten \gls{thing} gehörenden (Multi-)\glspl{ds} aktualisiert}
 		\ \\
-	\teststep{Thing wurde ausgewählt}{Der Anwender wählt den Datastream aus dem Datastream-Dropdown-Menü aus}{Das System lädt die zum Datastream/MultiDataStream gehörenden Messeinheiten neben die Textfelder zum eintragen}
+	\teststep{\gls{thing} wurde ausgewählt}{Der Anwender wählt den \gls{ds} aus dem \gls{ds}-Dropdown-Menü aus}{Das System lädt die zum (Multi-)\gls{ds} gehörenden Messeinheiten neben die Textfelder zum eintragen}
 		\ \\
 	\teststep{Messdaten geladen}{Der Nutzer trägt die Spalten mit den Messwerten neben die Messeinheiten ein}{Die Korrektheit der Eintragung wird wieder durch die Software geprüft}
 		\ \\
-	\teststep{Alle Textfelder ausgefüllt}{der User klickt auf den Button "{Upload}"}{Die Daten in den angegebenen Spalten werden eingelesen, konvertiert und auf den FROST-Server übertragen}
+	\teststep{Alle Textfelder ausgefüllt}{der User klickt auf den Button "{Upload}"}{Die Daten in den angegebenen Spalten werden eingelesen, konvertiert und auf den \gls{frost} übertragen}
 		\ \\	
 	
 	\test{Datei als Quelle wählen}{}
@@ -555,54 +555,55 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 		
 	\test{Neues Thing erstellen}{}
 		\ \\
-	\teststep{Die Datei und die FROST-Server-Domain wurden angegeben/hochgeladen}{Der Nutzer klickt auf den "{Create Thing}"{-Button}}{es öffnet sich der "{Create New Thing}"{-Dialog}}
+	\teststep{Die Datei und die \gls{frost}-Domain wurden angegeben/hochgeladen}{Der Nutzer klickt auf den "{Create Thing}"{-Button}}{es öffnet sich der "{Create New Thing}"{-Dialog}}
 		\ \\
-	\teststep{Das Dialogfenster ist offen, Name und Beschreibung des Things wurden in die Textfelder eingetragen, die Location wurde aus dem Dropdown-Menü ausgewählt}{Der Nutzer klickt auf "{Create}"}{Das Thing wird auf dem FROST-Server erstellt und in dem Hauptinterface dem Dropdown-Menü hinzugefügt}
+	\teststep{Das Dialogfenster ist offen, Name und Beschreibung des \glspl{thing} wurden in die Textfelder eingetragen, die \gls{location} wurde aus dem Dropdown-Menü ausgewählt}{Der Nutzer klickt auf "{Create}"}{Das \gls{thing} wird auf dem \gls{frost} erstellt und in dem Hauptinterface dem Dropdown-Menü hinzugefügt}
 		\ \\
 	
 	\test{Properties zu Thing hinzufügen}{}
 		\ \\
-	\teststep{Der "{Create New Thing}"{-Dialog} ist offen}{Der Nutzer klickt einmal oder mehrfach auf den "{Add Property}"{-Button}}{es werden ein oder mehrere Textfeld-Paare im Interface erstellt in denen der Nutzer die Eigenschaft (Property) und den Wert (Value) des Things einstellen kann}
+	\teststep{Der "{Create New Thing}"{-Dialog} ist offen}{Der Nutzer klickt einmal oder mehrfach auf den "{Add Property}"{-Button}}{es werden ein oder mehrere Textfeld-Paare im Interface erstellt in denen der Nutzer die Eigenschaft (Property) und den Wert (Value) des \glspl{thing} einstellen kann}
 		\ \\
 
 
 	\test{Neuen (Multi-)Datastream erstellen}{}
 		\ \\
-	\teststep{Die Datei und FROST-Server wurden angegeben und ein Thing ausgewählt}{Der User klickt auf den "{Create DS}"{-Button}}{Es öffnet sich der "{Create New DataStream}"{-Dialog} indem der User einen neuen DataStream oder MultiDataStream formulieren und erstellen kann}
+	\teststep{Die Datei und \gls{frost} wurden angegeben und ein \gls{thing} ausgewählt}{Der User klickt auf den "{Create DS}"{-Button}}{Es öffnet sich der "{Create New DataStream}"{-Dialog} indem der User einen neuen \gls{ds} oder Multi-\gls{ds} formulieren und erstellen kann}
 		\ \\
-	\teststep{Der User sieht das Dialogfenster zum erstellen eines DataStreams}{der User trägt Name und Beschreibung in die Textfelder ein, wählt Observation Type und Sensor aus den Dropdown-Menüs aus, trägt eine oder mehrere Units Of Measurement ein und klickt abschließend auf "{Create}"}{Die Software unterscheidet zwischen DataStream und MultiDataStream und legt den entsprechenden Stream mit den angegeben Daten im FROST-Server an}
+	\teststep{Der User sieht das Dialogfenster zum erstellen eines \glspl{ds}}{der User trägt Name und Beschreibung in die Textfelder ein, wählt Observation Type und \gls{sensor} aus den Dropdown-Menüs aus, trägt eine oder mehrere Units Of Measurement ein und klickt abschließend auf "{Create}"}{Die Software unterscheidet zwischen \gls{ds} und Multi-\gls{ds} und legt den entsprechenden Stream mit den angegeben Daten im \gls{frost} an}
 		\ \\
 
 	
 	\test{Sensor erstellen}{}
 	\ \\
-	\teststep{Der Nutzer erstellt gerade einen Datastream (sieht den Dialog wie in \cref{fig:ds}) und der zugehörige Sensor existiert noch nicht.}{Der Nutzer drückt den "{Create Sensor}"{-Knopf}.}{Es öffnet sich das Dialogfenster zum Erstellen eines Sensors (siehe \cref{fig:sensor}).}
+	\teststep{Der Nutzer erstellt gerade einen \gls{ds} (sieht den Dialog wie in \cref{fig:ds}) und der zugehörige \gls{sensor} existiert noch nicht.}{Der Nutzer drückt den "{Create Sensor}"{-Knopf}.}{Es öffnet sich das Dialogfenster zum Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}).}
 	\ \\
-	\teststep{}{Der Nutzer füllt alle Textfelder aus und drückt den "{Create}"{-Knopf}.}{Die Daten werden überprüft und ein neuer Sensor wird angelegt. Das Dialogfenster wird geschlossen.}
+	\teststep{}{Der Nutzer füllt alle Textfelder aus und drückt den "{Create}"{-Knopf}.}{Die Daten werden überprüft und ein neuer \gls{sensor} wird angelegt. Das Dialogfenster wird geschlossen.}
 
 	\ \\
 	\test{ObervedProperty erstellen}{}
 	\ \\
-	\teststep{Der Nutzer erstellt gerade einen Datastream (sieht den Dialog wie in \cref{fig:ds}) und eine ObservedProperty für einen Datensatz existiert noch nicht.}{Der Nutzer drückt den "{Create Property}"{-Knopf}.}{Es öffnet sich das Dialogfenster zum Erstellen einer ObservedProperty (siehe \cref{fig:obsProp}).}
+	\teststep{Der Nutzer erstellt gerade einen \gls{ds} (sieht den Dialog wie in \cref{fig:ds}) und eine \gls{obsprop} für einen Datensatz existiert noch nicht.}{Der Nutzer drückt den "{Create Property}"{-Knopf}.}{Es öffnet sich das Dialogfenster zum Erstellen einer \gls{obsprop} (siehe \cref{fig:obsProp}).}
 	\ \\
-	\teststep{}{Der Nutzer füllt alle Textfelder aus und drückt den "{Create}"{-Knopf}.}{Die Daten werden überprüft und ein neue ObservedProperty wird angelegt. Das Dialogfenster wird geschlossen.}
+	\teststep{}{Der Nutzer füllt alle Textfelder aus und drückt den "{Create}"{-Knopf}.}{Die Daten werden überprüft und ein neue \gls{obsprop} wird angelegt. Das Dialogfenster wird geschlossen.}
 	\ \\
 	
 	\test{Einen Datensatz zu einem Datastream hinzufügen}{}
 	\ \\
-	\teststep{Der Nutzer erstellt gerade einen Datastream (sieht den Dialog wie in \cref{fig:ds}).}{Der Nutzer drückt den "{Add unit}"{-Knopf}.}{Es wird eine neue leere Zeile in der Tabelle für die zum Datastream gehörigen Units of Measurement angelegt.}														  		
+	\teststep{Der Nutzer erstellt gerade einen \gls{ds} (sieht den Dialog wie in \cref{fig:ds}).}{Der Nutzer drückt den "{Add unit}"{-Knopf}.}{Es wird eine neue leere Zeile in der Tabelle für die zum \gls{ds} gehörigen Units of Measurement angelegt.}														  		
 	\test{Neue Datums-/Zeit-Spalte erstellen}{}
 		\ \\
+	%TODO veraltet?
 	\teststep{Der Nutzer hat die Datei geladen und den Server angegeben, es wird keine CFG-Datei genutzt (Ende von Test 1-fach)}{Der Benutzer drückt den "+"-Button, um eine neue Datums-/Zeit-Spalte anzulegen}{Die Software erstellt zwei neue Textfelder mit "Spalte" und "Format" im Interface, sodass sich die Datums- und Zeitnagabe über mehrere Spalten erstrecken kann}
 		\ \\
 		
 	
 	\test{Datastream hinzufügen}{}
 		\ \\
-	\teststep{Ein Thing wurde ausgewählt, die Datastreams wurden in das Dropdown-Menü geladen}{Der Nutzer klickt auf den "{Add DS}"{-Button}}{Das Webinterface wird aktualisiert und rechts vom letzten Datastream wird ein neues Dropdown-Menü für einen neuen Datastream und neue Textfelder hinzugefügt}
+	\teststep{Ein \gls{thing} wurde ausgewählt, die \glspl{ds} wurden in das Dropdown-Menü geladen}{Der Nutzer klickt auf den "{Add DS}"{-Button}}{Das Webinterface wird aktualisiert und rechts vom letzten \gls{ds} wird ein neues Dropdown-Menü für einen neuen Datastream und neue Textfelder hinzugefügt}
 		\ \\
 		
-		
+	%TODO entspricht nicht neuer Form, cfg wird nicht gedownloaded	
 	\test{Konfiguration abspeichern}{}
 	\ \\
 	\teststep{Der Nutzer hat eine Konfiguration erstellt.}{Der Nutzer drückt den "{Save}"{-Knopf}.}{Es wird eine cfg-Datei der Konfiguration erstellt und der Download der Datei wird angestoßen.}
