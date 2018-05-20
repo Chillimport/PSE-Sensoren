@@ -13,6 +13,8 @@
 \usepackage{pflichtenheft}
 \begin{document}
 	
+\tableofcontents
+	
 	%TODO
 	\section{Produktübersicht}
 
@@ -50,9 +52,9 @@
 
 	%TODO UML Diagramm einfügen
 
-
-\section{Musskriterien}
-\begin{enumerate}
+\section{Zielbestimmung}
+	\subsection{Musskriterien}
+	\begin{enumerate}
 	\item Import von Daten \\
 	Die Daten sollen aus Tabellen im CSV-/Excel-Dateiformat importiert werden
 	\item Konvertierung des Formats der Sensordaten \\
@@ -64,10 +66,10 @@
 	\item Datentyptransformationen \\
 	Alle Werte sind in der Quelldatei als String vorhanden und müssen, bevor sie auf den FROST-Server geladen werden, in den passenden Datentyp (bspw. Integer) umgewandelt werden.
 	Sonderwerte (Magic Numbers) sollen nicht auf den FROST-Server geladen, sondern separat behandelt werden.
-\end{enumerate}
+	\end{enumerate}
 
-\section{Wunschkriterien}
-\begin{enumerate}
+	\subsection{Wunschkriterien}
+	\begin{enumerate}
 	\item Standard-Konfiguration \\
 	Dem Benutzer wird eine vorgefertigte Konfiguration bestehend aus Spaltenformat, Datenformat und Datums- und Zeitformat bereitgestellt.
 	\item Überprüfung auf Duplikate \\
@@ -89,13 +91,10 @@
 	Diese Konfiguration ersetzt die Standard-Konfiguration.
 	\item automatische Sprachauswahl \\
 	Die Anwendung übernimmt automatisch die in Browser eingestellte Sprache.
-	
-	
-	
-\end{enumerate}
+	\end{enumerate}
 
-\section{Abgrenzungskriterien}
-\begin{enumerate}
+	\subsection{Abgrenzungskriterien}
+	\begin{enumerate}
 	\item Keine Verwaltung des FROST-Servers \\
 	Die Software soll keine schon auf dem FROST-Server liegenden Daten verwalten, ändern oder löschen.
 	\item Keine Benutzer-Verwaltung \\
@@ -103,7 +102,7 @@
 	Jeder Benutzer kann somit die gespeicherten Konfigurationen aller Benutzer sehen und verwenden.
 	\item Keine mobilen Endgeräte \\
 	Die Software muss nicht auf mobilen Endgräten laufen können.
-\end{enumerate}
+	\end{enumerate}
 
 \section{Anwendungsbereiche}
 Die Software kommt überall dort zum Einsatz wo Sensordaten aus Tabellen weiterverarbeitet müssen. \\
