@@ -94,27 +94,27 @@
 	}
 
 	\newglossaryentry{thing}{
-		name={Thing},plural={Things},description={Ein Thing (deutsch: Gegenstand/Ding) ist nach Definition der SensorThings API ein Objekt der physischen oder virtuellen Welt. Es benötigt einen Namen und eine Beschreibung. Es können sich ein oder mehrere Datastreams auf ein Thing beziehen}
+		name={Thing},plural={Things},description={Ein Thing (deutsch: Gegenstand/Ding) ist nach Definition der \gls{stApi} ein Objekt der physischen oder virtuellen Welt. Es benötigt einen Namen und eine Beschreibung. Es können sich ein oder mehrere \glspl{ds} auf ein Thing beziehen}
 	}
 
 	\newglossaryentry{ds}{
-		name={(Datastream)},plural={Datastreams},description={Ein Datastream ist eine fortlaufende Sammlung von Messungen (Observations) des selben Sensors und der selben ObservedProperty. Multi-Datastreams haben mehrere ObservedProperties}
+		name={Datastream},plural={Datastreams},description={Ein Datastream ist eine fortlaufende Sammlung von Messungen (\glspl{obs}) des selben \gls{sensor}s und der selben \gls{obsprop}. Multi-Datastreams haben mehrere \glspl{obsprop}}
 	}
 	
 	\newglossaryentry{obsprop}{
-		name={ObservedProperty},plural={ObservedProperties},description={beobachtete Eigenschaft: Spezifiziert das Phänomen einer Beobachtung (Observation)}
+		name={ObservedProperty},plural={ObservedProperties},description={Eine ObservedProperty (deutsch: beobachtete Eigenschaft) spezifiziert das Phänomen einer Beobachtung (\gls{obs})}
 	}
 
 	\newglossaryentry{location}{
-		name={Location},plural={Locations},description={Beschreibt den Ort eines oder mehrerer Things}
+		name={Location},plural={Locations},description={Beschreibt den Ort eines oder mehrerer \glspl{thing}}
 	}
 
 	\newglossaryentry{obs}{
-		name={Observation},plural={Observations},description={Beobachtung: Die Aktion des Messens eines Wertes einer Eigenschaft}
+		name={Observation},plural={Observations},description={Eine Observation (deutsch: Beobachtung) ist die Aktion des Messens eines Wertes einer Eigenschaft}
 	}
 
 	\newglossaryentry{sensor}{
-		name={Sensor},description={Misst eine Eigenschaft um eine Approximation des Wertes der Eigenschaft zurückzugeben}
+		name={Sensor},description={Ein Sensor misst eine Eigenschaft um eine Approximation des Wertes der Eigenschaft zurückzugeben}
 	}
 
 	
