@@ -67,6 +67,24 @@
 		name={JavaScript},description={JavaScript ist eine Programmiersprache, die hauptsächlich auf Webbrowsern Anwendung findet}
 	}
 
+	\newglossaryentry{logdat}{
+		name={Log-Datei},description={Eine Log-Datei, auch Protokoll-Datei, enthält das automatisch geführte Protokoll aller oder bestimmter Aktionen von Prozessen auf einem Computersystem}
+	}
+
+	\newglossaryentry{docker}{
+		name={Docker},description={Docker ist eine Software zur Isolierung von Anwendungen. Docker vereinfacht die Bereitstellung von Anwendungen, weil sich sog. Container, die alle nötigen Pakete enthalten, leicht als Dateien transportieren und installieren lassen}
+	}
+
+	\newglossaryentry{ssl}{
+		name={SSL},description={SSL steht für \textbf{S}ecure \textbf{S}ockets \textbf{L}ayer und ist die Standardtechnologie für die Absicherung von Internetverbindungen und den Schutz sensibler Daten, die zwischen zwei Systemen übertragen werden}
+	}
+
+	\newglossaryentry{https}{
+		name={HTTPS},description={\textbf{H}yper\textbf{T}ext \textbf{T}ransfer \textbf{P}rotocol \textbf{S}ecure (HTTPS) ist ein sicheres Hypertext-Übertragungsprotokoll, das \gls{ssl} benutzt}
+	}
+
+	
+
 \author{Fabian Nguyen \and Andreas Wieland \and Maximilian Göckel \and Adrian Cierpka \and Frithjof Marquardt}
 \title{Management von Sensordaten}
 
@@ -345,33 +363,33 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 			\item Nicht in Webinterface möglich
 		\end{itemize}
 		
-		\item Hochladen der Daten auf den Frost-Server
+		\item Hochladen der Daten auf den \gls{frost}
 		
-		\item Formatieren der Daten in OGC SensorThings API Standard
+		\item Formatieren der Daten in \gls{ogc} \gls{stApi} Standard
 		
 		\item Fehlermeldungen im Log
 		\begin{itemize}
 			\item Fehler in Datenzeilen
-			\item Verbindungsfehler zum Frostserver
+			\item Verbindungsfehler zum \gls{frost}
 			\item Fehlerhafte Quelldatei
 		\end{itemize}
 		
-		\item Anlegen einer Log-Datei mit
+		\item Anlegen einer \gls{logdat} mit
 		\begin{itemize}
 			\item Historie von Uploads
 			\item Fehlermeldungen
 		\end{itemize}
 		
-		\item Kurzanleitung auf der Weboberflächen.
+		\item Kurzanleitung auf der Weboberfläche.
 	\end{enumerate}
 	
 	\subsection{Gewünschte Funktionale Anforderungen}
 	\begin{enumerate}
 		\item Duplikaterkennung um Datenredundanz zu vermeiden
 		
-		\item Rückgabe von Fehlerhaften Zeilen in einer neuen CSV-Datei
+		\item Rückgabe von Fehlerhaften Zeilen in einer neuen \gls{csvExcel}
 		
-		\item Auswahlmöglichkeit komplexer Operationen auf Daten:
+		\item Auswahlmöglichkeit komplexer \gls{aggr} auf Daten:
 		\begin{itemize}
 			\item Summe
 			\item Minimum
@@ -393,9 +411,9 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	\end{itemize}
 	\item Systemdaten:
 	\begin{itemize}
-		\item Log-Datei
-		\item Adresse des FROST-Servers
-		\item Adresse der entfernten CSV/XLSX - Datei (optional) 
+		\item \gls{logdat}
+		\item Adresse des \gls{frost}
+		\item Adresse der entfernten \gls{csvExcel} (optional) 
 	\end{itemize}
 \end{itemize}
 	
@@ -403,9 +421,9 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	\begin{itemize}
 		\item Die Software dokumentiert Fehler jeglicher Art und das starten b.z.w abschließen von Uploads.
 		\item Die Eingaben werden direkt verarbeitet. Dem Nutzer wird sofort Feedback über eine Fortschrittsleiste gegeben, sollte die Anfrage länger als eine Sekunde dauern.
-		\item Die Daten werden korrekt an den FROST-Server übermittelt, dazu gehört auch Robustheit der Anwendung gegenüber falschen Angaben.
+		\item Die Daten werden korrekt an den \gls{frost} übermittelt, dazu gehört auch Robustheit der Anwendung gegenüber falschen Angaben.
 		\item Der Nutzer erhält bei falschen Angaben oder Fehlern eine Rückmeldung.
-		\item Zur einfachen Installation steht das Programm als Docker-Container zur Verfügung.
+		\item Zur einfachen Installation steht das Programm als \gls{docker}-Container zur Verfügung.
 	\end{itemize}
 	
 	
@@ -421,7 +439,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	Frontend-Anforderungen (Weboberfläche) :
 	\begin{itemize}
 	\item Die Benutzbarkeit hat höchste Priorität, auch Nutzer ohne oder wenig technischem Vorwissen sollen in der Lage sein die Software zu bedienen.
-	\item Die Daten sollten HTTPS-/SSL-Verschlüsselt werden um Abfangen der Daten zu verhindern.
+	\item Die Daten sollten \gls{https}-/\gls{ssl}-Verschlüsselt werden um Abfangen der Daten zu verhindern.
 	\end{itemize}
 	
 	\section{Anwendungsszenarien}
