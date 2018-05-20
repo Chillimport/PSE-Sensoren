@@ -47,11 +47,24 @@
 	}
 
 	\newglossaryentry{magicnum}{
-		name={Magic Number},plural={Magic Numbers},description={Deutsch: Magische Zahl. Ein im Quellcode eines Programms auftauchender Zahlenwert, dessen Bedeutung sich nicht unmittelbar erkennen lässt.}
+		name={Magic Number},plural={Magic Numbers},description={Deutsch: Magische Zahl. Ein im Quellcode eines Programms auftauchender Zahlenwert, dessen Bedeutung sich nicht unmittelbar erkennen lässt}
 	}
 
 	\newglossaryentry{aggr}{
-		name={Aggregation},plural={Aggregationen},description={Eine Aggregation beschreibt eine Zusammenfassung mehrerer Daten. Zum Beispiel die Summe, der Durchschnitt oder Minimum/Maximum.}
+		name={Aggregation},plural={Aggregationen},description={Eine Aggregation beschreibt eine Zusammenfassung mehrerer Daten. Zum Beispiel die Summe, der Durchschnitt oder Minimum/Maximum}
+	}
+
+	\newglossaryentry{jre}{
+		name={JRE},description={Mit der Java-Laufzeitumgebung (\textbf{J}ava \textbf{R}untime \textbf{E}nvironment) werden Programme (Java-Anwendungen) weitgehend unabhängig vom darunter liegenden Betriebssystem ausgeführt}
+	}
+
+	\newglossaryentry{headless}{
+		name={headless},description={Als headless (kopflos) bezeichnet man Computer, meist Serversysteme, die über keinen Bildschirm oder sonstige grafische Ausgabe verfügen.
+			Diese Systeme haben als Steuerungsmöglichkeit in vielen Fällen eine Netzwerkverbindung}
+	}
+
+	\newglossaryentry{js}{
+		name={JavaScript},description={JavaScript ist eine Programmiersprache, die hauptsächlich auf Webbrowsern Anwendung findet}
 	}
 
 \author{Fabian Nguyen \and Andreas Wieland \and Maximilian Göckel \and Adrian Cierpka \and Frithjof Marquardt}
@@ -199,30 +212,30 @@ Hierzu zählt:
 Server:
 \begin{itemize}
 	\item Beliebiges Betriebssystem, höchstwahrscheinlich jedoch Unix/Linux
-	\item Installiertes Java JRE
+	\item Installiertes Java \gls{jre}
 	\item Kleiner Webserver
 	\begin{itemize}
-		\item head-less
+		\item \gls{headless}
 		\item Unicore CPU
 		\item 1-2GB RAM
 		\item Speichermedium mit genug Speicherplatz für Software und temporäre Daten (8GB stark ausreichend)
 	\end{itemize}
-	\item Netzwerkanschluss an den FROST-Server und an den Nutzer-Computer
+	\item Netzwerkanschluss an den \gls{frost} und an den Nutzer-Computer
 \end{itemize}
 
 \noindent Client:
 
 \begin{itemize}
 	\item Moderner Webbrowser
-	\item JavaScript
+	\item \gls{js}
 	\item Netzwerkanschluss an den CHILLImport-Server
 \end{itemize}
 	
 	\begin{itemize}
-		\item head-less Server
+		\item \gls{headless} Server
 		\item Linux/Windows Server
-		\item Java JRE
-		\item SensorThings API
+		\item Java \gls{jre}
+		\item \gls{stApi}
 	\end{itemize}
 
 \section{Seitenentwürfe}
