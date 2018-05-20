@@ -32,20 +32,20 @@
 	\section{Produktübersicht}
 
 	%Max
-	Eines der wichtigsten Themen im "{Internet der Dinge}" (IoT) sind Sensordaten. Mit ihnen lassen sich Informationen über die Dinge um uns herum herausfinden. Sensordaten werden schon seit Jahren aufgenommen, gesammelt, und verarbeitet. ein Ziel des IoT ist es, mit mehr Sensoren mehr Daten aufzunehmen. \\
+	Eines der wichtigsten Themen im "{Internet der Dinge}" (IoT) sind Sensordaten. Mit ihnen lassen sich Informationen über die Dinge um uns herum herausfinden. Sensordaten werden schon seit Jahren aufgenommen, gesammelt, und verarbeitet. Ein Ziel des IoT ist es, mit mehr Sensoren mehr Daten aufzunehmen. \\
 
-	Damit diese Massen von Sensordaten in ihrer eigenen Vielfalt effizient verarbeitet werden können bedarf es einem einheitlichen Standard. Das Open Geospartial Consortium (OGC) stellt als Standardisierungsgremium dazu die SensorThings API \footnote{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html} bereit, welche die durch jahrelange Erfahrung im Arbeiten mit Sensordaten entstandenen Konzepte an die Anforderungen und Möglichkeiten neuer Schnittstellen anpasst. \\
+	Damit diese Massen von Sensordaten in ihrer eigenen Vielfalt effizient verarbeitet werden können, bedarf es einem einheitlichen Standard. Das Open Geospartial Consortium (OGC) stellt als Standardisierungsgremium dazu die SensorThings API \footnote{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html} bereit, welche die durch jahrelange Erfahrung im Arbeiten mit Sensordaten entstandenen Konzepte an die Anforderungen und Möglichkeiten neuer Schnittstellen anpasst. \\
 
-	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server\footnote{https://www.iosb.fraunhofer.de/servlet/is/80113/} des Fraunhofer IOSB ist eine Implementierung des SensorThings-Standards. Der Server will die SensorThings API ressourcenschonend und mit hoher Leistungsfähigkeit bereittellen. Das Institut hat sich direkt von Anfang dazu entschlossen die Software erreichbarer zu machen und entwickelte den Server von Anfang als Open Source Software\footnote{https://github.com/FraunhoferIOSB/FROST-Server}. \\
+	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server\footnote{https://www.iosb.fraunhofer.de/servlet/is/80113/} des Fraunhofer IOSB ist eine Implementierung des SensorThings-Standards. Der Server will die SensorThings API ressourcenschonend und mit hoher Leistungsfähigkeit bereitstellen. Das Institut hat sich direkt von Anfang dazu entschlossen, die Software erreichbarer zu machen und entwickelte den Server von Anfang als Open Source Software\footnote{https://github.com/FraunhoferIOSB/FROST-Server}. \\
 
 	Neben dem FROST-Server stellt das Fraunhofer auch eine Bibliothek bereit, die hilft auf die SensorThings API zuzugreifen. \\
 	\ \\
-	CHILLImport stellt zu dem FROST-Server eine Webseite bereit, die es Nutzern ermöglicht Daten aus Tabellen (beispielsweise einer Excel-Tabelle) in ein SensorThings-freundliches Format zu konvertieren und auf eine FROST-Server-Instanz hochzuladen. Die Software soll auf der einen Seite so einfach zu bedienen sein dass auch technisch unerfahrene Nutzer die Grundfunktionen nutzen können, auf der anderen Seite soll sie stark konfigurierbar sein um auch erfahrene Nutzer mit hohen Ansprüchen zufrieden zu stellen.\\
+	CHILLImport stellt zu dem FROST-Server eine Webseite bereit, die es Nutzern ermöglicht, Daten aus Tabellen (beispielsweise einer Excel-Tabelle) in ein SensorThings-freundliches Format zu konvertieren und auf eine FROST-Server-Instanz hochzuladen. Die Software soll auf der einen Seite so einfach zu bedienen sein, dass auch technisch unerfahrene Nutzer die Grundfunktionen nutzen können. Auf der anderen Seite soll sie stark konfigurierbar sein, um auch erfahrene Nutzer mit hohen Ansprüchen zufrieden zu stellen.\\
 
-
+\newpage
 	\section{SensorThings API}
 
-	die SensorThings API besteht aus folgenden Elementen die miteinander im Zusammenhang stehen. Jedes Element hat bestimmte Eigenschaften. Diese und die Beziehungen sind im unten abgebildeten UML-Diagramm dargestellt. \\
+	Die SensorThings API besteht aus folgenden Elementen, die miteinander im Zusammenhang stehen. Jedes Element hat bestimmte Eigenschaften. Diese und die Beziehungen sind im unten abgebildeten UML-Diagramm dargestellt. \\
 	\begin{enumerate}
 	
 	\item Thing (Gegenstand): ein Objekt aus der realen Welt (physisches Thing) oder ein virtuelles Thing.
@@ -58,13 +58,13 @@
 	\item Datastream (Datenfluss): Eine Menge von Beobachtungen über die selbe ObservedProperty vom selben Sensor   
 	\end{enumerate}
 	Die genaue Beschreibung aller Elemente und Beziehungen sind zu finden unter: \\
-	\href{http://developers.sensorup.com/docs/}{SensorUp Developer Page}\\
-	\href{https://en.wikipedia.org/wiki/SensorThings_API}{Wikipedia-Artike zur API}\\
-	\href{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html}{OGC-Dokumentation von SensorThings}\\
+	\href{http://developers.sensorup.com/docs/}{SensorUp Developer Page}\footnote{http://developers.sensorup.com/docs/}\\
+	\href{https://en.wikipedia.org/wiki/SensorThings_API}{Wikipedia-Artikel zur API}\footnote{https://en.wikipedia.org/wiki/SensorThings\_API}\\
+	\href{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html}{OGC-Dokumentation von SensorThings}\footnote{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html}\\
 
 
 	%TODO UML Diagramm einfügen
-
+\newpage
 \section{Zielbestimmung}
 	\subsection{Musskriterien}
 	\begin{enumerate}
@@ -117,6 +117,7 @@
 	Die Software muss nicht auf mobilen Endgräten laufen können.
 	\end{enumerate}
 
+\newpage
 \section{Anwendungsbereiche}
 Die Software kommt überall dort zum Einsatz wo Sensordaten aus Tabellen weiterverarbeitet müssen. \\
 \begin{itemize}
@@ -143,6 +144,7 @@ Hierzu zählt:
 	Zum einen gibt es die Personen, welche einfach Sensordaten auf einen Frostserver laden möchten, ohne die Konfigurationen zu ändern. Diese Gruppe verfügt über wenig bis keine Fachkenntnisse. \\Der Fokus liegt bei dieser Gruppe auf der einfachen Bedienung der Software.\\
 	Zum Anderen gibt es die Nutzergruppe, die ihre eigenen Konfigurationen erstellt. Diese Nutzer haben ein tieferes Verständnis im Umgang mit der Software. Für diese Nutzergruppe ist es wichtig, dass sie komplexe Einstellungsmöglichkeiten in den Konfigurationen nutzen können.
 	
+	\newpage
 \section{Betriebsbedingungen}
 \begin{itemize}
 	\item Die Software soll dauerhaft laufen. Geplante Betriebspausen oder Wartungszeiten sind nicht vorgesehen
@@ -190,7 +192,7 @@ Ein Entwurf für die Hauptseite der Weboberfläche ist in \cref{fig:guiMain} (si
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.4]{images/gui}
+\includegraphics[scale=0.32]{images/gui}
 \caption{\label{fig:guiMain}Hauptseite der Weboberfläche}
 \end{figure}
 Beim Aufrufen der Weboberfläche ist zu Beginn nur der Bereich zum Auswählen der Quelldatei sichtbar. 
@@ -213,21 +215,23 @@ Wie in \cref{fig:thing} dargestellt, müssen Name, Beschreibung und Eigenschafte
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=1]{images/thing}
+\includegraphics[scale=0.8]{images/thing}
 \caption{\label{fig:thing}Dialogfenster zum Erstellen eines Things.}
 \end{figure}
 
 
 \subsection{Datastream erstellen}
-\cref{fig:ds} zeigt das Dialogfenster zum Erstellen eines (Multi-)Datastreams. Es müssen erst Name, Beschreibung, Observation Type und ein Sensor gewählt werden. Soll dafür ein neuer Sensor angelegt werden, existiert der "{Create Sensor}"{-Button} (siehe \cref{fig:sensor}).\\
+\cref{fig:ds} zeigt das Dialogfenster zum Erstellen eines (Multi-)Datastreams. 
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.8]{images/datastream}
+\caption{\label{fig:ds}Dialogfenster zum Erstellen eines Datastreams.}
+\end{figure}
+Es müssen erst Name, Beschreibung, Observation Type und ein Sensor gewählt werden. Soll dafür ein neuer Sensor angelegt werden, existiert der "{Create Sensor}"{-Button} (siehe \cref{fig:sensor}).\\
 
 Im unteren Teil lassen sich die gemessenen Größen für eine Messwertreihe festlegen. Existiert eine solche Größe noch nicht, lässt sie sich über den "{Create Property}"{-Button} anlegen (siehe \cref{fig:oprop}). Mit dem "{Add unit}"{-Button} kann eine weitere Messwertreihe hinzugefügt werden. Hat ein Datastream mehr als eine solche Größe, wird er als MultiDatastream verwaltet.
 
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=1]{images/datastream}
-\caption{\label{fig:ds}Dialogfenster zum Erstellen eines Datastreams.}
-\end{figure}
+
 
 \subsection{Sensor, ObservedProperty oder Location erstellen}
 Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (siehe \cref{fig:oprop}) oder einer Location (siehe \cref{fig:loc}) verläuft, indem alle Textfelder des jeweiligen Dialogfeldes passend ausgefüllt werden und anschließend der "{Create}"{-Button} gedrückt wird.
@@ -492,7 +496,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 %		\item 10.09. - 17.09.: Terminfenster Abschlusspräsentation
 %	\end{itemize}
 	
-	
+	\newpage
 	\section{Glossar}
 	\begin{itemize}
 		\item FROST \\
@@ -543,7 +547,7 @@ Das Erstellen eines Sensors (siehe \cref{fig:sensor}), einer ObservedProperty (s
 	
 \newpage
 \section{Anhang}
-
+\pagestyle{empty}
 \begin{textblock*}{\paperwidth}(0\paperwidth ,0.2\paperheight)
 \begin{figure}[t]
 \centering
