@@ -15,20 +15,44 @@
 	
 	%TODO
 	\section{Produktübersicht}
+
+	%Max
+	Eines der wichtigsten Themen im "{Internet der Dinge}" (IoT) sind Sensordaten. Mit ihnen lassen sich Informationen über die Dinge um uns herum herausfinden. Sensordaten werden schon seit Jahren aufgenommen, gesammelt, und verarbeitet. ein Ziel des IoT ist es, mit mehr Sensoren mehr Daten aufzunehmen. \\
+
+	Damit diese Massen von Sensordaten in ihrer eigenen Vielfalt effizient verarbeitet werden können bedarf es einem einheitlichen Standard. Das Open Geospartial Consortium (OGC) stellt als Standardisierungsgremium dazu die SensorThings API \footnote{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html} bereit, welche die durch jahrelange Erfahrung im Arbeiten mit Sensordaten entstandenen Konzepte an die Anforderungen und Möglichkeiten neuer Schnittstellen anpasst. \\
+
+	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server\footnote{https://www.iosb.fraunhofer.de/servlet/is/80113/} des Fraunhofer IOSB ist eine Implementierung des SensorThings-Standards. Der Server will die SensorThings API ressourcenschonend und mit hoher Leistungsfähigkeit bereittellen. Das Institut hat sich direkt von Anfang dazu entschlossen die Software erreichbarer zu machen und entwickelte den Server von Anfang als Open Source Software\footnote{https://github.com/FraunhoferIOSB/FROST-Server}. \\
+
+	Neben dem FROST-Server stellt das Fraunhofer auch eine Bibliothek bereit, die hilft auf die SensorThings API zuzugreifen. \\
+	\ \\
+	CHILLImport stellt zu dem FROST-Server eine Webseite bereit, die es Nutzern ermöglicht Daten aus Tabellen (beispielsweise einer Excel-Tabelle) in ein SensorThings-freundliches Format zu konvertieren und auf eine FROST-Server-Instanz hochzuladen. Die Software soll auf der einen Seite so einfach zu bedienen sein dass auch technisch unerfahrene Nutzer die Grundfunktionen nutzen können, auf der anderen Seite soll sie stark konfigurierbar sein um auch erfahrene Nutzer mit hohen Ansprüchen zufrieden zu stellen.\\
+
+
+	\section{SensorThings API}
+
+	die SensorThings API besteht aus folgenden Elementen die miteinander im Zusammenhang stehen. Jedes Element hat bestimmte Eigenschaften. Diese und die Beziehungen sind im unten abgebildeten UML-Diagramm dargestellt. \\
+	\begin{enumerate}
 	
-	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server des Fraunhofer IOSB ist eine Open-Source-Implementierung des SensorThings-Standards des OGC und unter https://github.com/FraunhoferIOSB/FROST-Server downloadbar.
-	\\ \\ Der FROST-Server dient der Speicherung und Verwaltung von Sensordaten.\\
-	Unsere Software stellt zu diesem Server eine einfache und dennoch stark konfigurierbare Weboberfläche bereit, die es ermöglicht Sensordaten aus einer Tabelle einzulesen, zu konvertieren und auf einen FROST-Server zu übertragen. 
-	\\ \\Die Software läuft in einer Java JRE und das zugehörige Webinterface soll über einen herkömmlichen PC, einen Laptop oder ein Tablet erreichbar sein.\\
-	Sie ist ebenfalls Open-Source und soll überall dort eingesetzt werden, wo Daten aus Tabellen importiert, konvertiert und auf den FROST-Server übertragen werden sollen. \\
-	\\Hierzu zählt:
-	\begin{itemize}
-		\item Der Import von neuen Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen
-		\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XLSX-Tabellen-Form vorliegen
-	\end{itemize}
-	
+	\item Thing (Gegenstand): ein Objekt aus der realen Welt (physisches Thing) oder ein virtuelles Thing.
+	\item Locations (Orte): Beschreiben den Ort eines oder mehrerer Things.
+	\item HistoricalLocations (historische Orte): Beschreibt die zuletzt bekannte und vergangene Orte des/der Thing/s zusammen mit ihrem Zeitpunkt.
+	\item Sensor: Misst eine Eigenschaft um eine Approximation des Wertes der Eigenschaft zurückzugeben
+	\item Observation (Beobachtung): Die Aktion des Messens eines Wertes einer Eigenschaft
+	\item ObservedProperty (beobachtete Eigenschaft): Spezifiziert das Phänomen einer Beobachtung
+	\item FeatureOfInterest: Eine Beobachtung erzeugt einen Wert, welcher an ein Phänomen gekoppelt ist. Diese Phänomen ist Teil eines Features, welches das FeatureOfInterest einer Beobachtung ist
+	\item Datastream (Datenfluss): Eine Menge von Beobachtungen über die selbe ObservedProperty vom selben Sensor   
+	\end{enumerate}
+	Die genaue Beschreibung aller Elemente und Beziehungen sind zu finden unter: \\
+	\href{http://developers.sensorup.com/docs/}{SensorUp Developer Page}\\
+	\href{https://en.wikipedia.org/wiki/SensorThings_API}{Wikipedia-Artike zur API}\\
+	\href{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html}{OGC-Dokumentation von SensorThings}\\
+
+
+	%TODO UML Diagramm einfügen
+
+
 	\section{Musskriterien}
-\begin{enumerate}
+	\begin{enumerate}
 	\item Import von Daten \\
 	Die Daten sollen aus Tabellen im CSV-/Excel-Dateiformat importiert werden
 	\item Konvertierung des Formats der Sensordaten \\
