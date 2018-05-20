@@ -131,24 +131,35 @@ Hierzu zählt:
 	Zum einen gibt es Personen, welche einfach Sensordaten auf einen FROST-Server laden möchten, ohne die Konfigurationen zu ändern. \\Der Fokus liegt bei dieser Gruppe auf der einfachen Bedienung der Software.\\
 	\\Zum Anderen gibt es die Nutzergruppe die ihre eigenen Konfigurationen erstellt. Für diese Nutzergruppe ist es wichtig, dass sie komplexe Einstellungsmöglichkeiten in den Konfigurationen nutzen kann.
 	
-	\section{Betriebsbedingungen}
-	Unterschieden wird zwischen Endgerät und Server. \\
-	Das Ziel-Endgerät ist ein Computer, wobei jedes Gerät mit einer Internetanbindung zum Programmserver, einem Webbrowser und aktiviertem JavaScript ausreichend ist.\\
-	\ \\
-	Der Programmserver benötigt eine Anbindung an den FROST-Server und das Endgerät sowie eine Java JRE.
-	\begin{itemize}
-		\item Browser
-		\item JavaScript
-		\item Verbindung zum Programmserver
-	\end{itemize}
-	\begin{itemize}
-		\item Verbindung zum FROST-Server
-		\item Java JRE
-		\item Anbindung an Endgerät (zB Internet)
-	\end{itemize}
+\section{Betriebsbedingungen}
+\begin{itemize}
+	\item die Software soll dauerhaft laufen. Geplante Betriebspausen oder Wartungszeiten sind nicht vorgesehen
+	\item Die Software soll auf einem Webserver laufen, jedoch ist nicht sichergestellt dass die Laufzeit des Servers unterbrechungsfrei ist. Unter anderem kann die Stromversorgung plötzlich ausfallen oder der Server wird ausgeschaltet ohne vorher heruntergefahren zu werden
+	\item Die Software soll längere Zeit ohne Überwachung laufen denn gerade bei längeren Uploads kann es sein dass der Nutzer nicht immer anwesend ist.
+	\item Ein Zugriff auf das Interface der Software von einem Mobilgerät aus ist nicht vorgesehen
+\end{itemize}
 	
-	\section{Produktumgebung}
-	Die Software soll plattformunabhängig auf einem Server mit minimaler Rechen- und Speicherkapazität laufen. Des Weiteren soll das Programm headless ununterbrochen funktionieren.\\ Der Server stellt die Java JRE zur Verfügung, auf dem die Software läuft. Die Software benötigt nur noch eine Verbindung zu einer FROST-Server-Instanz, welche ihm vom Nutzer in der Konfiguration gegeben wird.
+\section{Produktumgebung}
+Server:
+\begin{itemize}
+	\item Beliebiges Betriebssystem, höchstwahrscheinlich jedoch Unix/Linux
+	\item Installiertes Java JRE
+	\item Kleiner Webserver
+	\begin{itemize}
+		\item head-less
+		\item Unicore CPU
+		\item 1-2GB RAM
+		\item Speichermedium mit genug Speicherplatz für Software und temporäre Daten (8GB stark ausreichend)
+	\end{itemize}
+	\item Netzwerkanschluss an den FROST-Server und an den Nutzer-Computer
+\end{itemize}
+
+Client:
+\begin{itemize}
+	\item Moderner Webbrowser
+	\item JavaScript
+	\item Netzwerkanschluss an den CHILLImport-Server
+\end{itemize}
 	
 	\begin{itemize}
 		\item head-less Server
