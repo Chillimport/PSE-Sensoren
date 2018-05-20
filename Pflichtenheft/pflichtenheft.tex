@@ -83,6 +83,10 @@
 		name={HTTPS},description={\textbf{H}yper\textbf{T}ext \textbf{T}ransfer \textbf{P}rotocol \textbf{S}ecure (HTTPS) ist ein sicheres Hypertext-Übertragungsprotokoll, das \gls{ssl} benutzt}
 	}
 
+	\newglossaryentry{iosb}{
+		name={Fraunhofer IOSB},description={Das Fraunhofer-Institut für Optronik, Systemtechnik und Bildauswertung ist in der angewandten Forschung und Entwicklung im Fach Ingenieurwissenschaften auf dem Gebiet der Informations- und Kommunikationstechnologie aktiv. So entwickelten sie unter anderem den \gls{frost}, der in diesem Projekt die zentrale Rolle spielt}
+	}
+
 	
 
 \author{Fabian Nguyen \and Andreas Wieland \and Maximilian Göckel \and Adrian Cierpka \and Frithjof Marquardt}
@@ -105,9 +109,9 @@
 
 	Damit diese Massen von Sensordaten in ihrer eigenen Vielfalt effizient verarbeitet werden können, bedarf es einem einheitlichen Standard. Das \gls{ogc} stellt als Standardisierungsgremium dazu die \gls{stApi} \footnote{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html} bereit, welche die durch jahrelange Erfahrung im Arbeiten mit Sensordaten entstandenen Konzepte an die Anforderungen und Möglichkeiten neuer Schnittstellen anpasst. \\
 
-	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server (\gls{frost})\footnote{https://www.iosb.fraunhofer.de/servlet/is/80113/} des Fraunhofer IOSB ist eine Implementierung des SensorThings-Standards. Der Server will die \gls{stApi} ressourcenschonend und mit hoher Leistungsfähigkeit bereitstellen. Das Institut hat sich direkt von Anfang dazu entschlossen, die Software erreichbarer zu machen und entwickelte den Server von Anfang als Open Source Software\footnote{https://github.com/FraunhoferIOSB/FROST-Server}. \\
+	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server (\gls{frost})\footnote{https://www.iosb.fraunhofer.de/servlet/is/80113/} des \gls{iosb} ist eine Implementierung des SensorThings-Standards. Der Server will die \gls{stApi} ressourcenschonend und mit hoher Leistungsfähigkeit bereitstellen. Das Institut hat sich direkt von Anfang dazu entschlossen, die Software erreichbarer zu machen und entwickelte den Server von Anfang als Open Source Software\footnote{https://github.com/FraunhoferIOSB/FROST-Server}. \\
 
-	Neben dem \gls{frost} stellt das Fraunhofer auch den FROST-Client bereit, eine Bibliothek, die hilft auf die \gls{stApi} zuzugreifen\footnote{https://github.com/FraunhoferIOSB/FROST-Client}. \\
+	Neben dem \gls{frost} stellt das \gls{iosb} auch den FROST-Client bereit, eine Bibliothek, die hilft auf die \gls{stApi} zuzugreifen\footnote{https://github.com/FraunhoferIOSB/FROST-Client}. \\
 	\ \\
 	CHILLImport stellt zu dem \gls{frost} eine Webseite bereit, die es Nutzern ermöglicht, Daten aus Tabellen (beispielsweise einer Excel-Tabelle) in ein \gls{stApi}-freundliches Format zu konvertieren und auf eine \gls{frost}-Instanz hochzuladen. Die Software soll auf der einen Seite so einfach zu bedienen sein, dass auch technisch unerfahrene Nutzer die Grundfunktionen nutzen können. Auf der anderen Seite soll sie stark konfigurierbar sein, um auch erfahrene Nutzer mit hohen Ansprüchen zufrieden zu stellen.\\
 
@@ -201,13 +205,13 @@ Die Software kommt überall dort zum Einsatz wo Sensordaten aus Tabellen weiterv
 
 
 
-Überall wo Daten im CSV-Format verarbeitet werden müssen: \\
-Die Software soll überall dort eingesetzt werden, wo Daten aus Tabellen importiert, konvertiert und auf den FROST-Server übertragen werden sollen. \\
-Hierzu zählt:
-\begin{itemize}
-	\item Der Import von neuen Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen
-	\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XLSX-Tabellen-Form vorliegen
-\end{itemize}
+%Überall wo Daten im CSV-Format verarbeitet werden müssen: \\
+%Die Software soll überall dort eingesetzt werden, wo Daten aus Tabellen importiert, %konvertiert und auf den FROST-Server übertragen werden sollen. \\
+%Hierzu zählt:
+%\begin{itemize}
+%	\item Der Import von neuen Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen
+%	\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XLSX-Tabellen-Form vorliegen
+%\end{itemize}
 
 
 	
