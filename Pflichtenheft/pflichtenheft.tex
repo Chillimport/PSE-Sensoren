@@ -38,6 +38,22 @@
 		name={FROST-Server},description={Der \textbf{FR}auenhofer \textbf{O}penSource \textbf{S}ensor\textbf{T}hings-Server ist die erste komplette quelloffene Implementierung der \gls{ogc} \gls{stApi}}
 	}
 
+	\newglossaryentry{csvExcel}{
+		name={CSV-/Excel-Datei},description={CSV (Comma Seperated Value, .csv) und Excel (.xlsx/.xls) sind gängige Dateiformate zum Speichern von Daten (hier speziell: Sensor-Daten) in Tabellenform}
+	}
+
+	\newglossaryentry{int}{
+		name={Integer},description={Mit Integer wird in der Informatik ein Datentyp bezeichnet, der ganzzahlige Werte speichert}
+	}
+
+	\newglossaryentry{magicnum}{
+		name={Magic Number},plural={Magic Numbers},description={Deutsch: Magische Zahl. Ein im Quellcode eines Programms auftauchender Zahlenwert, dessen Bedeutung sich nicht unmittelbar erkennen lässt.}
+	}
+
+	\newglossaryentry{aggr}{
+		name={Aggregation},plural={Aggregationen},description={Eine Aggregation beschreibt eine Zusammenfassung mehrerer Daten. Zum Beispiel die Summe, der Durchschnitt oder Minimum/Maximum.}
+	}
+
 \author{Fabian Nguyen \and Andreas Wieland \and Maximilian Göckel \and Adrian Cierpka \and Frithjof Marquardt}
 \title{Management von Sensordaten}
 
@@ -62,12 +78,12 @@
 
 	Neben dem \gls{frost} stellt das Fraunhofer auch den FROST-Client bereit, eine Bibliothek, die hilft auf die \gls{stApi} zuzugreifen\footnote{https://github.com/FraunhoferIOSB/FROST-Client}. \\
 	\ \\
-	CHILLImport stellt zu dem FROST-Server eine Webseite bereit, die es Nutzern ermöglicht, Daten aus Tabellen (beispielsweise einer Excel-Tabelle) in ein SensorThings-freundliches Format zu konvertieren und auf eine FROST-Server-Instanz hochzuladen. Die Software soll auf der einen Seite so einfach zu bedienen sein, dass auch technisch unerfahrene Nutzer die Grundfunktionen nutzen können. Auf der anderen Seite soll sie stark konfigurierbar sein, um auch erfahrene Nutzer mit hohen Ansprüchen zufrieden zu stellen.\\
+	CHILLImport stellt zu dem \gls{frost} eine Webseite bereit, die es Nutzern ermöglicht, Daten aus Tabellen (beispielsweise einer Excel-Tabelle) in ein \gls{stApi}-freundliches Format zu konvertieren und auf eine \gls{frost}-Instanz hochzuladen. Die Software soll auf der einen Seite so einfach zu bedienen sein, dass auch technisch unerfahrene Nutzer die Grundfunktionen nutzen können. Auf der anderen Seite soll sie stark konfigurierbar sein, um auch erfahrene Nutzer mit hohen Ansprüchen zufrieden zu stellen.\\
 
 \newpage
 	\section{SensorThings API}
 
-	Die SensorThings API besteht aus folgenden Elementen, die miteinander im Zusammenhang stehen. Jedes Element hat bestimmte Eigenschaften. Diese und die Beziehungen sind im unten abgebildeten UML-Diagramm (\cref{fig:ogc}) dargestellt. \\
+	Die \gls{stApi} besteht aus folgenden Elementen, die miteinander im Zusammenhang stehen. Jedes Element hat bestimmte Eigenschaften. Diese und die Beziehungen sind im unten abgebildeten UML-Diagramm (\cref{fig:ogc}) dargestellt. \\
 	\begin{enumerate}
 	
 	\item Thing (Gegenstand): ein Objekt aus der realen Welt (physisches Thing) oder ein virtuelles Thing.
@@ -95,16 +111,16 @@
 	\subsection{Musskriterien}
 	\begin{enumerate}
 	\item Import von Daten \\
-	Die Daten sollen aus Tabellen im CSV-/Excel-Dateiformat importiert werden
+	Die Daten sollen aus Tabellen im \gls{csvExcel}format importiert werden
 	\item Konvertierung des Formats der Sensordaten \\
-	Die Daten sollen aus den beliebigen Datenformaten und Anordnungen innerhalb der Quelldatei in den einheitlichen Standard der SensorThings API konvertiert werden.
-	Damit entsprechen sie dem Standard der Daten auf einem FROST-Server.
+	Die Daten sollen aus den beliebigen Datenformaten und Anordnungen innerhalb der Quelldatei in den einheitlichen Standard der \gls{stApi} konvertiert werden.
+	Damit entsprechen sie dem Standard der Daten auf einem \gls{frost}.
 	\item Erstellen, Abspeichern und Laden von Konfigurationen \\
 	Der Benutzer soll Spaltenformat, Datenformat und insbesondere das Datums- und Zeitformat einstellen und als Konfiguration abspeichern können.
 	Diese Konfigurationen sollen später auch wieder geladen werden können.
 	\item Datentyptransformationen \\
-	Alle Werte sind in der Quelldatei als String vorhanden und müssen, bevor sie auf den FROST-Server geladen werden, in den passenden Datentyp (bspw. Integer) umgewandelt werden.
-	Sonderwerte (Magic Numbers) sollen nicht auf den FROST-Server geladen, sondern separat behandelt werden.
+	Alle Werte sind in der Quelldatei als String vorhanden und müssen, bevor sie auf den \gls{frost} geladen werden, in den passenden Datentyp (bspw. \gls{int}) umgewandelt werden.
+	Sonderwerte (\glspl{magicnum}) sollen nicht auf den \gls{frost} geladen, sondern separat behandelt werden.
 	\end{enumerate}
 
 	\subsection{Wunschkriterien}
@@ -112,19 +128,19 @@
 	\item Standard-Konfiguration \\
 	Dem Benutzer wird eine vorgefertigte Konfiguration bestehend aus Spaltenformat, Datenformat und Datums- und Zeitformat bereitgestellt.
 	\item Überprüfung auf Duplikate \\
-	Beim Upload der Daten auf den FROST-Server werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut gespeichert.
-	\item Rückgabe nicht bearbeiteter Datensätze in neuer CSV-Datei \\
-	Bei (teilweise) fehlgeschlagener Übertragung zum FROST-Server werden die nicht übertragenen Daten in einer CSV-Datei an den Benutzer zurückgegeben.
+	Beim Upload der Daten auf den \gls{frost} werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut gespeichert.
+	\item Rückgabe nicht bearbeiteter Datensätze in neuer \gls{csvExcel} \\
+	Bei (teilweise) fehlgeschlagener Übertragung zum \gls{frost} werden die nicht übertragenen Daten in einer \gls{csvExcel} an den Benutzer zurückgegeben.
 	\item Korrektur von falschen Daten \\
 	Der Benutzer hat die Möglichkeit Fehler in den Daten direkt zu korrigieren.
 	\item Import von Fremdquellen wie anderen Webseiten \\
-	Es soll möglich sein als Quelldatei auch einen entfernten Speicherort, zum Beispiel einen Weblink  anzugeben.
+	Es soll möglich sein als Quelldatei auch einen entfernten Speicherort, zum Beispiel einen Weblink anzugeben.
 	\item Automatisierte Daten-Aktualisierung \\
 	Bei Import von Daten von einer entfernten Adresse wird eine automatische, regelmäßige Übertragung angeboten.
-	\item Import kompletter Datensätze von anderem FROST-Server \\
-	Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen FROST-Server zu kopieren
-	\item Auswahl komplexer Transformationen/Aggregationen\\ 
-	Aggregationen auf ausgewählten Daten (bspw. Summe oder Durschnitt) werden dem Benutzer bereitgestellt.
+	\item Import kompletter Datensätze von anderem \gls{frost} \\
+	Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen \gls{frost} zu kopieren
+	\item Auswahl komplexer Transformationen/\gls{aggr}\\ 
+	\gls{aggr} auf ausgewählten Daten (bspw. Summe oder Durschnitt) werden dem Benutzer bereitgestellt.
 	\item Automatische Formaterkennung \\
 	Aus der Quelldatei werden Spaltenformat, Datenformat und Datums- und Zeitformat automatisch erkannt und eine entsprechende Konfiguration generiert.
 	Diese Konfiguration ersetzt die Standard-Konfiguration.
@@ -134,8 +150,8 @@
 
 	\subsection{Abgrenzungskriterien}
 	\begin{enumerate}
-	\item Keine Verwaltung des FROST-Servers \\
-	Die Software soll keine schon auf dem FROST-Server liegenden Daten verwalten, ändern oder löschen.
+	\item Keine Verwaltung des \gls{frost}s \\
+	Die Software soll keine schon auf dem \gls{frost} liegenden Daten verwalten, ändern oder löschen.
 	\item Keine Benutzer-Verwaltung \\
 	Es wird keine Benutzer-Verwaltung mit verschiedenen Benutzerkonten bereitgestellt.
 	Jeder Benutzer kann somit die gespeicherten Konfigurationen aller Benutzer sehen und verwenden.
