@@ -4,6 +4,7 @@
 
 
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage[german]{babel}
 
 \usepackage{graphicx}
@@ -19,7 +20,7 @@
 \author{Fabian Nguyen \and Andreas Wieland \and Maximilian Göckel \and Adrian Cierpka \and Frithjof Marquardt}
 \title{Management von Sensordaten}
 
-
+\hyphenation{Ü-ber-tra-gungs-fort-schrit-te}
 
 \begin{document}
 
@@ -78,7 +79,7 @@
 	Die Daten sollen aus den beliebigen Datenformaten und Anordnungen innerhalb der Quelldatei in den einheitlichen Standard der SensorThings API konvertiert werden.
 	Damit entsprechen sie dem Standard der Daten auf einem FROST-Server.
 	\item Erstellen, Abspeichern und Laden von Konfigurationen \\
-	Der Benutzer soll Spaltenformat, Datenformat und insbesondere Datums- und Zeitformat einstellen und als Konfiguration abspeichern können.
+	Der Benutzer soll Spaltenformat, Datenformat und insbesondere das Datums- und Zeitformat einstellen und als Konfiguration abspeichern können.
 	Diese Konfigurationen sollen später auch wieder geladen werden können.
 	\item Datentyptransformationen \\
 	Alle Werte sind in der Quelldatei als String vorhanden und müssen, bevor sie auf den FROST-Server geladen werden, in den passenden Datentyp (bspw. Integer) umgewandelt werden.
@@ -172,7 +173,8 @@ Server:
 	\item Netzwerkanschluss an den FROST-Server und an den Nutzer-Computer
 \end{itemize}
 
-Client:
+\noindent Client:
+
 \begin{itemize}
 	\item Moderner Webbrowser
 	\item JavaScript
@@ -185,7 +187,7 @@ Client:
 		\item Java JRE
 		\item SensorThings API
 	\end{itemize}
-	
+
 \section{Seitenentwürfe}
 
 \subsection{Hauptseite}
