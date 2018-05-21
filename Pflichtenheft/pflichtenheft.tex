@@ -147,9 +147,9 @@
 
 	Damit diese Massen von Sensordaten in ihrer eigenen Vielfalt effizient verarbeitet werden können, bedarf es einem einheitlichen Standard. Das \gls{ogc} stellt als Standardisierungsgremium dazu die \gls{stApi} \footnote{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html} bereit, welche die durch jahrelange Erfahrung im Arbeiten mit Sensordaten entstandenen Konzepte an die Anforderungen und Möglichkeiten neuer Schnittstellen anpasst. \\
 
-	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server (\gls{frost})\footnote{https://www.iosb.fraunhofer.de/servlet/is/80113/} des \gls{iosb} ist eine Implementierung des SensorThings-Standards. Der Server will die \gls{stApi} ressourcenschonend und mit hoher Leistungsfähigkeit bereitstellen. Das Institut hat sich direkt von Anfang dazu entschlossen, die Software erreichbarer zu machen und entwickelte den Server von Anfang als Open Source Software\footnote{https://github.com/FraunhoferIOSB/FROST-Server}. \\
+	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server (\gls{frost})\footnote{https://www.iosb.fraunhofer.de/servlet/is/80113/} des \gls{iosb} ist eine Implementierung des SensorThings-Standards. Der Server will die \gls{stApi} ressourcenschonend und mit hoher Leistungsfähigkeit bereitstellen. Das Institut hat sich direkt von Anfang an dazu entschlossen, die Software erreichbarer zu machen und entwickelte den Server als Open Source Software\footnote{https://github.com/FraunhoferIOSB/FROST-Server}. \\
 
-	Neben dem \gls{frost} stellt das \gls{iosb} auch den FROST-Client bereit, eine Bibliothek, die hilft auf die \gls{stApi} zuzugreifen\footnote{https://github.com/FraunhoferIOSB/FROST-Client}. \\
+	Neben dem \gls{frost} stellt das \gls{iosb} auch den FROST-Client bereit, eine Bibliothek, die hilft, auf die \gls{stApi} zuzugreifen\footnote{https://github.com/FraunhoferIOSB/FROST-Client}. \\
 	\ \\
 	CHILLImport stellt zu dem \gls{frost} eine Webseite bereit, die es Nutzern ermöglicht, Daten aus Tabellen (beispielsweise einer Excel-Tabelle) in ein \gls{stApi}-freundliches Format zu konvertieren und auf eine \gls{frost}-Instanz hochzuladen. Die Software soll auf der einen Seite so einfach zu bedienen sein, dass auch technisch unerfahrene Nutzer die Grundfunktionen nutzen können. Auf der anderen Seite soll sie stark konfigurierbar sein, um auch erfahrene Nutzer mit hohen Ansprüchen zufrieden zu stellen.\\
 
@@ -159,13 +159,13 @@
 	Die \gls{stApi} besteht aus folgenden Elementen, die miteinander im Zusammenhang stehen. Jedes Element hat bestimmte Eigenschaften. Diese und die Beziehungen sind im unten abgebildeten UML-Diagramm (\cref{fig:ogc}) dargestellt. \\
 	\begin{enumerate}
 	
-	\item Thing (Gegenstand): ein Objekt aus der realen Welt (physisches Thing) oder ein virtuelles Thing.
-	\item Locations (Orte): Beschreiben den Ort eines oder mehrerer Things.
-	\item HistoricalLocations (historische Orte): Beschreibt die zuletzt bekannte und vergangene Orte des/der Things zusammen mit ihrem Zeitpunkt.
+	\item Thing (Gegenstand): Ein Objekt aus der realen Welt (physisches Thing) oder ein virtuelles Thing
+	\item Locations (Orte): Beschreiben den Ort eines oder mehrerer Things
+	\item HistoricalLocations (historische Orte): Beschreiben die zuletzt bekannten und vergangenen Orte des/der Things zusammen mit ihrem Zeitpunkt
 	\item Sensor: Misst eine Eigenschaft um eine Approximation des Wertes der Eigenschaft zurückzugeben
 	\item Observation (Beobachtung): Die Aktion des Messens eines Wertes einer Eigenschaft
 	\item ObservedProperty (beobachtete Eigenschaft): Spezifiziert das Phänomen einer Beobachtung
-	\item FeatureOfInterest: Eine Beobachtung erzeugt einen Wert, welcher an ein Phänomen gekoppelt ist. Diese Phänomen ist Teil eines Features, welches das FeatureOfInterest einer Beobachtung ist
+	\item FeatureOfInterest: Eine Beobachtung erzeugt einen Wert, welcher an ein Phänomen gekoppelt ist. Dieses Phänomen ist Teil eines Features, welches das FeatureOfInterest einer Beobachtung ist
 	\item Datastream (Datenfluss): Eine Menge von Beobachtungen über die selbe ObservedProperty vom selben Sensor   
 	\end{enumerate}
 	Die genaue Beschreibung aller Elemente und Beziehungen sind zu finden unter: \\
@@ -199,7 +199,7 @@
 	\subsection{Wunschkriterien}
 	\begin{enumerate}
 	\item Standard-Konfiguration \\
-	Dem Benutzer wird eine vorgefertigte Konfiguration bestehend aus Spaltenformat, Datenformat und Datums- und Zeitformat bereitgestellt.
+	Dem Benutzer wird eine vorgefertigte Konfiguration, bestehend aus Spaltenformat, Datenformat und Datums- und Zeitformat, bereitgestellt.
 	\item Überprüfung auf Duplikate \\
 	Beim Upload der Daten auf den \gls{frost} werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut gespeichert.
 	\item Rückgabe nicht bearbeiteter Datensätze in neuer \gls{csvExcel} \\
@@ -217,7 +217,7 @@
 	\item Automatische Formaterkennung \\
 	Aus der Quelldatei werden Spaltenformat, Datenformat und Datums- und Zeitformat automatisch erkannt und eine entsprechende Konfiguration generiert.
 	Diese Konfiguration ersetzt die Standard-Konfiguration.
-	\item automatische Sprachauswahl \\
+	\item Automatische Sprachauswahl \\
 	Die Anwendung übernimmt automatisch die in Browser eingestellte Sprache.
 	\end{enumerate}
 
@@ -225,19 +225,19 @@
 	\begin{enumerate}
 	\item Keine Verwaltung des \gls{frost}s \\
 	Die Software soll keine schon auf dem \gls{frost} liegenden Daten verwalten, ändern oder löschen.
-	\item Keine Benutzer-Verwaltung \\
-	Es wird keine Benutzer-Verwaltung mit verschiedenen Benutzerkonten bereitgestellt.
+	\item Keine Benutzerverwaltung \\
+	Es wird keine Benutzerverwaltung mit verschiedenen Benutzerkonten bereitgestellt.
 	Jeder Benutzer kann somit die gespeicherten Konfigurationen aller Benutzer sehen und verwenden.
 	\item Keine mobilen Endgeräte \\
-	Die Software muss nicht auf mobilen Endgräten laufen können.
+	Die Software muss nicht auf mobilen Endgeräten laufen können.
 	\end{enumerate}
 
 
 \section{Anwendungsbereiche}
-Die Software kommt überall dort zum Einsatz wo Sensordaten aus Tabellen weiterverarbeitet müssen. \\
+Die Software kommt überall dort zum Einsatz, wo Sensordaten aus Tabellen weiterverarbeitet müssen. \\
 \begin{itemize}
-	\item Forschungsprojekt, bei dem die Sensordaten in Tabellenform vorliegen. Diese Daten sollen in eine FROST-Instanz hochgeladen werden um ggf. weiterverarbeitet zu werden
-	\item Der Import neuer Sensordaten durch den Mitarbeiter einer Firma (zB Stadtwerke)
+	\item Forschungsprojekt, bei dem die Sensordaten in Tabellenform vorliegen. Diese Daten sollen in eine FROST-Instanz hochgeladen und ggf. weiterverarbeitet zu werden
+	\item Der Import neuer Sensordaten durch den Mitarbeiter einer Firma (z.B. Stadtwerke)
 	\item Die Integration bestehender Daten in Tabellenform durch einen wissenschaftlichen Mitarbeiter o.ä.
 \end{itemize}
 
@@ -274,9 +274,9 @@ Die Software kommt überall dort zum Einsatz wo Sensordaten aus Tabellen weiterv
 \section{Betriebsbedingungen}
 \begin{itemize}
 	\item Die Software soll dauerhaft laufen. Geplante Betriebspausen oder Wartungszeiten sind nicht vorgesehen
-	\item Die Software soll auf einem Webserver laufen, jedoch ist nicht sichergestellt dass die Laufzeit des Servers unterbrechungsfrei ist. Unter anderem kann die Stromversorgung plötzlich ausfallen oder der Server wird ausgeschaltet ohne vorher heruntergefahren zu werden
-	\item Die Software soll längere Zeit ohne Überwachung laufen, denn gerade bei längeren Uploads kann es sein dass der Nutzer nicht immer anwesend ist.
-	\item Ein Zugriff auf das Interface der Software von einem Mobilgerät aus ist nicht vorgesehen
+	\item Die Software soll auf einem Webserver laufen. Jedoch ist nicht sichergestellt, dass die Laufzeit des Servers unterbrechungsfrei ist. Unter anderem kann die Stromversorgung plötzlich ausfallen oder der Server wird ausgeschaltet, ohne vorher heruntergefahren zu werden
+	\item Die Software soll längere Zeit ohne Überwachung laufen, denn gerade bei längeren Uploads kann es sein, dass der Nutzer nicht immer anwesend ist.
+	\item Ein Zugriff auf das Interface der Software von einem Mobilgerät ist nicht vorgesehen
 \end{itemize}
 	
 \section{Produktumgebung}
@@ -323,7 +323,7 @@ Ein Entwurf für die Hauptseite der Weboberfläche ist in \cref{fig:guiMain} (si
 \caption{\label{fig:guiMain}Hauptseite der Weboberfläche}
 \end{figure}
 Beim Aufrufen der Weboberfläche ist zu Beginn nur der Bereich zum Auswählen der Quelldatei sichtbar. 
-Nach dem Einstellen der Quelle wird das Dateiformat überprüft und ein passender Konfigurator für das Spaltenformat der Datei und das Format der Daten in den Spalten wird sichtbar. \\
+Nach dem Einstellen der Quelle wird das Dateiformat überprüft und ein passender Konfigurator (für das Spaltenformat der Datei und das Format der Daten in den Spalten) wird sichtbar. \\
 
 Über das Log werden eventuelle Fehlermeldungen und Übertragungsfortschritte angezeigt. Unter "{Choose Configuration}" lässt sich eine auf dem Server gespeicherte Konfigurationsdatei auswählen. Dort bieten sich folgende Möglichkeiten:
 \begin{itemize}
