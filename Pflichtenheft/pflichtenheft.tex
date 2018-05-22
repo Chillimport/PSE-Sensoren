@@ -494,13 +494,8 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\end{itemize}
 \end{itemize}
 
-<<<<<<< HEAD
-\newpage
-\section{Systemmodell}
-=======
 \pagebreak
 	\section{Systemmodell}
->>>>>>> 1f9e638cf7c725ac67817d2cc2a3fda368e511b0
 	\begin{figure}[htbp]
 	\centering
 	\includegraphics[scale=1]{images/sysmodel}
@@ -548,13 +543,13 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\teststep{}{Der Benutzer drückt den "{Add Column}"{-Button}, um eine neue Datums-/Zeit-Spalte anzulegen.}{Die Software erstellt zwei neue Textfelder mit \string"Spalte\string" und \string"Format\string" im Interface, sodass sich die Datums- und Zeitangabe über mehrere Spalten erstrecken kann.}
 	\teststep{Die Spalten wurden korrekt angegeben.}{Der Benutzer gibt via \gls{regex} das Format des Datums/der Uhrzeit in dem dazugehörigen Textfeld an.}{Die Korrektheit des \gls{regex} wird anhand der Werte der Tabellendatei auf Fehler geprüft.}
 	\teststep{Das Datum / die Uhrzeit wurde korrekt ausgefüllt.}{Der Nutzer wählt das \gls{thing} aus dem Dropdown-Menü, welches alle \glspl{thing} enthält, aus.}{Das \gls{ds}-Dropdown-Menü wird mit den zum gewählten \gls{thing} gehörenden (Multi-)\glspl{ds} aktualisiert.}
-	\teststep{\gls{thing} wurde ausgewählt.}{Der Anwender wählt den \gls{ds} aus dem \gls{ds}-Dropdown-Menü aus.}{Das System lädt die zum (Multi-)\gls{ds} gehörenden Messeinheiten neben die Textfelder zum eintragen.}
+	\teststep{Ein \gls{thing} wurde ausgewählt.}{Der Anwender wählt den \gls{ds} aus dem \gls{ds}-Dropdown-Menü aus.}{Das System lädt die zum (Multi-)\gls{ds} gehörenden Messeinheiten neben die Textfelder zum eintragen.}
 	\teststep{Die Messeinheiten sind geladen.}{Der Nutzer trägt die Spalten mit den Messwerten neben die Messeinheiten ein.}{Die Korrektheit der Eintragung wird wieder durch die Software geprüft.}
 	\teststep{Alle Textfelder sind ausgefüllt.}{Der User klickt auf den Button "{Import Data}".}{Die Daten in den angegebenen Spalten werden eingelesen, konvertiert und auf den \gls{frost} übertragen.}
 	
 	\test{Import fehlerhafter Daten}{tst:fehler}
 	\tests{fnc:fehler}
-	\teststep{Die Konfiguration ist vollständig ausgefüllt, aber die Quelldatei enthält fehlerhafte Daten.}{Der User klickt auf den Button \string" Import Data\string"}{Die Software verarbeitet alle fehlerfreien Datenzeilen und überspringt fehlerhafte Zeilen. Anschließend wird im Log vermerkt, welche Zeilen ausgelassen wurden.}
+	\teststep{Die Konfiguration ist vollständig ausgefüllt, aber die Quelldatei enthält fehlerhafte Daten.}{Der User klickt auf den Button \string" Import Data\string".}{Die Software verarbeitet alle fehlerfreien Datenzeilen und überspringt fehlerhafte Zeilen. Anschließend wird im Log vermerkt, welche Zeilen ausgelassen wurden.}
 	
 	\test{Datei als Quelle wählen}{tst:quelle}
 	\tests{fnc:quelle}
