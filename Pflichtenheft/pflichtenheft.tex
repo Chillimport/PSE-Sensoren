@@ -291,7 +291,7 @@ Server:
 \end{itemize}
 
 
-\section{Seitenentwürfe}
+\section{Benutzeroberfläche}
 
 \subsection{Hauptseite}
 Die Software stellt eine Weboberfläche zum Einfügen von Sensor-Datensätzen auf einen \gls{frost} zur Verfügung. 
@@ -314,8 +314,9 @@ Nach dem Einstellen der Quelle wird das Dateiformat überprüft und ein passende
 \item Dann kann das zu den Daten gehörige \gls{thing} von schon auf dem \gls{frost} existierenden \glspl{thing} ausgewählt werden. Falls es benötigt wird, lässt sich über den "{Create Thing}"{-Button} ein neues \gls{thing} erstellen. (siehe \cref{fig:thing})
 \item Unter "{DateTime}"{ ist} das Datumsfomat einstellbar. Erst wird die Zeitzone eingegeben und danach lassen sich das Format für das Datum bzw. die Zeit als \gls{regex} und die zugehörige Spaltennummer angeben.
 \item Abschließend lassen sich ein oder mehrere (Multi-)\glspl{ds} auswählen. Existiert der (Multi-)\gls{ds} noch nicht, kann er über "{Create DS}"{ erstellt} werden. Mit Hilfe des "{Add DS}"{-Buttons} lassen sich weitere (Multi-)\glspl{ds} hinzufügen. Anschließend lassen sich wieder die zu den Daten gehörigen Spalten in der Quelldatei einstellen.
-\item Außerdem bietet die Weboberfläche über den "{Save}"{-Button} die Möglichkeit, eine bestehende Konfiguration auf dem Server abzuspeichern bzw. über den "{Reset}"{-Button} auf die Standard-Konfiguration zurückzusetzen.
-\item Über den "{Upload}"{-Button} werden die Daten auf den \gls{frost} hochgeladen.
+\item Außerdem bietet die Weboberfläche über den "{Save Configuration}"{-Button} die Möglichkeit, eine bestehende Konfiguration auf dem Server abzuspeichern bzw. über den "{Reset Configuration}"{-Button} auf die Standard-Konfiguration zurückzusetzen.
+\item Der Button "{Show Preview}"{ ermöglicht} es, die Konfiguration testweise auf die ersten Datenzeilen der Quelldatei anzuwenden und sich das Ergebnis anzeigen zu lassen. Dadurch lässt sich die vorliegende Konfiguration auf korrektheit überprüfen.
+\item Über den "{Import Data}"{-Button} werden die Daten auf den \gls{frost} hochgeladen.
 \item Der "{Help}"{-Button} ermöglicht den Zugriff auf eine Kurzanleitung für das Webinterface.
 \end{itemize}
 
@@ -338,7 +339,9 @@ Wie in \cref{fig:thing} dargestellt, müssen Name, Beschreibung und Eigenschafte
 \end{figure}
 Es müssen erst Name, Beschreibung, Observation Type und ein \gls{sensor} gewählt werden. Soll dafür ein neuer \gls{sensor} angelegt werden, existiert der "{Create Sensor}"{-Button} (siehe \cref{fig:sensor}).\\
 
-Im unteren Teil lassen sich die zugehörigen Einheiten für eine Messwertreihe festlegen. Existiert eine solche Einheit noch nicht, lässt sie sich über den "{Create Property}"{-Button} anlegen (siehe \cref{fig:oprop}). Unter \string"Aggregation\string" lässt sich auswählen, ob alle Daten importiert werden sollen, oder nur eine Aggregation dieses Datensatzes. Mit dem "{Add unit}"{-Button} kann eine weitere Messwertreihe hinzugefügt werden. Hat ein \gls{ds} mehr als eine solche Größe, wird er als Multi-\gls{ds} verwaltet.
+Im unteren Teil lassen sich die zugehörigen Einheiten für eine Messwertreihe festlegen. Existiert eine solche Einheit noch nicht, lässt sie sich über den "{Create Property}"{-Button} anlegen (siehe \cref{fig:oprop}). Mit dem "{Add unit}"{-Button} kann eine weitere Messwertreihe hinzugefügt werden. Hat ein \gls{ds} mehr als eine solche Größe, wird er als Multi-\gls{ds} verwaltet.\\
+
+Als Wunschkriterium kann an dieser Stelle noch das Auswählen von \gls{aggr}en der Messwerte eingefügt werden. Dies ist jedoch nicht Teil der erforderlichen graphischen Oberfläche. Unter \string"Aggregation\string" ließe sich dann auswählen, ob alle Daten importiert werden sollen oder nur eine \gls{aggr} der Daten.
 
 
 
@@ -537,14 +540,17 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\tests{fnc:conv}
 	\tests{fnc:dupl}
 	
-	\teststep{Der Nutzer hat die Quelle eingegeben und bestätigt.}{Der Nutzer füllt die Datums-/Uhrzeits-Spalte aus}{Die Software überprüft die Korrektheit der Spalten (Wurde eine Spalte angegeben, die nicht existiert?)}	
-	\teststep{}{Der Benutzer drückt den "{Add column}"{-Button}, um eine neue Datums-/Zeit-Spalte anzulegen}{Die Software erstellt zwei neue Textfelder mit \string"Spalte\string" und \string"Format\string" im Interface, sodass sich die Datums- und Zeitnagabe über mehrere Spalten erstrecken kann}
-	\teststep{Die Spalten wurden korrekt angegeben}{Der Benutzer gibt via \gls{regex} das Format des Datums/der Uhrzeit in dem dazugehörigen Textfeld an}{Die Korrektheit des \gls{regex} wird anhand der Werte der Tabellendatei auf Fehler geprüft}
-	\teststep{Das Datum / die Uhrzeit wurde korrekt ausgefüllt}{Der Nutzer wählt das \gls{thing} aus dem Dropdown-Menü, welches alle \glspl{thing} enthält, aus}{Das \gls{ds}-Dropdown-Menü wird mit den zum gewählten \gls{thing} gehörenden (Multi-)\glspl{ds} aktualisiert}
-	\teststep{\gls{thing} wurde ausgewählt}{Der Anwender wählt den \gls{ds} aus dem \gls{ds}-Dropdown-Menü aus}{Das System lädt die zum (Multi-)\gls{ds} gehörenden Messeinheiten neben die Textfelder zum eintragen}
-	\teststep{Messdaten geladen}{Der Nutzer trägt die Spalten mit den Messwerten neben die Messeinheiten ein}{Die Korrektheit der Eintragung wird wieder durch die Software geprüft}
-	\teststep{Alle Textfelder ausgefüllt}{Der User klickt auf den Button "{Upload}"}{Die Daten in den angegebenen Spalten werden eingelesen, konvertiert und auf den \gls{frost} übertragen}
-	\teststep{Alle Textfelder ausgefüllt}{Der User klickt auf den Button \string"Upload\string", aber hat fehlerhafte Daten ausgewählt}{Das Programm überspringt fehlerhafte Zeilen und vermerkt entsprechend im Log welche Zeilen ausgelassen wurden}
+	\teststep{Der Nutzer hat die Quelle eingegeben und bestätigt.}{Der Nutzer füllt die Datums-/Uhrzeits-Spalte aus.}{Die Software überprüft die Korrektheit der Spalten (Wurde eine Spalte angegeben, die nicht existiert?).}	
+	\teststep{}{Der Benutzer drückt den "{Add Column}"{-Button}, um eine neue Datums-/Zeit-Spalte anzulegen.}{Die Software erstellt zwei neue Textfelder mit \string"Spalte\string" und \string"Format\string" im Interface, sodass sich die Datums- und Zeitangabe über mehrere Spalten erstrecken kann.}
+	\teststep{Die Spalten wurden korrekt angegeben.}{Der Benutzer gibt via \gls{regex} das Format des Datums/der Uhrzeit in dem dazugehörigen Textfeld an.}{Die Korrektheit des \gls{regex} wird anhand der Werte der Tabellendatei auf Fehler geprüft.}
+	\teststep{Das Datum / die Uhrzeit wurde korrekt ausgefüllt.}{Der Nutzer wählt das \gls{thing} aus dem Dropdown-Menü, welches alle \glspl{thing} enthält, aus.}{Das \gls{ds}-Dropdown-Menü wird mit den zum gewählten \gls{thing} gehörenden (Multi-)\glspl{ds} aktualisiert.}
+	\teststep{\gls{thing} wurde ausgewählt.}{Der Anwender wählt den \gls{ds} aus dem \gls{ds}-Dropdown-Menü aus.}{Das System lädt die zum (Multi-)\gls{ds} gehörenden Messeinheiten neben die Textfelder zum eintragen.}
+	\teststep{Die Messeinheiten sind geladen.}{Der Nutzer trägt die Spalten mit den Messwerten neben die Messeinheiten ein.}{Die Korrektheit der Eintragung wird wieder durch die Software geprüft.}
+	\teststep{Alle Textfelder sind ausgefüllt.}{Der User klickt auf den Button "{Import Data}".}{Die Daten in den angegebenen Spalten werden eingelesen, konvertiert und auf den \gls{frost} übertragen.}
+	
+	\test{Import fehlerhafter Daten}{tst:fehler}
+	\tests{fnc:fehler}
+	\teststep{Die Konfiguration ist vollständig ausgefüllt, aber die Quelldatei enthält fehlerhafte Daten.}{Der User klickt auf den Button \string" Import Data\string"}{Die Software verarbeitet alle fehlerfreien Datenzeilen und überspringt fehlerhafte Zeilen. Anschließend wird im Log vermerkt, welche Zeilen ausgelassen wurden.}
 	
 	\test{Datei als Quelle wählen}{tst:quelle}
 	\tests{fnc:quelle}
@@ -563,10 +569,9 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 		
 	\test{Konfiguration abspeichern}{tst:save}
 	\tests{fnc:loadsave}
-	\teststep{Der Nutzer hat eine Konfiguration erstellt.}{Der Nutzer drückt den "{Save}"{-Knopf}.}{Es wird eine cfg-Datei der Konfiguration erstellt und abgespeichert.}
+	\teststep{Der Nutzer hat eine Konfiguration erstellt.}{Der Nutzer drückt den "{Save Configuration}"{-Knopf}.}{Es wird eine cfg-Datei der Konfiguration erstellt und abgespeichert.}
 
-		
-	\ \\
+	
 %	\test{Zielserver wählen}{}
 %	\ \\
 %	\teststep{Dem Nutzer wird die Webseite angezeigt. Insbesondere existiert ein Textfeld zur Eingabe des Zielservers.}{Der Nutzer gibt einen FROST-Server als Ziel in das Textfeld ein und drückt den "{Submit}"{-Knopf}.}{Der Server wird auf Gültigkeit überprüft und bei Korrektheit erscheint ein Konfigurator zum Einstellen des Formats der Daten in der Quelldatei. Im Konfigurator ist der Default-Case voreingestellt.}
@@ -574,24 +579,24 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	
 	\test{Konfiguration zurücksetzen}{tst:reset}
 	\tests{fnc:default}
-	\teststep{Der Nutzer befindet sich auf der Webseite und es wird der Konfigurator angezeigt.}{Der Nutzer drückt den "{Reset}"{-Knopf}.}{Alle eingestellten Konfigurationen werden auf den Default-Case zurückgesetzt.}
+	\teststep{Der Nutzer befindet sich auf der Webseite und es wird der Konfigurator angezeigt.}{Der Nutzer drückt den "{Reset Configuration}"{-Knopf}.}{Alle eingestellten Konfigurationen werden auf den Default-Case zurückgesetzt.}
 	
 	
 		
 	\test{Neues Thing erstellen}{tst:thing}
 	\tests{fnc:create}
-	\teststep{Die Datei und die \gls{frost}-Domain wurden angegeben/hochgeladen}{Der Nutzer klickt auf den "{Create Thing}"{-Button}}{es öffnet sich der "{Create New Thing}"{-Dialog}}
-	\teststep{Das Dialogfenster ist offen, Name und Beschreibung des \glspl{thing} wurden in die Textfelder eingetragen, die \gls{location} wurde aus dem Dropdown-Menü ausgewählt}{Der Nutzer klickt auf "{Create}"}{Das \gls{thing} wird auf dem \gls{frost} erstellt und in dem Hauptinterface dem Dropdown-Menü hinzugefügt}
+	\teststep{Die Datei und die \gls{frost}-Domain wurden angegeben/hochgeladen.}{Der Nutzer klickt auf den "{Create Thing}"{-Button}.}{Es öffnet sich der "{Create New Thing}"{-Dialog} (\cref{fig:thing}).}
+	\teststep{Das Dialogfenster ist offen, Name und Beschreibung des \glspl{thing} wurden in die Textfelder eingetragen, die \gls{location} wurde aus dem Dropdown-Menü ausgewählt.}{Der Nutzer klickt auf "{Create}".}{Das \gls{thing} wird auf dem \gls{frost} erstellt und in dem Hauptinterface dem Dropdown-Menü hinzugefügt.}
 	
 	\test{Properties zu Thing hinzufügen}{tst:prop}
 	\tests{fnc:create}
-	\teststep{Der "{Create New Thing}"{-Dialog} ist offen}{Der Nutzer klickt einmal oder mehrfach auf den "{Add Property}"{-Button}}{es werden ein oder mehrere Textfeld-Paare im Interface erstellt in denen der Nutzer die Eigenschaft (Property) und den Wert (Value) des \glspl{thing} einstellen kann}
+	\teststep{Der "{Create New Thing}"{-Dialog} ist offen.}{Der Nutzer klickt einmal oder mehrfach auf den "{Add Property}"{-Button}.}{es werden ein oder mehrere Textfeld-Paare im Interface erstellt in denen der Nutzer die Eigenschaft (Property) und den Wert (Value) des \glspl{thing} einstellen kann.}
 
 
 	\test{Neuen (Multi-)Datastream erstellen}{tst:datastream}
 	\tests{fnc:create}
-	\teststep{Die Datei und \gls{frost} wurden angegeben und ein \gls{thing} ausgewählt}{Der User klickt auf den "{Create DS}"{-Button}}{Es öffnet sich der "{Create New DataStream}"{-Dialog}, in dem der User einen neuen \gls{ds} oder Multi-\gls{ds} formulieren und erstellen kann}
-	\teststep{Der User sieht das Dialogfenster zum erstellen eines \glspl{ds}}{der User trägt Name und Beschreibung in die Textfelder ein, wählt Observation Type und \gls{sensor} aus den Dropdown-Menüs aus, trägt eine oder mehrere Units Of Measurement ein und klickt abschließend auf "{Create}"}{Die Software unterscheidet zwischen \gls{ds} und Multi-\gls{ds} und legt den entsprechenden Stream mit den angegeben Daten im \gls{frost} an}
+	\teststep{Die Datei und \gls{frost} wurden angegeben und ein \gls{thing} ausgewählt}{Der User klickt auf den "{Create DS}"{-Button}}{Es öffnet sich der "{Create New DataStream}"{-Dialog}, in dem der User einen neuen \gls{ds} oder Multi-\gls{ds} formulieren und erstellen kann.}
+	\teststep{Der User sieht das Dialogfenster zum erstellen eines \glspl{ds}}{der User trägt Name und Beschreibung in die Textfelder ein, wählt Observation Type und \gls{sensor} aus den Dropdown-Menüs aus, trägt eine oder mehrere Units Of Measurement ein und klickt abschließend auf "{Create}".}{Die Software unterscheidet zwischen \gls{ds} und Multi-\gls{ds} und legt den entsprechenden Stream mit den angegeben Daten im \gls{frost} an.}
 
 	
 	\test{Sensor erstellen}{tst:sensor}
@@ -607,20 +612,15 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	
 	\test{Einen Datensatz zu einem Datastream hinzufügen}{tst:adddata}
 	\tests{fnc:create}
-	\teststep{Der Nutzer erstellt gerade einen \gls{ds} (sieht den Dialog wie in \cref{fig:ds}).}{Der Nutzer drückt den "{Add unit}"{-Knopf}.}{Es wird eine neue leere Zeile in der Tabelle für die zum \gls{ds} gehörigen Units of Measurement angelegt.}														  		
-	\test{Neue Datums-/Zeit-Spalte erstellen}{}
-	
+	\teststep{Der Nutzer erstellt gerade einen \gls{ds} (sieht den Dialog wie in \cref{fig:ds}).}{Der Nutzer drückt den "{Add unit}"{-Knopf}.}{Es wird eine neue leere Zeile in der Tabelle für die zum \gls{ds} gehörigen Units of Measurement angelegt.}				
 		
 	
 	\test{Datastream hinzufügen}{}
-		\ \\
-	\teststep{Ein \gls{thing} wurde ausgewählt, die \glspl{ds} wurden in das Dropdown-Menü geladen}{Der Nutzer klickt auf den "{Add DS}"{-Button}}{Das Webinterface wird aktualisiert und rechts vom letzten \gls{ds} wird ein neues Dropdown-Menü für einen neuen Datastream und neue Textfelder hinzugefügt}
-		\ \\
-
+	\teststep{Ein \gls{thing} wurde ausgewählt, die \glspl{ds} wurden in das Dropdown-Menü geladen.}{Der Nutzer klickt auf den "{Add DS}"{-Button}.}{Das Webinterface wird aktualisiert und rechts vom letzten \gls{ds} wird ein neues Dropdown-Menü für einen neuen Datastream und neue Textfelder hinzugefügt.}
 	
 	\test{Hilfe anfordern}{tst:help}
 	\tests{fnc:help}
-	\teststep{Der Nutzer befindet sich auf der Webseite.}{Der Nutzer drückt den "{Hilfe}"{-Knopf}.}{Es wird eine Anleitung für den Gebrauch der Weboberfläche angezeigt.}
+	\teststep{Der Nutzer befindet sich auf der Webseite.}{Der Nutzer drückt den "{Help}"{-Button}.}{Es wird eine Anleitung für den Gebrauch der Weboberfläche angezeigt.}
 	
 
 
