@@ -156,7 +156,7 @@
 \newpage
 	\section{SensorThings API}
 
-	Die \gls{stApi} besteht aus folgenden Elementen, die miteinander im Zusammenhang stehen. Jedes Element hat bestimmte Eigenschaften. Diese und die Beziehungen sind im unten abgebildeten UML-Diagramm\footnote{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html} (\cref{fig:ogc}) dargestellt. \\
+	Die \gls{stApi} besteht aus folgenden Entitäten, die miteinander im Zusammenhang stehen. Jedes Element hat bestimmte Eigenschaften. Diese und die Beziehungen sind im unten abgebildeten UML-Diagramm\footnote{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html} (\cref{fig:ogc}) dargestellt. \\
 	\begin{enumerate}
 	
 	\item Thing (Gegenstand): Ein Objekt aus der realen Welt (physisches Thing) oder ein virtuelles Thing
@@ -183,8 +183,8 @@
 \section{Zielbestimmung}
 	\subsection{Musskriterien}
 	\begin{enumerate}
-	\item Import von Daten \\
-	Die Daten sollen aus Tabellen im \gls{csvExcel}format importiert werden
+	\item Import von Messwerten \\
+	Die Sensor-Messwerte sollen aus Tabellen im \gls{csvExcel}format importiert werden
 	\item Konvertierung des Formats der Sensordaten \\
 	Die Daten sollen aus den beliebigen Datenformaten und Anordnungen innerhalb der Quelldatei in den einheitlichen Standard der \gls{stApi} konvertiert werden.
 	Damit entsprechen sie dem Standard der Daten auf einem \gls{frost}.
@@ -199,34 +199,33 @@
 	\subsection{Wunschkriterien}
 	\begin{enumerate}
 	\item Standard-Konfiguration \\
-	Dem Benutzer wird eine vorgefertigte Konfiguration, bestehend aus Spaltenformat, Datenformat und Datums- und Zeitformat, bereitgestellt.
+	Für eine Auswahl gängiger Eingabedateien wird dem Benutzer eine Liste vordefinierter Konfigurationen, bestehend aus Spaltenformat, Datenformat und Datums- und Zeitformat, vorgeschlagen.
 	\item Überprüfung auf Duplikate \\
 	Beim Upload der Daten auf den \gls{frost} werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut gespeichert.
 	\item Rückgabe nicht bearbeiteter Datensätze in neuer \gls{csvExcel} \\
 	Bei (teilweise) fehlgeschlagener Übertragung zum \gls{frost} werden die nicht übertragenen Daten in einer \gls{csvExcel} an den Benutzer zurückgegeben.
-	\item Korrektur von falschen Daten \\
-	Der Benutzer hat die Möglichkeit Fehler in den Daten direkt zu korrigieren.
+	\item Korrektur fehlerhafter Daten \\
+	Dem Benutzer wird es ermöglicht automatisch erkannte fehlerhafte Datensätze in der Weboberfläche zu korrigieren.
 	\item Import von Fremdquellen wie anderen Webseiten \\
 	Es soll möglich sein als Quelldatei auch einen entfernten Speicherort, zum Beispiel einen Weblink anzugeben.
 	\item Automatisierte Daten-Aktualisierung \\
 	Bei Import von Daten von einer entfernten Adresse wird eine automatische, regelmäßige Übertragung angeboten.
 	\item Import kompletter Datensätze von anderem \gls{frost} \\
-	Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen \gls{frost} zu kopieren
+	Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen \gls{frost} zu kopieren.
 	\item Auswahl komplexer Transformationen/\gls{aggr}\\ 
 	\gls{aggr} auf ausgewählten Daten (bspw. Summe oder Durschnitt) werden dem Benutzer bereitgestellt.
 	\item Automatische Formaterkennung \\
-	Aus der Quelldatei werden Spaltenformat, Datenformat und Datums- und Zeitformat automatisch erkannt und eine entsprechende Konfiguration generiert.
-	Diese Konfiguration ersetzt die Standard-Konfiguration.
+	Aus der Quelldatei werden Spaltenformat, Datenformat und Datums- und Zeitformat automatisch erkannt und dem Benutzer eine passende Konfiguration vorgeschlagen.
 	\item Automatische Sprachauswahl \\
-	Die Anwendung übernimmt automatisch die in Browser eingestellte Sprache.
+	Die Anwendung übernimmt automatisch die im Browser eingestellte Sprache.
 	\end{enumerate}
 
 	\subsection{Abgrenzungskriterien}
 	\begin{enumerate}
-	\item Keine Verwaltung des \gls{frost}s \\
-	Die Software soll keine schon auf dem \gls{frost} liegenden Daten verwalten, ändern oder löschen.
+	\item Keine Bearbeitung vorhandener Daten \\
+	Die Bearbeitung (ändern, löschen) bereits vorhandener Daten auf einem \gls{frost} wird nicht unterstützt.
 	\item Keine Benutzerverwaltung \\
-	Es wird keine Benutzerverwaltung mit verschiedenen Benutzerkonten bereitgestellt.
+	Es wird keine Benutzerverwaltung mit verschiedenen Benutzerkonten bereitgestellt. Authentifizierung wird ebenfalls nicht unterstützt.
 	Jeder Benutzer kann somit die gespeicherten Konfigurationen aller Benutzer sehen und verwenden.
 	\item Keine mobilen Endgeräte \\
 	Die Software muss nicht auf mobilen Endgeräten laufen können.
