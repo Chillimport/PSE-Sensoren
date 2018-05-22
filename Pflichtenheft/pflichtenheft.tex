@@ -385,7 +385,7 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\fulfills{crt:conf}
 	Beim Erstellen einer Konfiguration für das Formatieren der Daten aus der Quelldatei ist folgendes einstellbar:
 	\begin{itemize}
-			\item Spaltenseperator
+			\item Spaltenseparator
 			\item Anzahl der Kopfzeilen
 			\item Einstellen der Datumsspalte/n
 			\item Format des Datums
@@ -422,7 +422,7 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 		\end{itemize}
 	
 	\functionality{Anlegen einer \gls{logdat}}{fnc:log}
-	Um Fehler einfacher zu reproduzieren und beheben, wird eine Log-Datei angelegt, die folgendes speichert:
+	Um Fehler einfacher zu reproduzieren und zu beheben, wird eine Log-Datei angelegt, die folgendes speichert:
 	\begin{itemize}
 			\item Historie von Uploads
 			\item Fehlermeldungen
@@ -446,7 +446,7 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	
 	\functionality{Rückgabe von Fehlerhaften Zeilen in einer neuen \gls{csvExcel}}{fnc:ruck}
 	\fulfills{crt:ruck}
-	Beim Upload nicht bearbeitete Zeilen aus der Quelldatei werden in eine Datei geschrieben und dem Nutzer zur Verfügung gestellt.
+	Beim Upload nicht bearbeiteter Zeilen aus der Quelldatei werden in eine Datei geschrieben und dem Nutzer zur Verfügung gestellt.
 	
 	\functionality{Auswahlmöglichkeit komplexer \gls{aggr} auf Daten}{fnc:aggr}
 	\fulfills{crt:aggr}
@@ -465,7 +465,7 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	
 	\functionality{Formaterkennung}{fnc:form}
 	\fulfills{crt:form}
-	Beim Hochladen einer Datei wird diese direkt analysiert und ein Spalten-, Daten- und Datumsformat vorgeschlagen, um das Einstellen der Konfiguration zu erleichtern.
+	Beim Hochladen einer Datei wird diese direkt analysiert und ein Spalten-, Daten- und Datums/Zeit-Format vorgeschlagen, um das Einstellen der Konfiguration zu erleichtern.
 	
 	
 	\functionality{Kurzanleitung auf der Weboberfläche}{fnc:help}
@@ -491,8 +491,8 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\end{itemize}
 \end{itemize}
 
-
-	\section{Systemmodell}
+\newpage
+\section{Systemmodell}
 	\begin{figure}[htbp]
 	\centering
 	\includegraphics[scale=1]{images/sysmodel}
@@ -514,14 +514,14 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\begin{itemize}
 	\item Das Programm soll über lange Zeiträume auch ohne Unterbrechungen zuverlässig ausgeführt werden können, solange die Produktumgebung dies zulässt.
 	\item Interaktion oder Beobachtung durch den Nutzer, während eines laufenden Imports, werden nicht vorausgesetzt.
-	\item Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit Plattform-unabhängig ist. 
+	\item Eine einfache Portierung ist gegeben, da die Software auf Java basiert und damit plattformunabhängig ist. 
 	\item Zu große oder zu viele Anfragen werden abgelehnt um Sicherheit zu gewährleisten und einer Überlastung des Servers vorzubeugen.
-	\item Es soll möglichst einfach sein die Software schnell und unkompliziert zu ändern oder zu erweitern.
+	\item Es soll möglichst einfach sein, die Software schnell und unkompliziert zu ändern oder zu erweitern.
 	\end{itemize}
 	Frontend-Anforderungen (Weboberfläche) :
 	\begin{itemize}
-	\item Die Benutzbarkeit hat höchste Priorität, auch Nutzer ohne oder wenig technischem Vorwissen sollen in der Lage sein die Software zu bedienen.
-	\item Die Daten sollten \gls{https}-/\gls{ssl}-Verschlüsselt werden um Abfangen der Daten zu verhindern.
+	\item Die Benutzbarkeit hat höchste Priorität, auch Nutzer ohne oder wenig technischem Vorwissen sollen in der Lage sein, die Software zu bedienen.
+	\item Die Daten sollten \gls{https}-/\gls{ssl}-verschlüsselt werden, um das Abfangen der Daten zu verhindern.
 	\end{itemize}
 	
 
