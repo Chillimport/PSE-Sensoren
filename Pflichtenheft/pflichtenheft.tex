@@ -24,16 +24,16 @@
 \makenoidxglossaries
 
 	\newglossaryentry{IoT}{
-		name={Internet der Dinge},description={Das Internet der Dinge (englisch: Internet of Things, IoT) ist ein Begriff dafür, dass in der modernen Welt physische und virtuelle Gegenstände miteinander über das Internet verbunden sind und dadurch zusammenarbeiten können}
+		name={Internet der Dinge},description={Das Internet der Dinge (englisch: Internet of Things, IoT) ist ein Begriff dafür, dass in der modernen Welt, physische und virtuelle Gegenstände miteinander über das Internet verbunden sind und dadurch zusammenarbeiten können.}
 	}
 
 	\newglossaryentry{ogc}{
-		name={OGC},description={Das \textbf{O}pen \textbf{G}eospatial \textbf{C}onsortium ist eine gemeinnützige Organisation, die gegründet wurde, um frei nutzbare, allgemeingültige Standards für die raumbezogene Informationsverarbeitung (insbesondere Geodaten) festzulegen. \\
+		name={OGC},description={Das \textbf{O}pen \textbf{G}eospatial \textbf{C}onsortium ist eine gemeinnützige Organisation, die gegründet wurde, um frei benutzbare, allgemeingültige Standards für die raumbezogene Informationsverarbeitung (insbesondere Geodaten) festzulegen. \\
 		http://www.opengeospatial.org/}
 	}
 
 	\newglossaryentry{stApi}{
-		name={SensorThings API},description={Allgemeiner einheitlicher Standard, um Verbindung zwischen Sensoren, deren Ort und Umgebung und den von ihnen erzeugten Daten herzustellen. Link zur genauen Beschreibung: \\
+		name={SensorThings API},description={Allgemeiner einheitlicher Standard um Verbindung zwischen Sensoren, deren Ort und Umgebung und den von ihnen erzeugten Daten herzustellen. Link zur genauen Beschreibung: \\
 		http://developers.sensorup.com/docs/}
 	}
 
@@ -48,7 +48,7 @@
 	}
 
 	\newglossaryentry{int}{
-		name={Integer},description={Integer (deutsch: Ganzzahl) ist ein Datentyp zum Speichern ganzzahliger Werte}
+		name={Integer},description={Integer (deutsch: Ganzzahl) ist ein Datentyp zum speichern ganzzahlige Werte}
 	}
 
 	\newglossaryentry{magicnum}{
@@ -64,7 +64,7 @@
 	}
 
 	\newglossaryentry{headless}{
-		name={headless},description={Als headless (kopflos) bezeichnet man Server/Computer, die über keine grafische Ausgabe, also insbesondere keinen Bildschirm verfügen. Diese Systeme haben als Steuerungsmöglichkeit in vielen Fällen eine Netzwerkverbindung}
+		name={headless},description={Als headless (kopflos) bezeichnet man Server/Computer die über keine grafische Ausgabe, also keinen Bildschirm oder verfügen. Diese Systeme haben als Steuerungsmöglichkeit in vielen Fällen eine Netzwerkverbindung}
 	}
 
 	\newglossaryentry{js}{
@@ -89,7 +89,7 @@
 	}
 
 	\newglossaryentry{regex}{
-		name={RegEx},description={\textbf{Reg}ular \textbf{Ex}pressions (Regex, regulärer Ausdrucke) dienen der Beschreibung von Zeichenketten mit ähnlichem Format. Sie können als Filterkriterien in der Textsuche benutzt werden. Dabei wird der Text mit dem Muster des regulären Ausdrucks (RegEx) verglichen}
+		name={RegEx},description={\textbf{Reg}ular \textbf{Ex}pressions (Regex, regulärer Ausdrucke) dienen der Beschreibung von Zeichenketten mit ähnlichem Format. Sie können als Filterkriterien in der Textsuche benutzt werden. Dabei wird der Text mit dem Muster des regulären Ausdrucks (RegEx) verglichen.}
 	}
 
 	\newglossaryentry{iosb}{
@@ -118,7 +118,7 @@
 	}
 
 	\newglossaryentry{sensor}{
-		name={Sensor},description={Ein Sensor misst eine Eigenschaft, um eine Approximation des Wertes der Eigenschaft zurückzugeben}
+		name={Sensor},description={Ein Sensor misst eine Eigenschaft um eine Approximation des Wertes der Eigenschaft zurückzugeben}
 	}
 
 	
@@ -174,11 +174,11 @@
 
 \begin{figure}
 \centering
-\includegraphics[scale=0.8]{images/ogc}
+\includegraphics[scale=0.9]{images/ogc}
 \caption{\label{fig:ogc}Klassendiagramm der SensorThings API}
 \end{figure}
 
-\newpage
+\pagebreak
 \section{Zielbestimmung}
 	\subsection{Musskriterien}
 	
@@ -215,18 +215,18 @@
 	Bei Import von Daten von einer entfernten Adresse wird eine automatische, regelmäßige Übertragung angeboten.
 	\criteriumOptional{Import kompletter Datensätze von anderem \gls{frost}}{crt:frost}
 	Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen \gls{frost} zu kopieren.
-	\criteriumOptional{Komplexe Transformation/\glspl{aggr}}{crt:aggr}
-	\gls{aggr} auf ausgewählten Daten (bspw. Summe oder Durchschnitt) werden dem Benutzer bereitgestellt.
+	\criteriumOptional{Komplexe Transformation/\gls{aggr}}{crt:aggr}
+	\gls{aggr} auf ausgewählten Daten (bspw. Summe oder Durschnitt) werden dem Benutzer bereitgestellt.
 	\criteriumOptional{Automatische Formaterkennung}{crt:form}
     Aus der Quelldatei werden Spaltenformat, Datenformat und Datums- und Zeitformat automatisch erkannt und dem Benutzer eine passende Konfiguration vorgeschlagen.
 	\criteriumOptional{Automatische Sprachauswahl}{crt:lang}
-	Die Anwendung übernimmt automatisch die im Browser eingestellte Sprache.
+	Die Anwendung übernimmt automatisch die in Browser eingestellte Sprache.
 	
 
 	\subsection{Abgrenzungskriterien}
 	
 	\criteriumNot{Keine Bearbeitung vorhandener Daten}{crt:no-edit}
-Die Bearbeitung (Ändern, Löschen) bereits vorhandener Daten auf einem \gls{frost} wird nicht unterstützt.
+Die Bearbeitung (ändern, löschen) bereits vorhandener Daten auf einem \gls{frost} wird nicht unterstützt.
 	\criteriumNot{Keine Benutzerverwaltung}{crt:no-user}
 Es wird keine Benutzerverwaltung mit verschiedenen Benutzerkonten bereitgestellt. Authentifizierung wird ebenfalls nicht unterstützt.
 Jeder Benutzer kann somit die gespeicherten Konfigurationen aller Benutzer sehen und verwenden.
@@ -261,12 +261,12 @@ Die Integration bestehender Sensordaten in Tabellenform stellt auch einen große
 \subsection{Betriebsbedingungen}
 \begin{itemize}
 	\item Es wird vorausgesetzt, dass ausreichend Speicherplatz auf dem Server verfügbar ist
-	\item Die Software soll ununterbrochen laufen, d.h. die Produktumgebung muss sicherstellen, dass es nicht zu Störungen (Unterbrechung der Stromversorgung, plötzliches Herunterfahren o.ä.) kommt
+	\item Die Software soll ununterbrochen laufen, d.h. die Produktumgebung muss sicherstellen, dass es nicht zu Störungen (Unterbrechung der Stromversorgung, plötzliches herunterfahren o.ä.) kommt
 	\item Da Uploads teilweise sehr lange dauern können und der Nutzer nicht immer zwingend anwesend ist, muss die Software problemfrei unüberwacht laufen können
 \end{itemize}
 	
 \section{Produktumgebung}
-Die Produktumgebung teilt sich auf in den Webserver, auf dem das Produkt läuft, und den Client, mit dem der Nutzer die Webseite aufrufen kann. Für beide sind die Umgebungen stark unterschiedlich: \\
+Die Produktumgebung teilt sich auf in den Webserver, auf dem das Produkt läuft, und den Client, den der Nutzer nutzt um die Webseite aufzurufen. Für beide sind die Umgebungen stark unterschiedlich:
 Server:
 \begin{itemize}
 	\item Unix/Linux
@@ -291,84 +291,9 @@ Server:
 \end{itemize}
 
 
-\section{Benutzeroberfläche}
-
-\subsection{Hauptseite}
-Die Software stellt eine Weboberfläche zum Einfügen von Sensor-Datensätzen auf einen \gls{frost} zur Verfügung. 
-Dieser Zielserver wird einmalig beim erstmaligen Aufsetzen der Software eingestellt und ist nicht über das Webinterface einstellbar. 
-Ein Entwurf für die Hauptseite der Weboberfläche ist in \cref{fig:guiMain} (siehe Anhang \cref{fig:guiMainA} für vergrößerte Darstellung) zu sehen.
-\\
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=0.4]{images/gui}
-\caption{\label{fig:guiMain}Hauptseite der Weboberfläche}
-\end{figure}
-Beim Aufrufen der Weboberfläche ist zu Beginn nur der Bereich zum Auswählen der Quelldatei sichtbar. 
-Nach dem Einstellen der Quelle wird das Dateiformat überprüft und ein passender Konfigurator (für das Spaltenformat der Datei und das Format der Daten in den Spalten) wird sichtbar. \\
-
-Über das Log werden eventuelle Fehlermeldungen und Übertragungsfortschritte angezeigt. Unter \string"Choose Configuration\string" lässt sich eine auf dem Server gespeicherte Konfigurationsdatei auswählen. Dort bieten sich folgende Möglichkeiten:
-\begin{itemize}
-\item Unter "{Configuration}" kann eingestellt werden, in welcher Form die Daten in der Quelldatei angespeichert sind, um diese dann in den vom \gls{frost} verwendeten \gls{ogc}-Standard zu konvertieren.
-\item Zuerst ist das Trennsymbol für die Spalten in der Quelldatei und die Anzahl der Kopfzeilen (nicht zum Datensatz gehörige Zeilen) anzugeben. 
-\item Dann kann das zu den Daten gehörige \gls{thing} von schon auf dem \gls{frost} existierenden \glspl{thing} ausgewählt werden. Falls es benötigt wird, lässt sich über den "{Create Thing}"{-Button} ein neues \gls{thing} erstellen. (siehe \cref{fig:thing})
-\item Unter "{DateTime}"{ ist} das Datumsfomat einstellbar. Erst wird die Zeitzone eingegeben und danach lassen sich das Format für das Datum bzw. die Zeit als \gls{regex} und die zugehörige Spaltennummer angeben.
-\item Abschließend lassen sich ein oder mehrere (Multi-)\glspl{ds} auswählen. Existiert der (Multi-)\gls{ds} noch nicht, kann er über "{Create DS}"{ erstellt} werden. Mit Hilfe des "{Add DS}"{-Buttons} lassen sich weitere (Multi-)\glspl{ds} hinzufügen. Anschließend lassen sich wieder die zu den Daten gehörigen Spalten in der Quelldatei einstellen.
-\item Außerdem bietet die Weboberfläche über den "{Save Configuration}"{-Button} die Möglichkeit, eine bestehende Konfiguration auf dem Server abzuspeichern bzw. über den "{Reset Configuration}"{-Button} auf die Standard-Konfiguration zurückzusetzen.
-\item Der Button "{Show Preview}"{ ermöglicht} es, die Konfiguration testweise auf die ersten Datenzeilen der Quelldatei anzuwenden und sich das Ergebnis anzeigen zu lassen. Dadurch lässt sich die vorliegende Konfiguration auf korrektheit überprüfen.
-\item Über den "{Import Data}"{-Button} werden die Daten auf den \gls{frost} hochgeladen.
-\item Der "{Help}"{-Button} ermöglicht den Zugriff auf eine Kurzanleitung für das Webinterface.
-\end{itemize}
-
-\subsection{Thing erstellen}
-Wie in \cref{fig:thing} dargestellt, müssen Name, Beschreibung und Eigenschaften gewählt werden, um ein \gls{thing} zu erstellen. Über den "{Add property}"{-Button} kann eine weitere Eigenschaft als Key-Value-Paar hinzugefügt werden. Abschließend muss eine bestehende \gls{location} gewählt bzw. eine neue erstellt werden (siehe \cref{fig:loc}).
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=0.8]{images/thing}
-\caption{\label{fig:thing}Dialogfenster zum Erstellen eines Things.}
-\end{figure}
-
-
-\subsection{Datastream erstellen}
-\cref{fig:ds} zeigt das Dialogfenster zum Erstellen eines (Multi-)Datastreams. 
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=0.8]{images/datastream}
-\caption{\label{fig:ds}Dialogfenster zum Erstellen eines Datastreams.}
-\end{figure}
-Es müssen erst Name, Beschreibung, Observation Type und ein \gls{sensor} gewählt werden. Soll dafür ein neuer \gls{sensor} angelegt werden, existiert der "{Create Sensor}"{-Button} (siehe \cref{fig:sensor}).\\
-
-Im unteren Teil lassen sich die zugehörigen Einheiten für eine Messwertreihe festlegen. Existiert eine solche Einheit noch nicht, lässt sie sich über den "{Create Property}"{-Button} anlegen (siehe \cref{fig:oprop}). Mit dem "{Add unit}"{-Button} kann eine weitere Messwertreihe hinzugefügt werden. Hat ein \gls{ds} mehr als eine solche Größe, wird er als Multi-\gls{ds} verwaltet.\\
-
-Als Wunschkriterium kann an dieser Stelle noch das Auswählen von \gls{aggr}en der Messwerte eingefügt werden. Dies ist jedoch nicht Teil der erforderlichen graphischen Oberfläche. Unter \string"Aggregation\string" ließe sich dann auswählen, ob alle Daten importiert werden sollen oder nur eine \gls{aggr} der Daten.
-
-
-
-\subsection{Sensor, ObservedProperty oder Location erstellen}
-Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop} (siehe \cref{fig:oprop}) oder einer \gls{location} (siehe \cref{fig:loc}) verläuft, indem alle Textfelder des jeweiligen Dialogfeldes passend ausgefüllt werden und anschließend der "{Create}"{-Button} gedrückt wird.
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=1]{images/sensor}
-\caption{\label{fig:sensor}Dialogfenster zum Erstellen eines Sensors.}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=1]{images/oprop}
-\caption{\label{fig:oprop}Dialogfenster zum Erstellen eines Things.}
-\end{figure}
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[scale=1]{images/loc}
-\caption{\label{fig:loc}Dialogfenster zum Erstellen einer Location.}
-\end{figure}
-
 \newpage
 \section{Funktionale Anforderungen}
-\subsection{Grundfunktionen}
+\subsection{Erforderliche funktionale Anforderungen}
 	
 	\functionality{Auswahlmöglichkeit der Datenquelle}{fnc:quelle}
 	\fulfills{crt:data}
@@ -432,7 +357,7 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 		\end{itemize}
 	
 
-	\subsection{erweiterte Funktionen}
+	\subsection{Gewünschte funktionale Anforderungen}
 	
 	
 	\functionality{Bereitstellen einer Default-Konfiguration}{fnc:default}
@@ -474,7 +399,82 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\functionality{Kurzanleitung auf der Weboberfläche}{fnc:help}
 	
 	
-	
+\section{Benutzeroberfläche}
+
+\subsection{Hauptseite}
+Die Software stellt eine Weboberfläche zum Einfügen von Sensor-Datensätzen auf einen \gls{frost} zur Verfügung. 
+Dieser Zielserver wird einmalig beim erstmaligen Aufsetzen der Software eingestellt und ist nicht über das Webinterface einstellbar. 
+Ein Entwurf für die Hauptseite der Weboberfläche ist in \cref{fig:guiMain} (siehe Anhang \cref{fig:guiMainA} für vergrößerte Darstellung) zu sehen.
+\\
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.4]{images/gui}
+\caption{\label{fig:guiMain}Hauptseite der Weboberfläche}
+\end{figure}
+Beim Aufrufen der Weboberfläche ist zu Beginn nur der Bereich zum Auswählen der Quelldatei sichtbar. 
+Nach dem Einstellen der Quelle wird das Dateiformat überprüft und ein passender Konfigurator (für das Spaltenformat der Datei und das Format der Daten in den Spalten) wird sichtbar. \\
+
+Über das Log werden eventuelle Fehlermeldungen und Übertragungsfortschritte angezeigt. Unter \string"Choose Configuration\string" lässt sich eine auf dem Server gespeicherte Konfigurationsdatei auswählen. Dort bieten sich folgende Möglichkeiten:
+\begin{itemize}
+\item Unter "{Configuration}" kann eingestellt werden, in welcher Form die Daten in der Quelldatei angespeichert sind, um diese dann in den vom \gls{frost} verwendeten \gls{ogc}-Standard zu konvertieren.
+\item Zuerst ist das Trennsymbol für die Spalten in der Quelldatei und die Anzahl der Kopfzeilen (nicht zum Datensatz gehörige Zeilen) anzugeben. 
+\item Dann kann das zu den Daten gehörige \gls{thing} von schon auf dem \gls{frost} existierenden \glspl{thing} ausgewählt werden. Falls es benötigt wird, lässt sich über den "{Create Thing}"{-Button} ein neues \gls{thing} erstellen. (siehe \cref{fig:thing})
+\item Unter "{DateTime}"{ ist} das Datumsfomat einstellbar. Erst wird die Zeitzone eingegeben und danach lassen sich das Format für das Datum bzw. die Zeit als \gls{regex} und die zugehörige Spaltennummer angeben.
+\item Abschließend lassen sich ein oder mehrere (Multi-)\glspl{ds} auswählen. Existiert der (Multi-)\gls{ds} noch nicht, kann er über "{Create DS}"{ erstellt} werden. Mit Hilfe des "{Add DS}"{-Buttons} lassen sich weitere (Multi-)\glspl{ds} hinzufügen. Anschließend lassen sich wieder die zu den Daten gehörigen Spalten in der Quelldatei einstellen.
+\item Außerdem bietet die Weboberfläche über den "{Save Configuration}"{-Button} die Möglichkeit, eine bestehende Konfiguration auf dem Server abzuspeichern bzw. über den "{Reset Configuration}"{-Button} auf die Standard-Konfiguration zurückzusetzen.
+\item Der Button "{Show Preview}"{ ermöglicht} es, die Konfiguration testweise auf die ersten Datenzeilen der Quelldatei anzuwenden und sich das Ergebnis anzeigen zu lassen. Dadurch lässt sich die vorliegende Konfiguration auf korrektheit überprüfen.
+\item Über den "{Import Data}"{-Button} werden die Daten auf den \gls{frost} hochgeladen.
+\item Der "{Help}"{-Button} ermöglicht den Zugriff auf eine Kurzanleitung für das Webinterface.
+\end{itemize}
+
+\subsection{Thing erstellen}
+Wie in \cref{fig:thing} dargestellt, müssen Name, Beschreibung und Eigenschaften gewählt werden, um ein \gls{thing} zu erstellen. Über den "{Add property}"{-Button} kann eine weitere Eigenschaft als Key-Value-Paar hinzugefügt werden. Abschließend muss eine bestehende \gls{location} gewählt bzw. eine neue erstellt werden (siehe \cref{fig:loc}).
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.8]{images/thing}
+\caption{\label{fig:thing}Dialogfenster zum Erstellen eines Things.}
+\end{figure}
+
+
+\subsection{Datastream erstellen}
+\cref{fig:ds} zeigt das Dialogfenster zum Erstellen eines (Multi-)Datastreams. 
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.8]{images/datastream}
+\caption{\label{fig:ds}Dialogfenster zum Erstellen eines Datastreams.}
+\end{figure}
+Es müssen erst Name, Beschreibung, Observation Type und ein \gls{sensor} gewählt werden. Soll dafür ein neuer \gls{sensor} angelegt werden, existiert der "{Create Sensor}"{-Button} (siehe \cref{fig:sensor}).\\
+
+Im unteren Teil lassen sich die zugehörigen Einheiten für eine Messwertreihe festlegen. Existiert eine solche Einheit noch nicht, lässt sie sich über den "{Create Property}"{-Button} anlegen (siehe \cref{fig:oprop}). Mit dem "{Add unit}"{-Button} kann eine weitere Messwertreihe hinzugefügt werden. Hat ein \gls{ds} mehr als eine solche Größe, wird er als Multi-\gls{ds} verwaltet.\\
+
+Als Wunschkriterium kann an dieser Stelle noch das Auswählen von \gls{aggr}en der Messwerte eingefügt werden. Dies ist jedoch nicht Teil der erforderlichen graphischen Oberfläche. Unter \string"Aggregation\string" ließe sich dann auswählen, ob alle Daten importiert werden sollen oder nur eine \gls{aggr} der Daten.
+
+
+\pagebreak
+\subsection{Sensor, ObservedProperty oder Location erstellen}
+Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop} (siehe \cref{fig:oprop}) oder einer \gls{location} (siehe \cref{fig:loc}) verläuft, indem alle Textfelder des jeweiligen Dialogfeldes passend ausgefüllt werden und anschließend der "{Create}"{-Button} gedrückt wird.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=1]{images/sensor}
+\caption{\label{fig:sensor}Dialogfenster zum Erstellen eines Sensors.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=1]{images/oprop}
+\caption{\label{fig:oprop}Dialogfenster zum Erstellen eines Things.}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=1]{images/loc}
+\caption{\label{fig:loc}Dialogfenster zum Erstellen einer Location.}
+\end{figure}
+
+	\pagebreak
 	%TODO Nummerierung der Wunschkriterien in Fließtext
 	\section{Produktdaten}
 	
@@ -494,14 +494,19 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\end{itemize}
 \end{itemize}
 
+<<<<<<< HEAD
 \newpage
 \section{Systemmodell}
+=======
+\pagebreak
+	\section{Systemmodell}
+>>>>>>> 1f9e638cf7c725ac67817d2cc2a3fda368e511b0
 	\begin{figure}[htbp]
 	\centering
 	\includegraphics[scale=1]{images/sysmodel}
 	\caption{\label{fig:system}Systemmodell der Software (Pfeile repräsentieren Netzwerkverbindungen)}
 	\end{figure}	
-	
+	\pagebreak
 	\section{Produktleistungen}
 	\begin{itemize}
 		\item Die Software dokumentiert Fehler jeglicher Art und das Starten bzw. Abschließen von Uploads.
@@ -527,7 +532,6 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\item Die Daten sollten \gls{https}-/\gls{ssl}-verschlüsselt werden, um das Abfangen der Daten zu verhindern.
 	\end{itemize}
 	
-
 	\section{Testfälle}
 	
 	\test{Anzeigen der Weboberfläche}{tst:webseite}
@@ -576,7 +580,7 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 %	\ \\
 %	\teststep{Dem Nutzer wird die Webseite angezeigt. Insbesondere existiert ein Textfeld zur Eingabe des Zielservers.}{Der Nutzer gibt einen FROST-Server als Ziel in das Textfeld ein und drückt den "{Submit}"{-Knopf}.}{Der Server wird auf Gültigkeit überprüft und bei Korrektheit erscheint ein Konfigurator zum Einstellen des Formats der Daten in der Quelldatei. Im Konfigurator ist der Default-Case voreingestellt.}
 %	\ \\
-	
+	\pagebreak
 	\test{Konfiguration zurücksetzen}{tst:reset}
 	\tests{fnc:default}
 	\teststep{Der Nutzer befindet sich auf der Webseite und es wird der Konfigurator angezeigt.}{Der Nutzer drückt den "{Reset Configuration}"{-Knopf}.}{Alle eingestellten Konfigurationen werden auf den Default-Case zurückgesetzt.}
@@ -592,7 +596,7 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\tests{fnc:create}
 	\teststep{Der "{Create New Thing}"{-Dialog} ist offen.}{Der Nutzer klickt einmal oder mehrfach auf den "{Add Property}"{-Button}.}{es werden ein oder mehrere Textfeld-Paare im Interface erstellt, in denen der Nutzer die Eigenschaft (Property) und den Wert (Value) des \glspl{thing} einstellen kann.}
 
-
+\pagebreak
 	\test{Neuen (Multi-)Datastream erstellen}{tst:datastream}
 	\tests{fnc:create}
 	\teststep{Die Datei und \gls{frost} wurden angegeben und ein \gls{thing} ausgewählt}{Der User klickt auf den "{Create DS}"{-Button}}{Es öffnet sich der "{Create New DataStream}"{-Dialog}, in dem der User einen neuen \gls{ds} oder Multi-\gls{ds} formulieren und erstellen kann.}
