@@ -236,8 +236,8 @@ Jeder Benutzer kann somit die gespeicherten Konfigurationen aller Benutzer sehen
 \pagebreak
 \section{Produkteinsatz}
 \subsection{Anwendungsbereiche}
-Die Software kommt überall dort zum Einsatz, wo Sensordaten gesammelt werden, aber nicht automatisch in den FROST-Server übertragen werden können.\\
-Als Beispiel ist ein Forschungsprojekt zu nennen, bei dem die Sensordaten in Tabellenform vorliegen. Diese Daten sollen in eine FROST-Instanz hochgeladen und ggf. weiterverarbeitet werden. Ebenso können neue Sensordaten durch den Mitarbeiter einer Firma (z.B. Stadtwerke) importiert werden.\\
+Die Software kommt überall dort zum Einsatz, wo Messwerte und Metadaten von Sensoren gesammelt werden, aber nicht automatisch in den FROST-Server übertragen werden können.\\
+Als Beispiel ist ein Forschungsprojekt zu nennen, bei dem die Messwerte in Tabellenform vorliegen. Diese Daten sollen in eine FROST-Instanz hochgeladen und ggf. weiterverarbeitet werden. Ebenso können neue Sensordaten durch den Mitarbeiter einer Firma (z.B. Stadtwerke) importiert werden.\\
 Die Integration bestehender Sensordaten in Tabellenform stellt auch einen großen Anwedungsbereich dar.
 	
 
@@ -581,7 +581,7 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 
 	\test{Neuen (Multi-)Datastream erstellen}{tst:datastream}
 	\tests{fnc:create}
-	\teststep{Die Datei und \gls{frost} wurden angegeben und ein \gls{thing} ausgewählt}{Der User klickt auf den "{Create DS}"{-Button}}{Es öffnet sich der "{Create New DataStream}"{-Dialog} indem der User einen neuen \gls{ds} oder Multi-\gls{ds} formulieren und erstellen kann}
+	\teststep{Die Datei und \gls{frost} wurden angegeben und ein \gls{thing} ausgewählt}{Der User klickt auf den "{Create DS}"{-Button}}{Es öffnet sich der "{Create New DataStream}"{-Dialog}, in dem der User einen neuen \gls{ds} oder Multi-\gls{ds} formulieren und erstellen kann}
 	\teststep{Der User sieht das Dialogfenster zum erstellen eines \glspl{ds}}{der User trägt Name und Beschreibung in die Textfelder ein, wählt Observation Type und \gls{sensor} aus den Dropdown-Menüs aus, trägt eine oder mehrere Units Of Measurement ein und klickt abschließend auf "{Create}"}{Die Software unterscheidet zwischen \gls{ds} und Multi-\gls{ds} und legt den entsprechenden Stream mit den angegeben Daten im \gls{frost} an}
 
 	
@@ -592,7 +592,7 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 
 	\test{ObervedProperty erstellen}{tst:oprop}
 	\tests{fnc:create}
-	\teststep{Der Nutzer erstellt gerade einen \gls{ds} (sieht den Dialog wie in \cref{fig:ds}) und eine \gls{obsprop} für einen Datensatz existiert noch nicht.}{Der Nutzer drückt den "{Create Property}"{-Knopf}.}{Es öffnet sich das Dialogfenster zum Erstellen einer \gls{obsprop} (siehe \cref{fig:obsProp}).}
+	\teststep{Der Nutzer erstellt gerade einen \gls{ds} (sieht den Dialog wie in \cref{fig:ds}) und eine \gls{obsprop} für einen Datensatz existiert noch nicht.}{Der Nutzer drückt den "{Create Property}"{-Knopf}.}{Es öffnet sich das Dialogfenster zum Erstellen einer \gls{obsprop} (siehe \cref{fig:oprop}).}
 	\teststep{}{Der Nutzer füllt alle Textfelder aus und drückt den "{Create}"{-Knopf}.}{Die Daten werden überprüft und ein neue \gls{obsprop} wird angelegt. Das Dialogfenster wird geschlossen.}
 
 	
