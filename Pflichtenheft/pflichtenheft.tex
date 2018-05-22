@@ -156,7 +156,7 @@
 \newpage
 	\section{SensorThings API}
 
-	Die \gls{stApi} besteht aus folgenden Elementen, die miteinander im Zusammenhang stehen. Jedes Element hat bestimmte Eigenschaften. Diese und die Beziehungen sind im unten abgebildeten UML-Diagramm\footnote{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html} (\cref{fig:ogc}) dargestellt. \\
+	Die \gls{stApi} besteht aus folgenden Entitäten, die miteinander im Zusammenhang stehen. Jedes Element hat bestimmte Eigenschaften. Diese und die Beziehungen sind im unten abgebildeten UML-Diagramm\footnote{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html} (\cref{fig:ogc}) dargestellt. \\
 	\begin{enumerate}
 	
 	\item Thing (Gegenstand): Ein Objekt aus der realen Welt (physisches Thing) oder ein virtuelles Thing
@@ -184,15 +184,17 @@
 	\subsection{Musskriterien}
 	
 	
-	\criterium{Import von Daten}{crt:data}
-	Die Daten sollen aus Tabellen im \gls{csvExcel}format importiert werden.
+	\criterium{Import von Messwerten}{crt:data}
+	Die Sensor-Messwerte sollen aus Tabellen im \gls{csvExcel}format importiert werden.
 
 	\criterium{Konvertierung des Formats der Sensordaten}{crt:conv}
 	Die Daten sollen aus den beliebigen Datenformaten und Anordnungen innerhalb der Quelldatei in den einheitlichen Standard der \gls{stApi} konvertiert werden.
+    Damit entsprechen sie dem Standard der Daten auf einem \gls{frost}.
 	
 	\criterium{Erstellen, Abspeichern und Laden von Konfigurationen}{crt:conf}
 	Der Benutzer soll Spaltenformat, Datenformat und insbesondere das Datums- und Zeitformat einstellen und als Konfiguration abspeichern können.
-	
+    Diese Konfigurationen sollen später auch wieder geladen werden können.
+
 	\criterium{Datentyptransformationen}{crt:trf}
 	Alle Werte sind in der Quelldatei als String vorhanden und müssen, bevor sie auf den \gls{frost} geladen werden, in den passenden Datentyp (bspw. \gls{int}) umgewandelt werden.
 	Sonderwerte (\glspl{magicnum}) sollen nicht auf den \gls{frost} geladen, sondern separat behandelt werden.	
@@ -201,13 +203,13 @@
 	
 	
 	\criteriumOptional{Standard-Konfiguration}{crt:std}
-	Dem Benutzer wird eine vorgefertigte Konfiguration, bestehend aus Spaltenformat, Datenformat und Datums- und Zeitformat, bereitgestellt.
+	Für eine Auswahl gängiger Eingabedateien wird dem Benutzer eine Liste vordefinierter Konfigurationen, bestehend aus Spaltenformat, Datenformat und Datums- und Zeitformat, vorgeschlagen.
 	\criteriumOptional{Überprüfung auf Duplikate}{crt:dupl}
 	Beim Upload der Daten auf den \gls{frost} werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut gespeichert.
 	\criteriumOptional{Rückgabe nicht bearbeiteter Datensätze in neuer \gls{csvExcel}}{crt:ruck}
 	Bei (teilweise) fehlgeschlagener Übertragung zum \gls{frost} werden die nicht übertragenen Daten in einer \gls{csvExcel} an den Benutzer zurückgegeben.
-	\criteriumOptional{Korrektur von falschen Daten}{crt:korr}
-	Der Benutzer hat die Möglichkeit, Fehler in den Daten direkt zu korrigieren.
+	\criteriumOptional{Korrektur fehlerhafter Daten}{crt:korr}
+	Dem Benutzer wird es ermöglicht automatisch erkannte fehlerhafte Datensätze in der Weboberfläche zu korrigieren.
 	\criteriumOptional{Import von Fremdquellen wie anderen Webseiten}{crt:web}
 	Es soll möglich sein, als Quelldatei auch einen entfernten Speicherort, zum Beispiel einen Weblink, anzugeben.
 	\criteriumOptional{Automatisierte Daten-Aktualisierung}{crt:akt}
@@ -217,19 +219,18 @@
 	\criteriumOptional{Komplexe Transformationen/\gls{aggr}}{crt:aggr}
 	\gls{aggr} auf ausgewählten Daten (bspw. Summe oder Durschnitt) werden dem Benutzer bereitgestellt.
 	\criteriumOptional{Automatische Formaterkennung}{crt:form}
-	Aus der Quelldatei werden Spaltenformat, Datenformat und Datums- und Zeitformat automatisch erkannt und eine entsprechende Konfiguration generiert.
-	Diese Konfiguration ersetzt die Standard-Konfiguration.
+    Aus der Quelldatei werden Spaltenformat, Datenformat und Datums- und Zeitformat automatisch erkannt und dem Benutzer eine passende Konfiguration vorgeschlagen.
 	\criteriumOptional{Automatische Sprachauswahl}{crt:lang}
 	Die Anwendung übernimmt automatisch die in Browser eingestellte Sprache.
 	
 
 	\subsection{Abgrenzungskriterien}
 	
-	\criteriumNot{Keine Verwaltung des \gls{frost}s}{crt:no-edit}
-	Die Software soll keine schon auf dem \gls{frost} liegenden Daten verwalten, ändern oder löschen.
+	\criteriumNot{Keine Bearbeitung vorhandener Daten}{crt:no-edit}
+Die Bearbeitung (ändern, löschen) bereits vorhandener Daten auf einem \gls{frost} wird nicht unterstützt.
 	\criteriumNot{Keine Benutzerverwaltung}{crt:no-user}
-	Es wird keine Benutzerverwaltung mit verschiedenen Benutzerkonten bereitgestellt.
-	Jeder Benutzer kann somit die gespeicherten Konfigurationen aller Benutzer sehen und verwenden.
+Es wird keine Benutzerverwaltung mit verschiedenen Benutzerkonten bereitgestellt. Authentifizierung wird ebenfalls nicht unterstützt.
+Jeder Benutzer kann somit die gespeicherten Konfigurationen aller Benutzer sehen und verwenden.
 	\criteriumNot{Keine mobilen Endgeräte}{crt:no-mobile}
 	Die Software muss nicht auf mobilen Endgeräten laufen können.
 
