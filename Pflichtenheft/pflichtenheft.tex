@@ -307,7 +307,7 @@ Ein Entwurf für die Hauptseite der Weboberfläche ist in \cref{fig:guiMain} (si
 Beim Aufrufen der Weboberfläche ist zu Beginn nur der Bereich zum Auswählen der Quelldatei sichtbar. 
 Nach dem Einstellen der Quelle wird das Dateiformat überprüft und ein passender Konfigurator (für das Spaltenformat der Datei und das Format der Daten in den Spalten) wird sichtbar. \\
 
-Über das Log werden eventuelle Fehlermeldungen und Übertragungsfortschritte angezeigt. Unter "{Choose Configuration}" lässt sich eine auf dem Server gespeicherte Konfigurationsdatei auswählen. Dort bieten sich folgende Möglichkeiten:
+Über das Log werden eventuelle Fehlermeldungen und Übertragungsfortschritte angezeigt. Unter \string"Choose Configuration\string" lässt sich eine auf dem Server gespeicherte Konfigurationsdatei auswählen. Dort bieten sich folgende Möglichkeiten:
 \begin{itemize}
 \item Unter "{Configuration}" kann eingestellt werden, in welcher Form die Daten in der Quelldatei angespeichert sind, um diese dann in den vom \gls{frost} verwendeten \gls{ogc}-Standard zu konvertieren.
 \item Zuerst ist das Trennsymbol für die Spalten in der Quelldatei und die Anzahl der Kopfzeilen (nicht zum Datensatz gehörige Zeilen) anzugeben. 
@@ -338,7 +338,7 @@ Wie in \cref{fig:thing} dargestellt, müssen Name, Beschreibung und Eigenschafte
 \end{figure}
 Es müssen erst Name, Beschreibung, Observation Type und ein \gls{sensor} gewählt werden. Soll dafür ein neuer \gls{sensor} angelegt werden, existiert der "{Create Sensor}"{-Button} (siehe \cref{fig:sensor}).\\
 
-Im unteren Teil lassen sich die zugehörigen Einheiten für eine Messwertreihe festlegen. Existiert eine solche Einheit noch nicht, lässt sie sich über den "{Create Property}"{-Button} anlegen (siehe \cref{fig:oprop}). Unter "Aggregation" lässt sich auswählen, ob alle Daten importiert werden sollen, oder nur eine Aggregation dieses Datensatzes. Mit dem "{Add unit}"{-Button} kann eine weitere Messwertreihe hinzugefügt werden. Hat ein \gls{ds} mehr als eine solche Größe, wird er als Multi-\gls{ds} verwaltet.
+Im unteren Teil lassen sich die zugehörigen Einheiten für eine Messwertreihe festlegen. Existiert eine solche Einheit noch nicht, lässt sie sich über den "{Create Property}"{-Button} anlegen (siehe \cref{fig:oprop}). Unter \string"Aggregation\string" lässt sich auswählen, ob alle Daten importiert werden sollen, oder nur eine Aggregation dieses Datensatzes. Mit dem "{Add unit}"{-Button} kann eine weitere Messwertreihe hinzugefügt werden. Hat ein \gls{ds} mehr als eine solche Größe, wird er als Multi-\gls{ds} verwaltet.
 
 
 
@@ -475,7 +475,7 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	%TODO Nummerierung der Wunschkriterien in Fließtext
 	\section{Produktdaten}
 	
-	Bei den Daten die auf dem Server gespeichert werden müssen wird unterschieden zwischen Nutzerdaten und Systemdaten.
+	Bei den Daten, die auf dem Server gespeichert werden müssen, wird unterschieden zwischen Nutzerdaten und Systemdaten.
 	
 \begin{itemize}
 	\item Nutzerdaten:
@@ -530,7 +530,7 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\tests{fnc:dupl}
 	
 	\teststep{Der Nutzer hat die Quelle eingegeben und bestätigt.}{Der Nutzer füllt die Datums-/Uhrzeits-Spalte aus}{Die Software überprüft die Korrektheit der Spalten (Wurde eine Spalte angegeben, die nicht existiert?)}	
-	\teststep{}{Der Benutzer drückt den "{Add column}"{-Button}, um eine neue Datums-/Zeit-Spalte anzulegen}{Die Software erstellt zwei neue Textfelder mit "Spalte" und "Format" im Interface, sodass sich die Datums- und Zeitnagabe über mehrere Spalten erstrecken kann}
+	\teststep{}{Der Benutzer drückt den "{Add column}"{-Button}, um eine neue Datums-/Zeit-Spalte anzulegen}{Die Software erstellt zwei neue Textfelder mit \string"Spalte\string" und \string"Format\string" im Interface, sodass sich die Datums- und Zeitnagabe über mehrere Spalten erstrecken kann}
 	\teststep{Die Spalten wurden korrekt angegeben}{Der Benutzer gibt via \gls{regex} das Format des Datums/der Uhrzeit in dem dazugehörigen Textfeld an}{Die Korrektheit des \gls{regex} wird anhand der Werte der Tabellendatei auf Fehler geprüft}
 	\teststep{Das Datum / die Uhrzeit wurde korrekt ausgefüllt}{Der Nutzer wählt das \gls{thing} aus dem Dropdown-Menü, welches alle \glspl{thing} enthält, aus}{Das \gls{ds}-Dropdown-Menü wird mit den zum gewählten \gls{thing} gehörenden (Multi-)\glspl{ds} aktualisiert}
 	\teststep{\gls{thing} wurde ausgewählt}{Der Anwender wählt den \gls{ds} aus dem \gls{ds}-Dropdown-Menü aus}{Das System lädt die zum (Multi-)\gls{ds} gehörenden Messeinheiten neben die Textfelder zum eintragen}
