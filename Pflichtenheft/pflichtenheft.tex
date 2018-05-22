@@ -543,7 +543,8 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\teststep{Das Datum / die Uhrzeit wurde korrekt ausgefüllt}{Der Nutzer wählt das \gls{thing} aus dem Dropdown-Menü, welches alle \glspl{thing} enthält, aus}{Das \gls{ds}-Dropdown-Menü wird mit den zum gewählten \gls{thing} gehörenden (Multi-)\glspl{ds} aktualisiert}
 	\teststep{\gls{thing} wurde ausgewählt}{Der Anwender wählt den \gls{ds} aus dem \gls{ds}-Dropdown-Menü aus}{Das System lädt die zum (Multi-)\gls{ds} gehörenden Messeinheiten neben die Textfelder zum eintragen}
 	\teststep{Messdaten geladen}{Der Nutzer trägt die Spalten mit den Messwerten neben die Messeinheiten ein}{Die Korrektheit der Eintragung wird wieder durch die Software geprüft}
-	\teststep{Alle Textfelder ausgefüllt}{der User klickt auf den Button "{Upload}"}{Die Daten in den angegebenen Spalten werden eingelesen, konvertiert und auf den \gls{frost} übertragen}
+	\teststep{Alle Textfelder ausgefüllt}{Der User klickt auf den Button "{Upload}"}{Die Daten in den angegebenen Spalten werden eingelesen, konvertiert und auf den \gls{frost} übertragen}
+	\teststep{Alle Textfelder ausgefüllt}{Der User klickt auf den Button \string"Upload\string", aber hat fehlerhafte Daten ausgewählt}{Das Programm meldet einen Fehler im Log und bricht die Verarbeitung ab}
 	
 	\test{Datei als Quelle wählen}{tst:quelle}
 	\tests{fnc:quelle}
