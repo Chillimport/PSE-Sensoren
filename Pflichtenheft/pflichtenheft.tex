@@ -533,14 +533,14 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\test{Anzeigen der Weboberfläche}{tst:webseite}
 	\teststep{Der Nutzer hat einen Browser geöffnet.}{Der Nutzer navigiert auf die Webseite.}{Die Webseite wird wie in \cref{fig:guiMain} dargestellt.}
 
-	
+
 	\test{Konfigurieren und Hochladen}{tst:conf}
 	\tests{fnc:create}
 	\tests{fnc:upload}
 	\tests{fnc:conv}
 	\tests{fnc:dupl}
 	
-	\teststep{Der Nutzer hat die Quelle eingegeben und bestätigt.}{Der Nutzer füllt die Datums-/Uhrzeits-Spalte aus.}{Die Software überprüft die Korrektheit der Spalten (Wurde eine Spalte angegeben, die nicht existiert?).}	
+	\teststep{Der Nutzer hat die Quelle eingegeben und bestätigt.}{Der Nutzer füllt die Datums-/Uhrzeit-Spalte aus.}{Die Software überprüft die Korrektheit der Spalten (Wurde eine Spalte angegeben, die nicht existiert?).}	
 	\teststep{}{Der Benutzer drückt den "{Add Column}"{-Button}, um eine neue Datums-/Zeit-Spalte anzulegen.}{Die Software erstellt zwei neue Textfelder mit \string"Spalte\string" und \string"Format\string" im Interface, sodass sich die Datums- und Zeitangabe über mehrere Spalten erstrecken kann.}
 	\teststep{Die Spalten wurden korrekt angegeben.}{Der Benutzer gibt via \gls{regex} das Format des Datums/der Uhrzeit in dem dazugehörigen Textfeld an.}{Die Korrektheit des \gls{regex} wird anhand der Werte der Tabellendatei auf Fehler geprüft.}
 	\teststep{Das Datum / die Uhrzeit wurde korrekt ausgefüllt.}{Der Nutzer wählt das \gls{thing} aus dem Dropdown-Menü, welches alle \glspl{thing} enthält, aus.}{Das \gls{ds}-Dropdown-Menü wird mit den zum gewählten \gls{thing} gehörenden (Multi-)\glspl{ds} aktualisiert.}
@@ -590,13 +590,13 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	
 	\test{Properties zu Thing hinzufügen}{tst:prop}
 	\tests{fnc:create}
-	\teststep{Der "{Create New Thing}"{-Dialog} ist offen.}{Der Nutzer klickt einmal oder mehrfach auf den "{Add Property}"{-Button}.}{es werden ein oder mehrere Textfeld-Paare im Interface erstellt in denen der Nutzer die Eigenschaft (Property) und den Wert (Value) des \glspl{thing} einstellen kann.}
+	\teststep{Der "{Create New Thing}"{-Dialog} ist offen.}{Der Nutzer klickt einmal oder mehrfach auf den "{Add Property}"{-Button}.}{es werden ein oder mehrere Textfeld-Paare im Interface erstellt, in denen der Nutzer die Eigenschaft (Property) und den Wert (Value) des \glspl{thing} einstellen kann.}
 
 
 	\test{Neuen (Multi-)Datastream erstellen}{tst:datastream}
 	\tests{fnc:create}
 	\teststep{Die Datei und \gls{frost} wurden angegeben und ein \gls{thing} ausgewählt}{Der User klickt auf den "{Create DS}"{-Button}}{Es öffnet sich der "{Create New DataStream}"{-Dialog}, in dem der User einen neuen \gls{ds} oder Multi-\gls{ds} formulieren und erstellen kann.}
-	\teststep{Der User sieht das Dialogfenster zum erstellen eines \glspl{ds}}{der User trägt Name und Beschreibung in die Textfelder ein, wählt Observation Type und \gls{sensor} aus den Dropdown-Menüs aus, trägt eine oder mehrere Units Of Measurement ein und klickt abschließend auf "{Create}".}{Die Software unterscheidet zwischen \gls{ds} und Multi-\gls{ds} und legt den entsprechenden Stream mit den angegeben Daten im \gls{frost} an.}
+	\teststep{Der User sieht das Dialogfenster zum Erstellen eines \glspl{ds}}{der User trägt Name und Beschreibung in die Textfelder ein, wählt Observation Type und \gls{sensor} aus den Dropdown-Menüs aus, trägt eine oder mehrere Units Of Measurement ein und klickt abschließend auf "{Create}".}{Die Software unterscheidet zwischen \gls{ds} und Multi-\gls{ds} und legt den entsprechenden Stream mit den angegeben Daten im \gls{frost} an.}
 
 	
 	\test{Sensor erstellen}{tst:sensor}
@@ -604,7 +604,7 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 	\teststep{Der Nutzer erstellt gerade einen \gls{ds} (sieht den Dialog wie in \cref{fig:ds}) und der zugehörige \gls{sensor} existiert noch nicht.}{Der Nutzer drückt den "{Create Sensor}"{-Knopf}.}{Es öffnet sich das Dialogfenster zum Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}).}
 	\teststep{}{Der Nutzer füllt alle Textfelder aus und drückt den "{Create}"{-Knopf}.}{Die Daten werden überprüft und ein neuer \gls{sensor} wird angelegt. Das Dialogfenster wird geschlossen.}
 
-	\test{ObervedProperty erstellen}{tst:oprop}
+	\test{ObservedProperty erstellen}{tst:oprop}
 	\tests{fnc:create}
 	\teststep{Der Nutzer erstellt gerade einen \gls{ds} (sieht den Dialog wie in \cref{fig:ds}) und eine \gls{obsprop} für einen Datensatz existiert noch nicht.}{Der Nutzer drückt den "{Create Property}"{-Knopf}.}{Es öffnet sich das Dialogfenster zum Erstellen einer \gls{obsprop} (siehe \cref{fig:oprop}).}
 	\teststep{}{Der Nutzer füllt alle Textfelder aus und drückt den "{Create}"{-Knopf}.}{Die Daten werden überprüft und ein neue \gls{obsprop} wird angelegt. Das Dialogfenster wird geschlossen.}
