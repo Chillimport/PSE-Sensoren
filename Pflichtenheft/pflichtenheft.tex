@@ -182,57 +182,58 @@
 \newpage
 \section{Zielbestimmung}
 	\subsection{Musskriterien}
-	\begin{enumerate}
-	\item Import von Daten \\
-	Die Daten sollen aus Tabellen im \gls{csvExcel}format importiert werden
-	\item Konvertierung des Formats der Sensordaten \\
-	Die Daten sollen aus den beliebigen Datenformaten und Anordnungen innerhalb der Quelldatei in den einheitlichen Standard der \gls{stApi} konvertiert werden.
-	Damit entsprechen sie dem Standard der Daten auf einem \gls{frost}.
-	\item Erstellen, Abspeichern und Laden von Konfigurationen \\
-	Der Benutzer soll Spaltenformat, Datenformat und insbesondere das Datums- und Zeitformat einstellen und als Konfiguration abspeichern können.
-	Diese Konfigurationen sollen später auch wieder geladen werden können.
-	\item Datentyptransformationen \\
-	Alle Werte sind in der Quelldatei als String vorhanden und müssen, bevor sie auf den \gls{frost} geladen werden, in den passenden Datentyp (bspw. \gls{int}) umgewandelt werden.
-	Sonderwerte (\glspl{magicnum}) sollen nicht auf den \gls{frost} geladen, sondern separat behandelt werden.
-	\end{enumerate}
+	
+	
+	\criterium{Import von Daten}{crt:data}
+	Die Daten sollen aus Tabellen im \gls{csvExcel}format importiert werden.
 
+	\criterium{Konvertierung des Formats der Sensordaten}{crt:conv}
+	Die Daten sollen aus den beliebigen Datenformaten und Anordnungen innerhalb der Quelldatei in den einheitlichen Standard der \gls{stApi} konvertiert werden.
+	
+	\criterium{Erstellen, Abspeichern und Laden von Konfigurationen}{crt:conf}
+	Der Benutzer soll Spaltenformat, Datenformat und insbesondere das Datums- und Zeitformat einstellen und als Konfiguration abspeichern können.
+	
+	\criterium{Datentyptransformationen}{crt:trf}
+	Alle Werte sind in der Quelldatei als String vorhanden und müssen, bevor sie auf den \gls{frost} geladen werden, in den passenden Datentyp (bspw. \gls{int}) umgewandelt werden.
+	Sonderwerte (\glspl{magicnum}) sollen nicht auf den \gls{frost} geladen, sondern separat behandelt werden.	
+	
 	\subsection{Wunschkriterien}
-	\begin{enumerate}
-	\item Standard-Konfiguration \\
+	
+	
+	\criteriumOptional{Standard-Konfiguration}{crt:std}
 	Dem Benutzer wird eine vorgefertigte Konfiguration, bestehend aus Spaltenformat, Datenformat und Datums- und Zeitformat, bereitgestellt.
-	\item Überprüfung auf Duplikate \\
+	\criteriumOptional{Überprüfung auf Duplikate}{crt:dupl}
 	Beim Upload der Daten auf den \gls{frost} werden diese mit den bestehenden Daten abgeglichen und Duplikate werden nicht erneut gespeichert.
-	\item Rückgabe nicht bearbeiteter Datensätze in neuer \gls{csvExcel} \\
+	\criteriumOptional{Rückgabe nicht bearbeiteter Datensätze in neuer \gls{csvExcel}}{crt:ruck}
 	Bei (teilweise) fehlgeschlagener Übertragung zum \gls{frost} werden die nicht übertragenen Daten in einer \gls{csvExcel} an den Benutzer zurückgegeben.
-	\item Korrektur von falschen Daten \\
-	Der Benutzer hat die Möglichkeit Fehler in den Daten direkt zu korrigieren.
-	\item Import von Fremdquellen wie anderen Webseiten \\
-	Es soll möglich sein als Quelldatei auch einen entfernten Speicherort, zum Beispiel einen Weblink anzugeben.
-	\item Automatisierte Daten-Aktualisierung \\
+	\criteriumOptional{Korrektur von falschen Daten}{crt:korr}
+	Der Benutzer hat die Möglichkeit, Fehler in den Daten direkt zu korrigieren.
+	\criteriumOptional{Import von Fremdquellen wie anderen Webseiten}{crt:web}
+	Es soll möglich sein, als Quelldatei auch einen entfernten Speicherort, zum Beispiel einen Weblink, anzugeben.
+	\criteriumOptional{Automatisierte Daten-Aktualisierung}{crt:akt}
 	Bei Import von Daten von einer entfernten Adresse wird eine automatische, regelmäßige Übertragung angeboten.
-	\item Import kompletter Datensätze von anderem \gls{frost} \\
-	Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen \gls{frost} zu kopieren
-	\item Auswahl komplexer Transformationen/\gls{aggr}\\ 
+	\criteriumOptional{Import kompletter Datensätze von anderem \gls{frost}}{crt:frost}
+	Der Benutzer hat zusätzlich die Möglichkeit, Daten von einem anderen \gls{frost} zu kopieren.
+	\criteriumOptional{Komplexe Transformationen/\gls{aggr}}{crt:aggr}
 	\gls{aggr} auf ausgewählten Daten (bspw. Summe oder Durschnitt) werden dem Benutzer bereitgestellt.
-	\item Automatische Formaterkennung \\
+	\criteriumOptional{Automatische Formaterkennung}{crt:form}
 	Aus der Quelldatei werden Spaltenformat, Datenformat und Datums- und Zeitformat automatisch erkannt und eine entsprechende Konfiguration generiert.
 	Diese Konfiguration ersetzt die Standard-Konfiguration.
-	\item Automatische Sprachauswahl \\
+	\criteriumOptional{Automatische Sprachauswahl}{crt:lang}
 	Die Anwendung übernimmt automatisch die in Browser eingestellte Sprache.
-	\end{enumerate}
+	
 
 	\subsection{Abgrenzungskriterien}
-	\begin{enumerate}
-	\item Keine Verwaltung des \gls{frost}s \\
+	
+	\criteriumNot{Keine Verwaltung des \gls{frost}s}{crt:no-edit}
 	Die Software soll keine schon auf dem \gls{frost} liegenden Daten verwalten, ändern oder löschen.
-	\item Keine Benutzerverwaltung \\
+	\criteriumNot{Keine Benutzerverwaltung}{crt:no-user}
 	Es wird keine Benutzerverwaltung mit verschiedenen Benutzerkonten bereitgestellt.
 	Jeder Benutzer kann somit die gespeicherten Konfigurationen aller Benutzer sehen und verwenden.
-	\item Keine mobilen Endgeräte \\
+	\criteriumNot{Keine mobilen Endgeräte}{crt:no-mobile}
 	Die Software muss nicht auf mobilen Endgeräten laufen können.
-	\end{enumerate}
 
-
+\pagebreak
 \section{Anwendungsbereiche}
 Die Software kommt überall dort zum Einsatz, wo Sensordaten aus Tabellen weiterverarbeitet müssen. \\
 \begin{itemize}
@@ -302,12 +303,12 @@ Server:
 	\item Netzwerkanschluss an den CHILLImport-Server
 \end{itemize}
 	
-	\begin{itemize}
-		\item \gls{headless} Server
-		\item Linux/Windows Server
-		\item Java \gls{jre}
-		\item \gls{stApi}
-	\end{itemize}
+%	\begin{itemize}
+%		\item \gls{headless} Server
+%		\item Linux/Windows Server
+%		\item Java \gls{jre}
+%		\item \gls{stApi}
+%	\end{itemize}
 
 \section{Seitenentwürfe}
 
@@ -319,7 +320,7 @@ Ein Entwurf für die Hauptseite der Weboberfläche ist in \cref{fig:guiMain} (si
 
 \begin{figure}[htbp]
 \centering
-\includegraphics[scale=0.32]{images/gui}
+\includegraphics[scale=0.4]{images/gui}
 \caption{\label{fig:guiMain}Hauptseite der Weboberfläche}
 \end{figure}
 Beim Aufrufen der Weboberfläche ist zu Beginn nur der Bereich zum Auswählen der Quelldatei sichtbar. 
@@ -385,22 +386,29 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 \section{Funktionale Anforderungen}
 \subsection{Erforderliche funktionale Anforderungen}
 	
-	\begin{enumerate}
-		\item Auswahlmöglichkeit der Datenquelle
+	\functionality{Auswahlmöglichkeit der Datenquelle}{fnc:quelle}
+	\fulfills{crt:data}
+	\fulfills{crt:web}
+	\fulfills{crt:frost}
+	Die Datenquelle ist frei wählbar aus den folgenden Möglichkeiten:
 		\begin{itemize}
 			\item eine Datei
+			\item externe Webseite
 			\item externer Server (optional)
 		\end{itemize}
 		
-		\item Laden, speichern von Konfigurationen
-		
-		\item Erstellen von Konfigurationen
-		\begin{itemize}
-			\item Einstellen des Spaltenseperators
-			\item Anzahl der Kopfzeilen auswählen
+	\functionality{Laden und speichern von Konfigurationen}{fnc:loadsave}
+	\fulfills{crt:conf}
+	
+	\functionality{Erstellen von Konfigurationen}{fnc:create}
+	\fulfills{crt:conf}
+	Beim Erstellen einer Konfiguration für das Formatieren der Daten aus der Quelldatei ist folgendes einstellbar:
+	\begin{itemize}
+			\item Spaltenseperator
+			\item Anzahl der Kopfzeilen
 			\item Einstellen der Datumsspalte/n
-			\item Format des Datums einstellen
-			\item Auswählen und erstellen von
+			\item Format des Datums
+			\item Auswählen und Erstellen von
 			\begin{itemize}
 				\item \glspl{thing}
 				\item \glspl{location}, für neue \glspl{thing}
@@ -410,50 +418,79 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 			\end{itemize}
 			\item Spaltenauswahl für Datenextraktion
 		\end{itemize}
-		
-		\item Bereitstellen einer Default-Konfiguration
-		
-		\item Auswahlmöglichkeit des Zielservers
-		\begin{itemize}
-			\item Nicht in Webinterface möglich
-		\end{itemize}
-		
-		\item Hochladen der Daten auf den \gls{frost}
-		
-		\item Formatieren der Daten in \gls{ogc} \gls{stApi} Standard
-		
-		\item Fehlermeldungen im Log
-		\begin{itemize}
+	
+	\functionality{Auswahlmöglichkeit des Zielservers}{fnc:target}
+	\fulfills{crt:data}
+	Der Zielserver wird einmalig beim Aufsetzen der Software gewählt und ist danach nur noch durch das Ändern der Konfigurationsdatei zu bearbeiten.
+	
+	\functionality{Hochladen der Daten auf den \gls{frost}}{fnc:upload}
+	\fulfills{crt:data}
+	
+	\functionality{Formatieren der Daten in \gls{ogc} \gls{stApi} Standard}{fnc:conv}
+	\fulfills{crt:conv}
+	\fulfills{crt:trf}
+	Vor dem Hochladen der Daten aus der Quelldatei werden diese aus ihrem Format (als String gespeichert) in andere passende Datentypen transformiert und auf den \gls{ogc} \gls{stApi} Standard gebracht.
+	
+	\functionality{Fehlermeldungen}{fnc:fehler}
+	\fulfills{crt:korr}
+	Für folgende Fehler sollen Fehlermeldungen erscheinen:
+	\begin{itemize}
 			\item Fehler in Datenzeilen
 			\item Verbindungsfehler zum \gls{frost}
 			\item Fehlerhafte Quelldatei
 		\end{itemize}
-		
-		\item Anlegen einer \gls{logdat} mit
-		\begin{itemize}
+	
+	\functionality{Anlegen einer \gls{logdat}}{fnc:log}
+	Um Fehler einfacher zu reproduzieren und beheben, wird eine Log-Datei angelegt, die folgendes speichert:
+	\begin{itemize}
 			\item Historie von Uploads
 			\item Fehlermeldungen
 		\end{itemize}
-		
-		\item Kurzanleitung auf der Weboberfläche.
-	\end{enumerate}
 	
+
 	\subsection{Gewünschte funktionale Anforderungen}
-	\begin{enumerate}
-		\item Duplikaterkennung um Datenredundanz zu vermeiden
-		
-		\item Rückgabe von Fehlerhaften Zeilen in einer neuen \gls{csvExcel}
-		
-		\item Auswahlmöglichkeit komplexer \gls{aggr} auf Daten:
-		\begin{itemize}
+	
+	
+	\functionality{Bereitstellen einer Default-Konfiguration}{fnc:default}
+	\fulfills{crt:std}
+	
+	
+	\functionality{Duplikaterkennung}{fnc:dupl}
+	\fulfills{crt:dupl}
+	Bevor Daten hochgeladen werden, werden diese mit den Daten im \gls{frost} abgeglichen, um das Hochladen redundanter Daten zu vermeiden.
+	
+	\functionality{Fehlerkorrektur}{fnc:korr}
+	\fulfills{crt:korr}
+	Werden beim Formatieren der Daten Fehler festgestellt, wird dem Nutzer die Möglichkeit gegeben, die Daten zu korrigieren bzw. seine Konfiguration anzupassen.	
+	
+	\functionality{Rückgabe von Fehlerhaften Zeilen in einer neuen \gls{csvExcel}}{fnc:ruck}
+	\fulfills{crt:ruck}
+	Beim Upload nicht bearbeitete Zeilen aus der Quelldatei werden in eine Datei geschrieben und dem Nutzer zur Verfügung gestellt.
+	
+	\functionality{Auswahlmöglichkeit komplexer \gls{aggr} auf Daten}{fnc:aggr}
+	\fulfills{crt:aggr}
+	Der Nutzer kann aus folgenden Aggregationen für seine Datensätze wählen:
+	\begin{itemize}
 			\item Summe
 			\item Minimum
 			\item Maximum
 			\item Durchschnitt
-		\end{itemize}
-		Operationen sind nur Spaltenweise  möglich. 
-	\end{enumerate}
-
+	\end{itemize}
+	Diese Operationen sind nur spaltenweise möglich (d.h. nur auf der Messreihe für einzelne Größen).
+	
+	\functionality{Regelmäßige Daten-Aktualisierung}{fnc:akt}
+	\fulfills{crt:akt}
+	Quelldateien von externen Webseiten können regelmäßig ohne erneute Aktion vom Nutzer abgerufen und verarbeitet werden.
+	
+	\functionality{Formaterkennung}{fnc:form}
+	\fulfills{crt:form}
+	Beim Hochladen einer Datei wird diese direkt analysiert und ein Spalten-, Daten- und Datumsformat vorgeschlagen, um das Einstellen der Konfiguration zu erleichtern.
+	
+	
+	\functionality{Kurzanleitung auf der Weboberfläche}{fnc:help}
+	
+	
+	
 	%TODO Nummerierung der Wunschkriterien in Fließtext
 	\section{Produktdaten}
 	
@@ -500,46 +537,43 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 
 	\section{Testfälle}
 	
-	\test{Anzeigen der Weboberfläche}{}
-	\ \\
+	\test{Anzeigen der Weboberfläche}{tst:webseite}
 	\teststep{Der Nutzer hat einen Browser geöffnet.}{Der Nutzer navigiert auf die Webseite.}{Die Webseite wird wie in \cref{fig:guiMain} dargestellt.}
 
-	   
 	
-		\ \\
-	\test{Konfigurieren und Hochladen}{}
-		\ \\
-	\teststep{Der Nutzer hat Quelle und Ziel eingegeben und bestätigt}{Der Nutzer füllt die Datums-/Uhrzeits-Spalte aus}{Die Software überprüft die Korrektheit der Spalten (Wurde eine Spalte angegeben, die nicht existiert?)}
-		\ \\
+	\test{Konfigurieren und Hochladen}{tst:conf}
+	\tests{fnc:create}
+	\tests{fnc:upload}
+	\tests{fnc:conv}
+	\tests{fnc:dupl}
+	
+	\teststep{Der Nutzer hat die Quelle eingegeben und bestätigt.}{Der Nutzer füllt die Datums-/Uhrzeits-Spalte aus}{Die Software überprüft die Korrektheit der Spalten (Wurde eine Spalte angegeben, die nicht existiert?)}	
+	\teststep{}{Der Benutzer drückt den "{Add column}"{-Button}, um eine neue Datums-/Zeit-Spalte anzulegen}{Die Software erstellt zwei neue Textfelder mit "Spalte" und "Format" im Interface, sodass sich die Datums- und Zeitnagabe über mehrere Spalten erstrecken kann}
 	\teststep{Die Spalten wurden korrekt angegeben}{Der Benutzer gibt via \gls{regex} das Format des Datums/der Uhrzeit in dem dazugehörigen Textfeld an}{Die Korrektheit des \gls{regex} wird anhand der Werte der Tabellendatei auf Fehler geprüft}
-		\ \\
 	\teststep{Das Datum / die Uhrzeit wurde korrekt ausgefüllt}{Der Nutzer wählt das \gls{thing} aus dem Dropdown-Menü, welches alle \glspl{thing} enthält, aus}{Das \gls{ds}-Dropdown-Menü wird mit den zum gewählten \gls{thing} gehörenden (Multi-)\glspl{ds} aktualisiert}
-		\ \\
 	\teststep{\gls{thing} wurde ausgewählt}{Der Anwender wählt den \gls{ds} aus dem \gls{ds}-Dropdown-Menü aus}{Das System lädt die zum (Multi-)\gls{ds} gehörenden Messeinheiten neben die Textfelder zum eintragen}
-		\ \\
 	\teststep{Messdaten geladen}{Der Nutzer trägt die Spalten mit den Messwerten neben die Messeinheiten ein}{Die Korrektheit der Eintragung wird wieder durch die Software geprüft}
-		\ \\
 	\teststep{Alle Textfelder ausgefüllt}{der User klickt auf den Button "{Upload}"}{Die Daten in den angegebenen Spalten werden eingelesen, konvertiert und auf den \gls{frost} übertragen}
-		\ \\	
 	
-	\test{Datei als Quelle wählen}{}
-	\ \\
+	\test{Datei als Quelle wählen}{tst:quelle}
+	\tests{fnc:quelle}
 	\teststep{Dem Nutzer wird die Webseite angezeigt.}{Der Nutzer wählt die Radio-Box "{Upload File}".}{Es wird ein Textfeld und ein "Browse\string"\string-Knopf angezeigt, um die hochzuladende Datei festzulegen.}
-	\ \\
 	\teststep{}{Der Nutzer drückt den "{Browse}"{-Knopf}.}{Es öffnet sich ein Dateimanager zum Auswählen der Datei.}
-	\ \\
 	\teststep{}{Der Nutzer wählt seine Datei aus.}{Der Dateipfad erscheint im Textfeld.}
-	\ \\
-	\test{Entfernte Webseite als Quelle wählen}{}
-	\ \\
-	\teststep{Dem Nutzer wird die Webseite angezeigt.}{Der Nutzer wählt die Radio-Box "{Choose Website}".}{Es wird ein Textfeld angezeigt, um die URL der entfernten Webseite festzulegen.}
-	\ \\
-	\teststep{}{Der Nutzer gibt eine URL ein.}{Die URL wird auf Gültigkeit überprüft und die zu ladende Datei auf dem Server der Weboberfläche zwischengespeichert.}
-	\ \\
 	
-	\test{Konfiguration laden}{}
-	\ \\
+	\test{Entfernte Webseite als Quelle wählen}{tst:webquelle}
+	\tests{fnc:quelle}
+	\teststep{Dem Nutzer wird die Webseite angezeigt.}{Der Nutzer wählt die Radio-Box "{Choose Website}".}{Es wird ein Textfeld angezeigt, um die URL der entfernten Webseite festzulegen.}
+	\teststep{}{Der Nutzer gibt eine URL ein.}{Die URL wird auf Gültigkeit überprüft und die zu ladende Datei auf dem Server der Weboberfläche zwischengespeichert.}
+	
+	\test{Konfiguration laden}{tst:load}
+	\tests{fnc:loadsave}
 	\teststep{Der Nutzer befindet sich auf der Webseite und hat eine gültige Quelldatei angegeben. Es wird ein Konfigurator angezeigt.}{Der Nutzer wählt unter "{Choose Configuration}" eine abgespeicherte Konfiguration aus.}{Die entsprechende Datei wird auf Korrektheit überprüft und im Erfolgsfall ist der Konfigurator entsprechend der Datei eingestellt.}
+		
+	\test{Konfiguration abspeichern}{tst:save}
+	\tests{fnc:loadsave}
+	\teststep{Der Nutzer hat eine Konfiguration erstellt.}{Der Nutzer drückt den "{Save}"{-Knopf}.}{Es wird eine cfg-Datei der Konfiguration erstellt und abgespeichert.}
+
 		
 	\ \\
 %	\test{Zielserver wählen}{}
@@ -547,74 +581,55 @@ Das Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}), einer \gls{obsprop}
 %	\teststep{Dem Nutzer wird die Webseite angezeigt. Insbesondere existiert ein Textfeld zur Eingabe des Zielservers.}{Der Nutzer gibt einen FROST-Server als Ziel in das Textfeld ein und drückt den "{Submit}"{-Knopf}.}{Der Server wird auf Gültigkeit überprüft und bei Korrektheit erscheint ein Konfigurator zum Einstellen des Formats der Daten in der Quelldatei. Im Konfigurator ist der Default-Case voreingestellt.}
 %	\ \\
 	
-	\test{Konfiguration zurücksetzen}{}
-	\ \\
+	\test{Konfiguration zurücksetzen}{tst:reset}
+	\tests{fnc:default}
 	\teststep{Der Nutzer befindet sich auf der Webseite und es wird der Konfigurator angezeigt.}{Der Nutzer drückt den "{Reset}"{-Knopf}.}{Alle eingestellten Konfigurationen werden auf den Default-Case zurückgesetzt.}
-	\ \\
 	
 	
 		
-	\test{Neues Thing erstellen}{}
-		\ \\
+	\test{Neues Thing erstellen}{tst:thing}
+	\tests{fnc:create}
 	\teststep{Die Datei und die \gls{frost}-Domain wurden angegeben/hochgeladen}{Der Nutzer klickt auf den "{Create Thing}"{-Button}}{es öffnet sich der "{Create New Thing}"{-Dialog}}
-		\ \\
 	\teststep{Das Dialogfenster ist offen, Name und Beschreibung des \glspl{thing} wurden in die Textfelder eingetragen, die \gls{location} wurde aus dem Dropdown-Menü ausgewählt}{Der Nutzer klickt auf "{Create}"}{Das \gls{thing} wird auf dem \gls{frost} erstellt und in dem Hauptinterface dem Dropdown-Menü hinzugefügt}
-		\ \\
 	
-	\test{Properties zu Thing hinzufügen}{}
-		\ \\
+	\test{Properties zu Thing hinzufügen}{tst:prop}
+	\tests{fnc:create}
 	\teststep{Der "{Create New Thing}"{-Dialog} ist offen}{Der Nutzer klickt einmal oder mehrfach auf den "{Add Property}"{-Button}}{es werden ein oder mehrere Textfeld-Paare im Interface erstellt in denen der Nutzer die Eigenschaft (Property) und den Wert (Value) des \glspl{thing} einstellen kann}
-		\ \\
 
 
-	\test{Neuen (Multi-)Datastream erstellen}{}
-		\ \\
+	\test{Neuen (Multi-)Datastream erstellen}{tst:datastream}
+	\tests{fnc:create}
 	\teststep{Die Datei und \gls{frost} wurden angegeben und ein \gls{thing} ausgewählt}{Der User klickt auf den "{Create DS}"{-Button}}{Es öffnet sich der "{Create New DataStream}"{-Dialog} indem der User einen neuen \gls{ds} oder Multi-\gls{ds} formulieren und erstellen kann}
-		\ \\
 	\teststep{Der User sieht das Dialogfenster zum erstellen eines \glspl{ds}}{der User trägt Name und Beschreibung in die Textfelder ein, wählt Observation Type und \gls{sensor} aus den Dropdown-Menüs aus, trägt eine oder mehrere Units Of Measurement ein und klickt abschließend auf "{Create}"}{Die Software unterscheidet zwischen \gls{ds} und Multi-\gls{ds} und legt den entsprechenden Stream mit den angegeben Daten im \gls{frost} an}
-		\ \\
 
 	
-	\test{Sensor erstellen}{}
-	\ \\
+	\test{Sensor erstellen}{tst:sensor}
+	\tests{fnc:create}
 	\teststep{Der Nutzer erstellt gerade einen \gls{ds} (sieht den Dialog wie in \cref{fig:ds}) und der zugehörige \gls{sensor} existiert noch nicht.}{Der Nutzer drückt den "{Create Sensor}"{-Knopf}.}{Es öffnet sich das Dialogfenster zum Erstellen eines \gls{sensor}s (siehe \cref{fig:sensor}).}
-	\ \\
 	\teststep{}{Der Nutzer füllt alle Textfelder aus und drückt den "{Create}"{-Knopf}.}{Die Daten werden überprüft und ein neuer \gls{sensor} wird angelegt. Das Dialogfenster wird geschlossen.}
 
-	\ \\
-	\test{ObervedProperty erstellen}{}
-	\ \\
+	\test{ObervedProperty erstellen}{tst:oprop}
+	\tests{fnc:create}
 	\teststep{Der Nutzer erstellt gerade einen \gls{ds} (sieht den Dialog wie in \cref{fig:ds}) und eine \gls{obsprop} für einen Datensatz existiert noch nicht.}{Der Nutzer drückt den "{Create Property}"{-Knopf}.}{Es öffnet sich das Dialogfenster zum Erstellen einer \gls{obsprop} (siehe \cref{fig:obsProp}).}
-	\ \\
 	\teststep{}{Der Nutzer füllt alle Textfelder aus und drückt den "{Create}"{-Knopf}.}{Die Daten werden überprüft und ein neue \gls{obsprop} wird angelegt. Das Dialogfenster wird geschlossen.}
-	\ \\
+
 	
-	\test{Einen Datensatz zu einem Datastream hinzufügen}{}
-	\ \\
+	\test{Einen Datensatz zu einem Datastream hinzufügen}{tst:adddata}
+	\tests{fnc:create}
 	\teststep{Der Nutzer erstellt gerade einen \gls{ds} (sieht den Dialog wie in \cref{fig:ds}).}{Der Nutzer drückt den "{Add unit}"{-Knopf}.}{Es wird eine neue leere Zeile in der Tabelle für die zum \gls{ds} gehörigen Units of Measurement angelegt.}														  		
 	\test{Neue Datums-/Zeit-Spalte erstellen}{}
-		\ \\
-	%TODO veraltet?
-	\teststep{Der Nutzer hat die Datei geladen und den Server angegeben, es wird keine CFG-Datei genutzt (Ende von Test 1-fach)}{Der Benutzer drückt den "+"-Button, um eine neue Datums-/Zeit-Spalte anzulegen}{Die Software erstellt zwei neue Textfelder mit "Spalte" und "Format" im Interface, sodass sich die Datums- und Zeitnagabe über mehrere Spalten erstrecken kann}
-		\ \\
+	
 		
 	
 	\test{Datastream hinzufügen}{}
 		\ \\
 	\teststep{Ein \gls{thing} wurde ausgewählt, die \glspl{ds} wurden in das Dropdown-Menü geladen}{Der Nutzer klickt auf den "{Add DS}"{-Button}}{Das Webinterface wird aktualisiert und rechts vom letzten \gls{ds} wird ein neues Dropdown-Menü für einen neuen Datastream und neue Textfelder hinzugefügt}
 		\ \\
-		
-	%TODO entspricht nicht neuer Form, cfg wird nicht gedownloaded	
-	\test{Konfiguration abspeichern}{}
-	\ \\
-	\teststep{Der Nutzer hat eine Konfiguration erstellt.}{Der Nutzer drückt den "{Save}"{-Knopf}.}{Es wird eine cfg-Datei der Konfiguration erstellt und der Download der Datei wird angestoßen.}
-	\ \\
 
 	
-	\test{Hilfe anfordern}{}
-	\ \\
+	\test{Hilfe anfordern}{tst:help}
+	\tests{fnc:help}
 	\teststep{Der Nutzer befindet sich auf der Webseite.}{Der Nutzer drückt den "{Hilfe}"{-Knopf}.}{Es wird eine Anleitung für den Gebrauch der Weboberfläche angezeigt.}
-	\ \\
 	
 
 
