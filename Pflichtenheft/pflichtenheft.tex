@@ -235,34 +235,20 @@ Jeder Benutzer kann somit die gespeicherten Konfigurationen aller Benutzer sehen
 	Die Software muss nicht auf mobilen Endgeräten laufen können.
 
 \pagebreak
-\section{Anwendungsbereiche}
-Die Software kommt überall dort zum Einsatz, wo Sensordaten aus Tabellen weiterverarbeitet müssen. \\
-\begin{itemize}
-	\item Forschungsprojekt, bei dem die Sensordaten in Tabellenform vorliegen. Diese Daten sollen in eine FROST-Instanz hochgeladen und ggf. weiterverarbeitet zu werden
-	\item Der Import neuer Sensordaten durch den Mitarbeiter einer Firma (z.B. Stadtwerke)
-	\item Die Integration bestehender Daten in Tabellenform durch einen wissenschaftlichen Mitarbeiter o.ä.
-\end{itemize}
-
-
-
-%Überall wo Daten im CSV-Format verarbeitet werden müssen: \\
-%Die Software soll überall dort eingesetzt werden, wo Daten aus Tabellen importiert, %konvertiert und auf den FROST-Server übertragen werden sollen. \\
-%Hierzu zählt:
-%\begin{itemize}
-%	\item Der Import von neuen Sensordaten, welche in CSV-/XSLX-Tabellen-Form vorliegen
-%	\item Die Integration von bestehenden (archivierten) Sensordaten, welche in CSV-/XLSX-Tabellen-Form vorliegen
-%\end{itemize}
-
-
+\section{Produkteinsatz}
+\subsection{Anwendungsbereiche}
+Die Software kommt überall dort zum Einsatz, wo Sensordaten aus gesammelt werden, aber nicht automatisch in den FROST-Server übertragen werden können.\\
+Als Beispiel ist ein Forschungsprojekt zu nennen, bei dem die Sensordaten in Tabellenform vorliegen. Diese Daten sollen in eine FROST-Instanz hochgeladen und ggf. weiterverarbeitet zu werden. Ebenso können neue Sensordaten durch den Mitarbeiter einer Firma (z.B. Stadtwerke) importiert werden.\\
+Die Integration bestehender Sensordaten in Tabellenform stellt auch einen großen Anwedungsbereich dar.
 	
-	%TODO Die zwei Zielgruppen genauer darstellen/abgrenzen
-	\section{Zielgruppen}
+
+	\subsection{Zielgruppen}
 	Die Software ist auf zwei Zielgruppen ausgelegt.\\
 	\begin{enumerate}
 		\item Personen, welche einfach Sensordaten auf einen FROST-Server laden möchten, ohne die Konfigurationen zu ändern
 		
 		\begin{itemize}
-			\item Wenig bis keine Fachkenntnisse
+			\item Wenig bis keine technischen Kenntnisse
 			\item Fokus auf einfache und schnelle Bedienung der Software
 		\end{itemize}
 		
@@ -273,19 +259,19 @@ Die Software kommt überall dort zum Einsatz, wo Sensordaten aus Tabellen weiter
 		\end{itemize} 
 	\end{enumerate}
 	
-\section{Betriebsbedingungen}
+\subsection{Betriebsbedingungen}
 \begin{itemize}
-	\item Die Software soll dauerhaft laufen. Geplante Betriebspausen oder Wartungszeiten sind nicht vorgesehen
-	\item Die Software soll auf einem Webserver laufen. Jedoch ist nicht sichergestellt, dass die Laufzeit des Servers unterbrechungsfrei ist. Unter anderem kann die Stromversorgung plötzlich ausfallen oder der Server wird ausgeschaltet, ohne vorher heruntergefahren zu werden
-	\item Die Software soll längere Zeit ohne Überwachung laufen, denn gerade bei längeren Uploads kann es sein, dass der Nutzer nicht immer anwesend ist.
-	\item Ein Zugriff auf das Interface der Software von einem Mobilgerät ist nicht vorgesehen
+	\item Es wird vorausgesetzt, dass ausreichend Speicherplatz auf dem Server verfügbar ist
+	\item Die Software soll ununterbrochen laufen, d.h. die Produktumgebung muss sicherstellen dass es nicht zu Störungen (Unterbrechung der Stromversorgung, plötzliches herunterfahren o.ä.) kommt
+	\item Da Uploads teilweise sehr lange dauern können und der Nutzer nicht immer zwingend anwesend ist, muss die Software problemfrei unüberwacht laufen können
 \end{itemize}
 	
 \section{Produktumgebung}
+Die Produktumgebung teilt sich auf in den Webserver, auf dem das Produkt läuft, und den Client, den der Nutzer nutzt um die Webseite aufzurufen. Für beide sind die Umgebungen stark unterschiedlich:
 Server:
 \begin{itemize}
-	\item Beliebiges Betriebssystem, höchstwahrscheinlich jedoch Unix/Linux
-	\item Installiertes Java \gls{jre}
+	\item Unix/Linux
+	\item Java \gls{jre}
 	\item Kleiner Webserver
 	\begin{itemize}
 		\item \gls{headless}
@@ -293,23 +279,18 @@ Server:
 		\item 1-2GB RAM
 		\item Speichermedium mit genug Speicherplatz für Software und temporäre Daten (8GB stark ausreichend)
 	\end{itemize}
-	\item Netzwerkanschluss an den \gls{frost} und an den Nutzer-Computer
+	\item Konnektivität mit dem \gls{frost}
+	\item Erreichbarkeit durch Nutzer-Client
 \end{itemize}
 
 \noindent Client:
 
 \begin{itemize}
-	\item Moderner Webbrowser
-	\item \gls{js}
-	\item Netzwerkanschluss an den CHILLImport-Server
+	\item Moderner Desktop-Webbrowser
+	\item Aktiviertes \gls{js}
+	\item Netzwerkanschluss an den Web-Server
 \end{itemize}
-	
-%	\begin{itemize}
-%		\item \gls{headless} Server
-%		\item Linux/Windows Server
-%		\item Java \gls{jre}
-%		\item \gls{stApi}
-%	\end{itemize}
+
 
 \section{Seitenentwürfe}
 
