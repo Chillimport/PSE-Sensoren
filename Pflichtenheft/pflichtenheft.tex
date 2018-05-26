@@ -135,8 +135,10 @@
 \thispagestyle{empty}
 \maketitle
 \newpage
+\pagenumbering{gobble}
 \tableofcontents
 \newpage
+\pagenumbering{arabic}
 
 	%TODO
 	\section{Produktübersicht}
@@ -146,7 +148,7 @@
 
 	Damit diese Massen von Messwerten und Metadaten eines Sensors in ihrer eigenen Vielfalt effizient verarbeitet werden können, bedarf es einem einheitlichen Standard. Das \gls{ogc} stellt als Standardisierungsgremium dazu die \gls{stApi} \footnote{http://docs.opengeospatial.org/is/15-078r6/15-078r6.html} bereit, welche die durch jahrelange Erfahrung im Arbeiten mit Sensordaten entstandenen Konzepte an die Anforderungen und Möglichkeiten neuer Schnittstellen anpasst. \\
 
-	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server (\gls{frost})\footnote{https://www.iosb.fraunhofer.de/servlet/is/80113/} des \gls{iosb} ist eine Implementierung des SensorThings-Standards. Der Server will die \gls{stApi} ressourcenschonend und mit hoher Leistungsfähigkeit bereitstellen. Das Institut hat sich direkt von Anfang an dazu entschlossen, die Software erreichbarer zu machen und entwickelte den Server als Open Source Software\footnote{https://github.com/FraunhoferIOSB/FROST-Server}. \\
+	Der \textbf{FR}aunhofer\textbf{O}penSource\textbf{S}ensor\textbf{T}ings-Server (\gls{frost})\footnote{https://www.iosb.fraunhofer.de/servlet/is/80113/} des \\ \gls{iosb} ist eine Implementierung des SensorThings-Standards. Der Server will die \gls{stApi} ressourcenschonend und mit hoher Leistungsfähigkeit bereitstellen. Das Institut hat sich direkt von Anfang an dazu entschlossen, die Software erreichbarer zu machen und entwickelte den Server als Open Source Software\footnote{https://github.com/FraunhoferIOSB/FROST-Server}. \\
 
 	Neben dem \gls{frost} stellt das \gls{iosb} auch den FROST-Client bereit, eine Bibliothek, die hilft, auf die \gls{stApi} zuzugreifen\footnote{https://github.com/FraunhoferIOSB/FROST-Client}. \\
 	\ \\
@@ -289,7 +291,7 @@ Server:
 \begin{itemize}
 	\item Moderner Desktop-Webbrowser
 	\item Aktiviertes \gls{js}
-	\item Netzwerkanschluss an den Web-Server
+	\item Netzwerkverbindung zum Web-Server
 \end{itemize}
 
 
@@ -307,6 +309,7 @@ Server:
 			\item externe Webseite
 			\item externer Server (optional)
 		\end{itemize}
+	Allerdings dürfen lediglich \gls{csvExcel}en ausgewählt werden
 		
 	\functionality{Laden und speichern von Konfigurationen}{fnc:loadsave}
 	\fulfills{crt:conf}
