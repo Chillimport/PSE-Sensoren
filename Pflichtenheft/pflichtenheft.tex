@@ -277,10 +277,10 @@ Server:
 	\item Java \gls{jre}
 	\item Kleiner Webserver
 	\begin{itemize}
-		\item \gls{headless}
 		\item Unicore CPU
 		\item 1-2GB RAM
 		\item Speichermedium mit genug Speicherplatz für Software und temporäre Daten (8GB stark ausreichend)
+		\item Ein Bildschirm wird nicht benötigt (\gls{headless})
 	\end{itemize}
 	\item Konnektivität mit dem \gls{frost}
 	\item Erreichbarkeit durch Nutzer-Client
@@ -291,7 +291,7 @@ Server:
 \begin{itemize}
 	\item Moderner Desktop-Webbrowser
 	\item Aktiviertes \gls{js}
-	\item Netzwerkverbindung zum Web-Server
+	\item Konnektivität zum Web-Server
 \end{itemize}
 
 
@@ -303,16 +303,17 @@ Server:
 	\fulfills{crt:data}
 	\fulfills{crt:web}
 	\fulfills{crt:frost}
-	Die Datenquelle ist frei wählbar aus den folgenden Möglichkeiten:
-		\begin{itemize}
-			\item eine Datei
-			\item externe Webseite
-			\item externer Server (optional)
-		\end{itemize}
-	Allerdings dürfen lediglich \gls{csvExcel}en ausgewählt werden
+	Die Quelle für die Tabellendatei ist frei wählbar aus den folgenden Möglichkeiten:
+		\begin{enumerate}
+			\item Eine lokale Datei über Dateiupload
+			\item Eine entfernte Datei über einen Weblink
+			\item Ein anderer \gls{frost}
+		\end{enumerate}
+	Allerdings dürfen als Datei bei \textit{1.} und \textit{2.} lediglich \gls{csvExcel}en ausgewählt werden.
 		
 	\functionality{Laden und speichern von Konfigurationen}{fnc:loadsave}
 	\fulfills{crt:conf}
+	Der Nutzer kann seine Konfiguration auf dem Webserver speichern und diese bei späterer Nutzung wieder laden. Es können mehrere Konfigurationen gespeichert werden, diese werden in einem Drop-Down-Menü angezeigt.
 	
 	\functionality{Erstellen von Konfigurationen}{fnc:create}
 	\fulfills{crt:conf}
@@ -322,7 +323,7 @@ Server:
 			\item Anzahl der Kopfzeilen
 			\item Einstellen der Datumsspalte/n
 			\item Format des Datums
-			\item Auswählen und Erstellen von
+			\item Auswählen von Entitäten:
 			\begin{itemize}
 				\item \glspl{thing}
 				\item \glspl{location}, für neue \glspl{thing}
@@ -330,6 +331,7 @@ Server:
 				\item \gls{sensor}s, für neue \glspl{ds}
 				\item \glspl{obsprop}, für neue \glspl{ds}
 			\end{itemize}
+			\item Erstellen von neuen Entitäten
 			\item Spaltenauswahl für Datenextraktion
 		\end{itemize}
 	
@@ -337,22 +339,22 @@ Server:
 	\fulfills{crt:data}
 	Der Zielserver wird einmalig beim Aufsetzen der Software gewählt und ist danach nur noch durch das Ändern der Konfigurationsdatei zu bearbeiten.
 	
-	\functionality{Hochladen der Daten auf den \gls{frost}}{fnc:upload}
-	\fulfills{crt:data}
-	
 	\functionality{Formatieren der Daten in \gls{ogc} \gls{stApi} Standard}{fnc:conv}
 	\fulfills{crt:conv}
 	\fulfills{crt:trf}
 	Vor dem Hochladen der Daten aus der Quelldatei werden diese aus ihrem Format (als String gespeichert) in andere passende Datentypen transformiert und auf den \gls{ogc} \gls{stApi} Standard gebracht.
 	
+	\functionality{Hochladen der Daten auf den \gls{frost}}{fnc:upload}
+	\fulfills{crt:data}
+	
 	\functionality{Fehlermeldungen}{fnc:fehler}
 	\fulfills{crt:korr}
 	Für folgende Fehler sollen Fehlermeldungen erscheinen:
 	\begin{itemize}
-			\item Fehler in Datenzeilen
-			\item Verbindungsfehler zum \gls{frost}
-			\item Fehlerhafte Quelldatei
-		\end{itemize}
+		\item Fehler in Datenzeilen
+		\item Verbindungsfehler zum \gls{frost}
+		\item Fehlerhafte Quelldatei
+	\end{itemize}
 	
 	\functionality{Anlegen einer \gls{logdat}}{fnc:log}
 	Um Fehler einfacher zu reproduzieren und zu beheben, wird eine Log-Datei angelegt, die folgendes speichert:
@@ -381,17 +383,6 @@ Server:
 	\fulfills{crt:ruck}
 	Beim Upload nicht bearbeiteter Zeilen aus der Quelldatei werden in eine Datei geschrieben und dem Nutzer zur Verfügung gestellt.
 	
-	\functionality{Auswahlmöglichkeit komplexer \gls{aggr} auf Daten}{fnc:aggr}
-	\fulfills{crt:aggr}
-	Der Nutzer kann aus folgenden Aggregationen für seine Datensätze wählen:
-	\begin{itemize}
-			\item Summe
-			\item Minimum
-			\item Maximum
-			\item Durchschnitt
-	\end{itemize}
-	Diese Operationen sind nur spaltenweise möglich (d.h. nur auf der Messreihe für einzelne Größen).
-	
 	\functionality{Regelmäßige Daten-Aktualisierung}{fnc:akt}
 	\fulfills{crt:akt}
 	Quelldateien von externen Webseiten können regelmäßig ohne erneute Aktion vom Nutzer abgerufen und verarbeitet werden.
@@ -400,14 +391,23 @@ Server:
 	\fulfills{crt:form}
 	Beim Hochladen einer Datei wird diese direkt analysiert und ein Spalten-, Daten- und Datums/Zeit-Format vorgeschlagen, um das Einstellen der Konfiguration zu erleichtern.
 	
-	
 	\functionality{Kurzanleitung auf der Weboberfläche}{fnc:help}
 	
-	
+	\functionality{Auswahlmöglichkeit komplexer \gls{aggr} auf Daten}{fnc:aggr}
+	\fulfills{crt:aggr}
+	Der Nutzer kann aus folgenden Aggregationen für seine Datensätze wählen:
+	\begin{itemize}
+		\item Summe
+		\item Minimum
+		\item Maximum
+		\item Durchschnitt
+	\end{itemize}
+	Diese Operationen sind nur spaltenweise möglich (d.h. nur auf der Messreihe für einzelne Größen).
+		
 \section{Benutzeroberfläche}
 
 \subsection{Hauptseite}
-Die Software stellt eine Weboberfläche zum Einfügen von Sensor-Datensätzen auf einen \gls{frost} zur Verfügung. 
+Die Software stellt eine Weboberfläche zum Importieren von Sensor-Datensätzen auf einen \gls{frost} zur Verfügung. 
 Dieser Zielserver wird einmalig beim erstmaligen Aufsetzen der Software eingestellt und ist nicht über das Webinterface einstellbar. 
 Ein Entwurf für die Hauptseite der Weboberfläche ist in \cref{fig:guiMain} (siehe Anhang \cref{fig:guiMainA} für vergrößerte Darstellung) zu sehen.
 \\
@@ -422,7 +422,7 @@ Nach dem Einstellen der Quelle wird das Dateiformat überprüft und ein passende
 
 Über das Log werden eventuelle Fehlermeldungen und Übertragungsfortschritte angezeigt. Unter \string"Choose Configuration\string" lässt sich eine auf dem Server gespeicherte Konfigurationsdatei auswählen. Dort bieten sich folgende Möglichkeiten:
 \begin{itemize}
-\item Unter "{Configuration}" kann eingestellt werden, in welcher Form die Daten in der Quelldatei angespeichert sind, um diese dann in den vom \gls{frost} verwendeten \gls{ogc}-Standard zu konvertieren.
+\item Unter "{Configuration}" kann eingestellt werden, in welcher Form die Daten in der Quelldatei abgespeichert sind, um diese dann in den vom \gls{frost} verwendeten \gls{ogc}-Standard zu konvertieren.
 \item Zuerst ist das Trennsymbol für die Spalten in der Quelldatei und die Anzahl der Kopfzeilen (nicht zum Datensatz gehörige Zeilen) anzugeben. 
 \item Dann kann das zu den Daten gehörige \gls{thing} von schon auf dem \gls{frost} existierenden \glspl{thing} ausgewählt werden. Falls es benötigt wird, lässt sich über den "{Create Thing}"{-Button} ein neues \gls{thing} erstellen. (siehe \cref{fig:thing})
 \item Unter "{DateTime}"{ ist} das Datumsfomat einstellbar. Erst wird die Zeitzone eingegeben und danach lassen sich das Format für das Datum bzw. die Zeit als \gls{regex} und die zugehörige Spaltennummer angeben.
