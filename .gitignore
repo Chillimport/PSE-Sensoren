@@ -6,6 +6,13 @@ Pflichtenheft/*.out
 Pflichtenheft/*.toc
 Pflichtenheft/Pflichtenheft Vorlage IPD/**
 
+Entwurf/*.pdf
+Entwurf/*.log
+Entwurf/*.synctex.gz
+Entwurf/*.aux
+Entwurf/*.out
+Entwurf/*.toc
+
 #Apple
 # General
 .DS_Store
