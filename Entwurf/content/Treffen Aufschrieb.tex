@@ -1,0 +1,23 @@
+Nicht zu sehr in Microservices verrennen, Backend in einer Anwendung
+
+Schnittstellen zwischen modulen des Systemmodells direkt spezifizieren
+
+(Sowas wie Blockdiagramm beim treffen bis nächstes mal)
+
+Backend => FROST Schnitstelle SensorThings API
+Frontend => Backend REST
+FROST-Client Modul unten im Backend
+Controller oben im Backend um Anfragen entgegen zu nehmen
+(Einer für DS, einen für Vorschau etc)
+Controller zum parsen etc validieren, service möglich für Logik (Weiterverarbeitung), gibt .json zurück
+Datenbank für Konfigurationen + Modell Drauf, (Controller für DB?)
+
+REST-Befehltabelle auf englischer Wiki Seite
+
+Spring petstore als beispiel anschauen
+(Controller Code z.b @Requestmapping @Repository etc)
+
+Schritt 1 Grundgerüst anzeigen (Nur Oberfläche)
+Schritt 2 Datei auswählen (Was existiert schon auf dem Server?)
+Backend per JS abfragen
+Schritt 3 Datei auf Backend überprüfen (Frontend muss z.b kurze Vorschau zum überprüfen senden)
