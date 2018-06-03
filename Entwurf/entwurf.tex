@@ -1,12 +1,29 @@
-\documentclass[a4paper, 12pt]{article}
+\documentclass[a4paper, 12pt, titlepage]{article}
 
-\usepackage[ngerman]{babel}
+
+\setlength{\voffset}{-0.5cm}
+
+
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+
+\author{Adrian Cierpka \and Maximilian Göckel \and Frithjof Marquardt \and Fabian Nguyen \and Andreas Wieland\vspace{3cm}}
+\title{CHILLImport: Weboberfläche zum Management von Sensordaten\\\vspace{2cm}
+\Large Entwurf\\\vspace{4cm}}
+
 
 \begin{document}
 
+\pagenumbering{gobble}
+\maketitle
+\clearpage
 \tableofcontents
 \clearpage
+\pagenumbering{arabic}
+
+
 \include{content/todo}
 
 \include{content/treffen}
