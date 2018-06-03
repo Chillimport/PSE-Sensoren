@@ -13,6 +13,8 @@ Entwurf/*.aux
 Entwurf/*.out
 Entwurf/*.toc
 
+Entwurf/content/*.aux
+
 #Apple
 # General
 .DS_Store
