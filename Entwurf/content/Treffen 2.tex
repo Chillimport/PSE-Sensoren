@@ -1,0 +1,29 @@
+    PSE Treffen
+    
+    System-Modell
+    
+    Importieren aus Zusatzfunktionen raus "extrahieren", Zentraler Hauptpunkt!
+    Zusatzfunktionen detaillierter darstellen
+    Controller lediglich als Schnittstelle von außen, hauptsächliche Logik woanders
+    Ein/Aus als Extra-Paket und Funktionen als Hauptpaket
+    Abfolgen untereinander und große Blöcke wie Logging/Fehler nebendran durchziehen
+    Website holt sich Daten asynchron, User klickt -> Website holt daten   Also Website mehr Logik als "nur Darstellung"
+    Website MVC im Kleinen
+    Einzelne JS files etc nicht aufführen sondern Objektorientiert darstellen
+    
+    Klassenmodellierung
+    
+    Parser -> Abstraktes Modell kommt raus   (Damit z.b auch Json Parser nachgeschrieben werden kann, Programm verwendet intern Funtkionen auf dem abstrakten Modell weiter)
+    Pipeline Modell nur nach vorne Date Parser -> Zone Parser etc z.b , keine zyklischen Abfolgen oder Rücksprünge
+    Cut nur einmal implementieren (wurde schon bei parseCSV umgewandelt)
+    (Interne Tabellendarstellung? Was muss sie können?Z.B Zugriff auf bestimmte Zeilen/Spalten? Methoden definieren, Zugriff durchspielen, überlegen an welcher Stelle Fehler auftreten können)
+    Getter/Setter nicht explizit aufführen, public werte haben eh alle g/s
+    Komplettübersicht über Architektur/Fluss wichtiger als einzelne Methoden etc
+    
+    FROST-Client Nutzung : https://github.com/hylkevds/SensorThingsStuff/tree/master/src/main/java/de/fraunhofer/iosb/ilt/tests
+    (SensorThingsManager / SensorThingsImporter komplexeres Beispiel)
+    
+    Service Klasse legt Dinge direkt auf dem Server an (Authentifizierung beim Service öffnen weglassen), Locations/Things erstellen und mit Service anlegen.
+    
+    
+    
