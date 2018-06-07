@@ -1,5 +1,40 @@
 \section{Aufbau}
 
-Architektur\\
+\subsection{Architektur}
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.44]{uml/architektur.eps}
+\caption{\label{fig:architektur} Architekturmodell}
+\end{figure}
+
+Die Grundaufteilung der Software besteht aus einem Frontend, einem Backend und einem zugrundeliegenden FROST-Server. Das Frontend umfasst dabei vorwiegend die Darstellung der Webseite, während im Backend die Verarbeitung der Daten von der Webseite, die auf den FROST-Server geladen werden sollen, stattfindet. Eine nähere Beschreibung der Komponenten erfolgt hier:
+
+\paragraph{Frontend}
+Die Webseite wird mit einer Model-View-Controller-Architektur (MVC) modelliert.
+Das Model wird dabei von den html- bzw js-Dateien gebildet.
+Im Controller wird gemanagt, welche Datei gerade angezeigt werden soll, und die View zeigt die Webseiten letztlich an.
+
+\paragraph{Backend}
+Das Backend ist das Zentrum der Software und für die Funktionalität verantwortlich.
+Für die Kommunikation mit der Webseite stehen die Controller zur Verfügung.
+Diese bekommen die Daten und entscheiden dann, welche Komponente benötigt wird, um sie weiterzuverarbeiten.\\
+
+Im Konfigurationsmanagement werden Konfigurationsdateien angelegt, geladen und für andere Komponenten zur Verfügung gestellt.\\
+
+Die Hauptfunktionalität der Software, das Hochladen von Daten auf den FROST-Server, läuft über die DataImport-Komponente.
+Diese kann zur Verarbeitung der Daten auf andere Komponenten wie das Konfigurationsmanagement, die Konvertierung in ein internes Datenformat und das Erstellen der Observations zugreifen.
+Mit der Duplikatsüberprüfung kann für eine gegebene Entity geschaut werden, ob diese schon auf dem Server existiert.
+Neben dem Hochladen der Daten lässt sich über die Previewkomponente die bestehende Konfiguration überprüfen.
+Sie muss im Gegensatz zum wirklichen Hochladen jedoch keine Observations erstellen.\\
+
+Zusätzlich besteht für die Controller noch Zugriff auf Komponenten zur Erstellung von Entities bzw. Abfragen von bestehenden Entities auf dem FROST-Server.
+Sämtliche Kommunikation mit dem FROST-Server läuft dabei über den FROST-Client.
+Außerdem gibt es noch Komponenten zur Fehlerbehandlung und dem Erstellen eines Logs.
+
+\paragraph{FROST-Server}
+Diese Komponente enthält nur einen FROST-Server, auf den die vom Nutzer gesammelten Daten übertragen werden.
+Die Kommunikation mit dem Server findet durch den FROST-Client als Schnittstelle statt.
+
+\subsection{Klassendiagramm}
 
 Klassendiagramm

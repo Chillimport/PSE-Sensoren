@@ -14,6 +14,7 @@ Entwurf/*.out
 Entwurf/*.toc
 
 Entwurf/content/*.aux
+Entwurf/content/*.log
 
 #Apple
 # General
