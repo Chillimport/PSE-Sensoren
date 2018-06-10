@@ -1,0 +1,26 @@
+\subsection{ErrorHandler}
+
+\paragraph{Beschreibung}
+Diese Klasse nimmt Fehlermeldungen entgegen und behandelt sie (wenn möglich).
+
+
+\paragraph{Methoden}
+
+\begin{itemize}
+\item + notify(String message) : void
+Informiert den User über ein Ereignis, entweder durch eine Popup Message oder über das Log-Fenster (Je nach Dringlichkeit)
+
+\item + identify(String message) : boolean
+Stellt fest um welchen Fehler es sich handelt und leitet entsprechende Maßnahmen ein. (z.b Zeile überspringen)
+Gibt zurück ob der Fehler behandelt werden konnte oder nicht.
+
+\item + identify(Exception e) : boolean
+Identifiziert den Exception Typ und behandelt die Exception.(I.d.r Zeile überspringen)
+Gibt zurück ob die Exception behandelt werden konnte.
+
+\item - skipRow() : void
+Sort dafür, dass die aktuelle Zeile übersprungen wird.
+
+\item + clearLog() : void
+Leert das (Session-) Log
+\end{itemize}
