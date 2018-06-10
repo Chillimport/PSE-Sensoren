@@ -1,0 +1,15 @@
+\subsection{Logmanager}
+
+\paragraph{Beschreibung}
+Diese Klasse implementiert das Log-Fenster und hält es auf dem Laufenden.
+Außerdem werden alle Imports in ein permanentes (seperates) Log geschrieben.
+\paragraph{Methoden}
+
+\begin{itemize}
+\item + writeToLog(String message) : void
+Diese Methode schreibt Nachrichten in das Log-Fenster (Uhrzeit über System)
+\item + saveImport(int amount) : void
+Hält im permanenten Log fest, dass ein Import stattgefunden hat und wieviele zeilen importiert wurden. (Datum über System) 
+\item + clearLog() : void
+Leert das (Session-) Log
+\end{itemize}
