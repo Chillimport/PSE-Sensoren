@@ -1,0 +1,19 @@
+\subsection{CreateObservations}
+
+\paragraph{Beschreibung}
+Hier werden die Observations erstellt, die anschließend auf den Frost-Server hochgeladen werden können.
+Dazu werden die Daten aus der internen Tabellendarstellung gelesen und daraus zeilenweise Observations erstellt, mit der Duplikatklasse auf Duplikate überprüft und anschließend hochgeladen
+
+
+
+\paragraph{Methoden}
+
+\begin{itemize}
+\item + processTable(Table table, int step) : void
+nimmt die Table entgegen und schreibt die Daten in Observations, step sagt wie viele zeilen auf einmal abgearbeitet werden, bevor observations hochgeladen werden
+\item - createObs(String name, Object result, ZonedDateTime time) : Observation
+\item - createObs(String name, Object result, List<String> time, List<Formatter> format, String zone) : Observation
+methoden zum Erstellen von Observations mit verschiedenen Parametern
+\item - combineResults(List<Object> results) : Object
+erstellt aus mehreren results ein einziges result-Object
+\end{itemize}
