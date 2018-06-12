@@ -3,7 +3,7 @@ Table
 
 	
 - LinkedList<ArrayList<Object>> table
-	Speichert die Daten der Tabelle, jedes LinkedList-element enthält eine ArrayListe, welche die Elemente der Tabelle hält
+	Speichert die Daten der Tabelle, jedes LinkedList-Element enthält eine ArrayListe, welche die Elemente der Tabelle hält
 - String id;
 	Die Identifikationsnummer der Tabelle, kann der Name sein
 
@@ -39,10 +39,11 @@ Table
 			
 + getFirstRow(): List<Object>
 	Gibt die erste Zeile zurück
-		List<Object>: Die erste Zeile
+			List<Object>: Die erste Zeile
+
 + getLastRow(): List<Object>
 	Gibt die letzte Zeile zurück
-		List<Object>: Die letzte Zeile
+			List<Object>: Die letzte Zeile
 		
 + setElement(Object o, int row, int column): void
 	Ersetzt ein Element der Tabelle mit einem neuen Element
@@ -73,16 +74,14 @@ Table
 	Ersetzt eine Spalte mit NULL
 		int column: Die Position der Spalte
 
-+ insertRow(List<Object> row, int position): void
-	Fügt eine neue Zeile hinter einer bestehenden Zeile ein
++ appendRow(List<Object> row): void
+	Fügt eine neue Zeile hinter der letzten bestehenden Zeile ein
 		List<Object> row: Die einzufügende Zeile als Liste
-		int position: Die Position hinter der die Zeile eingefügt werden soll
 		
-+ insertColumn(List<Object> column, int position): void
-	Fügt eine neue Spalte hinter einer bestehenden Spalte ein
++ appendColumn(List<Object> column): void
+	Fügt eine neue Spalte hinter der letzten bestehenden Spalte ein
 		List<Object> column: Die einzufügende Spalte als Liste
-		int position: Die Position hinter der die Spalte eingefügt werden soll
-	
+		
 + getRowCount(): int
 	Gibt die Anzahl Zeilen zurück
 			int: Die Anzahl Zeilen
@@ -93,6 +92,7 @@ Table
 + getID(): String
 	Gibt die ID der Tabelle zurück
 			String: Die ID, NULL falls keine ID gesetzt wurde
+			
 + clone(): Table
 	Erstellt eine ganze Kopie der Tabelle
 			Table: die Kopie der Tabelle als neue Table-Instanz
