@@ -1,0 +1,40 @@
+
+\subsection{ConfigManagement}
+Variablen:
+\begin{itemize}
+	\item Keine Variablen auf die der Nutzer Einfluss haben könnte.\\
+		Die Speicherpfade sind final und nicht einsehbar.
+		
+\end{itemize}
+\ \\
+Methoden:
+\begin{itemize}
+	\item loadConfig(String id): Config (JSON)
+	\item saveConfig(Config (JSON))
+	\item static: ConvertToJava(Config (JSON)): Configuration
+	\item listAll(): List<String>
+	\item getServer(): URL
+\end{itemize}
+\ \\
+Beschreibung Allgemein:\\
+Diese Klasse ist zuständig für die Verwaltung von Konfigurationen.
+
+\ \\
+Beschreibung Methoden:\\
+\begin{itemize}
+	\item loadConfig(String id): Config (JSON) \\
+	Diese Methode bekommt den Namen einer Configuration übergeben, lädt die Configuration und gibt sie als JSON Objekt zurück.
+	
+	\item saveConfig(Config (JSON))\\
+	Diese Methode bekommt als Eingabe eine Configuration als JSON Objekt
+	und speichert dieses auf der Festplatte des Servers
+	
+	\item ConvertToJava(Config (JSON)): Configuration
+	Um aus einer JSON Configuration eien Java Configuration zu erhalten übergibt man dieser Funktion ein JSON-Objekt und erhält als Ausgabe die gewünschte Java Configuration.
+	
+	\item listAll() \\
+	Diese Funktion gibt eine Liste aller Konfigurationen, dargestellt als ihre Namen(String), zurück.
+	
+	\item getServer(): URL\\
+	Diese Methode gibt die URL des Zielservers zurück 
+\end{itemize}
