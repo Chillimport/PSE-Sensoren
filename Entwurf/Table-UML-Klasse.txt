@@ -21,18 +21,18 @@ Table
 
 			
 			
-+ get(int row, int column): Object //Gibt ein einzelnes Element der Tablle zurück
++ getElement(int row, int column): Object //Gibt ein einzelnes Element der Tablle zurück
 	Gibt ein einzelnes Element der Tabelle an der angegebenen Stekle zurück
 		int row: Die Zeile an der das Element liegt, darf nicht NULL sein
 		int column: Die Spalte an der das Element liegt, darf nicht NULL sein
 			Object: Das Element an der Stelle
 			
-+ get(int row): List<Object>
++ getRow(int row): List<Object>
 	Gibt eine ganze Zeile zurück
 		int row: Die Position der Zeile, darf nicht NULL sein
 			List<Object>: die Zeile als Liste
 		
-+ get(int column): List<Object>
++ getColumn(int column): List<Object>
 	Gibt eine ganze Spalte zurück
 		int row: Die Position der Spalte, darf nicht NULL sein
 			List<Object>: die Spalte als Liste
@@ -44,41 +44,41 @@ Table
 	Gibt die letzte Zeile zurück
 		List<Object>: Die letzte Zeile
 		
-+ set(Object o, int row, int column): void
++ setElement(Object o, int row, int column): void
 	Ersetzt ein Element der Tabelle mit einem neuen Element
 		Object o: Das neue Element, darf NULL sein
 		int row: Die Zeile des Elements
 		int column: Die Spalte des Elements
 		
-+ set(List<Object>, int row): void
++ setRow(List<Object>, int row): void
 	Ersetzt eine Zeile mit einer neuen Zeile
 		List<Object>: Die neue Zeile als Liste, darf NULL sein
 		int row: Die Position der zu ersetzen Zeile
 		
-+ set(List<Object>, int column): void
++ setColumn(List<Object>, int column): void
 	Ersetzt eine Spalte mit einer neuen Spalte
 		List<Object>: Die neue Spalte als Liste, darf NULL sein
 		int row: Die Position der zu ersetzen Spalte
 		
-+ remove(int row, int column): void
++ removeElement(int row, int column): void
 	Ersetzt ein Element mit NULL
 		int row: Die Zeile des Elements
 		int column: Die Spalte des Elements
 	
-+ remove(int row): void
++ removeRow(int row): void
 	Ersetzt eine Zeile mit NULL
 		int row: Die Position der Zeile
 		
-+ remove(int column): void
++ removeColumn(int column): void
 	Ersetzt eine Spalte mit NULL
 		int column: Die Position der Spalte
 
-+ insert(List<Object> row, int position): void
++ insertRow(List<Object> row, int position): void
 	Fügt eine neue Zeile hinter einer bestehenden Zeile ein
 		List<Object> row: Die einzufügende Zeile als Liste
 		int position: Die Position hinter der die Zeile eingefügt werden soll
 		
-+ insert(List<Object> column, int position): void
++ insertColumn(List<Object> column, int position): void
 	Fügt eine neue Spalte hinter einer bestehenden Spalte ein
 		List<Object> column: Die einzufügende Spalte als Liste
 		int position: Die Position hinter der die Spalte eingefügt werden soll
