@@ -1,0 +1,151 @@
+\documentclass[a4paper, 12 pt, titlepage]{article}
+
+%opening
+\title{Entwurf: Configurations etc.}
+\author{Adrian}
+
+\setlength{\voffset}{-0.5cm}
+
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[german]{babel}
+
+\usepackage{graphicx}
+\usepackage[absolute]{textpos}
+
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage[nameinlink]{cleveref}
+\crefname{figure}{Abb.}{Abb.}
+
+\begin{document}
+
+\maketitle
+
+\section{Klasse: Configuration}
+Variablen:
+\begin{itemize}
+	\item name: String
+	\item delimiter: Character
+	\item headerlines: Integer
+	\item staticTimezone: TimeZone
+	\item variableTimezone: Integer
+	\item dateTime: List<StringColumn>
+ 	\item streamData: List<StreamObservation>
+\end{itemize}
+\ \\
+Methoden:
+\begin{itemize}
+	%TODO Methoden ergänzen
+	\item Konstruktor: Configuration(name)
+	\item Einfache Getter und Setter für:
+	\begin{itemize}
+		\item name
+		\item delimiter
+		\item headerlines
+		\item dateTime
+		\item streamData
+	\end{itemize}
+
+	\item Angepasste getter und setter:
+	\begin{itemize}
+		\item getStaticTimezone(): TimeZone
+		\item getVariableTimezone(): Integer
+		\item setStaticTimezone(TimeZone zone)
+		\item setVariableTimezone(Integer column)
+	\end{itemize}
+\end{itemize}
+\ \\
+Beschreibung Allgemein: \\Diese Klasse stellt die Konfigurationen dar. Sie speichert
+alle notwendigen Daten und bietet getter und setter für einen vereinfachten Zugriff auf Daten bereit.\\
+\ \\
+Beschreibung Variablen:
+\begin{itemize}
+	\item name:\\Hier wird der Name, eine eindeutige Kennung der Konfiguration, gespeichert.
+	
+	\item delimiter: \\Falls eine CSV-Datei importiert werden soll, muss ein Trennsymbol für die Spalten gewählt werden.
+	
+	\item headerlines: \\In einem CSV-Dokoment gibt es Kopfzeilen, welche für den Import irrelevant sind. Die Anzahl dieser Zeilen wird in dieser Variable gespeichert.
+	
+	\item staticTimezone: \\Falls die Zeitzone für alle Observations gleich ist, kann hier eine Zeitzone gewählt werden.
+	
+	\item variableTimezone: \\Hier wird die Spalte angegeben in der sich die Zeitzone befindet, falls die Zeitzone sich ändern kann
+	
+	\item dateTime:\\Hier wird eine Liste mit Datumsformaten mit einer zugehörigen Spalte gespeichert
+	
+	\item streamData\\ In dieser Liste werden die Datastreams zusammen mit den Spalten gespeichert, aus welchen die Daten extrahiert werden.
+	
+\end{itemize}
+\ \\
+Beschreibung Methoden:
+\begin{itemize}
+	\item getStaticTimezone(): TimeZone\\
+	Gibt die gewählte Zeitzone oder NULL, falls die variableTimezone oder keine Timezone gewählt wurde
+	
+	\item getVariableTimezone(): Integer\\
+	Gibt die Spalte zurück, in der sich die Zeitzone befinden soll.
+	Gibt -1 zurück, falls keine Spalte oder eine StaticTimezone gewählt wurde
+	
+	\item setStaticTimezone(TimeZone zone) \\
+	Setzt die StaticTimezone auf zone und die VariableTimezone auf -1
+	
+	\item setVariableTimezone(Integer column) \\
+	Setzt die variableTimezone auf column und staticTimeZone auf NULL
+\end{itemize}
+
+\section{Klasse: StringColumn}
+Variablen:
+\begin{itemize}
+	\item string: String
+	\item column: Integer
+\end{itemize} 
+
+\section{Klasse: StreamObservation}
+Variablen: 
+\begin{itemize}
+	\item dsID: String
+	\item observation: List<Integer>
+\end{itemize}
+
+\section{ConfigManagement}
+Variablen:
+\begin{itemize}
+	\item Keine Variablen auf die der Nutzer Einfluss haben könnte.\\
+		Die Speicherpfade sind final und nicht einsehbar.
+		
+\end{itemize}
+\ \\
+Methoden:
+\begin{itemize}
+	\item loadConfig(String id): Config (JSON)
+	\item saveConfig(Config (JSON))
+	\item static: ConvertToJava(Config (JSON)): Configuration
+	\item listAll(): List<String>
+	\item getServer(): URL
+\end{itemize}
+\ \\
+Beschreibung Allgemein:\\
+Diese Klasse ist zuständig für die Verwaltung von Konfigurationen.
+
+\ \\
+Beschreibung Methoden:\\
+\begin{itemize}
+	\item loadConfig(String id): Config (JSON) \\
+	Diese Methode bekommt den Namen einer Configuration übergeben, lädt die Configuration und gibt sie als JSON Objekt zurück.
+	
+	\item saveConfig(Config (JSON))\\
+	Diese Methode bekommt als Eingabe eine Configuration als JSON Objekt
+	und speichert dieses auf der Festplatte des Servers
+	
+	\item ConvertToJava(Config (JSON)): Configuration
+	Um aus einer JSON Configuration eien Java Configuration zu erhalten übergibt man dieser Funktion ein JSON-Objekt und erhält als Ausgabe die gewünschte Java Configuration.
+	
+	\item listAll() \\
+	Diese Funktion gibt eine Liste aller Konfigurationen, dargestellt als ihre Namen(String), zurück.
+	
+	\item getServer(): URL\\
+	Diese Methode gibt die URL des Zielservers zurück 
+\end{itemize}
+
+\end{document}
