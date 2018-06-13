@@ -2,9 +2,9 @@ Table
 	Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit dem Fokus auf zeilenweise Verarbeitung. Der Inhalt der Tabellenelemente ist nicht beschränkt.
 
 	
-- LinkedList<ArrayList<Object>> table
+- List<List<Object>> table
 	Speichert die Daten der Tabelle, jedes LinkedList-Element enthält eine ArrayListe, welche die Elemente der Tabelle hält
-- String id;
+- Integer id;
 	Die Identifikationsnummer der Tabelle, kann der Name sein
 
 	
@@ -17,7 +17,7 @@ Table
 	
 + Table(String id): void
 	Erstellt einen neuen Table mit leerer Tabelle
-		String id: Die ID der neuen Instanz, kann NULL sein für keine ID
+		String id: Die ID der neuen Instanz, kann NULL sein für autogenerierte ID
 
 			
 			
@@ -77,7 +77,7 @@ Table
 + appendRow(List<Object> row): void
 	Fügt eine neue Zeile hinter der letzten bestehenden Zeile ein
 		List<Object> row: Die einzufügende Zeile als Liste
-		
+
 + appendColumn(List<Object> column): void
 	Fügt eine neue Spalte hinter der letzten bestehenden Spalte ein
 		List<Object> column: Die einzufügende Spalte als Liste
@@ -95,7 +95,7 @@ Table
 			
 + clone(): Table
 	Erstellt eine ganze Kopie der Tabelle
-			Table: die Kopie der Tabelle als neue Table-Instanz
+			Table: die Kopie der Tabelle als neue Table-Instanz mit gleicher ID
 			
 + clear(): void
 	Löscht die Tabelle komplett und ersetzt sie gegen NULL
@@ -104,7 +104,7 @@ Table
 	Gibt zurück ob die Tabelle leer ist
 			boolean: true wenn die Tabelle leer oder NULL ist
 			
-+ compare(Table o): boolean
++ equals(Table o): boolean
 	Vergleicht die Table-Instanz mit einer anderen Instanz
 		Table o: Die andere zu vergleichede Table-Instanz
 			boolean: true, wenn alle Einträge gleich sind, sonst false

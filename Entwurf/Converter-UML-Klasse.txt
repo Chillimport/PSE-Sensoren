@@ -2,18 +2,19 @@
 	Konvertiert eine Datei aus dem File-Format in das Table-Format für die interne Repräsentation und wieder zurück
 	(Kann vielleicht auch ein Interface sein?)
 	(Methoden können static sein?)
-+ convert(File file): Table
+	(Konfiguration nicht static!)
++ convert(File file, Config cfg): Table
 	Konvertiert eine Tabellen-Datei in eine Instanz der Klasse Table
 		File file: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle repräsentieren
 			Table: die Table-Instanz die die Tabelle repräsentiert
 
-+convertBack(Table table): File
++ convertBack(Table table): File
 	Konvertiert eine Table-instanz wieder zurück in eine Datei, die gespeichert werden kann
 		Table table: Die zu konvertierende Table-Instanz
 			File: Die Datei
-	
-			
-			
+
+
+
 CSVConverter extends Converter
 	Konvertiert nur CSV-Dateien
 	
@@ -36,6 +37,7 @@ CSVConverter extends Converter
 
 ExcelConverter extends Converter
 	Konvertiert nur Excel-Dateien
+	
 + convert(File file): Table
 	Konvertiert eine Tabellen-Datei im Excel-Format in eine Instanz der Klasse Table.
 	Jeder Wert der Excel-Tabelle behält seinen Datentyp bzw wird in den entsprechenden Java-Datentyp umgewandelt.
