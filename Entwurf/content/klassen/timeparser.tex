@@ -1,18 +1,19 @@
 \subsection{TimeParser}
 
 \paragraph{Beschreibung}
-Diese Klassen soll die Funktionalität zur Konvertierung von Zeitformaten in das vom FROST-Server verwendete ZonedDateTime-Format bereitstellen.
+Diese Klasse stellt die Funktionalität zur Konvertierung von Zeitformaten in das vom FROST-Server verwendete ZonedDateTime-Format bereit.
 Je nach (teilweise) schon bestehenden Zeitformaten sollen dafür verschiedene Methoden zur Verfügung stehen.
 
+\paragraph{Attribute}
+\begin{itemize}
+\item - final map<int, ZoneId> zones
+\end{itemize}
 \paragraph{Methoden}
 
 \begin{itemize}
 \item + toZonedDateTime(LocalDateTime time, ZoneId zone) : ZonedDateTime
-\item + toZonedDateTime(String time, DateTimeFormatter format, String zone) : ZonedDateTime
-\item + toZonedDateTime(String time, DateTimeFormatter format, ZoneId zone) : ZonedDateTime
-\item + toZonedDateTime(List<String> time, List<DateTimeFormatter> format)(falls Datum/Zeit in mehreren Spalten in Quelldatei)
-Methoden zur Konvertierung in ZonedDateTime
-\item - toLocalDateTime(String time, DateTimeFormatter format) : LocalDateTime
-\item - toZoneId(String zone) : ZoneId
-Hilfsmethoden für Zwischenschritte bzw. zur erstellung von zoneId aus String
+\item + toLocalDateTime(String time, DateTimeFormatter format) : LocalDateTime
+\item + toLocalDateTime(List<String> time, List<DateTimeFormatter> format) : LocalDateTime
+\item + toZoneId(String zone) : ZoneId
+\item + toZoneId(int id) : ZoneId
 \end{itemize}
