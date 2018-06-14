@@ -4,13 +4,10 @@
 Diese Klassen sollen die Funktionalität zur Überprüfung einer Entity auf Dupilkate auf dem FROST-Server enthalten.
 Je nach Entity werden dafür über den FROST-Client Requests an den FROST-Server gestellt, um eine evtl vorhandene Entity mit gleichem Identifikator zu finden.
 
-abstract? mit find methode und verschiedenen Parametern und dann je nach Entity überschreiben
-
-
 \paragraph{Methoden}
 \begin{itemize}
-\item + find(String name) : boolean
-sucht entity mit Namen name auf Server und gibt true im Erfolgsfall zurück, sonst false
-\item + find(int id) : boolean
-sucht entity mit dieser id auf Server und gibt true im Erfolgsfall zurück, sonst false
+\item + find(ZonedDateTime time, Object result) : boolean
+sucht Observation mit Datum/Zeit und dem gegebenen Result und gibt true im Erfolgsfall zurück, sonst false
+\item + find(Datastream stream, ZonedDateTime time, Object result) : boolean
+\item + find(MultiDatastream stream, ZonedDateTime time, Object result) : boolean
 \end{itemize}
