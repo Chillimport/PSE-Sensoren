@@ -1,4 +1,4 @@
-Table
+﻿Table
 	Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit dem Fokus auf zeilenweise Verarbeitung. Der Inhalt der Tabellenelemente ist nicht beschränkt.
 
 	
@@ -21,8 +21,8 @@ Table
 
 			
 			
-+ getElement(int row, int column): Object //Gibt ein einzelnes Element der Tablle zurück
-	Gibt ein einzelnes Element der Tabelle an der angegebenen Stekle zurück
++ getElement(int row, int column): Object
+	Gibt ein einzelnes Element der Tabelle an der angegebenen Stelle zurück
 		int row: Die Zeile an der das Element liegt, darf nicht NULL sein
 		int column: Die Spalte an der das Element liegt, darf nicht NULL sein
 			Object: Das Element an der Stelle
@@ -59,20 +59,7 @@ Table
 + setColumn(List<Object>, int column): void
 	Ersetzt eine Spalte mit einer neuen Spalte
 		List<Object>: Die neue Spalte als Liste, darf NULL sein
-		int row: Die Position der zu ersetzen Spalte
-		
-+ removeElement(int row, int column): void
-	Ersetzt ein Element mit NULL
-		int row: Die Zeile des Elements
-		int column: Die Spalte des Elements
-	
-+ removeRow(int row): void
-	Ersetzt eine Zeile mit NULL
-		int row: Die Position der Zeile
-		
-+ removeColumn(int column): void
-	Ersetzt eine Spalte mit NULL
-		int column: Die Position der Spalte
+		int row: Die Position der zu ersetzenden Spalte
 
 + appendRow(List<Object> row): void
 	Fügt eine neue Zeile hinter der letzten bestehenden Zeile ein
