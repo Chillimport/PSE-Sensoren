@@ -1,86 +1,74 @@
 
-\subsection{Klasse: Configuration}
-Variablen:
+\section{Klasse: Configuration}
+Diese Klasse stellt die Konfigurationen dar. Sie speichert
+alle notwendigen Daten und stellt getter für einen vereinfachten Zugriff auf Daten bereit.
+
+\subsection{Attribute}
 
 \begin{itemize}
-	\item name: String
-	\item delimiter: Character
-	\item headerlines: Integer
-	\item staticTimezone: TimeZone
-	\item variableTimezone: Integer
-	\item dateTime: List<StringColumn>
- 	\item streamData: List<StreamObservation>
-\end{itemize}
-\ \\
-Methoden:
-\begin{itemize}
-	%TODO Methoden ergänzen
-	\item Konstruktor: Configuration(name)
-	\item Einfache Getter und Setter für:
-	\begin{itemize}
-		\item name
-		\item delimiter
-		\item headerlines
-		\item dateTime
-		\item streamData
-	\end{itemize}
-
-	\item Angepasste getter und setter:
-	\begin{itemize}
-		\item getStaticTimezone(): TimeZone
-		\item getVariableTimezone(): Integer
-		\item setStaticTimezone(TimeZone zone)
-		\item setVariableTimezone(Integer column)
-	\end{itemize}
-\end{itemize}
-\ \\
-Beschreibung Allgemein: \\Diese Klasse stellt die Konfigurationen dar. Sie speichert
-alle notwendigen Daten und bietet getter und setter für einen vereinfachten Zugriff auf Daten bereit.\\
-\ \\
-Beschreibung Variablen:
-\begin{itemize}
-	\item name:\\Hier wird der Name, eine eindeutige Kennung der Konfiguration, gespeichert.
+	\item \textit{private Integer id} Hier wird die ID der Konfiguration gespeichert.
 	
-	\item delimiter: \\Falls eine CSV-Datei importiert werden soll, muss ein Trennsymbol für die Spalten gewählt werden.
+	\item \textit{private Character delimiter} Falls eine CSV-Datei importiert werden soll, muss ein Trennsymbol für die Spalten gewählt werden.
 	
-	\item headerlines: \\In einem CSV-Dokoment gibt es Kopfzeilen, welche für den Import irrelevant sind. Die Anzahl dieser Zeilen wird in dieser Variable gespeichert.
+	\item \textit{private Integer headerlines} In einem CSV-Dokoment gibt es Kopfzeilen, welche für den Import irrelevant sind. Die Anzahl dieser Zeilen wird hier gespeichert.
 	
-	\item staticTimezone: \\Falls die Zeitzone für alle Observations gleich ist, kann hier eine Zeitzone gewählt werden.
+	\item \textit{private Integer timezone} Hier wird die Zeitzone gespeichert. Falls die Zahl positiv ist, handelt es sich um eine Spaltenangabe. Falls die Zahl negativ ist, handelt sich um die Integer-Darstellung einer konstanten Zeitzone.
 	
-	\item variableTimezone: \\Hier wird die Spalte angegeben in der sich die Zeitzone befindet, falls die Zeitzone sich ändern kann
+	\item \textit{private List<StringColumn> dateTime} Hier wird eine Liste aus Datumsformaten mit einer zugehörigen Spalte gespeichert 
 	
-	\item dateTime:\\Hier wird eine Liste mit Datumsformaten mit einer zugehörigen Spalte gespeichert
-	
-	\item streamData\\ In dieser Liste werden die Datastreams zusammen mit den Spalten gespeichert, aus welchen die Daten extrahiert werden.
-	
-\end{itemize}
-\ \\
-Beschreibung Methoden:
-\begin{itemize}
-	\item getStaticTimezone(): TimeZone\\
-	Gibt die gewählte Zeitzone oder NULL, falls die variableTimezone oder keine Timezone gewählt wurde
-	
-	\item getVariableTimezone(): Integer\\
-	Gibt die Spalte zurück, in der sich die Zeitzone befinden soll.
-	Gibt -1 zurück, falls keine Spalte oder eine StaticTimezone gewählt wurde
-	
-	\item setStaticTimezone(TimeZone zone) \\
-	Setzt die StaticTimezone auf zone und die VariableTimezone auf -1
-	
-	\item setVariableTimezone(Integer column) \\
-	Setzt die variableTimezone auf column und staticTimeZone auf NULL
+	\item \textit{private List<StreamObseration> streamData} In dieser Liste werden die Datastreams zusammen mit den Spalten gespeichert, aus welchen die Daten extrahiert werden.
 \end{itemize}
 
-\subsection{Klasse: StringColumn}
-Variablen:
+\subsection{Methoden}
 \begin{itemize}
-	\item string: String
-	\item column: Integer
+	\item \textit{public Configuration(Integer id, Character delilmiter, Integer headerlines, Integer timezone, List<StringColumn> dateTime, List<StreamObservation> streamData)}
+	
+	\item \textit{public Integer getId()} Diese Methode gibt die id der Konfiguration zurück.
+	
+	\item \textit{public Character getDelimiter()} Diese Methode gibt den delimiter zurück.
+	
+	\item \textit{public Integer getHeaderlines()} Diese Methode gibt die Anzahl der Kopfzeilen zurück.
+	
+	\item \textit{public Integer getTimezone()} Diese Methode gibt timezone zurück.	
+	
+	\item \textit{public List<StringColumn> getDateTime()} Diese Methode gibt die DateTime-Liste zurück.
+	
+	\item \textit{public List<StreamObseration> getStreamData()} Diese Methode gibt die streamData zurück.
+
+	\item \textit{public static Configuration ConvertToJava(String)]} Diese Methode generiert aus einem String eine Configuration.
+	
+	\item \textit{public String serialize()} Diese Methode stellt eine Konfiguration als String dar und gibt diesen zurück.
+\end{itemize}
+
+
+\section{Klasse: StringColumn}
+Diese Klasse wird dazu verwendet einen String zusammen mit einer Spaltennummer zu speichern.
+\subsection{Attribute}
+\begin{itemize}
+	\item \textit{private String string} Ein String
+	\item \textit{private Integer column} Eine Spaltennummer
 \end{itemize} 
 
-\subsection{Klasse: StreamObservation}
-Variablen: 
+\subsection{Methoden}
 \begin{itemize}
-	\item dsID: String
-	\item observation: List<Integer>
+	\item \textit{public void setString(String string)}
+	\item \textit{public String getString()}
+	
+	\item \textit{public void setColumn(Integer column)}
+	\item \textit{public Integer getColumn()}
+\end{itemize}
+
+\section{Klasse: StreamObservation}
+\subsection{Attribute} 
+\begin{itemize}
+	\item \textit{private Integer dsID}
+	\item \textit{private List<Integer> observation}
+\end{itemize}
+
+\subsection{Methoden}
+\begin{itemize}
+	\item \textit{public void setDsID(Integer dsID)}
+	\item \textit{public void setObservations(List<Integer>)}
+	\item \textit{public Integer getDsID()}
+	\item \textit{public List<Integer> getObservtions()}
 \end{itemize}
