@@ -1,0 +1,17 @@
+\subsection{SensorController}
+
+\paragraph{Beschreibung}
+Diese Controller-Klasse empfängt Anfragen vom Frontend, die das Erstellen oder Abrufen von Sensoren betreffen. Zur Bearbeitung dieser Anfragen greift die Klasse auf den Frost-Client zu.
+
+
+\paragraph{Attribute}
+
+\paragraph{Methoden}
+\begin{itemize}
+\item[+] \textit{ createSensor(String name,String description,EncodingType encodingType,String metadata) : void }
+erstellt mithilfe des Frost-Client einen neuen Sensor und lädt diesen auf den Frostserver.
+\item[+] \textit{getSensor(int id) : Sensor}
+sucht auf dem Server den Sensor mit der angegebenen id und gibt diesen zurück (NULL im Fehlerfall)
+\item[+] \textit{getSensors(String begin) : List<Sensor> }
+sucht auf dem Frost-Server die Sensoren (maximal die ersten 7), deren Namen mit der angegeben Zeichenkette beginnen.
+\end{itemize}
