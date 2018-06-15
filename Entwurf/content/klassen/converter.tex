@@ -1,52 +1,87 @@
-<<abstract>> Converter
-	Konvertiert eine Datei aus dem File-Format in das Table-Format für die interne Repräsentation und wieder zurück
-	(Kann vielleicht auch ein Interface sein?)
-	(Methoden können static sein?)
-+ convert(File file): Table
+\subsection{<<abstract>> <<static>> Converter}
+Konvertiert eine Datei aus dem File-Format in das Table-Format für die interne Repräsentation und wieder zurück \\
+
+\paragraph{Methoden}
+
+\begin{itemize}
+	\item[+] \textit{convert(File file): Table} \\
 	Konvertiert eine Tabellen-Datei in eine Instanz der Klasse Table
-		File file: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle repräsentieren
-			Table: die Table-Instanz die die Tabelle repräsentiert
+	\begin{enumerate}
+		\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle repräsentieren
+		\begin{itemize}
+			\item[*] \textit{Table}: die Table-Instanz die die Tabelle repräsentiert
+		\end{itemize}
+	\end{enumerate}
 
-+convertBack(Table table): File
-	Konvertiert eine Table-instanz wieder zurück in eine Datei, die gespeichert werden kann
-		Table table: Die zu konvertierende Table-Instanz
-			File: Die Datei
-	
+	\item[+] \textit{convertBack(Table table): File} \\
+	Konvertiert eine Table-Instanz wieder zurück in eine Datei, die gespeichert werden kann
+	\begin{enumerate}
+		\item \textit{Table table}: Die zu konvertierende Table-Instanz
+		\begin{itemize}
+			\item[*] \textit{File}: Die Datei
+		\end{itemize}
+	\end{enumerate}
+\end{itemize}
 			
 			
-CSVConverter extends Converter
-	Konvertiert nur CSV-Dateien
-	
-+ convert(File file): Table
+\subsection{<<static>> CSVConverter extends Converter}
+Konvertiert nur CSV-Dateien \\
+
+\paragraph{Methoden}
+\begin{itemize}
+	\item[+] \textit{convert(File file): Table} \\
 	Konvertiert eine Tabellen-Datei im CSV-Format in eine Instanz der Klasse Table
-		File file: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle im CSV-Format repräsentieren
-			Table: die Table-Instanz die die Tabelle repräsentiert
-			
-+ convertBack(Table table): File
-	Konvertiert eine Table-instanz wieder zurück in eine CSV-Datei, die gespeichert werden kann
-		Table table: Die Tabelle
-			File: Die CSV-Datei
-			
-- removeHeaders(File file): File
+	\begin{enumerate}
+		\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle im CSV-Format repräsentieren
+		\begin{itemize}
+			\item[*] \textit{Table}: die Table-Instanz die die Tabelle repräsentiert
+		\end{itemize}
+	\end{enumerate}
+	
+	\item[+] \textit{convertBack(Table table): File} \\
+	Konvertiert eine Table-Instanz wieder zurück in eine CSV-Datei, die gespeichert werden kann
+	\begin{enumerate}
+		\item \textit{Table table}: Die zu konvertierende Table-Instanz
+		\begin{itemize}
+			\item[*] \textit{File}: Die CSV-Datei
+		\end{itemize}
+	\end{enumerate}
+
+	\item[-] \textit{removeHeaders(File file): File} \\
 	Entfernt die Kopfzeilen der CSV-Datei, welche durch die Konfiguration festgelegt sind
-		File file: Die CSV-Datei von der die Kopfzeilen entfernt werden sollen
-			File: Die selbe CSV-Datei, nur ohne Kopfzeilen
-			
+	\begin{enumerate}
+		\item \textit{File file}: Die CSV-Datei von der die Kopfzeilen entfernt werden sollen
+			\begin{itemize}
+				\item[*] File: Die selbe CSV-Datei, nur ohne Kopfzeilen
+			\end{itemize}
+	\end{enumerate}
+\end{itemize}
 
 
-ExcelConverter extends Converter
-	Konvertiert nur Excel-Dateien
-+ convert(File file): Table
+\subsection{<<static>> ExcelConverter extends Converter}
+Konvertiert nur Excel-Dateien \\
+
+\paragraph{Methoden}
+\begin{itemize}
+	\item[+] \textit{convert(File file): Table} \\
 	Konvertiert eine Tabellen-Datei im Excel-Format in eine Instanz der Klasse Table.
 	Jeder Wert der Excel-Tabelle behält seinen Datentyp bzw wird in den entsprechenden Java-Datentyp umgewandelt.
-%	Siehe auch: https://support.office.com/en-us/article/data-types-in-data-models-e2388f62-6122-4e2b-bcad-053e3da9ba90#__toc327893213
-	und http://poi.apache.org/spreadsheet/
-		File file: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle im Excel-Format repräsentieren
-			Table: die Table-Instanz die die Tabelle repräsentiert
-			
-+ convertBack(Table table): File
+	Siehe auch: \href{https://support.office.com/en-us/article/data-types-in-data-models-e2388f62-6122-4e2b-bcad-053e3da9ba90#__toc327893213}{Datentypen in MS Excel} und \href{http://poi.apache.org/spreadsheet/}{Apache POI Spreadsheet Library}
+	\begin{enumerate}
+		\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle im Excel-Format repräsentieren
+		\begin{itemize}
+			\item[*] \textit{Table}: die Table-Instanz die die Tabelle repräsentiert
+		\end{itemize}
+	\end{enumerate}
+	
+	\item[+] \textit{convertBack(Table table): File} \\
 	Konvertiert eine Table-instanz wieder zurück in eine Excel-Datei, die gespeichert werden kann.
 	Die Datentypen werden -wenn möglich- aus dem Java-Datentyp wieder in den Excel-Datentyp zurück-konvertiert.
-%	Siehe auch: https://support.office.com/en-us/article/data-types-in-data-models-e2388f62-6122-4e2b-bcad-053e3da9ba90#__toc327893213
-		Table table: Die Tabelle
-			File: Die Excel-Datei
+	Siehe auch: \href{https://support.office.com/en-us/article/data-types-in-data-models-e2388f62-6122-4e2b-bcad-053e3da9ba90#__toc327893213}{Datentypen in MS Excel}
+	\begin{enumerate}
+		\item \textit{Table table}: Die zu konvertierende Table-Instanz
+		\begin{itemize}
+			\item[*] \textit{File}: Die Excel-Datei
+		\end{itemize}
+	\end{enumerate}
+\end{itemize}

@@ -13,25 +13,18 @@ Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit 
 \paragraph{Konstruktoren}
 
 \begin{itemize}
-	\item[+] \textit{Table(Table t, String id): void} Erstellt eine Table-Instanz aus einer 2-dimensionalen Liste \\
+	\item[+] \textit{Table(Table t): void} Erstellt eine Table-Instanz aus einer 2-dimensionalen Liste \\
 	Dabei werden alle inneren Listen auf die selbe Länge verlängert und mit NULL aufgefüllt, damit die Tabelle immer gleich viele Spalten besitzt
 	\begin{enumerate}
 		\item \textit{Table t}: Die Table-Instanz aus der ein neuer Table erstellt wird, kann NULL sein
-		\item \textit{String id}: Die ID der neuen Instanz, kann NULL sein für keine ID
 	\end{enumerate}
 
-	\item[+] \textit{Table(String id): void} Erstellt einen neuen Table mit leerer Tabelle
-	\begin{enumerate}
-		\item \textit{String id}: Die ID der neuen Instanz, kann NULL sein für keine ID
-	\end{enumerate}
-\end{itemize}	
-	
-		
-
+	\item[+] \textit{Table(): void} Erstellt einen neuen Table mit leerer Tabelle
+\end{itemize}
 			
 \paragraph{Methoden}
 \begin{itemize}
-	\item[+] \textit{get(int row, int column): Object} \\
+	\item[+] \textit{getElement(int row, int column): Object} \\
 	Gibt ein einzelnes Element der Tabelle an der angegebenen Stelle zurück
 	\begin{enumerate}
 		\item \textit{int row}: Die Zeile an der das Element liegt, darf nicht NULL sein
@@ -41,7 +34,7 @@ Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit 
 		\end{itemize}
 	\end{enumerate}
 
-	\item[+] \textit{get(int row): List<Object>} \\
+	\item[+] \textit{getRow(int row): List<Object>} \\
 	Gibt eine ganze Zeile zurück
 	\begin{enumerate}
 		\item \textit{int row}: Die Position der Zeile, darf nicht NULL sein
@@ -50,7 +43,7 @@ Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit 
 		\end{itemize}
 	\end{enumerate}
 
-	\item[+] \textit{get(int column): List<Object>} \\
+	\item[+] \textit{getColumn(int column): List<Object>} \\
 	Gibt eine ganze Spalte zurück
 	\begin{enumerate}
 	\item \textit{int column}: Die Position der Spalte, darf nicht NULL sein
@@ -77,7 +70,7 @@ Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit 
 			\end{itemize}
 		\end{enumerate}
 	
-	\item[+] \textit{set(Object o, int row, int column): void} \\
+	\item[+] \textit{setElement(Object o, int row, int column): void} \\
 	Ersetzt ein Element der Tabelle mit einem neuen Element
 	\begin{enumerate}
 		\item \textit{Object o}: Das neue Element, darf NULL sein
@@ -85,14 +78,14 @@ Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit 
 		\item \textit{int column}: Die Spalte des Elements
 	\end{enumerate}
 
-	\item[+] \textit{set(List<Object> row, int pos): void} \\
+	\item[+] \textit{setRow(List<Object> row, int pos): void} \\
 	Ersetzt eine Zeile mit einer neuen Zeile
 	\begin{enumerate}
 		\item \textit{List<Object> row}: Die neue Zeile als Liste, darf NULL sein
 		\item \textit{int pos}: Die Position der zu ersetzenden Zeile
 	\end{enumerate}
 
-	\item[+] \textit{set(List<Object> column, int pos): void} \\
+	\item[+] \textit{setColumn(List<Object> column, int pos): void} \\
 	Ersetzt eine Spalte mit einer neuen Spalte
 	\begin{enumerate}
 		\item \textit{List<Object> column}: Die neue Spalte als Liste, darf NULL sein
@@ -106,26 +99,14 @@ Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit 
 		\item \textit{int column}: Die Spalte des Elements
 	\end{enumerate}
 
-	\item[+] \textit{remove(int row): void} \\
-	Ersetzt eine Zeile mit NULL
-	\begin{enumerate}
-		\item \textit{int row}: Die Position der Zeile
-	\end{enumerate}
-
-	\item[+] \textit{remove(int column): void} \\
-	Ersetzt eine Spalte mit NULL
-	\begin{enumerate}
-		\item \textit{int column}: Die Position der Spalte
-	\end{enumerate}
-
-	\item[+] \textit{insert(List<Object> row, int position): void} \\
+	\item[+] \textit{insertRow(List<Object> row, int position): void} \\
 	Fügt eine neue Zeile hinter einer bestehenden Zeile ein
 	\begin{enumerate}
 		\item \textit{List<Object> row}: Die einzufügende Zeile als Liste
 		\item \textit{int position}: Die Position hinter der die Zeile eingefügt werden soll
 	\end{enumerate}
 
-	\item[+] \textit{insert(List<Object> column, int position): void} \\
+	\item[+] \textit{insertColumn(List<Object> column, int position): void} \\
 	Fügt eine neue Spalte hinter einer bestehenden Spalte ein
 	\begin{enumerate}
 		\item \textit{List<Object> column}: Die einzufügende Spalte als Liste
@@ -147,15 +128,6 @@ Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit 
 		\item \textit{Keine Parameter}
 		\begin{itemize}
 			\item[] \textit{int}: Die Anzahl Spalten
-		\end{itemize}
-	\end{enumerate}
-	
-	\item[+] \textit{getID(): String} \\
-	Gibt die ID der Tabelle zurück
-	\begin{enumerate}
-		\item \textit{Keine Parameter}
-		\begin{itemize}
-			\item[] \textit{String}: Die ID, NULL falls keine ID gesetzt wurde
 		\end{itemize}
 	\end{enumerate}
 	
