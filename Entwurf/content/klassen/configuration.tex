@@ -1,9 +1,9 @@
 
-\section{Klasse: Configuration}
-Diese Klasse stellt die Konfigurationen dar. Sie speichert
-alle notwendigen Daten und stellt getter für einen vereinfachten Zugriff auf Daten bereit.
+\subsection{Configuration}
+Diese Klasse stellt die Konfigurationen dar. 
+Sie speichert alle notwendigen Daten und stellt getter für einen vereinfachten Zugriff auf Daten bereit.
 
-\subsection{Attribute}
+\paragraph{Attribute}
 
 \begin{itemize}
 	\item \textit{private Integer id} Hier wird die ID der Konfiguration gespeichert.
@@ -19,9 +19,9 @@ alle notwendigen Daten und stellt getter für einen vereinfachten Zugriff auf Da
 	\item \textit{private List<StreamObseration> streamData} In dieser Liste werden die Datastreams zusammen mit den Spalten gespeichert, aus welchen die Daten extrahiert werden.
 \end{itemize}
 
-\subsection{Methoden}
+\paragraph{Methoden}
 \begin{itemize}
-	\item \textit{public Configuration(Integer id, Character delilmiter, Integer headerlines, Integer timezone, List<StringColumn> dateTime, List<StreamObservation> streamData)}
+	\item \textit{public Configuration(Integer id, Character delimiter, Integer headerlines, Integer timezone, List<StringColumn> dateTime, List<StreamObservation> streamData)}
 	
 	\item \textit{public Integer getId()} Diese Methode gibt die id der Konfiguration zurück.
 	
@@ -41,15 +41,15 @@ alle notwendigen Daten und stellt getter für einen vereinfachten Zugriff auf Da
 \end{itemize}
 
 
-\section{Klasse: StringColumn}
+\subsection{StringColumn}
 Diese Klasse wird dazu verwendet einen String zusammen mit einer Spaltennummer zu speichern.
-\subsection{Attribute}
+\paragraph{Attribute}
 \begin{itemize}
 	\item \textit{private String string} Ein String
 	\item \textit{private Integer column} Eine Spaltennummer
 \end{itemize} 
 
-\subsection{Methoden}
+\paragraph{Methoden}
 \begin{itemize}
 	\item \textit{public void setString(String string)}
 	\item \textit{public String getString()}
@@ -58,14 +58,14 @@ Diese Klasse wird dazu verwendet einen String zusammen mit einer Spaltennummer z
 	\item \textit{public Integer getColumn()}
 \end{itemize}
 
-\section{Klasse: StreamObservation}
-\subsection{Attribute} 
+\subsection{StreamObservation}
+\paragraph{Attribute} 
 \begin{itemize}
 	\item \textit{private Integer dsID}
 	\item \textit{private List<Integer> observation}
 \end{itemize}
 
-\subsection{Methoden}
+\paragraph{Methoden}
 \begin{itemize}
 	\item \textit{public void setDsID(Integer dsID)}
 	\item \textit{public void setObservations(List<Integer>)}
