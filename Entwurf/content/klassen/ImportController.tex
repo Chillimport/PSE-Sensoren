@@ -1,0 +1,15 @@
+\subsection{ImportController}
+
+\paragraph{Beschreibung}
+Diese Controller-Klasse empfängt Anfragen vom Frontend, die den Daten-Import oder die Vorschau betreffen.
+
+
+\paragraph{Attribute}
+
+\paragraph{Methoden}
+\begin{itemize}
+\item[+] \textit{ importData() : void}
+ erstellt mit dem ConfigurationManagement eine Configuration Instanz die vom Uploader abgerufen wird um den Daten-Import durchzuführen.
+\item[+] \textit{showPreview() : void}
+sucht auf dem Server das Thing mit der angegebenen id und gibt es zurück (NULL im Fehlerfall)
+\end{itemize}
