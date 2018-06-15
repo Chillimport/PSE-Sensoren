@@ -27,7 +27,7 @@ Außerdem werden alle Imports in ein permanentes (seperates) Log geschrieben.
 \item \textit{ - LogManager() : LogManager}  \\ Privater Konstruktor um mehrfache Erstellung zu unterbinden
 \item \textit{ - initLog() : void} \\ Initialisiert einen Java-Logger
 \item \textit{ + getLog() : Logger} \\ Gibt die Java-Logger Instanz zurück
-\item \textit{ + getInstance() : LogManager}  \\ Verweist auf den einmaligen LogManager
+\item \textit{ + static getInstance() : LogManager}  \\ Verweist auf den einmaligen LogManager
 \item \textit{ + writeToLog(String message, boolean severe) : void} \\ Schreibt <msg> als info in das Log wenn <severe> false ist,
 sonst als severe.
 	
