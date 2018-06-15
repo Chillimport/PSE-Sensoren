@@ -5,20 +5,20 @@ Diese Klasse nimmt Fehlermeldungen entgegen und speichert sie ab.
 
 \paragraph{Attribute}
 \begin{itemize}
-\item \textit{private final static ErrorHandler errorHandler}
+\item \textit{ - final static ErrorHandler errorHandler}
 \\ Singleton Referenz
-\item \textit{private String path}
+\item \textit{ - String path}
 \\ Speicherfad der .txt Datei in die die Zeilen geschrieben werden sollen
-\item \textit{private List<skippedRow>}
+\item \textit{ - List<skippedRow>}
 \\ Liste von Zeilen und zugehörigen Exceptions
 \end{itemize}
 
 \paragraph{Methoden}
 
 \begin{itemize}
-\item \textit{private ErrorHandler() : ErrorHandler}  \\Privater Konstruktor für Singleton
-\item \textit{public getInstance() : ErrorHandler} \\Verweist auf die ErrorHandler Instanz
-\item \textit{public addRows(int row, Exception e) : void}
+\item \textit{ - ErrorHandler() : ErrorHandler}  \\Pivater Konstruktor für Singleton
+\item \textit{ + getInstance() : ErrorHandler} \\Verweist auf die ErrorHandler Instanz
+\item \textit{ + addRows(int row, Exception e) : void}
 \\Fügt ein neues skipRows Objekt zur Liste hinzu mit der übersprungenen Zeile und der Exception als Information 
 
 \end{itemize}
