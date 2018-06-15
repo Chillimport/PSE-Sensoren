@@ -1,17 +1,24 @@
 \subsection{ErrorHandler}
 
 \paragraph{Beschreibung}
-Diese Klasse nimmt Fehlermeldungen entgegen und behandelt sie (wenn möglich).
+Diese Klasse nimmt Fehlermeldungen entgegen und speichert sie ab.
 
+\paragraph{Attribute}
+\begin{itemize}
+\item \textit{private final static ErrorHandler errorHandler}
+\\ Singleton Referenz
+\item \textit{private String path}
+\\ Speicherfad der .txt Datei in die die Zeilen geschrieben werden sollen
+\item \textit{private List<skipRows>}
+\\ Liste von Zeilen und zugehörigen Exceptions
+\end{itemize}
 
 \paragraph{Methoden}
 
 \begin{itemize}
-\item + notify(String message) : void
-Informiert den User über ein Ereignis, entweder durch eine Popup Message oder über das Log-Fenster (Je nach Dringlichkeit)
-
-\item + identify(Exception e) : boolean
-Identifiziert den Exception Typ und behandelt sie (z.B user neue Angaben geben lassen, notify aufrufen)
-Gibt zurück ob die Exception behandelt werden konnte.
+\item \textit{private ErrorHandler() : ErrorHandler}  \\Privater Konstruktor für Singleton
+\item \textit{public getInstance() : ErrorHandler} \\Verweist auf die ErrorHandler Instanz
+\item \textit{public addRows(int row, Exception e) : void}
+\\Fügt ein neues skipRows Objekt zur Liste hinzu mit der übersprungenen Zeile und der Exception als Information 
 
 \end{itemize}

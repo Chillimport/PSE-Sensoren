@@ -5,19 +5,30 @@ Diese Klasse implementiert das Log-Fenster und hält es auf dem Laufenden.
 Außerdem werden alle Imports in ein permanentes (seperates) Log geschrieben.
 
 
+\paragraph{Attribute}
+
+\begin{itemize}
+	
+\item \textit{private final static LogManager logManager}  
+\\ Die einzige LogManager-Instanz 
+\item \textit{private final static Logger log}
+\\ Java-Logger Instanz
+\item \textit{private static FileHandler txtFile}
+\\ Text-File in die geschrieben wird
+\item \textit{private static SimpleFormatter formatter}
+\\ Text Formatter
+
+\end{itemize}
+
 \paragraph{Methoden}
 
 \begin{itemize}
-\item + initLog () : void
-Initialisiert ein leeres Log
-
-\item + writeToLog(String message) : void
-Diese Methode schreibt Nachrichten in das Log-Fenster (Uhrzeit über System)
-
-\item + saveImport(int amount) : void
-Hält im permanenten Log fest, dass ein Import stattgefunden hat und wieviele zeilen importiert wurden. (Datum über System) 
-
-\item + clearLog() : void
-Leert das (Session-) Log
-
+	
+\item \textit{ private LogManager() : LogManager}  \\ Privater Konstruktor um mehrfache Erstellung zu unterbinden
+\item \textit{ private initLog() : void} \\ Initialisiert einen Java-Logger
+\item \textit{ public getLog() : Logger} \\ Gibt die Java-Logger Instanz zurück
+\item \textit{ public getInstance() : LogManager}  \\ Verweist auf den einmaligen LogManager
+\item \textit{ public writeToLog(String message, boolean severe) : void} \\ Schreibt <msg> als info in das Log wenn <severe> false ist,
+sonst als severe.
+	
 \end{itemize}
