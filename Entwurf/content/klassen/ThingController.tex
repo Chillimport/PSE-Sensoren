@@ -1,0 +1,17 @@
+\subsection{ThingController}
+
+\paragraph{Beschreibung}
+Diese Controller-Klasse empfängt Anfragen vom Frontend, die das Erstellen oder Abrufen von Things betreffen. Zur Bearbeitung dieser Anfragen greift die Klasse auf den Frost-Client zu.
+
+
+\paragraph{Attribute}
+
+\paragraph{Methoden}
+\begin{itemize}
+\item \textit{public createThing(String name, String description, Map<String, Object> properties, Location location) : boolean }
+erstellt mithilfe des Frost-Client ein neues Thing und lädt es auf den Frostserver.
+\item \textit{public getThing(int id) : Thing}
+sucht auf dem Server das Thing mit der angegebenen id und gibt es zurück (NULL im Fehlerfall)
+\item \textit{public getThings(String begin) : ???? }
+sucht auf dem Frost-Server die Things (maximal die ersten 7) deren Name mit der angegeben Zeichenkette beginnen.
+\end{itemize}
