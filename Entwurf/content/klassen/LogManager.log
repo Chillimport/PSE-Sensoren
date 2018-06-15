@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.5.16)  15 JUN 2018 13:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.5.16)  15 JUN 2018 14:31
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -402,11 +402,6 @@ Overfull \hbox (13.28882pt too wide) in paragraph at lines 14--16
  []
 
 
-Overfull \hbox (23.51094pt too wide) in paragraph at lines 14--16
-\OT1/cmr/m/it/10 static
- []
-
-
 Overfull \hbox (18.53871pt too wide) in paragraph at lines 14--16
 \OT1/cmr/m/it/10 Log-
  []
@@ -456,11 +451,6 @@ Overfull \hbox (3.57774pt too wide) in paragraph at lines 16--18
  []
 
 
-Overfull \hbox (23.51094pt too wide) in paragraph at lines 16--18
-\OT1/cmr/m/it/10 static
- []
-
-
 Overfull \hbox (20.32762pt too wide) in paragraph at lines 16--18
 \OT1/cmr/m/it/10 File-
  []
@@ -496,11 +486,6 @@ Missing character: There is no r in font nullfont!
 
 Overfull \hbox (3.57774pt too wide) in paragraph at lines 18--20
 \OT1/cmr/m/it/10 -
- []
-
-
-Overfull \hbox (23.51094pt too wide) in paragraph at lines 18--20
-\OT1/cmr/m/it/10 static
  []
 
 
@@ -819,6 +804,11 @@ Missing character: There is no r in font nullfont!
 
 Overfull \hbox (7.66663pt too wide) in paragraph at lines 30--31
 \OT1/cmr/m/it/10 +
+ []
+
+
+Overfull \hbox (23.51094pt too wide) in paragraph at lines 30--31
+\OT1/cmr/m/it/10 static
  []
 
 
