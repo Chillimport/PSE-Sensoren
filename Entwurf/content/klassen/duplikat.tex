@@ -1,6 +1,5 @@
 \subsection{CheckDuplicate}
 
-\paragraph{Beschreibung}
 Diese Klasse enthält die Funktionalität zur Überprüfung einer Observation auf Duplikate auf dem FROST-Server.
 Zwei Observations sind Duplikate, falls das Ergebnis und die Beobachtungszeit übereinstimmen.
 
@@ -8,8 +7,7 @@ Zwei Observations sind Duplikate, falls das Ergebnis und die Beobachtungszeit ü
 
 \paragraph{Methoden}
 \begin{itemize}
-\item + find(ZonedDateTime time, Object result) : boolean
-sucht Observation mit Datum/Zeit und dem gegebenen Result und gibt true im Erfolgsfall zurück, sonst false
-\item + find(Datastream stream, ZonedDateTime time, Object result) : boolean
-\item + find(MultiDatastream stream, ZonedDateTime time, Object result) : boolean
+\item \textit{public boolean find(ZonedDateTime time, Object result)} Sucht eine Observation auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
+\item \textit{public boolean find(Datastream stream, ZonedDateTime time, Object result)} Sucht eine Observation zu dem Datastream auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
+\item \textit{public boolean find(MultiDatastream stream, ZonedDateTime time, Object result)} Sucht eine Observation zu dem MultiDatastream auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
 \end{itemize}
