@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.5.16)  15 JUN 2018 11:55
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.5.16)  15 JUN 2018 13:50
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -237,8 +237,8 @@ Missing character: There is no i in font nullfont!
 Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 
-Overfull \hbox (30.02756pt too wide) in paragraph at lines 11--12
-\OT1/cmr/m/it/10 private
+Overfull \hbox (7.66663pt too wide) in paragraph at lines 11--12
+\OT1/cmr/m/it/10 +
  []
 
 
@@ -278,8 +278,8 @@ Missing character: There is no l in font nullfont!
 Missing character: There is no e in font nullfont!
 Missing character: There is no r in font nullfont!
 
-Overfull \hbox (30.02756pt too wide) in paragraph at lines 13--14
-\OT1/cmr/m/it/10 private
+Overfull \hbox (7.66663pt too wide) in paragraph at lines 13--14
+\OT1/cmr/m/it/10 +
  []
 
 
@@ -311,26 +311,6 @@ Overfull \hbox (17.37762pt too wide) in paragraph at lines 13--14
 Overfull \hbox (17.88925pt too wide) in paragraph at lines 13--14
 \OT1/cmr/m/it/10 tion 
  []
-
-
-! LaTeX Error: \begin{document} ended by \end{itemize}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.18 \end{itemize}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Extra \endgroup.
-<recently read> \endgroup 
-                          
-l.18 \end{itemize}
-                  
-Things are pretty mixed up, but I think the worst is over.
 
 )
 ! Emergency stop.
