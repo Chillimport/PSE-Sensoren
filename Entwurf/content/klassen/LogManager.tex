@@ -4,21 +4,13 @@
 Diese Klasse implementiert das Log-Fenster und hält es auf dem Laufenden.
 Außerdem werden alle Imports in ein permanentes (seperates) Log geschrieben.
 
-
 \paragraph{Attribute}
-
-\begin{itemize}
-	
-\item \textit{- final static LogManager logManager}  
-\\ Die einzige LogManager-Instanz 
-\item \textit{- Logger log}
-\\ Java-Logger Instanz
-\item \textit{- FileHandler txtFile}
-\\ Text-File in die geschrieben wird
-\item \textit{-  SimpleFormatter formatter}
-\\ Text Formatter
-
-\end{itemize}
+\begin{enumerate}[$\bullet$]
+	\item \textit{final static LogManager logManager}  Die einzige LogManager Instanz
+	\item \textit{Logger log} Die Java-Logger Instanz
+	\item \textit{FileHandler txtFile} Text-File in die geschrieben wird
+	\item \textit{SimpleFormatter formatter} Text-Formatter
+\end{enumerate}
 
 \paragraph{Konstruktoren}
 \begin{enumerate}[-]
@@ -31,7 +23,7 @@ Außerdem werden alle Imports in ein permanentes (seperates) Log geschrieben.
 
 \begin{enumerate}[+]
 
-	\item \textit{static getInstance()}  \\ Verweist auf den einmaligen LogManager
+	\item \textit{static getInstance() : LogManager}  \\ Verweist auf den einmaligen LogManager
 	
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
@@ -52,7 +44,7 @@ sonst als severe.
 \item \textit{initLog()} \\ Initialisiert einen Java-Logger
 \vspace{-0.2cm}
 
-\item \textit{getLogger()} \\ Gibt die Java-Logger Instanz zurück
+\item \textit{getLogger() : Logger} \\ Gibt die Java-Logger Instanz zurück
 \begin{enumerate}[$\circ$]
 	\item Logger
 \end{enumerate}
