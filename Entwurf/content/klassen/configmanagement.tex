@@ -9,12 +9,32 @@ Diese Klasse ist für die Verwaltung der Konfigurationen zuständig.
 \end{itemize}
 
 \paragraph{Methoden}
-\begin{itemize}
-	\item \textit{public Configuration loadConfig(Integer id)} Diese Methode lädt eine Konfiguration und gibt diese zurück.
 	
-	\item \textit{public void saveConfig(Configuration)} Diese Methode speichert die übergebene Konfiguration auf der Festplatte des Servers.
+	\begin{enumerate}[+]
+	\item \textit{public loadConfig(Integer id) : Configuration} Diese Methode lädt eine Konfiguration und gibt diese zurück.
+		\begin{enumerate}[$\bullet$]
+			\item \textit{Integer id} Die id der Konfiguration
+		\end{enumerate}
+		\vspace{-0.2cm}
+		\begin{enumerate}[$\circ$]
+			\item \textit{Configuration} Die Konfiguration
+		\end{enumerate}
 	
-	\item \textit{public List<Integer> listAll()} Diese Methode gibt die ID's aller Konfigurationen in einer Liste zurück.
+	\item \textit{public saveConfig(Configuration cfg)} Diese Methode speichert die übergebene Konfiguration auf der Festplatte des Servers.
 	
-	\item \textit{public URL getServer()} Diese Methode gibt die URL des Zielservers zurück.
-\end{itemize}
+	\begin{enumerate}[$\bullet$]
+		\item \textit{Configuration cfg} Die Konfiguration die gespeichert werden soll
+	\end{enumerate}
+	
+	\item \textit{public listAll() : List<Integer> } Diese Methode gibt die ID's aller Konfigurationen in einer Liste zurück.
+	
+	\begin{enumerate}[$\circ$]
+		\item \textit{List<Integer>} Liste aller id's der vorhandenen Konfigurationen
+	\end{enumerate}
+	
+	\item \textit{public getServer() : URL} Diese Methode gibt die URL des Zielservers zurück.
+	
+	\begin{enumerate}[$\circ$]
+		\item \textit{URL} Adresse des Zielservers
+	\end{enumerate}
+\end{enumerate}
