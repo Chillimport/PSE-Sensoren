@@ -2,86 +2,102 @@
 Konvertiert eine Datei aus dem File-Format in das Table-Format für die interne Repräsentation und wieder zurück \\
 
 \paragraph{Methoden}
-
-\begin{itemize}
-	\item[+] \textit{convert(File file): Table} \\
+\begin{enumerate}[+]
+	\item textit{convert(File file, configuration cfg): Table} \\
 	Konvertiert eine Tabellen-Datei in eine Instanz der Klasse Table
-	\begin{enumerate}
+	
+	\begin{enumerate}[$\bullet$]
 		\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle repräsentieren
-		\begin{itemize}
-			\item[*] \textit{Table}: die Table-Instanz die die Tabelle repräsentiert
-		\end{itemize}
+		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{Table}: die Table-Instanz die die Tabelle repräsentiert
 	\end{enumerate}
 
-	\item[+] \textit{convertBack(Table table): File} \\
+	\item \textit{convertBack(Table table, Configuration cfg): File} \\
 	Konvertiert eine Table-Instanz wieder zurück in eine Datei, die gespeichert werden kann
-	\begin{enumerate}
+	\begin{enumerate}[$\bullet$]
 		\item \textit{Table table}: Die zu konvertierende Table-Instanz
-		\begin{itemize}
-			\item[*] \textit{File}: Die Datei
-		\end{itemize}
+		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration
 	\end{enumerate}
-\end{itemize}
-			
-			
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{File}: Die Datei
+	\end{enumerate}
+\end{enumerate}
+
+
 \subsection{<<static>> CSVConverter extends Converter}
 Konvertiert nur CSV-Dateien \\
 
 \paragraph{Methoden}
-\begin{itemize}
-	\item[+] \textit{convert(File file): Table} \\
+
+\begin{enumerate}[+]
+	\item textit{convert(File file, Configuration cfg): Table} \\
 	Konvertiert eine Tabellen-Datei im CSV-Format in eine Instanz der Klasse Table
-	\begin{enumerate}
-		\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle im CSV-Format repräsentieren
-		\begin{itemize}
-			\item[*] \textit{Table}: die Table-Instanz die die Tabelle repräsentiert
-		\end{itemize}
+	
+\begin{enumerate}[$\bullet$]
+	\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle im CSV-Format repräsentieren
+	\item \textit{Configurtion cfg}: Die zu nutzende Konfiguration, diese stellt u.a. die zu entfernenden Kopfzeilen und das Trennsymbol bereit
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{Table}: die Table-Instanz die die Tabelle repräsentiert
 	\end{enumerate}
 	
-	\item[+] \textit{convertBack(Table table): File} \\
-	Konvertiert eine Table-Instanz wieder zurück in eine CSV-Datei, die gespeichert werden kann
-	\begin{enumerate}
-		\item \textit{Table table}: Die zu konvertierende Table-Instanz
-		\begin{itemize}
-			\item[*] \textit{File}: Die CSV-Datei
-		\end{itemize}
+	\item \textit{convertBack(Table table, Configuration cfg): File} \\
+	Konvertiert eine Table-Instanz wieder zurück in eine Datei, die gespeichert werden kann
+	\begin{enumerate}[$\bullet$]
+		\textit{Table table}: Die zu konvertierende Table-Instanz
+		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration, die u.a. das Trennsymbol bereitstellt
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{File}: Die CSV-Datei
 	\end{enumerate}
 
-	\item[-] \textit{removeHeaders(File file): File} \\
+	\item \textit{removeHeaders(File file, Configuration cfg): File} \\
 	Entfernt die Kopfzeilen der CSV-Datei, welche durch die Konfiguration festgelegt sind
-	\begin{enumerate}
+	\begin{enumerate}[$\bullet$]
 		\item \textit{File file}: Die CSV-Datei von der die Kopfzeilen entfernt werden sollen
-			\begin{itemize}
-				\item[*] File: Die selbe CSV-Datei, nur ohne Kopfzeilen
-			\end{itemize}
+		\item \textit{Configuration cfg}: Die Konfiguration, die die Anzahl Kopfzeilen enthält
 	\end{enumerate}
-\end{itemize}
-
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{File}: Die selbe CSV-Datei, nur ohne Kopfzeilen
+	\end{enumerate}
+\end{enumerate}
 
 \subsection{<<static>> ExcelConverter extends Converter}
 Konvertiert nur Excel-Dateien \\
 
 \paragraph{Methoden}
-\begin{itemize}
-	\item[+] \textit{convert(File file): Table} \\
+\begin{enumerate}[+]
+	\item textit{convert(File file): Table} \\
 	Konvertiert eine Tabellen-Datei im Excel-Format in eine Instanz der Klasse Table.
 	Jeder Wert der Excel-Tabelle behält seinen Datentyp bzw wird in den entsprechenden Java-Datentyp umgewandelt.
-	Siehe auch: \href{https://support.office.com/en-us/article/data-types-in-data-models-e2388f62-6122-4e2b-bcad-053e3da9ba90#__toc327893213}{Datentypen in MS Excel} und \href{http://poi.apache.org/spreadsheet/}{Apache POI Spreadsheet Library}
-	\begin{enumerate}
+	Siehe auch: \href{https://support.office.com/en-us/article/data-types-in-data-models-e2388f62-6122-4e2b-bcad-053e3da9ba90#__toc327893213}{Datentypen in MS Excel} und 
+	\href{http://poi.apache.org/spreadsheet/}{Apache POI Spreadsheet Library}	
+	\begin{enumerate}[$\bullet$]
 		\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle im Excel-Format repräsentieren
-		\begin{itemize}
-			\item[*] \textit{Table}: die Table-Instanz die die Tabelle repräsentiert
-		\end{itemize}
+		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{Table}: die Table-Instanz die die Tabelle repräsentiert
 	\end{enumerate}
 	
-	\item[+] \textit{convertBack(Table table): File} \\
+	\item \textit{convertBack(Table table, Configuration cfg): File} \\
 	Konvertiert eine Table-instanz wieder zurück in eine Excel-Datei, die gespeichert werden kann.
 	Die Datentypen werden -wenn möglich- aus dem Java-Datentyp wieder in den Excel-Datentyp zurück-konvertiert.
 	Siehe auch: \href{https://support.office.com/en-us/article/data-types-in-data-models-e2388f62-6122-4e2b-bcad-053e3da9ba90#__toc327893213}{Datentypen in MS Excel}
-	\begin{enumerate}
-		\item \textit{Table table}: Die zu konvertierende Table-Instanz
-		\begin{itemize}
-			\item[*] \textit{File}: Die Excel-Datei
-		\end{itemize}
+	\begin{enumerate}[$\bullet$]
+		\textit{Table table}: Die zu konvertierende Table-Instanz
+		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration
 	\end{enumerate}
-\end{itemize}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{File}: Die Excel-Datei
+	\end{enumerate}
+\end{enumerate}
