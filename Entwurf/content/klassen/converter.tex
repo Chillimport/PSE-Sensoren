@@ -37,9 +37,9 @@ Konvertiert nur CSV-Dateien \\
 	\item textit{convert(File file, Configuration cfg): Table} \\
 	Konvertiert eine Tabellen-Datei im CSV-Format in eine Instanz der Klasse Table
 	
-\begin{enumerate}[$\bullet$]
-	\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle im CSV-Format repräsentieren
-	\item \textit{Configurtion cfg}: Die zu nutzende Konfiguration, diese stellt u.a. die zu entfernenden Kopfzeilen und das Trennsymbol bereit
+	\begin{enumerate}[$\bullet$]
+		\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle im CSV-Format repräsentieren
+		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration, diese stellt u.a. die zu entfernenden Kopfzeilen und das Trennsymbol bereit
 	\end{enumerate}
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
@@ -49,7 +49,7 @@ Konvertiert nur CSV-Dateien \\
 	\item \textit{convertBack(Table table, Configuration cfg): File} \\
 	Konvertiert eine Table-Instanz wieder zurück in eine Datei, die gespeichert werden kann
 	\begin{enumerate}[$\bullet$]
-		\textit{Table table}: Die zu konvertierende Table-Instanz
+		\item \textit{Table table}: Die zu konvertierende Table-Instanz
 		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration, die u.a. das Trennsymbol bereitstellt
 	\end{enumerate}
 	\vspace{-0.2cm}
@@ -93,7 +93,7 @@ Konvertiert nur Excel-Dateien \\
 	Die Datentypen werden -wenn möglich- aus dem Java-Datentyp wieder in den Excel-Datentyp zurück-konvertiert.
 	Siehe auch: \href{https://support.office.com/en-us/article/data-types-in-data-models-e2388f62-6122-4e2b-bcad-053e3da9ba90#__toc327893213}{Datentypen in MS Excel}
 	\begin{enumerate}[$\bullet$]
-		\textit{Table table}: Die zu konvertierende Table-Instanz
+		\item \textit{Table table}: Die zu konvertierende Table-Instanz
 		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration
 	\end{enumerate}
 	\vspace{-0.2cm}
