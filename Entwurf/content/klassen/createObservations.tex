@@ -5,13 +5,21 @@
 Hier werden die Observations erstellt, die anschließend auf den Frost-Server hochgeladen werden können.
 Dazu werden die Daten aus der internen Tabellendarstellung gelesen und daraus zeilenweise Observations erstellt, mit der Duplikatklasse auf Duplikate überprüft und anschließend hochgeladen
 
-\paragraph{Attribute}
 \paragraph{Methoden}
 
-\begin{itemize}
-\item \textit{public Observation create(Datastream stream, Object result, ZonedDateTime phenomenonTime)} Erstellt eine Observation aus Result und Beobachtungszeit für einen Datastream
-\item \textit{public Observation create(MultiDatastream stream, Object result, ZonedDateTime phenomenonTime)} Erstellt eine Observation aus Result und Beobachtungszeit für einen MultiDatastream
-\item \textit{public Observation create(Datastream stream, Object result, ZonedDateTime phenomenonTime, ZonedDateTime resultTime)} Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen Datastream
-\item \textit{public Observation create(MultiDatastream stream, Object result, ZonedDateTime phenomenonTime, ZonedDateTime resultTime)} Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen MultiDatastream
-\item \textit{public Object combineResults(List<Object> results)} Erstellt aus mehreren Objects ein einzelnes, um es als Result für eine Observation verwenden zu können
-\end{itemize}
+\begin{enumerate}[+]
+	\item \textit{public Observation create(Datastream stream, Object result, ZonedDateTime phenomenonTime)} // Erstellt eine Observation aus Result und Beobachtungszeit für einen Datastream
+	\item \textit{public Observation create(Datastream stream, Object result, ZonedDateTime phenomenonTime)} Erstellt eine Observation aus Result und Beobachtungszeit für einen Datastream
+	\item \textit{public Observation create(MultiDatastream stream, Object result, ZonedDateTime phenomenonTime)} Erstellt eine Observation aus Result und Beobachtungszeit für einen MultiDatastream
+	\item \textit{public Observation create(Datastream stream, Object result, ZonedDateTime phenomenonTime, ZonedDateTime resultTime)} Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen Datastream
+	\item \textit{public Observation create(MultiDatastream stream, Object result, ZonedDateTime phenomenonTime, ZonedDateTime resultTime)} Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen MultiDatastream
+	\item \textit{public Object combineResults(List<Object> results)} Erstellt aus mehreren Objects ein einzelnes, um es als Result für eine Observation verwenden zu können
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{Datastream stream} \\Der zugehörige Datastream
+		\item \textit{Object result} Der gemessene Wert
+		\item \textit{ZonedDateTime phenomenonTime} \\Die Zeit zu der das Phänomen aufgetreten ist
+		\item \textit{MultiDatastream stream} \\ Der zugehörige Multidatastream
+		\item \textit{ZonedDateTime resultTime} \\ Der Zeitpunkt zu dem gemessen wurde.
+		\item \textit{List<Object> results} Die Messwerte die zusammengefasst werden sollen
+	\end{enumerate}
