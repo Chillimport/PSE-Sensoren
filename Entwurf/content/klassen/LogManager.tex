@@ -22,13 +22,34 @@ Außerdem werden alle Imports in ein permanentes (seperates) Log geschrieben.
 
 \paragraph{Methoden}
 
-\begin{itemize}
+\begin{enumerate}[+]
+
+	\item \textit{static getInstance()}  \\ Verweist auf den einmaligen LogManager
 	
-\item \textit{ - LogManager() : LogManager}  \\ Privater Konstruktor um mehrfache Erstellung zu unterbinden
-\item \textit{ - initLog() : void} \\ Initialisiert einen Java-Logger
-\item \textit{ + getLog() : Logger} \\ Gibt die Java-Logger Instanz zurück
-\item \textit{ + static getInstance() : LogManager}  \\ Verweist auf den einmaligen LogManager
-\item \textit{ + writeToLog(String message, boolean severe) : void} \\ Schreibt <msg> als info in das Log wenn <severe> false ist,
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{LogManager} \\ Die LogManager Instanz
+	\end{enumerate}
+
+\item \textit{writeToLog(String message, boolean severe)} \\ Schreibt <msg> als info in das Log wenn <severe> false ist,
 sonst als severe.
+\begin{enumerate}[$\bullet$]
+\item \textit{string message} Die zu schreibende Nachricht
+\item \textit{boolean severe} Ob die Nachricht dringend ist oder nicht
+\end{enumerate}
+\end{enumerate}
+
+
+\begin{enumerate}[$-$]
 	
-\end{itemize}
+\item \textit{LogManager()} \\
+Privater Konstruktor um mehrfache Erstellung zu unterbinden
+
+\item \textit{initLog()} \\ Initialisiert einen Java-Logger
+\vspace{-0.2cm}
+
+\item \textit{getLogger()} \\ Gibt die Java-Logger Instanz zurück
+\begin{enumerate}[$\circ$]
+	\item Logger
+\end{enumerate}
+	
