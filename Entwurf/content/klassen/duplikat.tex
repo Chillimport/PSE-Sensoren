@@ -3,11 +3,22 @@
 Diese Klasse enthält die Funktionalität zur Überprüfung einer Observation auf Duplikate auf dem FROST-Server.
 Zwei Observations sind Duplikate, falls das Ergebnis und die Beobachtungszeit übereinstimmen.
 
-\paragraph{Attribute}
-
 \paragraph{Methoden}
-\begin{itemize}
-\item \textit{public boolean find(ZonedDateTime time, Object result)} Sucht eine Observation auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
-\item \textit{public boolean find(Datastream stream, ZonedDateTime time, Object result)} Sucht eine Observation zu dem Datastream auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
+	
+	\begin{enumerate}[+]
+\item \textit{public boolean find(ZonedDateTime time, Object result)} \\Sucht eine Observation auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
+			
+\item \textit{public boolean find(Datastream stream, ZonedDateTime time, Object result)} \\Sucht eine Observation zu dem Datastream auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
+
 \item \textit{public boolean find(MultiDatastream stream, ZonedDateTime time, Object result)} Sucht eine Observation zu dem MultiDatastream auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
-\end{itemize}
+
+
+		\begin{enumerate}[$\bullet$]
+			\item \textit{ZonedDateTime time} Die Zeit inkl. Zeitzone
+			\item \textit{Object result} Der Messwert
+			\item \textit{Datastream stream} Der zugehörige Datastream 
+			\item \textit{Multidatastream stream} Der zugehörige Multidatastream
+			\item \textit{Datastream stream} Der zugehörige Datastream 
+		\end{enumerate}
+		\vspace{-0.2cm}
+\end{enumerate}
