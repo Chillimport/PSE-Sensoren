@@ -6,7 +6,7 @@ Außerdem werden alle Imports in ein permanentes (seperates) Log geschrieben.
 
 \paragraph{Attribute}
 \begin{enumerate}[$\bullet$]
-	\item \textit{final static LogManager logManager}  Die einzige LogManager Instanz
+	\item \textit{final static LogManager logManager}  Die einzige LogManager-Instanz
 	\item \textit{Logger log} Die Java-Logger Instanz
 	\item \textit{FileHandler txtFile} Text-File in die geschrieben wird
 	\item \textit{SimpleFormatter formatter} Text-Formatter
@@ -27,13 +27,13 @@ Außerdem werden alle Imports in ein permanentes (seperates) Log geschrieben.
 	
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
-		\item \textit{LogManager} \\ Die LogManager Instanz
+		\item \textit{LogManager} \\ Die LogManager-Instanz
 	\end{enumerate}
 
-\item \textit{writeToLog(String message, boolean severe)} \\ Schreibt <msg> als info in das Log wenn <severe> false ist,
+\item \textit{writeToLog(String message, boolean severe)} \\ Schreibt <msg> als Info in das Log wenn <severe> false ist,
 sonst als severe.
 \begin{enumerate}[$\bullet$]
-\item \textit{string message} Die zu schreibende Nachricht
+\item \textit{String message} Die zu schreibende Nachricht
 \item \textit{boolean severe} Ob die Nachricht dringend ist oder nicht
 \end{enumerate}
 \end{enumerate}
@@ -44,7 +44,7 @@ sonst als severe.
 \item \textit{initLog()} \\ Initialisiert einen Java-Logger
 \vspace{-0.2cm}
 
-\item \textit{getLogger() : Logger} \\ Gibt die Java-Logger Instanz zurück
+\item \textit{getLogger() : Logger} \\ Gibt die Java-Logger-Instanz zurück
 \begin{enumerate}[$\circ$]
 	\item Logger
 \end{enumerate}
