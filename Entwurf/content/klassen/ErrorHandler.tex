@@ -7,7 +7,8 @@ Diese Klasse nimmt Fehlermeldungen entgegen und speichert sie ab.
 
 \begin{enumerate}[$\bullet$]
 	\item \textit{final static ErrorHandler errorHandler} \\Referenz auf die einzige errorHandler Instanz
-	\item \textit{String path} Speicherpfad der .txt Datei in die geschrieben werden soll
+	\item \textit{String path} Speicherpfad der .txt Datei in die die Exceptions geschrieben werden (Nur Zeilen Nr. und Exception)
+	\item \textit{String returnPath} Speicherpfad der .txt Datei in die die Fehlerhaften Zeilen kopiert werden (Komplette original Zeile)
 	\item \textit{List <skippedRow> skippedRows} \\ Liste von Zeilen und zugehörigen Exception
 \end{enumerate}
 
@@ -21,7 +22,7 @@ Diese Klasse nimmt Fehlermeldungen entgegen und speichert sie ab.
 \begin{enumerate}[+]
 	\item \textit{static getInstance() : ErrorHandler} \\ Gibt die einzige ErrorHandler Instanz zurück
 \begin{enumerate}[$\circ$]
-	\item \textit{ErrorHandler} Die ErrorHandler Instanz
+ 	\item \textit{ErrorHandler} Die ErrorHandler Instanz
 \end{enumerate}
 \item \textit{addRows(int row, Exception e)	}
 \\Fügt ein neues skippedRow Objekt zur Liste hinzu mit der übersprungenen Zeile und der Exception als Information 
@@ -29,5 +30,6 @@ Diese Klasse nimmt Fehlermeldungen entgegen und speichert sie ab.
 	\item \textit{int row} Die Zeile
 	\item \textit{Exception e} Der aufgetretene Fehler
 \end{enumerate}
+\item \textit{returnRows()} Kopiert alle übersprungenen Zeilen aus der Originaldatei und gibt sie in einer neuen Datei zurück.
 \end{enumerate}
 
