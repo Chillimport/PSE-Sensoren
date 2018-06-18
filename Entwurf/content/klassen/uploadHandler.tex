@@ -4,6 +4,6 @@ Die Klasse UploadHandler ist für die Überwachung des Ablaufs eines Imports von
 \paragraph{Attribute}
 \paragraph{Methoden}
 \begin{itemize}
-\item \textit{public int upload(Configuration config)} Verwaltet den Upload von Daten auf den FROST-Server mithilfe der Konfiguration (lädt die Quelldatei, bringt die Daten in die interne Darstellung und verarbeitet diese dann), gibt StatusCode zurück
+\item \textit{public int upload(String filename, Configuration config)} Lädt die Quelldatei mit dem Namen filename über den FileManager und verwaltet den Upload von Daten auf den FROST-Server mithilfe der Konfiguration (lädt die Quelldatei, bringt die Daten in die interne Darstellung und verarbeitet diese dann), gibt StatusCode zurück
 \item \textit{public int processTable(Configuration config, Table table, int step)} Liest aus der übergebenen Table die mithilfe der Konfiguration zeilenweise die Daten aus und erstellt damit Observations, überprüft diese auf Duplikate und erstellt sie auf dem FROST-Server, gibt StatusCode zurück
 \end{itemize}
