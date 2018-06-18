@@ -2,9 +2,9 @@
 
 \subsection{Import von Daten}
 
-Dieses Sequenzdiagramm beschreibt den Verlauf des Imports von Daten vom "Upload"-Button aus.
-Dazu wird erst der Import-Controller aufgerufen.
-Dort wird mit den Informationen von der Weboberfläche eine Konfiguration erstellt und damit der UploadHandler aufgerufen.
+Dieses Sequenzdiagramm beschreibt den Verlauf des Imports von Daten vom "{Upload}"{-Button} aus.
+Dazu wird vom MainWIndow erst der Import-Controller aufgerufen.
+Dort wird mit den Informationen von der Weboberfläche eine Konfiguration erstellt und damit zusammen mit dem Namen der Quelldatei der UploadHandler aufgerufen.
 Dieser konvertiert erst die Daten aus der Quelldatei in die interne Darstellung und arbeitet die zurückgegebene Table dann zeilenweise ab.
 Die Daten werden mit dem Konfigurationsobjekt den richtigen Spalten zugeordnet und interpretiert.
 Anschließend werden aus den Results und der ZonedDateTime Observations im ObservationCreator erstellt.
@@ -18,6 +18,11 @@ Diese werden mit der CheckDuplicate-Klasse auf Duplikate im FROST-Server überpr
 
 \clearpage
 \subsection{Konfiguration speichern}
+Das folgende Sequenzdiagramm beschreibt den Ablauf für das Speichern einer Konfiguration.
+Drückt der Nutzer auf den ”{Save Configuration}"{-Button}, ruft das MainWindow den Konfigurations-Controller auf.
+Dort wird mit den Eingabe-Daten von der Webseite eine Konfiguration erstellt und an das Config-Management zum Abspeichern übergeben.
+Dieses konvertiert die Konfiguration erst in einen String, um diesen dann in einer Datei abzuspeichern.
+Im Anschluss wird ein StatusCode als Antwort zurückgegeben.
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=0.44]{uml/SD_saveConfig.eps}
