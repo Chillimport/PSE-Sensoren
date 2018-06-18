@@ -39,7 +39,7 @@ Konvertiert nur CSV-Dateien. Implementierung der abstrakten Klasse \textit{Conve
 	
 	\begin{enumerate}[$\bullet$]
 		\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle im CSV-Format repräsentieren
-		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration, diese stellt u.a. die zu entfernenden Kopfzeilen und das Trennsymbol bereit
+		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration, diese stellt u.a. die zu entfernenden Kopfzeilen, die Magic Numbers und das Trennsymbol bereit
 	\end{enumerate}
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
@@ -50,7 +50,7 @@ Konvertiert nur CSV-Dateien. Implementierung der abstrakten Klasse \textit{Conve
 	Konvertiert eine Table-Instanz wieder zurück in eine Datei, die gespeichert werden kann
 	\begin{enumerate}[$\bullet$]
 		\item \textit{Table table}: Die zu konvertierende Table-Instanz
-		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration, die u.a. das Trennsymbol bereitstellt
+		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration, die u.a. das Trennsymbol und die Kopfzeilen, die wieder hinzugefügt werden, bereitstellt
 	\end{enumerate}
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
@@ -70,7 +70,7 @@ Konvertiert nur CSV-Dateien. Implementierung der abstrakten Klasse \textit{Conve
 \end{enumerate}
 
 \subsection{ExcelConverter implements Converter}
-Konvertiert nur Excel-Dateien. Implementierung der abstrakten Klasse \textit{Converter}.\\
+Konvertiert nur Excel-Dateien. Implementierung der abstrakten Klasse \textit{Converter}. \\
 
 \paragraph{Methoden}
 \begin{enumerate}[+]
