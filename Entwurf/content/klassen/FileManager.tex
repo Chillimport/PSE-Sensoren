@@ -4,17 +4,17 @@ Die Klasse File-Management stellt die Funktionalität zum Abspeichern und Laden 
 \paragraph{Attribute}
 
 \begin{enumerate}[$\bullet$]
-	\item \textit{private String path} Speichert den path zu dem Speicherort der Quelldatei
+	\item \textit{- String path} Speichert den path zu dem Speicherort der Quelldatei
 \end{enumerate}
 
 \paragraph{Methoden}
 
 \begin{enumerate}[+]
-	\item \textit{public File load()} Lädt die gespeicherte Datei und gibt das File zurück
+	\item \textit{load() : File} Lädt die gespeicherte Datei und gibt das File zurück
 	\begin{enumerate}[$\circ$]
 		\item \textit{File} Die geladene Datei
 	\end{enumerate}
-	\item \textit{public int save(String path, File file)} Speichert ein File ab und gibt einen int als Statuscode zurück
+	\item \textit{save(String path, File file) : int} Speichert ein File ab und gibt einen int als Statuscode zurück
 	\begin{enumerate}[$\bullet$]
 		\item \textit{String path} Der Speicherpfad
 		\item \textit{File file} Die zu schreibende Datei
