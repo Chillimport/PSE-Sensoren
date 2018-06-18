@@ -1,17 +1,17 @@
 
-\subsection{ConfigManagement}
+\subsection{ConfigManager}
 Diese Klasse ist für die Verwaltung der Konfigurationen zuständig.
 \paragraph{Attribute}
-\begin{itemize}
-	\item \textit{private String configPath} Speichert den Weg zu dem Ordner, in dem die Konfigurationen gespeichert sind
+\begin{enumerate}[-]
+	\item \textit{String configPath} Speichert den Weg zu dem Ordner, in dem die Konfigurationen gespeichert sind
 	
-	\item \textit{private String ServerURLPath} Hier wird gespeichert, wo die Datei mit der Zielserver-URL liegt.		
-\end{itemize}
+	\item \textit{String ServerURLPath} Hier wird gespeichert, wo die Datei mit der Zielserver-URL liegt.		
+\end{enumerate}
 
 \paragraph{Methoden}
 	
 	\begin{enumerate}[+]
-	\item \textit{public loadConfig(Integer id) : Configuration} Diese Methode lädt eine Konfiguration und gibt diese zurück.
+	\item \textit{loadConfig(Integer id) : Configuration} Diese Methode lädt eine Konfiguration und gibt diese zurück.
 		\begin{enumerate}[$\bullet$]
 			\item \textit{Integer id} Die id der Konfiguration
 		\end{enumerate}
@@ -20,21 +20,21 @@ Diese Klasse ist für die Verwaltung der Konfigurationen zuständig.
 			\item \textit{Configuration} Die Konfiguration
 		\end{enumerate}
 	
-	\item \textit{public saveConfig(Configuration cfg)} Diese Methode speichert die übergebene Konfiguration auf der Festplatte des Servers.
+	\item \textit{saveConfig(Configuration cfg) : Integer} Diese Methode speichert die übergebene Konfiguration auf der Festplatte des Servers.
 	
 	\begin{enumerate}[$\bullet$]
-		\item \textit{Configuration cfg} Die Konfiguration die gespeichert werden soll
+		\item \textit{Configuration cfg} Die Konfiguration, die gespeichert werden soll
 	\end{enumerate}
 	
-	\item \textit{public listAll() : List<Integer> } Diese Methode gibt die ID's aller Konfigurationen in einer Liste zurück.
+	\item \textit{listAll() : List<Configuration> } Diese Methode gibt alle Konfigurationen in einer Liste zurück.
 	
 	\begin{enumerate}[$\circ$]
 		\item \textit{List<Integer>} Liste aller id's der vorhandenen Konfigurationen
 	\end{enumerate}
 	
-	\item \textit{public getServer() : URL} Diese Methode gibt die URL des Zielservers zurück.
+	\item \textit{getServer() : SensorThingsService} Diese Methode gibt ein SensorThingsService-Objekt zurück.
 	
 	\begin{enumerate}[$\circ$]
-		\item \textit{URL} Adresse des Zielservers
+		\item \textit{SensorThingsService} SErve des FROST-Client's
 	\end{enumerate}
 \end{enumerate}
