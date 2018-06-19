@@ -1,11 +1,11 @@
 \subsection{CSVConverter implements Converter}
-Konvertiert eine Datei aus dem File-Format in das RowTable-Format für die interne Repräsentation und wieder zurück \\
+Konvertiert eine Datei aus dem File-Format in das Table-Format für die interne Repräsentation und wieder zurück \\
 Konvertiert nur CSV-Dateien. \\
 
 \paragraph{Methoden}
 
 \begin{enumerate}[+]
-	\item \underline{\textit{convert(File file, Configuration cfg): RowTable}} \\
+	\item \underline{\textit{convert(File file, Configuration cfg): Table}} \\
 	Konvertiert eine Tabellen-Datei im CSV-Format in eine Instanz der Klasse Table
 	
 	\begin{enumerate}[$\bullet$]
@@ -14,13 +14,13 @@ Konvertiert nur CSV-Dateien. \\
 	\end{enumerate}
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
-		\item \textit{RowTable}: die RowTable-Instanz die die Tabelle repräsentiert
+		\item \textit{Table}: die Table-Instanz die die Tabelle repräsentiert
 	\end{enumerate}
 	
-	\item \underline{\textit{convertBack(RowTable table, Configuration cfg): File}} \\
+	\item \underline{\textit{convertBack(Table table, Configuration cfg): File}} \\
 	Konvertiert eine Table-Instanz wieder zurück in eine Datei, die gespeichert werden kann
 	\begin{enumerate}[$\bullet$]
-		\item \textit{RowTable table}: Die zu konvertierende RowTable-Instanz
+		\item \textit{Table table}: Die zu konvertierende Table-Instanz
 		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration, die u.a. das Trennsymbol und die Kopfzeilen, die wieder hinzugefügt werden, bereitstellt
 	\end{enumerate}
 	\vspace{-0.2cm}

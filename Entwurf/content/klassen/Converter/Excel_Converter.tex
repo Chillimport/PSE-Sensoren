@@ -1,5 +1,3 @@
-\subsection{<{<{interface}>}> Converter}
-
 \subsection{ExcelConverter implements Converter}
 Konvertiert eine Datei aus dem File-Format in das RowTable-Format für die interne Repräsentation und wieder zurück \\
 
@@ -10,8 +8,7 @@ Konvertiert nur Excel-Dateien. \\
 	\item \underline{\textit{convert(File file): RowTable}} \\
 	Konvertiert eine Tabellen-Datei im Excel-Format in eine Instanz der Klasse RowTable.
 	Jeder Wert der Excel-Tabelle behält seinen Datentyp bzw wird in den entsprechenden Java-Datentyp umgewandelt.
-	Siehe auch: \href{https://support.office.com/en-us/article/data-types-in-data-models-e2388f62-6122-4e2b-bcad-053e3da9ba90#__toc327893213}{Datentypen in MS Excel} und 
-	\href{http://poi.apache.org/spreadsheet/}{Apache POI Spreadsheet Library}	
+	
 	\begin{enumerate}[$\bullet$]
 		\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle im Excel-Format repräsentieren
 		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration
