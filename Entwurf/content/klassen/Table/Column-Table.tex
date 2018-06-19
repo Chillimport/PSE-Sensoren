@@ -1,36 +1,49 @@
-\subsection{Table}
-Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit dem Fokus auf zeilenweise Verarbeitung. Der Inhalt der Tabellenelemente ist nicht beschränkt.
+\subsection{ColumnTable implements Table}
+
+Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit dem Fokus auf spaltenweise Verarbeitung. Der Inhalt der Tabellenelemente ist nicht beschränkt.
 
 
 \paragraph{Attribute}
 
 \begin{itemize}
-	\item[-] \textit{List{<List<Object>}> table} \\
-	Speichert die Daten der Tabelle, jedes Listenelement enthält eine weitere Liste, welche die Elemente der Tabelle hält
+	\item[-] \textit{List{<List<Object>}> columnTable} \\
+	Speichert die Daten der Tabelle, jedes Listenelement enthält eine weitere Liste, welche die Elemente der Tabelle hält. \\
+	Die äußeren Listenelemente repräsentieren die Spalten der Tabelle, die inneren Listenelemente die Zeilen.
 \end{itemize}
+
 
 \paragraph{Konstruktoren}
 
 \begin{enumerate}[+]
-	\item \textit{Table(Table t): void} \\
-	Erstellt eine Table-Instanz aus einer 2-dimensionalen Liste \\
-	Dabei werden alle inneren Listen auf die selbe Länge verlängert und mit NULL aufgefüllt, damit die Tabelle immer gleich viele Spalten besitzt	
+	\item \textit{ColumnTable(ColumnTable ct)} \\
+	Erstellt eine Table-Instanz aus einer ColumnTable \\
+	Dabei werden alle äußeren Listen auf die selbe Länge verlängert und mit NULL aufgefüllt, damit die Tabelle immer gleich viele Spalten besitzt	
 	\begin{enumerate}[$\bullet$]
 		\item \textit{Table t}: Die Table-Instanz aus der ein neuer Table erstellt wird, kann NULL sein
 	\end{enumerate}
 	\vspace{-0.2cm}
-	\item \textit{Table(): void} \\
-	Erstellt einen neuen Table mit leerer Tabelle
+	
+	\item \textit{ColumnTable(RowTable rt)} \\
+	Erstellt eine ColumnTable-Instanz aus einer RowTable \\
+	Dabei werden alle äußeren Listen auf die selbe Länge verlängert und mit NULL aufgefüllt, damit die Tabelle immer gleich viele Spalten besitzt	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{Table t}: Die Table-Instanz aus der ein neuer Table erstellt wird, kann NULL sein
+	\end{enumerate}
+	\vspace{-0.2cm}
+	
+	\item \textit{ColumnTable()} \\
+	Erstellt einen neuen ColumnTable mit leerer Tabelle
 \end{enumerate}
-			
+
+		
 \paragraph{Methoden}
 
 \begin{enumerate}[+]
 	\item \textit{getElement(int row, int column): Object} \\
 	Gibt ein einzelnes Element der Tabelle an der angegebenen Stelle zurück
 	\begin{enumerate}[$\bullet$]
-\item \textit{int row}: Die Zeile an der das Element liegt, darf nicht NULL sein
-\item \textit{int column}: Die Spalte an der das Element liegt, darf nicht NULL sein
+		\item \textit{int row}: Die Zeile an der das Element liegt, darf nicht NULL sein
+		\item \textit{int column}: Die Spalte an der das Element liegt, darf nicht NULL sein
 	\end{enumerate}
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
@@ -49,7 +62,6 @@ Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit 
 	
 	\item \textit{getColumn(int column): List<Object>} \\
 	Gibt eine ganze Spalte zurück
-	
 	\begin{enumerate}[$\bullet$]
 		\item \textit{int column}: Die Position der Spalte, darf nicht NULL sein
 	\end{enumerate}
@@ -58,20 +70,20 @@ Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit 
 		\item \textit{List<Object>}: die Spalte als Liste
 	\end{enumerate}
 	
-	\item \textit{getFirstRow(): List<Object>} \\
-	Gibt die erste Zeile zurück
+	\item \textit{getFirstColumn(): List<Object>} \\
+	Gibt die erste Spalte zurück
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
-		\item \textit{List<Object>}: Die erste Zeile
+		\item \textit{List<Object>}: Die erste Spalte
 	\end{enumerate}
-
-	\item \textit{getLastRow(): List<Object>} \\
-	Gibt die letzte Zeile zurück
+	
+	\item \textit{getLastColumn(): List<Object>} \\
+	Gibt die letzte Spalte zurück
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
-		\item \textit{List<Object>}: Die letzte Zeile
+		\item \textit{List<Object>}: Die letzte Spalte
 	\end{enumerate}
-
+	
 	\item \textit{setElement(Object o, int row, int column): void} \\
 	Ersetzt ein Element der Tabelle mit einem neuen Element
 	\begin{enumerate}[$\bullet$]
@@ -88,7 +100,7 @@ Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit 
 		\item \textit{int pos}: Die Position der zu ersetzenden Zeile
 	\end{enumerate}
 	\vspace{-0.2cm}
-
+	
 	\item \textit{setColumn(List<Object> column, int pos): void} \\
 	Ersetzt eine Spalte mit einer neuen Spalte
 	\begin{enumerate}[$\bullet$]
@@ -96,18 +108,7 @@ Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit 
 		\item \textit{int pos}: Die Position der zu ersetzen Spalte
 	\end{enumerate}
 	\vspace{-0.2cm}
-
-	\item erste public Methode\\
-	beschreibung der Methode
-	\begin{enumerate}[$\bullet$]
-		\item \textit{param 1:} beschreibung
-		\item \textit{param 2:} beschreibung
-	\end{enumerate}
-	\vspace{-0.2cm}
-	\begin{enumerate}[$\circ$]
-		\item \textit{Rückgabeparameter:} beschreibung
-	\end{enumerate}
-
+	
 	\item \textit{remove(int row, int column): void} \\
 	Ersetzt ein Element mit NULL
 	\begin{enumerate}[$\bullet$]
@@ -116,60 +117,51 @@ Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit 
 	\end{enumerate}
 	\vspace{-0.2cm}
 	
-	\item \textit{insertRow(List<Object> row, int position): void} \\
-	Fügt eine neue Zeile hinter einer bestehenden Zeile ein
+	\item \textit{appendRow(List<Object> row): void} \\
+	Fügt eine neue Zeile hinter der letzten bestehenden Zeile ein
 	\begin{enumerate}[$\bullet$]
 		\item \textit{List<Object> row}: Die einzufügende Zeile als Liste
-		\item \textit{int position}: Die Position hinter der die Zeile eingefügt werden soll
 	\end{enumerate}
 	\vspace{-0.2cm}
-
-	\item \textit{insertColumn(List<Object> column, int position): void} \\
-	Fügt eine neue Spalte hinter einer bestehenden Spalte ein
+	
+	\item \textit{appendColumn(List<Object> column): void} \\
+	Fügt eine neue Spalte hinter der letzten bestehenden Spalte ein
 	\begin{enumerate}[$\bullet$]
 		\item \textit{List<Object> column}: Die einzufügende Spalte als Liste
-		\item \textit{int position}: Die Position hinter der die Spalte eingefügt werden soll
 	\end{enumerate}
 	\vspace{-0.2cm}
-
+	
 	\item \textit{getRowCount(): int} \\
 	Gibt die Anzahl Zeilen zurück
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
 		\item \textit{int}: Die Anzahl Zeilen
 	\end{enumerate}
-
+	
 	\item \textit{getColumnCount(): int} \\
 	Gibt die Anzahl Spalten zurück
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
 		\item \textit{int}: Die Anzahl Spalten
 	\end{enumerate}
-
-	\item \textit{getColumnCount(): int} \\
-	Gibt die Anzahl Spalten zurück
-	\vspace{-0.2cm}
-	\begin{enumerate}[$\circ$]
-		\item \textit{int}: Die Anzahl Spalten
-	\end{enumerate}
-
+	
 	\item \textit{clone(): Table} \\
 	Erstellt eine ganze Kopie der Tabelle
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
 		\item \textit{Table}: die Kopie der Tabelle als neue Table-Instanz
 	\end{enumerate}
-
+	
 	\item \textit{clear(): void} \\
 	Löscht die Tabelle komplett und ersetzt sie gegen NULL
-
+	
 	\item \textit{isEmpty(): boolean} \\
 	Gibt zurück ob die Tabelle leer ist
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
 		\item \textit{boolean}: true wenn die Tabelle leer oder NULL ist
 	\end{enumerate}
-
+	
 	\item \textit{compare(Table o): boolean} \\
 	Vergleicht die Table-Instanz mit einer anderen Instanz
 	\begin{enumerate}[$\bullet$]
