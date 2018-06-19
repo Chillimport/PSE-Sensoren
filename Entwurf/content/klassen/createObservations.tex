@@ -1,26 +1,80 @@
 
 \subsection{ObservationCreator}
 
-
-Hier werden die Observations erstellt, die anschließend auf den Frost-Server hochgeladen werden können.
-Dazu werden die Daten aus der internen Tabellendarstellung gelesen und daraus zeilenweise Observations erstellt, mit der Duplikatklasse auf Duplikate überprüft und anschließend hochgeladen
+Diese Klasse stellt Methoden zur Erstellung von Observations bereit.
+Diese werden jedoch noch nicht auf den FROST-Server hochgeladen.
 
 \paragraph{Methoden}
 
 \begin{enumerate}[+]
-	\item \textit{public Observation create(Datastream stream, Object result, ZonedDateTime phenomenonTime)} // Erstellt eine Observation aus Result und Beobachtungszeit für einen Datastream
-	\item \textit{public Observation create(Datastream stream, Object result, ZonedDateTime phenomenonTime)} Erstellt eine Observation aus Result und Beobachtungszeit für einen Datastream
-	\item \textit{public Observation create(MultiDatastream stream, Object result, ZonedDateTime phenomenonTime)} Erstellt eine Observation aus Result und Beobachtungszeit für einen MultiDatastream
-	\item \textit{public Observation create(Datastream stream, Object result, ZonedDateTime phenomenonTime, ZonedDateTime resultTime)} Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen Datastream
-	\item \textit{public Observation create(MultiDatastream stream, Object result, ZonedDateTime phenomenonTime, ZonedDateTime resultTime)} Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen MultiDatastream
-	\item \textit{public Object combineResults(List<Object> results)} Erstellt aus mehreren Objects ein einzelnes, um es als Result für eine Observation verwenden zu können
-	
-	\begin{enumerate}[$\bullet$]
-		\item \textit{Datastream stream} \\Der zugehörige Datastream
-		\item \textit{Object result} Der gemessene Wert
-		\item \textit{ZonedDateTime phenomenonTime} \\Die Zeit zu der das Phänomen aufgetreten ist
-		\item \textit{MultiDatastream stream} \\ Der zugehörige Multidatastream
-		\item \textit{ZonedDateTime resultTime} \\ Der Zeitpunkt zu dem gemessen wurde.
-		\item \textit{List<Object> results} Die Messwerte die zusammengefasst werden sollen
-	\end{enumerate}
+\item \underline{\textit{create(Datastream stream, Object result, ZonedDateTime time) : Observation}}\\
+Erstellt eine Observation aus Result und Beobachtungszeit für einen Datastream und gibt diese zurück
+
+\begin{enumerate}[$\bullet$]
+\item \textit{stream:} Datastream der Observation
+\item \textit{result:} Ergebnis/Wert der Observation
+\item \textit{time:} Beobachtungszeit der Observation
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{Observation:} die erstellte Observation
+\end{enumerate}
+
+\item \underline{\textit{create(MultiDatastream stream, Object result, ZonedDateTime time) : Observation}}\\
+Erstellt eine Observation aus Result und Beobachtungszeit für einen MultiDatastream und gibt diese zurück
+
+\begin{enumerate}[$\bullet$]
+\item \textit{stream:} MultiDatastream der Observation
+\item \textit{result:} Ergebnis/Wert der Observation
+\item \textit{time:} Beobachtungszeit der Observation
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{Observation:} die erstellte Observation
+\end{enumerate}
+
+\item \underline{\textit{create(Datastream stream, Object result, ZonedDateTime pTime,}}\\
+\underline{\textit{ ZonedDateTime rTime) : Observation}}\\
+Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen Datastream und gibt diese zurück
+
+\begin{enumerate}[$\bullet$]
+\item \textit{stream:} Datastream der Observation
+\item \textit{result:} Ergebnis/Wert der Observation
+\item \textit{pTime:} Beobachtungszeit der Observation
+\item \textit{rTime:} Zeit, bei der das Ergebnis der Observation eingetragen wurde
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{Observation:} die erstellte Observation
+\end{enumerate}
+
+
+\item \underline{\textit{create(MultiDatastream stream, Object result, ZonedDateTime pTime,}}\\
+\underline{\textit{ZonedDateTime rTime) : Observation}}\\
+Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen MultiDatastream und gibt diese zurück
+
+\begin{enumerate}[$\bullet$]
+\item \textit{stream:} MultiDatastream der Observation
+\item \textit{result:} Ergebnis/Wert der Observation
+\item \textit{pTime:} Beobachtungszeit der Observation
+\item \textit{rTime:} Zeit, bei der das Ergebnis der Observation eingetragen wurde
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{Observation:} die erstellte Observation
+\end{enumerate}
+
+\item \underline{\textit{combineResults(List<Object> results) : Object}}\\
+Erstellt aus mehreren Objects ein einzelnes, um es als Result für eine Observation verwenden zu können
+
+
+\begin{enumerate}[$\bullet$]
+\item \textit{results:} Ergebnisse/Werte der Observation
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{Object:} zu einem Object zusammengefasste Werte
+\end{enumerate}
+
+
 \end{enumerate}
