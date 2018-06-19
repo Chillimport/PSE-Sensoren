@@ -1,17 +1,38 @@
 \subsection{<{<{abstract}>}> EntityController}
-
-\paragraph{Beschreibung}
-Diese Controller-Klasse empfängt Anfragen vom Frontend, die das Erstellen oder Abrufen von Entities betreffen. Zur Bearbeitung dieser Anfragen greift die Klasse auf den Frost-Client zu.
-
-
-\paragraph{Attribute}
+Diese Controller-Klasse empfängt Anfragen vom Frontend, die das Erstellen oder Abrufen von Entitäten betreffen.
 
 \paragraph{Methoden}
-\begin{itemize}
-\item[+] \textit{ create(Entity e): ResponseEntity<?> }
-erstellt mithilfe des Frost-Client eine neue Entity und lädt diese auf den Frostserver
-\item[+] \textit{get(int id): ResponseEntity<Entity>}
-sucht auf dem Server die Entity mit der angegebenen id und gibt sie zurück (NULL im Fehlerfall)
-\item[+] \textit{getAll(): ResponseEntity<List<Entity>>}
-gibt alle auf dem FROST-Server gespeicherten Entities zurück
-\end{itemize}
+
+\begin{enumerate}[+]
+	\item \textit{ create(Entity e): ResponseEntity<?> }\\
+	erstellt eine neue Entity und lädt diese auf den FROST-Server
+	
+		\begin{enumerate}[$\bullet$]
+			\item \textit{Entity e} die Entität, die erstellt werden soll
+
+		\end{enumerate}
+		\vspace{-0.2cm}
+		\begin{enumerate}[$\circ$]
+			\item \textit{ResponseEntity<?>} Rückgabe-Typ von Controller-Klassen
+		\end{enumerate}
+	
+	\item \textit{ get(Integer id): ResponseEntity<Entity> }\\
+	sucht auf dem Server die Entität mit der angegebenen id und gibt sie zurück (NULL im Fehlerfall)
+	
+		\begin{enumerate}[$\bullet$]
+			\item \textit{Integer id} ID der Entität, die geladen werden soll
+		
+		\end{enumerate}
+		\vspace{-0.2cm}
+		\begin{enumerate}[$\circ$]
+			\item \textit{ResponseEntity<Entity>} Entität mit angegebener ID (Rückgabe-Typ von Controller-Klassen)
+		\end{enumerate}
+	\item \textit{ getAll(): ResponseEntity<List<Entity>> }\\
+	gibt alle auf dem FROST-Server gespeicherten Entitäten zurück
+	
+	\begin{enumerate}[$\circ$]
+		\item \textit{ResponseEntity<List<Entity>>} alle Entitäten auf dem FROST-Server (Rückgabe-Typ von Controller-Klassen)
+	\end{enumerate}
+
+
+\end{enumerate}	
