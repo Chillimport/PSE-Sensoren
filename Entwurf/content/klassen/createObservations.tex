@@ -11,9 +11,9 @@ Diese werden jedoch noch nicht auf den FROST-Server hochgeladen.
 Erstellt eine Observation aus Result und Beobachtungszeit für einen Datastream und gibt diese zurück
 
 \begin{enumerate}[$\bullet$]
-\item \textit{stream:} Datastream der Observation
-\item \textit{result:} Ergebnis/Wert der Observation
-\item \textit{time:} Beobachtungszeit der Observation
+\item \textit{Datastream stream:} Datastream der Observation
+\item \textit{Object result:} Ergebnis/Wert der Observation
+\item \textit{ZonedDateTime time:} Beobachtungszeit der Observation
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]
@@ -24,9 +24,9 @@ Erstellt eine Observation aus Result und Beobachtungszeit für einen Datastream 
 Erstellt eine Observation aus Result und Beobachtungszeit für einen MultiDatastream und gibt diese zurück
 
 \begin{enumerate}[$\bullet$]
-\item \textit{stream:} MultiDatastream der Observation
-\item \textit{result:} Ergebnis/Wert der Observation
-\item \textit{time:} Beobachtungszeit der Observation
+\item \textit{MultiDatastream stream:} MultiDatastream der Observation
+\item \textit{Object result:} Ergebnis/Wert der Observation
+\item \textit{ZonedDateTime time:} Beobachtungszeit der Observation
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]
@@ -38,10 +38,10 @@ Erstellt eine Observation aus Result und Beobachtungszeit für einen MultiDatast
 Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen Datastream und gibt diese zurück
 
 \begin{enumerate}[$\bullet$]
-\item \textit{stream:} Datastream der Observation
-\item \textit{result:} Ergebnis/Wert der Observation
-\item \textit{pTime:} Beobachtungszeit der Observation
-\item \textit{rTime:} Zeit, bei der das Ergebnis der Observation eingetragen wurde
+\item \textit{Datastream stream:} Datastream der Observation
+\item \textit{Object result:} Ergebnis/Wert der Observation
+\item \textit{ZonedDateTime pTime:} Beobachtungszeit der Observation
+\item \textit{ZonedDateTime rTime:} Zeit, bei der das Ergebnis der Observation eingetragen wurde
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]
@@ -54,10 +54,10 @@ Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit fü
 Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen MultiDatastream und gibt diese zurück
 
 \begin{enumerate}[$\bullet$]
-\item \textit{stream:} MultiDatastream der Observation
-\item \textit{result:} Ergebnis/Wert der Observation
-\item \textit{pTime:} Beobachtungszeit der Observation
-\item \textit{rTime:} Zeit, bei der das Ergebnis der Observation eingetragen wurde
+\item \textit{MultiDatastream stream:} MultiDatastream der Observation
+\item \textit{Object result:} Ergebnis/Wert der Observation
+\item \textit{ZonedDateTime pTime:} Beobachtungszeit der Observation
+\item \textit{ZonedDateTime rTime:} Zeit, bei der das Ergebnis der Observation eingetragen wurde
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]
@@ -69,7 +69,7 @@ Erstellt aus mehreren Objects ein einzelnes, um es als Result für eine Observat
 
 
 \begin{enumerate}[$\bullet$]
-\item \textit{results:} Ergebnisse/Werte der Observation
+\item \textit{List<Object> results:} Ergebnisse/Werte der Observation
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]

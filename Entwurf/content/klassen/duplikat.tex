@@ -1,4 +1,4 @@
-\subsection*{CheckDuplicate}
+\subsection{CheckDuplicate}
 
 Diese Klasse enthält die Funktionalität zur Überprüfung einer Observation auf Duplikate auf dem FROST-Server.
 Zwei Observations sind Duplikate, falls das Ergebnis und die Beobachtungszeit übereinstimmen.
@@ -9,8 +9,8 @@ Zwei Observations sind Duplikate, falls das Ergebnis und die Beobachtungszeit ü
 \item \underline{\textit{find(ZonedDateTime time, Object result) : boolean}}\\
 Sucht eine Observation auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
 \begin{enumerate}[$\bullet$]
-\item \textit{time:} die Beobachtungszeit der Observation
-\item \textit{result:} der Wert der Observation
+\item \textit{ZonedDateTime time:} die Beobachtungszeit der Observation
+\item \textit{Object result:} der Wert der Observation
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]
@@ -21,9 +21,9 @@ Sucht eine Observation auf dem FROST-Server mit gegebener Beobachtungszeit und R
 Sucht eine Observation zu dem Datastream auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
 
 \begin{enumerate}[$\bullet$]
-\item \textit{stream:} der Datastream, zu der Observation
-\item \textit{time:} die Beobachtungszeit der Observation
-\item \textit{result:} der Wert der Observation
+\item \textit{Datastream stream:} der Datastream, zu der Observation
+\item \textit{ZonedDateTimetime:} die Beobachtungszeit der Observation
+\item \textit{Object result:} der Wert der Observation
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]
@@ -34,9 +34,9 @@ Sucht eine Observation zu dem Datastream auf dem FROST-Server mit gegebener Beob
 Sucht eine Observation zu dem MultiDatastream auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
 
 \begin{enumerate}[$\bullet$]
-\item \textit{stream:} der MultiDatastream, zu der Observation
-\item \textit{time:} die Beobachtungszeit der Observation
-\item \textit{result:} der Wert der Observation
+\item \textit{MultiDatastream stream:} der MultiDatastream, zu der Observation
+\item \textit{ZonedDateTimetime:} die Beobachtungszeit der Observation
+\item \textit{Object result:} der Wert der Observation
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]
