@@ -5,16 +5,54 @@ Diese Klasse stellt die Funktionalität zur Konvertierung von Zeitformaten in da
 Je nach (teilweise) schon bestehenden Zeitformaten sollen dafür verschiedene Methoden zur Verfügung stehen.
 
 \paragraph{Attribute}
-\begin{itemize}
-\item \textit{private final map<int, ZoneId> zones } Diese Map stellt den Zusammenhang zwischen Integern als Key für die Zeitzonen dar.
-\end{itemize}
-
 \paragraph{Methoden}
 
-\begin{itemize}
-\item \textit{public ZonedDateTime toZonedDateTime(LocalDateTime time, ZoneId zone)} Erstellt eine ZonedDateTime aus einer LocalDateTime und Zeitzone
-\item \textit{public LocalDateTime toLocalDateTime(String time, DateTimeFormatter format)} Konvertiert einen String über das gegebene Format in die zugehörige LocalDateTime
-\item \textit{public LocalDateTime toLocalDateTime(List<String> time, List<DateTimeFormatter> format)} Konvertiert mehrere Strings über die Formate in die zugehörige LocalDatetime
-\item \textit{public ZoneId toZoneId(String zone)} Konvertiert einen String in die zugehörige Zeitzone
-\item \textit{public ZoneId toZoneId(int id)} Konvertiert den Integer in die zugehörige Zeitzone
-\end{itemize}
+\begin{enumerate}[+]
+\item \underline{\textit{toZonedDateTime(LocalDateTime time, ZoneId zone) : ZonedDateTime}}\\
+Erstellt eine ZonedDateTime aus einer LocalDateTime und Zeitzone
+
+\begin{enumerate}[$\bullet$]
+\item \textit{time:} die LocalDateTime für die ZonedDateTime
+\item \textit{zone:} die Zeitzone für die ZonedDateTime
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{ZonedDateTime:} die erstellte ZonedDateTime
+\end{enumerate}
+
+\item \underline{\textit{toLDT(String time, DateTimeFormatter format) : LocalDateTime}}\\
+Konvertiert einen String über das gegebene Format in die zugehörige LocalDateTime
+
+\begin{enumerate}[$\bullet$]
+\item \textit{time:} der String, aus dem die Zeit erstellt wird
+\item \textit{format:} das Format für den String
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{LocalDateTime:} die erstellte LocalDateTime
+\end{enumerate}
+
+\item \underline{\textit{toLDT(List<String> time, List<DateTimeFormatter> format) : LocalDateTime}}\\
+Konvertiert mehrere Strings über die Formate in die zugehörige LocalDatetime
+
+\begin{enumerate}[$\bullet$]
+\item \textit{time:} die Strings, aus denen die Zeit erstellt wird
+\item \textit{format:} die Formate für die Strings
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{LocalDateTime:} die erstellte LocalDateTime
+\end{enumerate}
+
+\item \underline{\textit{toZoneId(String zone) : ZoneId}}\\
+Konvertiert einen String in die zugehörige Zeitzone
+
+\begin{enumerate}[$\bullet$]
+\item \textit{zone:} Zone als String
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{ZoneId:} die erstellte ZoneId
+\end{enumerate}
+
+\end{enumerate}
