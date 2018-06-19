@@ -1,0 +1,41 @@
+\subsection{CSVConverter implements Converter}
+Konvertiert eine Datei aus dem File-Format in das RowTable-Format für die interne Repräsentation und wieder zurück \\
+Konvertiert nur CSV-Dateien. \\
+
+\paragraph{Methoden}
+
+\begin{enumerate}[+]
+	\item \underline{\textit{convert(File file, Configuration cfg): RowTable}} \\
+	Konvertiert eine Tabellen-Datei im CSV-Format in eine Instanz der Klasse Table
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle im CSV-Format repräsentieren
+		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration, diese stellt u.a. die zu entfernenden Kopfzeilen, die Magic Numbers und das Trennsymbol bereit
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{RowTable}: die RowTable-Instanz die die Tabelle repräsentiert
+	\end{enumerate}
+	
+	\item \underline{\textit{convertBack(RowTable table, Configuration cfg): File}} \\
+	Konvertiert eine Table-Instanz wieder zurück in eine Datei, die gespeichert werden kann
+	\begin{enumerate}[$\bullet$]
+		\item \textit{RowTable table}: Die zu konvertierende RowTable-Instanz
+		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration, die u.a. das Trennsymbol und die Kopfzeilen, die wieder hinzugefügt werden, bereitstellt
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{File}: Die CSV-Datei
+	\end{enumerate}
+
+	\item \underline{\textit{removeHeaders(File file, Configuration cfg): File}} \\
+	Entfernt die Kopfzeilen der CSV-Datei, welche durch die Konfiguration festgelegt sind
+	\begin{enumerate}[$\bullet$]
+		\item \textit{File file}: Die CSV-Datei von der die Kopfzeilen entfernt werden sollen
+		\item \textit{Configuration cfg}: Die Konfiguration, die die Anzahl Kopfzeilen enthält
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{File}: Die selbe CSV-Datei, nur ohne Kopfzeilen
+	\end{enumerate}
+\end{enumerate}
