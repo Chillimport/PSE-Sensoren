@@ -3,9 +3,9 @@
 Diese Klasse ist für die Verwaltung der Konfigurationen zuständig.
 \paragraph{Attribute}
 \begin{enumerate}[-]
-	\item \textit{String configPath} Speichert den Weg zu dem Ordner, in dem die Konfigurationen gespeichert sind
+	\item \textit{configPath : String} Speichert den Weg zu dem Ordner, in dem die Konfigurationen gespeichert sind
 	
-	\item \textit{String ServerURLPath} Hier wird gespeichert, wo die Datei mit der Zielserver-URL liegt.		
+	\item \textit{serverURLPath : String} Hier wird gespeichert, wo die Datei mit der Zielserver-URL liegt.		
 \end{enumerate}
 
 \paragraph{Methoden}
@@ -13,28 +13,28 @@ Diese Klasse ist für die Verwaltung der Konfigurationen zuständig.
 	\begin{enumerate}[+]
 	\item \textit{loadConfig(Integer id) : Configuration} Diese Methode lädt eine Konfiguration und gibt diese zurück.
 		\begin{enumerate}[$\bullet$]
-			\item \textit{Integer id} Die id der Konfiguration
+			\item \textit{Integer id:} Die id der Konfiguration
 		\end{enumerate}
 		\vspace{-0.2cm}
 		\begin{enumerate}[$\circ$]
-			\item \textit{Configuration} Die Konfiguration
+			\item \textit{Configuration:} Die Konfiguration
 		\end{enumerate}
 	
 	\item \textit{saveConfig(Configuration cfg) : Integer} Diese Methode speichert die übergebene Konfiguration auf der Festplatte des Servers.
 	
 	\begin{enumerate}[$\bullet$]
-		\item \textit{Configuration cfg} Die Konfiguration, die gespeichert werden soll
+		\item \textit{Configuration cfg:} Die Konfiguration, die gespeichert werden soll
 	\end{enumerate}
 	
-	\item \textit{listAll() : List<Configuration> } Diese Methode gibt alle Konfigurationen in einer Liste zurück.
+	\item \textit{listAll() : List<Configuration>} Diese Methode gibt alle Konfigurationen in einer Liste zurück.
 	
 	\begin{enumerate}[$\circ$]
-		\item \textit{List<Integer>} Liste aller id's der vorhandenen Konfigurationen
+		\item \textit{List<Configuration>:} Alle Konfigurationen in einer Liste.
 	\end{enumerate}
 	
-	\item \textit{getServer() : SensorThingsService} Diese Methode gibt ein SensorThingsService-Objekt zurück.
+	\item \textit{getServer() : URL} Diese Methode gibt die URL zu dem Zielserver zurück.
 	
 	\begin{enumerate}[$\circ$]
-		\item \textit{SensorThingsService} SErve des FROST-Client's
+		\item \textit{URL:} URL zu dem Zielserver
 	\end{enumerate}
 \end{enumerate}
