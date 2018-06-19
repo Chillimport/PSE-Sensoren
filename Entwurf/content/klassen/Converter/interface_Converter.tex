@@ -1,10 +1,10 @@
 \subsection{<{<{interface}>}> Converter}
-Stellt Methoden zur konvertierung einer Datei aus dem File-Format in das Table-Format für die interne Repräsentation und wieder zurück bereit. \\
+Stellt Methoden zur konvertierung einer Datei aus dem File-Format in das RowTable-Format für die interne Repräsentation und wieder zurück bereit. \\
 
 \paragraph{Methoden}
 \begin{enumerate}[+]
 	\item \underline{\textit{convert(File file, configuration cfg): RowTable}} \\
-	Konvertiert eine Tabellen-Datei in eine Instanz der Klasse Table
+	Konvertiert eine Tabellen-Datei in eine Instanz der Klasse RowTable
 	
 	\begin{enumerate}[$\bullet$]
 		\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss sonst aber eine Tabelle repräsentieren
@@ -18,7 +18,7 @@ Stellt Methoden zur konvertierung einer Datei aus dem File-Format in das Table-F
 	\item \underline{\textit{convertBack(RowTable table, Configuration cfg): File}} \\
 	Konvertiert eine RowTable-Instanz wieder zurück in eine Datei, die gespeichert werden kann
 	\begin{enumerate}[$\bullet$]
-		\item \textit{RowTable table}: Die zu konvertierende Table-Instanz
+		\item \textit{RowTable table}: Die zu konvertierende RowTable-Instanz
 		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration
 	\end{enumerate}
 	\vspace{-0.2cm}

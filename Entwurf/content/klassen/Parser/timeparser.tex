@@ -12,8 +12,8 @@ Je nach (teilweise) schon bestehenden Zeitformaten sollen dafür verschiedene Me
 Erstellt eine ZonedDateTime aus einer LocalDateTime und Zeitzone
 
 \begin{enumerate}[$\bullet$]
-\item \textit{time:} die LocalDateTime für die ZonedDateTime
-\item \textit{zone:} die Zeitzone für die ZonedDateTime
+\item \textit{LocalDateTime time:} die LocalDateTime für die ZonedDateTime
+\item \textit{ZoneId zone:} die Zeitzone für die ZonedDateTime
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]
@@ -24,8 +24,8 @@ Erstellt eine ZonedDateTime aus einer LocalDateTime und Zeitzone
 Konvertiert einen String über das gegebene Format in die zugehörige LocalDateTime
 
 \begin{enumerate}[$\bullet$]
-\item \textit{time:} der String, aus dem die Zeit erstellt wird
-\item \textit{format:} das Format für den String
+\item \textit{String time:} der String, aus dem die Zeit erstellt wird
+\item \textit{DateTimeFormatter format:} das Format für den String
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]
@@ -36,8 +36,8 @@ Konvertiert einen String über das gegebene Format in die zugehörige LocalDateT
 Konvertiert mehrere Strings über die Formate in die zugehörige LocalDatetime
 
 \begin{enumerate}[$\bullet$]
-\item \textit{time:} die Strings, aus denen die Zeit erstellt wird
-\item \textit{format:} die Formate für die Strings
+\item \textit{List<String> time:} die Strings, aus denen die Zeit erstellt wird
+\item \textit{List<DateTimeFormatter> format:} die Formate für die Strings
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]
@@ -48,7 +48,7 @@ Konvertiert mehrere Strings über die Formate in die zugehörige LocalDatetime
 Konvertiert einen String in die zugehörige Zeitzone
 
 \begin{enumerate}[$\bullet$]
-\item \textit{zone:} Zone als String
+\item \textit{String zone:} Zone als String
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]
