@@ -1,56 +1,141 @@
-\subsection{Javascript}
 
-\paragraph{Beschreibung}
-Dateien, die die Funktionalität für die Buttons über js auf der Webseite bereitstellen.
+\subsection{MainWindow}
+Diese Klasse stellt das Hauptfenster dar. 
 
-\paragraph{Methoden/Funktionen}
-\begin{itemize}
-\item Quellenauswahl: Listener für radioboxen und dann dateimanager für Dateiauswahl bzw. textfeld um seite anzugeben
-\item Funktion zum Weiterleiten/Hochladen der ausgewählten Datei
-\item Funktion die konfigurationen entgegennimmt und in Liste schreibt (Konfigurationscontroller -> listall methode)
-\item funktion zum anzeigen (laden) einer Konfiguration
-\item funktion für lognachrichten auflisten
+\paragraph{Konstruktoren}
+\begin{enumerate}[+]
+	\item \textit{MainWindow()} Ein Konstruktor für das Hauptfenster.
+\end{enumerate}
 
-\item things auflisten
-\item create thing 
-\begin{itemize}
-\item property hinzufügen
-\item locatoins anzeigen
-\item create location
-\begin{itemize}
-\item encodingType anzeigen
-\item anlegen
-\end{itemize}
-\item thing wirklich anlegen
-\end{itemize}
+\paragraph{Methoden}
+
+\begin{enumerate}[+]
+	\item \textit{browse()} Öffnet ein Dialogfenster zum Laden einer Datei.
+	\item \textit{chooseThing()} Lädt die Things in das Dropdown-Menu.
+	\item \textit{createThing()} Öffnet das ThingWindow.
+	\item \textit{chooseTimeZone()} Öffnet ein Fenster zum auswählen der TimeZone.
+	\item \textit{addColumn()} Fügt eine Spalte für die DateTime hinzu.
+	\item \textit{chooseConfig()} Füllt das Dropdown-Menu mit bis zu 20 Konfigurationen.
+	\item \textit{chooseDatasteam()} Füllt das Dropdown-Menu mit den Datasteams.
+	\item \textit{createDatastream()} Ruft das DatastreamWindow auf.
+	\item \textit{addDatastream()} Fügt einen Datastream hinzu.
+	\item \textit{saveConfiguration()} Speichert die Konfiguration.
+	\item \textit{showPreview()} Zeigt eine Vorschau für den Import.
+	\item \textit{resetConfig()} Setzt die bisher erstellte Konfiguration zurück.
+	\item \textit{import()} Importiert die Eingabedatei in den Frostserver
+	\item \textit{help()} Öffnet eine "{Help}"{-Seite}.
+	\item \textit{downloadErrors()} Öffnet ein Dialogfenster um den Download der fehlgeschlagenen Zeilen zu bestätigen.
+	\item \textit{addMagicNumbers()} Öffnet ein Dialogfenster um die Abbildung von Sonderzeichen zu definieren.	
+\end{enumerate}
 
 
-\item timezone auswählen
-\item spalte für Datum hinzufügen
-\item Datastreamauswahl anzeigen lassen (nachdem thing ausgewählt ist!!)
-\item create datastream
-\begin{itemize}
-\item obseravtiontype auswählen
-\item sensor auswählen
-\item sensor erstellen
-\begin{itemize}
-\item encodingType
-\item erstellen
-\end{itemize}
 
-\item observed Property auswählen
-\item observed Property erstellen
-\begin{itemize}
-\item erstellen
-\end{itemize}
+\subsection{DatastreamWindow}
+Diese Klasse stellt das Fenster zum Erstellen eines Datastreams dar.
 
-\item neue unit (zeile) hinzufügen
-\item endgültig erstellen
-\end{itemize}
+\paragraph{Konstruktoren}
+\begin{enumerate}[+]
+	\item \textit{DatastreamWindow()} Ein Konstruktor für das Fenster.
+\end{enumerate}
 
-\item add datastream
+\paragraph{Methoden}
 
-\item Konfiguration speichern, reset 
-\item preview asuführen
-\item Importieren
-\end{itemize}
+\begin{enumerate}[+]
+	\item \textit{chooseObservationType()} Füllt das zugehörige Dropdown-Menu mit den Observation-Types.
+	\item \textit{chooseSensor()} Füllt das Dropdown-Menu zur Auswahl eines Sensors mit Daten.
+	\item \textit{createSensor()} Öffnet das Fenster zum Erstellen eines Sensors.
+	\item \textit{chooseProperty()} Füllt das Dropdown-Menu mit Daten.
+	\item \textit{createProperty()} Öffnet das Fenster zum Erstellen einer Property.
+	\item \textit{addUnit()} Fügt eine Reihe für ein neues Unit hinzu.
+	\item \textit{createDatastream()} Erstellt mit den eingegebenen Daten einen neuen Datastream.
+\end{enumerate}
+
+
+
+\subsection{ThingWindow}
+Diese Klasse stellt das Fenster zum Erstellen eines Things dar.
+
+\paragraph{Konstruktoren}
+\begin{enumerate}[+]
+	\item \textit{ThingWindow()} Ein Konstruktor für das Fenster.
+\end{enumerate}
+
+\paragraph{Methoden}
+
+\begin{enumerate}[+]
+	\item \textit{addProperty()} Fügt eine Reihe für eine weitere Property hinzu.
+	\item \textit{chooseLocation()} Füllt das Dropdown-Menu mit Locations. 
+	\item \textit{createLocation()} Öffnet das Fenster LocationWindow.
+	\item \textit{createThing()} Erstellt aus den gegebenen Daten ein Thing.
+\end{enumerate}
+
+
+
+\subsection{SensorWindow}
+Diese Klasse stellt das Fenster zum Erstellen eines Sensors dar.
+
+\paragraph{Konstruktoren}
+\begin{enumerate}[+]
+	\item \textit{SensorWindow()} Ein Konstruktor für das Fenster.
+\end{enumerate}
+
+\paragraph{Methoden}
+
+\begin{enumerate}[+]
+	\item \textit{chooseEncodingType()} Füllt das dazugehörige Dropdown-Menu mit den Encodingtypes.
+	\item \textit{createSensor()} Erstellt aus den gegebenen Daten ein Sensor-Objekt.
+		
+\end{enumerate}
+
+
+
+\subsection{LocationWindow}
+Diese Klasse stellt das Fenster zum Erstellen einer Location dar.
+
+\paragraph{Konstruktoren}
+\begin{enumerate}[+]
+	\item \textit{LocationWindow()} Ein Konstruktor für das Fenster.
+\end{enumerate}
+
+\paragraph{Methoden}
+
+\begin{enumerate}[+]
+	\item \textit{chooseEncodingType()} Füllt das dazugehörige Dropdown-Menu mit den Encodingtypes.
+	\item \textit{createLocation()} Erstellt aus den gegebenen Daten ein Location-Objekt.
+	
+\end{enumerate}
+
+
+
+
+\subsection{MagicWindow}
+Diese Klasse stellt das Fenster zum Erstellen der Sonderzeichen-Abbildungen dar.
+
+\paragraph{Konstruktoren}
+\begin{enumerate}[+]
+	\item \textit{MagicWindow()} Ein Konstruktor für das Fenster.
+\end{enumerate}
+
+\paragraph{Methoden}
+
+\begin{enumerate}[+]
+	\item \textit{addEntry()} Fügt eine Abbildung hinzu.
+	\item \textit{createMagic()} Erstellt aus den gegebenen Daten ein MagicNumbers-Objekt.	
+\end{enumerate}
+
+
+
+\subsection{PropertyWindow}
+Diese Klasse stellt das Fenster zum Erstellen einer Property dar.
+
+\paragraph{Konstruktoren}
+\begin{enumerate}[+]
+	\item \textit{PropertyWindow()} Ein Konstruktor für das Fenster.
+\end{enumerate}
+
+\paragraph{Methoden}
+
+\begin{enumerate}[+]
+	\item \textit{createProperty()} Erstellt aus den gegebenen Daten ein 	Property-Objekt.	
+\end{enumerate}
+
