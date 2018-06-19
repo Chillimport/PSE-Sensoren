@@ -1,4 +1,4 @@
-\subsection{ConfigurationController}
+\subsection{ConfigController}
 Diese Controller-Klasse empfängt Anfragen vom Frontend, die das Erstellen oder Abrufen von Konfigurationen betreffen. Zur Bearbeitung dieser Anfragen greift die Klasse auf den ConfigManager zu.
 
 
@@ -32,7 +32,7 @@ Diese Controller-Klasse empfängt Anfragen vom Frontend, die das Erstellen oder 
 	\begin{enumerate}[$\circ$]
 		\item \textit{ResponseEntity<Configuration>} Konfiguration mit angegebener ID (Rückgabe-Typ von Controller-Klassen)
 	\end{enumerate}
-	\item \textit{ getAll(): ResponseEntity<List<Configuration>> }\\
+	\item \textit{ getConfigurations(): ResponseEntity<List<Configuration>> }\\
 	gibt alle gespeicherten Konfigurationen zurück
 	
 	\begin{enumerate}[$\circ$]
