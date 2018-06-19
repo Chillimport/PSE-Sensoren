@@ -13,7 +13,7 @@ Diese werden mit der CheckDuplicate-Klasse auf Duplikate im FROST-Server überpr
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=0.44]{uml/SD_upload.eps}
-\caption{Sequenzdiagramm zum Upload von Daten auf dem FROST-Server}
+\caption{Sequenzdiagramm zum Import von Daten auf den FROST-Server}
 \end{figure}
 
 \clearpage
@@ -31,6 +31,9 @@ Im Anschluss wird ein StatusCode als Antwort zurückgegeben.
 
 \clearpage
 \subsection{Fehlerhafte Zeilen zurückgeben}
+
+Dieses Sequenzdiagramm 
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=0.44]{uml/SD_returnErrors.eps}
@@ -39,6 +42,15 @@ Im Anschluss wird ein StatusCode als Antwort zurückgegeben.
 
 \clearpage
 \subsection{Thing erstellen}
+
+Das Sequenzdiagramm wird dargestellt, was beim Erstellen eines Things passiert.
+Das Erstellen anderer Entitities verläuft analog.
+Beim Klicken auf den "{Create Thing}"{-Button} reagiert das MainWindow und öffnet einen Dialog zum Erstellen des Things.
+Dort lassen sich die Eigenschaften des Things vom Benutzer festlegen.
+Beim Auswahl der Location werden die Vorschläge über die Funktion chooseLocation() aktualisiert.
+Nach dem der Benutzer den "{Create}"{-Button} gedrückt hat, wird der ThingController aufgerufen, um das Thing zu erstellen.
+Dazu ruft er den SensorThingsService auf und gibt nach Ausführung der Operation einen StatusCode zurück.
+
 \begin{figure}[htbp]
 \centering
 \includegraphics[scale=0.44]{uml/SD_createThing.eps}
