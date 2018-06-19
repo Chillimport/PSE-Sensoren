@@ -1,0 +1,28 @@
+\subsection{Datastream}
+Diese Klasse Beschreibt einen (Multi-)Datastream. Ein Datastream ist eine fortlaufende Sammlung von Messungen (Observations) des selben Sensors und der selben ObservedProperty. Multi-Datastreams haben mehrere ObservedProperties.
+
+\paragraph{Attribute}
+\begin{enumerate}[$\bullet$]
+	\item \textit{NAME : String} Name des Datastreams
+	\item \textit{DESCRIPTION : String} Beschreibung des Datastreams
+	\item \textit{OBSERVATION\_TYPE: ObservationType} Beobachtungs-Typ des Datastreams
+	\item \textit{UNITS\_OF\_MEASUREMENT: List<UnitOfMeasurement>} Maßeinheit(en) des Datastreams: eine bei Datastream, mehrere bei MultiDatastream
+	\item \textit{SENSOR: Sensor} Sensor des Datastreams
+	\item \textit{THING: Thing} Thing des Datastreams
+	
+\end{enumerate}
+
+\paragraph{Konstruktoren}
+\begin{enumerate}[+]
+	\item \textit{Datastream(String name, String desc, ObservationType obType,  List<UnitOfMeasurement> units, Sensor sensor, Thing thing)}
+	erstellt eine neue Thing-Instanz
+	\begin{enumerate}[$\bullet$]
+		\item \textit{String name} Name des Datastreams
+		\item \textit{String desc} Beschreibung des Datastreams
+		\item \textit{ObservationType obType} Beobachtungs-Typ des Datastreams
+		\item \textit{List<UnitOfMeasurement> units} Maßeinheit(en) des Datastreams: eine bei Datastream, mehrere bei MultiDatastream
+		\item \textit{Sensor sensor} Sensor des Datastreams
+		\item \textit{Thing thing} Thing des Datastreams
+	\end{enumerate}
+	
+\end{enumerate}
