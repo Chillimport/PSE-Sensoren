@@ -46,12 +46,12 @@ Sie speichert alle notwendigen Daten und stellt "{getter}"{-Methoden} für einen
 	
 	\item \textit{streamData : List<StreamObseration>} In dieser Liste werden die Datastreams zusammen mit den Spalten gespeichert, aus welchen die Daten extrahiert werden.
 	
-	\item \textit{mapOfMagicNumbers : MagicNumbers} Hier wird das Mapping für Sonderzeichen gespeichert. Sonderzeichen sollen nicht auf dem FROST-Server gespeichert werden und haben eine spezielle Bedeutung.
+	\item \textit{mapOfMagicNumbers : MagicNumberMap} Hier wird das Mapping für Sonderzeichen gespeichert. Sonderzeichen sollen nicht auf dem FROST-Server gespeichert werden und haben eine spezielle Bedeutung.
 \end{enumerate}
 
 \paragraph{Konstruktoren}
 \begin{enumerate}[+]
-	\item \textit{Configuration(Integer id, String name, Character delimiter, Integer numberOfHeaderlines, ZoneIdColumn timezone, List<StringColumn> dateTime, List<StreamObservation> streamData, MagicNumbers mapOfMagicNumbers)} Dieser Konstruktor erstellt aus den gegebenen Parametern eine vollständig ausgefüllte Configuration.
+	\item \textit{Configuration(Integer id, String name, Character delimiter, Integer numberOfHeaderlines, ZoneIdColumn timezone, List<StringColumn> dateTime, List<StreamObservation> streamData, MagicNumberMap mapOfMagicNumbers)} Dieser Konstruktor erstellt aus den gegebenen Parametern eine vollständig ausgefüllte Configuration.
 	\begin{enumerate}[$\bullet$]
 		\item \textit{Integer id:} ID der Konfiguration.
 		\item \textit{String name:} Name der Konfiguration.
@@ -60,7 +60,7 @@ Sie speichert alle notwendigen Daten und stellt "{getter}"{-Methoden} für einen
 		\item \textit{ZoneIdColumn timezone:} Zeitzone oder Splatennummer der Zone.
 		\item \textit{List<StringColumn> dateTime:} Liste für Zeitangaben.
 		\item \textit{List<StreamObservation> streamData:} Liste aus Streams mit dazugehörigen Spaltennummern für Observations.
-		\item \textit{mapOfMagicNumbers:} Mapping für Sonderzeichen.
+		\item \textit{MagicNumberMap mapOfMagicNumbers:} Mapping für Sonderzeichen.
 	\end{enumerate}
 \end{enumerate}
 

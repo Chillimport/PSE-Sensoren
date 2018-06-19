@@ -7,3 +7,25 @@ Klasse zum Abspeichern einer Zuordnung für die Ersetzung von \string"Magic Numb
 \item \textit{replacement : Object} Neuer Wert, der den alten ersetzt
 \end{enumerate}
 \paragraph{Methoden}
+
+\subsection{MagicNumberMap}
+Klasse zum Abspeichern mehrerer MagicNumbers bezüglich einer Spalte.
+
+\paragraph{Attribut}
+\begin{enumerate}[-]
+	\item \textit{map : List<List<MagicNumber>{}>} Die äußere Liste stellt die Spalten dar. In der inneren Liste werden die verschiedenen Mappings für die Spalte gespeichert.
+\end{enumerate}
+
+\paragraph{Methoden}
+\begin{enumerate}[+]
+	\item \textit{getMapping(Integer column, Object object1) : Object} Gibt das Objekt aus, auf das object1 und column, gemappt werden.
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{Integer column} Die Spalte aus der object stammt.
+		\item \textit{Object object1:} Ein Object welches abgebildet werden soll.
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{Object:} Das Objekt auf welches object abgebildet wird.
+	\end{enumerate}
+\end{enumerate}
