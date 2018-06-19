@@ -1,3 +1,18 @@
+\subsection{StringColumn}
+Diese Klasse wird dazu verwendet, einen String zusammen mit einer Spaltennummer zu speichern.
+\paragraph{Attribute}
+\begin{enumerate}[-]
+	\item \textit{String string} Ein String
+	\item \textit{Integer column} Eine Spaltennummer
+\end{enumerate} 
+
+\subsection{StreamObservation}
+Diese Klasse speichert einen Datastream zusammen mit einer Liste aus Spaltenangaben, welche anzeigen, wo die Observations auszulesen sind.
+\paragraph{Attribute} 
+\begin{enumerate}[-]
+	\item \textit{Integer dsID} ID eines (Multi-) Datastreams. 
+	\item \textit{List<Integer> observation} Spaltenangaben.
+\end{enumerate}
 
 \subsection{Configuration}
 Diese Klasse stellt die Konfigurationen dar. 
@@ -5,70 +20,44 @@ Sie speichert alle notwendigen Daten und stellt getter für einen vereinfachten 
 
 \paragraph{Attribute}
 
-\begin{itemize}
-	\item \textit{private Integer id} Hier wird die ID der Konfiguration gespeichert.
+\begin{enumerate}[-]
+	\item \textit{Integer id} Hier wird die ID der Konfiguration gespeichert. Die ID wird automatisch generiert.
 	
-	\item \textit{private Character delimiter} Falls eine CSV-Datei importiert werden soll, muss ein Trennsymbol für die Spalten gewählt werden.
+	\item \textit{String name} Hier wird der Name der Konfiguration gespeichert.
 	
-	\item \textit{private Integer headerlines} In einem CSV-Dokoment gibt es Kopfzeilen, welche für den Import irrelevant sind. Die Anzahl dieser Zeilen wird hier gespeichert.
+	\item \textit{Character delimiter} Falls eine CSV-Datei importiert werden soll, muss ein Trennsymbol für die Spalten gewählt werden.
 	
-	\item \textit{private Integer timezone} Hier wird die Zeitzone gespeichert. Falls die Zahl positiv ist, handelt es sich um eine Spaltenangabe. Falls die Zahl negativ ist, handelt sich um die Integer-Darstellung einer konstanten Zeitzone.
+	\item \textit{Integer numberOfHeaderlines} In einem CSV-Dokument gibt es Kopfzeilen, welche für den Import irrelevant sind. Die Anzahl dieser Zeilen wird hier gespeichert.
 	
-	\item \textit{private List<StringColumn> dateTime} Hier wird eine Liste aus Datumsformaten mit einer zugehörigen Spalte gespeichert 
+	\item \textit{Integer timezone} Hier wird die Zeitzone gespeichert. Falls die Zahl positiv ist, handelt es sich um eine Spaltenangabe. Falls die Zahl negativ ist, handelt sich um die Integer-Darstellung einer konstanten Zeitzone.
 	
-	\item \textit{private List<StreamObseration> streamData} In dieser Liste werden die Datastreams zusammen mit den Spalten gespeichert, aus welchen die Daten extrahiert werden.
-\end{itemize}
+	\item \textit{List<StringColumn> dateTime} Hier wird eine Liste aus Datumsformaten mit einer zugehörigen Spalte gespeichert 
+	
+	\item \textit{List<StreamObseration> streamData} In dieser Liste werden die Datastreams zusammen mit den Spalten gespeichert, aus welchen die Daten extrahiert werden.
+	
+	\item \textit{MagicNumbers mapOfMagicNumbers} Hier wird das Mapping der Magic-Numbers gespeichert.
+\end{enumerate}
 
 \paragraph{Methoden}
-\begin{itemize}
-	\item \textit{public Configuration(Integer id, Character delimiter, Integer headerlines, Integer timezone, List<StringColumn> dateTime, List<StreamObservation> streamData)}
-	
-	\item \textit{public Integer getId()} Diese Methode gibt die id der Konfiguration zurück.
-	
-	\item \textit{public Character getDelimiter()} Diese Methode gibt den delimiter zurück.
-	
-	\item \textit{public Integer getHeaderlines()} Diese Methode gibt die Anzahl der Kopfzeilen zurück.
-	
-	\item \textit{public Integer getTimezone()} Diese Methode gibt timezone zurück.	
-	
-	\item \textit{public List<StringColumn> getDateTime()} Diese Methode gibt die DateTime-Liste zurück.
-	
-	\item \textit{public List<StreamObseration> getStreamData()} Diese Methode gibt die streamData zurück.
+\begin{enumerate}[+]
+	\item \textit{Configuration(Integer id, String name, Character delimiter, Integer headerlines, Integer timezone, List<StringColumn> dateTime, List<StreamObservation> streamData)}
+	\begin{enumerate}[$\bullet$]
+		\item Alle Parameterbeschreibungen stimmen mit den Beschreibungen der Attribute aus der Configuration-Klasse überein.
+	\end{enumerate}
 
-	\item \textit{public static Configuration convertToJava(JSONObject)]} Diese Methode generiert aus einem JSONObject eine Configuration.
+	\item \textit{static convertToJava(String jsonString) : Configuration} Diese Methode generiert aus einem JSON-String eine Configuration.
+	\begin{enumerate}[$\bullet$]
+		\item \textit{String jsonString} Der String, in dem das JSON-Objekt kodiert ist.
+	\end{enumerate}
+	\begin{enumerate}[$\circ$]
+		\item \textit{String Configuration} Die generierte Konfiguration.
+	\end{enumerate}
 	
-	\item \textit{public static JSONObject convertToJSON(Configuration)]} Diese Methode generiert aus einer Konfiguration ein JSONObject.
-\end{itemize}
-
-
-\subsection{StringColumn}
-Diese Klasse wird dazu verwendet einen String zusammen mit einer Spaltennummer zu speichern.
-\paragraph{Attribute}
-\begin{itemize}
-	\item \textit{private String string} Ein String
-	\item \textit{private Integer column} Eine Spaltennummer
-\end{itemize} 
-
-\paragraph{Methoden}
-\begin{itemize}
-	\item \textit{public void setString(String string)}
-	\item \textit{public String getString()}
-	
-	\item \textit{public void setColumn(Integer column)}
-	\item \textit{public Integer getColumn()}
-\end{itemize}
-
-\subsection{StreamObservation}
-\paragraph{Attribute} 
-\begin{itemize}
-	\item \textit{private Integer dsID}
-	\item \textit{private List<Integer> observation}
-\end{itemize}
-
-\paragraph{Methoden}
-\begin{itemize}
-	\item \textit{public void setDsID(Integer dsID)}
-	\item \textit{public void setObservations(List<Integer>)}
-	\item \textit{public Integer getDsID()}
-	\item \textit{public List<Integer> getObservtions()}
-\end{itemize}
+	\item \textit{static serialize(Configuration config) : String} Diese Methode generiert aus einer Konfiguration ein JSON-String.
+	\begin{enumerate}[$\bullet$]
+		\item \textit{Configuration config} Die Konfiguration, welche in einen String überführt werden soll.
+	\end{enumerate}
+	\begin{enumerate}[$\circ$]
+		\item \textit{String} Das generierte JSON-Objekt als String.
+	\end{enumerate}
+\end{enumerate}

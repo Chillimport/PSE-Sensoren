@@ -1,0 +1,17 @@
+\subsection{<{<{abstract}>}> EntityController}
+
+\paragraph{Beschreibung}
+Diese Controller-Klasse empfängt Anfragen vom Frontend, die das Erstellen oder Abrufen von Entities betreffen. Zur Bearbeitung dieser Anfragen greift die Klasse auf den Frost-Client zu.
+
+
+\paragraph{Attribute}
+
+\paragraph{Methoden}
+\begin{itemize}
+\item[+] \textit{ create(Entity e): ResponseEntity<?> }
+erstellt mithilfe des Frost-Client eine neue Entity und lädt diese auf den Frostserver
+\item[+] \textit{get(int id): ResponseEntity<Entity>}
+sucht auf dem Server die Entity mit der angegebenen id und gibt sie zurück (NULL im Fehlerfall)
+\item[+] \textit{getAll(): ResponseEntity<List<Entity>>}
+gibt alle auf dem FROST-Server gespeicherten Entities zurück
+\end{itemize}

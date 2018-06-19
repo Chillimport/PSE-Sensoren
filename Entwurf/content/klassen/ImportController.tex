@@ -8,8 +8,8 @@ Diese Controller-Klasse empfängt Anfragen vom Frontend, die den Daten-Import od
 
 \paragraph{Methoden}
 \begin{itemize}
-\item[+] \textit{ importData() : void}
- erstellt mit dem ConfigurationManagement eine Configuration Instanz die vom Uploader abgerufen wird um den Daten-Import durchzuführen.
-\item[+] \textit{showPreview() : void}
-sucht auf dem Server das Thing mit der angegebenen id und gibt es zurück (NULL im Fehlerfall)
+\item[+] \textit{ importData(Configuration config, String file) : ResponseEntity<?>}
+ erstellt eine aktuelle Configuration Instanz, die daraufhin vom Uploader abgerufen wird um den Daten-Import durchzuführen
+\item[+] \textit{showPreview(Configuration config, String file) : ResponseEntity<?>}
+erstellt eine aktuelle Configuration Instanz, die daraufhin vom Uploader abgerufen wird um eine Vorschau anzuzeigen
 \end{itemize}
