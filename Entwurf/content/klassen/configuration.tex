@@ -15,6 +15,16 @@ Diese Klasse speichert einen Datastream zusammen mit einer Liste aus Spaltenanga
 	\item \textit{observation : List<Integer>} Spaltenangaben.
 \end{enumerate}
 
+\subsection{ZoneIdColumn}
+Diese Klasse stellt ein Tupel aus einer ZoneId und einer Spaltennummer dar.
+Sie wird verwendet um die variableTimeZone mit der staticTimeZone zu verbinden, so wird diese Klasse zum Beispiel als Rückgabeparameter bei getTimezone verwendet.
+
+\paragraph{Attribute}
+\begin{enumerate}[-]
+	\item \textit{zoneId : ZoneId} Die ID einer Zeitzone.
+	\item \textit{column : Integer} Spaltennummer.
+\end{enumerate}
+
 \subsection{Configuration}
 Diese Klasse stellt die Konfigurationen dar. 
 Sie speichert alle notwendigen Daten und stellt "{getter}"{-Methoden} für einen vereinfachten Zugriff auf Daten bereit.
@@ -30,7 +40,7 @@ Sie speichert alle notwendigen Daten und stellt "{getter}"{-Methoden} für einen
 	
 	\item \textit{numberOfHeaderlines : Integer} In einem CSV-Dokument gibt es Kopfzeilen, welche für den Import irrelevant sind. Die Anzahl dieser Zeilen wird hier gespeichert.
 	
-	\item \textit{timezone : Integer} Hier wird die Zeitzone gespeichert. Falls die Zahl positiv ist, handelt es sich um eine Spaltenangabe. Falls die Zahl negativ ist, handelt sich um die Integer-Darstellung einer konstanten Zeitzone.
+	\item \textit{timezone : ZoneIdColumn} Hier wird die Zeitzone gespeichert.
 	
 	\item \textit{dateTime : List<StringColumn>} Hier wird eine Liste aus Datumsformaten mit einer zugehörigen Spalte gespeichert 
 	
@@ -41,16 +51,16 @@ Sie speichert alle notwendigen Daten und stellt "{getter}"{-Methoden} für einen
 
 \paragraph{Konstruktoren}
 \begin{enumerate}[+]
-	\item \textit{Configuration(Integer id, String name, Character delimiter, Integer numberOfHeaderlines, Integer timezone, List<StringColumn> dateTime, List<StreamObservation> streamData, MagicNumbers mapOfMagicNumbers)} Dieser Konstruktor erstellt aus den gegebenen Parametern eine vollständig ausgefüllte Configuration.
+	\item \textit{Configuration(Integer id, String name, Character delimiter, Integer numberOfHeaderlines, ZoneIdColumn timezone, List<StringColumn> dateTime, List<StreamObservation> streamData, MagicNumbers mapOfMagicNumbers)} Dieser Konstruktor erstellt aus den gegebenen Parametern eine vollständig ausgefüllte Configuration.
 	\begin{enumerate}[$\bullet$]
-		\item \textit{Integer id:} ID der Konfiguration
-		\item \textit{String name:} Name der Konfiguration
-		\item \textit{Character delimiter:} Spaltentrennsymbol
-		\item \textit{Integer numberOfHeaderlines:} Anzahl der Kopfzeilen
-		\item \textit{Integer timezone:} Zeitzone
-		\item \textit{List<StringColumn> dateTime:} Liste für Zeitangaben
-		\item \textit{List<StreamObservation> streamData:} Liste aus Streams mit dazugehörigen Spaltennummern für Observations
-		\item \textit{mapOfMagicNumbers:} Mapping für Sonderzeichen
+		\item \textit{Integer id:} ID der Konfiguration.
+		\item \textit{String name:} Name der Konfiguration.
+		\item \textit{Character delimiter:} Spaltentrennsymbol.
+		\item \textit{Integer numberOfHeaderlines:} Anzahl der Kopfzeilen.
+		\item \textit{ZoneIdColumn timezone:} Zeitzone oder Splatennummer der Zone.
+		\item \textit{List<StringColumn> dateTime:} Liste für Zeitangaben.
+		\item \textit{List<StreamObservation> streamData:} Liste aus Streams mit dazugehörigen Spaltennummern für Observations.
+		\item \textit{mapOfMagicNumbers:} Mapping für Sonderzeichen.
 	\end{enumerate}
 \end{enumerate}
 
