@@ -1,17 +1,38 @@
 \subsection{ObservedPropertyController}
-
-\paragraph{Beschreibung}
-Diese Controller-Klasse empfängt Anfragen vom Frontend, die das Erstellen oder Abrufen von ObservedProperties betreffen. Zur Bearbeitung dieser Anfragen greift die Klasse auf den Frost-Client zu.
-
-
-\paragraph{Attribute}
+Diese Controller-Klasse empfängt Anfragen vom Frontend, die das Erstellen oder Abrufen von ObservedProperties betreffen.
 
 \paragraph{Methoden}
-\begin{itemize}
-\item[+] \textit{ create(ObservedProperty o): ResponseEntity<?> }
-erstellt mithilfe des Frost-Client eine neue ObservedProperty und lädt diese auf den Frostserver
-\item[+] \textit{get(int id): ResponseEntity<ObservedProperty>}
-sucht auf dem Server die ObservedProperty mit der angegebenen id und gibt diese zurück (NULL im Fehlerfall)
-\item[+] \textit{getAll(): ResponseEntity<List<ObservedProperty>> }
-gibt alle auf dem FROST-Server gespeicherten ObservedProperties zurück
-\end{itemize}
+
+\begin{enumerate}[+]
+	\item \textit{ create(ObservedProperty op): ResponseEntity<?> }\\
+	erstellt eine neue ObservedProperty und lädt diese auf den FROST-Server
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{ObservedProperty op} die ObservedProperty, die erstellt werden soll
+		
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{ResponseEntity<?>} Rückgabe-Typ von Controller-Klassen
+	\end{enumerate}
+	
+	\item \textit{ get(Integer id): ResponseEntity<ObservedProperty> }\\
+	sucht auf dem Server die ObservedProperty mit der angegebenen id und gibt sie zurück (NULL im Fehlerfall)
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{Integer id} ID der ObservedProperty, die geladen werden soll
+		
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{ResponseEntity<ObservedProperty>} ObservedProperty mit angegebener ID (Rückgabe-Typ von Controller-Klassen)
+	\end{enumerate}
+	\item \textit{ getAll(): ResponseEntity<List<ObservedProperty>> }\\
+	gibt alle auf dem FROST-Server gespeicherten ObservedProperties zurück
+	
+	\begin{enumerate}[$\circ$]
+		\item \textit{ResponseEntity<List<ObservedProperty>>} alle ObservedProperties auf dem FROST-Server (Rückgabe-Typ von Controller-Klassen)
+	\end{enumerate}
+	
+	
+\end{enumerate}	
