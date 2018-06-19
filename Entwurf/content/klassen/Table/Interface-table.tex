@@ -1,9 +1,17 @@
-\subsection{<{<interface>}> Table}
-		
+\subsection{<{<abstract>}> Table} \label{Table}
+
+\paragraph{Attribute}
+
+\begin{itemize}
+	\item[-] \textit{List{<List<Object>}> Table} \\
+	Speichert die Daten der Tabelle, jedes Listenelement enthält eine weitere Liste, welche die Elemente der Tabelle hält. \\
+	In der Implementierung der abstrakten Klasse muss entschieden werden welche Liste die Spalten und welche Liste die Zeilen enthält.\\
+\end{itemize}
+
 \paragraph{Methoden}
 
 \begin{enumerate}[+]
-	\item \textit{getElement(int row, int column): Object} \\
+	\item \textit{<{<abstract>}> getElement(int row, int column): Object} \\
 	Gibt ein einzelnes Element der Tabelle an der angegebenen Stelle zurück
 	\begin{enumerate}[$\bullet$]
 		\item \textit{int row}: Die Zeile an der das Element liegt, darf nicht NULL sein
@@ -14,7 +22,7 @@
 		\item \textit{Object}: Das Element an der Stelle
 	\end{enumerate}
 	
-	\item \textit{setElement(Object o, int row, int column): void} \\
+	\item \textit{<{<abstract>}> setElement(Object o, int row, int column): void} \\
 	Ersetzt ein Element der Tabelle mit einem neuen Element
 	\begin{enumerate}[$\bullet$]
 		\item \textit{Object o}: Das neue Element, darf NULL sein
@@ -23,7 +31,7 @@
 	\end{enumerate}
 	\vspace{-0.2cm}
 	
-	\item \textit{remove(int row, int column): void} \\
+	\item \textit{<{<abstract>}> remove(int row, int column): void} \\
 	Ersetzt ein Element mit NULL
 	\begin{enumerate}[$\bullet$]
 		\item \textit{int row}: Die Zeile des Elements
@@ -31,21 +39,21 @@
 	\end{enumerate}
 	\vspace{-0.2cm}
 	
-	\item \textit{getRowCount(): int} \\
+	\item \textit{<{<abstract>}> getRowCount(): int} \\
 	Gibt die Anzahl Zeilen zurück
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
 		\item \textit{int}: Die Anzahl Zeilen
 	\end{enumerate}
 
-	\item \textit{getColumnCount(): int} \\
+	\item \textit{<{<abstract>}> getColumnCount(): int} \\
 	Gibt die Anzahl Spalten zurück
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
 		\item \textit{int}: Die Anzahl Spalten
 	\end{enumerate}
 
-	\item \textit{clone(): Table} \\
+	\item \textit{<{<abstract>}> clone(): Table} \\
 	Erstellt eine ganze Kopie der Tabelle
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
@@ -62,7 +70,7 @@
 		\item \textit{boolean}: true wenn die Tabelle leer oder NULL ist
 	\end{enumerate}
 
-	\item \textit{compare(Table o): boolean} \\
+	\item \textit{<{<abstract>}> compare(Table o): boolean} \\
 	Vergleicht die Table-Instanz mit einer anderen Instanz
 	\begin{enumerate}[$\bullet$]
 		\item \textit{Table o}: Die andere zu vergleichede Table-Instanz

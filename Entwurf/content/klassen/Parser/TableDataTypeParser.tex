@@ -1,0 +1,30 @@
+\subsection{TableDataTypeParser}
+
+Diese Klasse konvertiert die Datentypen einer ColumnTable-Tabelle in die Datentypen die nach der Konfiguration für den (Multi)Datastream benötigt werden.
+
+\paragraph{Attribute}
+
+\paragraph{Methoden}
+
+\begin{enumerate}[+]
+	\item \underline{\textit{convertTable(ColumnTable t, Configuration cfg): RowTable}} \\	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{ColumnTable t}: Die RowTable-Instanz aus der ein neuer RowTable erstellt wird, kann NULL sein
+		\item \textit{Configuration cfg}: Die zu Nutzende Konfiguration, die die benötigten Datentypen an den richtigen Spalten bereitstellt.
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{RowTable}: Die konvertierte Tabelle
+	\end{enumerate}
+
+	\item \underline{\textit{convertColumn(List<Object> column, String obsTypeURL): List<Object>}} \\
+	Konvertiert eine Spalte der Tabelle in den durch den ObservationType angegebenen Datentyp.
+	\begin{enumerate}[$\bullet$]
+		\item \textit{List<Object> column}: Die zu konvertierende Spalte als Liste von Objekten
+		\item \textit{String obsTyeURL}: Die URL des ObservationTypes, die den Datentyp festegt
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{List<Object>}: Die konvertierte Spalte
+	\end{enumerate}
+\end{enumerate}
