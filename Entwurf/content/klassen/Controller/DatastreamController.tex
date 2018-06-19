@@ -1,0 +1,39 @@
+\subsection{DatastreamController}
+Diese Controller-Klasse empfängt Anfragen vom Frontend, die das Erstellen oder Abrufen von (Multi-)Datastreams betreffen.
+
+
+\paragraph{Methoden}
+
+\begin{enumerate}[+]
+	\item \textit{ create(Datastream ds): ResponseEntity<?> }\\
+	erstellt einen neuen Datastream und lädt ihn auf den FROST-Server
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{Datastream ds} der Datastream, der erstellt werden soll
+		
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{ResponseEntity<?>} Rückgabe-Typ von Controller-Klassen
+	\end{enumerate}
+	
+	\item \textit{ get(Integer id): ResponseEntity<Datastream> }\\
+	sucht auf dem Server den Datastream mit der angegebenen id und gibt ihn zurück (NULL im Fehlerfall)
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{Integer id} ID des Datastreams, der geladen werden soll
+		
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{ResponseEntity<Datastream>} Datastream mit angegebener ID (Rückgabe-Typ von Controller-Klassen)
+	\end{enumerate}
+	\item \textit{ getAll(): ResponseEntity<List<Datastream>> }\\
+	gibt alle auf dem FROST-Server gespeicherten Datastreams zurück
+	
+	\begin{enumerate}[$\circ$]
+		\item \textit{ResponseEntity<List<Datastream>>} alle Datastreams auf dem FROST-Server (Rückgabe-Typ von Controller-Klassen)
+	\end{enumerate}
+	
+	
+\end{enumerate}	

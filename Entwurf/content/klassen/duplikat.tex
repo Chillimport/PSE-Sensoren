@@ -6,19 +6,41 @@ Zwei Observations sind Duplikate, falls das Ergebnis und die Beobachtungszeit ü
 \paragraph{Methoden}
 	
 	\begin{enumerate}[+]
-\item \textit{public boolean find(ZonedDateTime time, Object result)} \\Sucht eine Observation auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
-			
-\item \textit{public boolean find(Datastream stream, ZonedDateTime time, Object result)} \\Sucht eine Observation zu dem Datastream auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
+\item \underline{\textit{find(ZonedDateTime time, Object result) : boolean}}\\
+Sucht eine Observation auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
+\begin{enumerate}[$\bullet$]
+\item \textit{ZonedDateTime time:} die Beobachtungszeit der Observation
+\item \textit{Object result:} der Wert der Observation
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{boolean:} Angabe, ob Observation gefunden wurde
+\end{enumerate}
+	
+\item \underline{\textit{find(Datastream stream, ZonedDateTime time, Object result) : boolean}}\\
+Sucht eine Observation zu dem Datastream auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
 
-\item \textit{public boolean find(MultiDatastream stream, ZonedDateTime time, Object result)} Sucht eine Observation zu dem MultiDatastream auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
+\begin{enumerate}[$\bullet$]
+\item \textit{Datastream stream:} der Datastream, zu der Observation
+\item \textit{ZonedDateTimetime:} die Beobachtungszeit der Observation
+\item \textit{Object result:} der Wert der Observation
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{boolean:} Angabe, ob Observation gefunden wurde
+\end{enumerate}
 
+\item \underline{\textit{find(MultiDatastream stream, ZonedDateTime time, Object result) : boolean}}\\
+Sucht eine Observation zu dem MultiDatastream auf dem FROST-Server mit gegebener Beobachtungszeit und Result und gibt true im Erfolgsfall zurück, sonst false
 
-		\begin{enumerate}[$\bullet$]
-			\item \textit{ZonedDateTime time} Die Zeit inkl. Zeitzone
-			\item \textit{Object result} Der Messwert
-			\item \textit{Datastream stream} Der zugehörige Datastream 
-			\item \textit{Multidatastream stream} Der zugehörige Multidatastream
-			\item \textit{Datastream stream} Der zugehörige Datastream 
-		\end{enumerate}
-		\vspace{-0.2cm}
+\begin{enumerate}[$\bullet$]
+\item \textit{MultiDatastream stream:} der MultiDatastream, zu der Observation
+\item \textit{ZonedDateTimetime:} die Beobachtungszeit der Observation
+\item \textit{Object result:} der Wert der Observation
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{boolean:} Angabe, ob Observation gefunden wurde
+\end{enumerate}
+
 \end{enumerate}

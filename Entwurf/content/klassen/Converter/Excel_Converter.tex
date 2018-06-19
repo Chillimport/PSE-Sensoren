@@ -1,0 +1,33 @@
+\subsection{ExcelConverter implements Converter}
+Konvertiert eine Datei aus dem File-Format in das RowTable-Format für die interne Repräsentation und wieder zurück \\
+
+Konvertiert nur Excel-Dateien. \\
+
+\paragraph{Methoden}
+\begin{enumerate}[+]
+	\item \underline{\textit{convert(File file): RowTable}} \\
+	Konvertiert eine Tabellen-Datei im Excel-Format in eine Instanz der Klasse RowTable.
+	Jeder Wert der Excel-Tabelle behält seinen Datentyp bzw wird in den entsprechenden Java-Datentyp umgewandelt.
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{File file}: Die zu konvertierende Datei, kann NULL sein, muss ansonsten aber eine Tabelle im Excel-Format repräsentieren
+		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{RowTable}: die RowTable-Instanz die die Tabelle repräsentiert
+	\end{enumerate}
+	
+	\item \underline{\textit{convertBack(RowTable table, Configuration cfg): File}} \\
+	Konvertiert eine RowTable-Instanz wieder zurück in eine Excel-Datei, die gespeichert werden kann.
+	Die Datentypen werden -wenn möglich- aus dem Java-Datentyp wieder in den Excel-Datentyp zurück-konvertiert.
+	Siehe auch: \href{https://support.office.com/en-us/article/data-types-in-data-models-e2388f62-6122-4e2b-bcad-053e3da9ba90#__toc327893213}{Datentypen in MS Excel}
+	\begin{enumerate}[$\bullet$]
+		\item \textit{RowTable table}: Die zu konvertierende RowTable-Instanz
+		\item \textit{Configuration cfg}: Die zu nutzende Konfiguration
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{File}: Die Excel-Datei
+	\end{enumerate}
+\end{enumerate}

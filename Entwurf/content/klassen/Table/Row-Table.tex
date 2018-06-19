@@ -1,11 +1,11 @@
-\subsection{RowTable implements Table}	
+\subsection{RowTable extends \hyperref[Table]{Table}}	
 Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit dem Fokus auf zeilenweise Verarbeitung. Der Inhalt der Tabellenelemente ist nicht beschränkt.
 	
 	
-\paragraph{Attribute}
+\paragraph{Attribute geerbt von \hyperref[Table]{Table}}
 
 \begin{itemize}
-	\item[-] \textit{List{<List<Object>}> rowTable} \\
+	\item[-] \textit{List{<List<Object>}> Table} \\
 	Speichert die Daten der Tabelle, jedes Listenelement enthält eine weitere Liste, welche die Elemente der Tabelle hält. \\
 	Die "äußere" Listenelemente repräsentieren die Zeilen der Tabelle, die inneren Listenelemente die Spalten.
 \end{itemize}
@@ -146,21 +146,11 @@ Repräsentiert eine 2-dimensionale Tabelle bestehend aus Zeilen und Spalten mit 
 		\item \textit{int}: Die Anzahl Spalten
 	\end{enumerate}
 	
-	\item \textit{clone(): Table} \\
+	\item \textit{clone(): RowTable} \\
 	Erstellt eine ganze Kopie der Tabelle
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
-		\item \textit{Table}: die Kopie der Tabelle als neue Table-Instanz
-	\end{enumerate}
-	
-	\item \textit{clear(): void} \\
-	Löscht die Tabelle komplett und ersetzt sie gegen NULL
-	
-	\item \textit{isEmpty(): boolean} \\
-	Gibt zurück ob die Tabelle leer ist
-	\vspace{-0.2cm}
-	\begin{enumerate}[$\circ$]
-		\item \textit{boolean}: true wenn die Tabelle leer oder NULL ist
+		\item \textit{Table}: die Kopie der Tabelle als neue RowTable-Instanz
 	\end{enumerate}
 	
 	\item \textit{compare(Table o): boolean} \\

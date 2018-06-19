@@ -1,0 +1,41 @@
+\subsection{ConfigurationController}
+Diese Controller-Klasse empfängt Anfragen vom Frontend, die das Erstellen oder Abrufen von Konfigurationen betreffen. Zur Bearbeitung dieser Anfragen greift die Klasse auf den ConfigManager zu.
+
+
+\paragraph{Attribute}
+\begin{enumerate}[$\bullet$]
+	\item \textit{configCounter: Integer} zählt die Anzahl gespeicherter Konfigurationen
+\end{enumerate}
+
+\paragraph{Methoden}
+
+\begin{enumerate}[+]
+	\item \textit{ createAndSaveConfiguration(Configuration config) : ResponseEntity<?> } \\
+	erstellt mithilfe des ConfigManagers eine neue Konfiguration, speichert sie ab und inkrementiert den configCounter
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{Configuration config} die Konfiguration, die gespeichert werden soll
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{ResponseEntity<?>} Rückgabe-Typ von Controller-Klassen
+	\end{enumerate}
+	
+		\item \textit{ getConfiguration(Integer id): ResponseEntity<Configuration> }\\
+		sucht auf dem Server die Konfiguration mit der angegebenen id und gibt sie zurück (NULL im Fehlerfall)
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{Integer id} ID der Konfiguration, die geladen werden soll
+		
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{ResponseEntity<Configuration>} Konfiguration mit angegebener ID (Rückgabe-Typ von Controller-Klassen)
+	\end{enumerate}
+	\item \textit{ getAll(): ResponseEntity<List<Configuration>> }\\
+	gibt alle gespeicherten Konfigurationen zurück
+	
+	\begin{enumerate}[$\circ$]
+		\item \textit{ResponseEntity<List<Configuration>>} alle gespeicherten Konfigurationen (Rückgabe-Typ von Controller-Klassen)
+	\end{enumerate}
+\end{enumerate}

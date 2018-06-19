@@ -1,42 +1,64 @@
 \section{Klassenbeschreibung}
+\subsection{Übersicht}
+Die folgende Tabelle zeigt eine Übersicht aller Klassen des Klassendiagramms gruppiert nach den Blöcken im Architekturdiagramm.
 
-beschreibung aller Klassen
+\begin{table}[htbp]
+\begin{tabular}{p{10cm} c | llll}
+Frontend & Seite & Controller & Model & Import & Fehler und Log\\
+\hline
+uploadHandler & \pageref{uploadHandler}\\
+
+\end{tabular}
+\end{table}
 
 \input{content/klassen/js}
-\input{content/klassen/html}
-
 
 \input{content/klassen/configuration}
 \input{content/klassen/configmanagement}
 
-
 \input{content/klassen/uploadHandler}
-
-
 
 \input{content/klassen/Table/Interface-Table}
 \input{content/klassen/Table/Row-Table}
 \input{content/klassen/Table/Column-Table}
-\input{content/klassen/Converter/converter}
+
+\input{content/klassen/Converter/interface_Converter}
+\input{content/klassen/Converter/CSV_Converter}
+\input{content/klassen/Converter/Excel_Converter}
 
 \input{content/klassen/createObservations}
 \input{content/klassen/duplikat}
-\input{content/klassen/timeparser}
+\input{content/klassen/Parser/timeparser}
+\input{content/klassen/Parser/TableDataTypeParser}
 
 \input{content/klassen/skippedRow}
 \input{content/klassen/ErrorHandler}
 \input{content/klassen/LogManager}
 
-\input{content/klassen/EntityController}
-\input{content/klassen/ThingController}
-\input{content/klassen/DatastreamController}
-\input{content/klassen/LocationController}
-\input{content/klassen/SensorController}
-\input{content/klassen/ObservedPropertyController}
+\input{content/klassen/Entities/ValueCode}
+\input{content/klassen/Entities/Property}
+\input{content/klassen/Entities/Entity}
+\input{content/klassen/Entities/Thing}
+\input{content/klassen/Entities/Datastream}
+\input{content/klassen/Entities/Location}
+\input{content/klassen/Entities/Sensor}
+\input{content/klassen/Entities/ObservedProperty}
+\input{content/klassen/Entities/UnitOfMeasurement}
 
-\input{content/klassen/ConfigurationController}
-\input{content/klassen/ImportController}
-\input{content/klassen/SourceFileController}
+
+
+
+
+\input{content/klassen/Controller/EntityController}
+\input{content/klassen/Controller/ThingController}
+\input{content/klassen/Controller/DatastreamController}
+\input{content/klassen/Controller/LocationController}
+\input{content/klassen/Controller/SensorController}
+\input{content/klassen/Controller/ObservedPropertyController}
+
+\input{content/klassen/Controller/ConfigurationController}
+\input{content/klassen/Controller/ImportController}
+\input{content/klassen/Controller/SourceFileController}
 \input{content/klassen/FileManager}
 
 

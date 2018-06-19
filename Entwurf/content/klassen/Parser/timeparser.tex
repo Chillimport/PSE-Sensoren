@@ -1,0 +1,58 @@
+\subsection{TimeParser}
+
+
+Diese Klasse stellt die Funktionalität zur Konvertierung von Zeitformaten in das vom FROST-Server verwendete ZonedDateTime-Format bereit.
+Je nach (teilweise) schon bestehenden Zeitformaten sollen dafür verschiedene Methoden zur Verfügung stehen.
+
+\paragraph{Attribute}
+\paragraph{Methoden}
+
+\begin{enumerate}[+]
+\item \underline{\textit{toZonedDateTime(LocalDateTime time, ZoneId zone) : ZonedDateTime}}\\
+Erstellt eine ZonedDateTime aus einer LocalDateTime und Zeitzone
+
+\begin{enumerate}[$\bullet$]
+\item \textit{LocalDateTime time:} die LocalDateTime für die ZonedDateTime
+\item \textit{ZoneId zone:} die Zeitzone für die ZonedDateTime
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{ZonedDateTime:} die erstellte ZonedDateTime
+\end{enumerate}
+
+\item \underline{\textit{toLDT(String time, DateTimeFormatter format) : LocalDateTime}}\\
+Konvertiert einen String über das gegebene Format in die zugehörige LocalDateTime
+
+\begin{enumerate}[$\bullet$]
+\item \textit{String time:} der String, aus dem die Zeit erstellt wird
+\item \textit{DateTimeFormatter format:} das Format für den String
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{LocalDateTime:} die erstellte LocalDateTime
+\end{enumerate}
+
+\item \underline{\textit{toLDT(List<String> time, List<DateTimeFormatter> format) : LocalDateTime}}\\
+Konvertiert mehrere Strings über die Formate in die zugehörige LocalDatetime
+
+\begin{enumerate}[$\bullet$]
+\item \textit{List<String> time:} die Strings, aus denen die Zeit erstellt wird
+\item \textit{List<DateTimeFormatter> format:} die Formate für die Strings
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{LocalDateTime:} die erstellte LocalDateTime
+\end{enumerate}
+
+\item \underline{\textit{toZoneId(String zone) : ZoneId}}\\
+Konvertiert einen String in die zugehörige Zeitzone
+
+\begin{enumerate}[$\bullet$]
+\item \textit{String zone:} Zone als String
+\end{enumerate}
+\vspace{-0.2cm}
+\begin{enumerate}[$\circ$]
+\item \textit{ZoneId:} die erstellte ZoneId
+\end{enumerate}
+
+\end{enumerate}
