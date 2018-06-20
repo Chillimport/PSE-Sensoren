@@ -1,24 +1,23 @@
 \subsection{File-Manager}
 Die Klasse File-Management stellt die Funktionalität zum Abspeichern und Laden von Dateien zur Verfügung.
 
-\paragraph{Attribute}
-
 \paragraph{Methoden}
 
 \begin{enumerate}[+]
-	\item \textit{load(String path) : File} Lädt die gespeicherte Datei und gibt das File zurück
+	\item \textit{load(String path): File} Lädt die gespeicherte Datei und gibt das File zurück
 	\begin{enumerate}[$\bullet$]
 	\item \textit{String path:} Der Speicherpfad der Datei
 	\end{enumerate}
 	\begin{enumerate}[$\circ$]
 		\item \textit{File:} Die geladene Datei
 	\end{enumerate}
-	\item \textit{save(String path, File file) : int} Speichert ein File ab und gibt einen int als Statuscode zurück
+
+	\item \textit{save(String path, File file): Integer} Speichert ein File ab und gibt einen Integer als Statuscode zurück
 	\begin{enumerate}[$\bullet$]
-		\item \textit{String path:} Der Speicherpfad
-		\item \textit{File file:} Die zu schreibende Datei
+		\item \textit{String path}: Der Speicherpfad
+		\item \textit{File file}: Die zu schreibende Datei
 	\end{enumerate}
 	\begin{enumerate}[$\circ$]
-	\item \textit{File:} Die geladene Datei
+	\item \textit{Integer}: Der Statuscode
 	\end{enumerate}
 \end{enumerate}

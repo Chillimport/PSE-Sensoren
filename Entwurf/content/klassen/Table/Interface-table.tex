@@ -3,7 +3,7 @@
 \paragraph{Attribute}
 
 \begin{itemize}
-	\item[-] \textit{List{<List<Object>}> Table} \\
+	\item[-] \textit{table: List{<List<Object>}>} \\
 	Speichert die Daten der Tabelle, jedes Listenelement enthält eine weitere Liste, welche die Elemente der Tabelle hält. \\
 	In der Implementierung der abstrakten Klasse muss entschieden werden welche Liste die Spalten und welche Liste die Zeilen enthält.\\
 \end{itemize}
@@ -11,46 +11,46 @@
 \paragraph{Methoden}
 
 \begin{enumerate}[+]
-	\item \textit{<{<abstract>}> getElement(int row, int column): Object} \\
+	\item \textit{<{<abstract>}> getElement(Integer row, Integer column): Object} \\
 	Gibt ein einzelnes Element der Tabelle an der angegebenen Stelle zurück
 	\begin{enumerate}[$\bullet$]
-		\item \textit{int row}: Die Zeile an der das Element liegt, darf nicht NULL sein
-		\item \textit{int column}: Die Spalte an der das Element liegt, darf nicht NULL sein
+		\item \textit{Integer row}: Die Zeile an der das Element liegt, darf nicht NULL sein
+		\item \textit{Integer column}: Die Spalte an der das Element liegt, darf nicht NULL sein
 	\end{enumerate}
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
 		\item \textit{Object}: Das Element an der Stelle
 	\end{enumerate}
 	
-	\item \textit{<{<abstract>}> setElement(Object o, int row, int column): void} \\
+	\item \textit{<{<abstract>}> setElement(Object o, Integer row, Integer column): void} \\
 	Ersetzt ein Element der Tabelle mit einem neuen Element
 	\begin{enumerate}[$\bullet$]
 		\item \textit{Object o}: Das neue Element, darf NULL sein
-		\item \textit{int row}: Die Zeile des Elements
-		\item \textit{int column}: Die Spalte des Elements
+		\item \textit{Integer row}: Die Zeile des Elements
+		\item \textit{Integer column}: Die Spalte des Elements
 	\end{enumerate}
 	\vspace{-0.2cm}
 	
-	\item \textit{<{<abstract>}> remove(int row, int column): void} \\
+	\item \textit{<{<abstract>}> remove(Integer row, Integer column): void} \\
 	Ersetzt ein Element mit NULL
 	\begin{enumerate}[$\bullet$]
-		\item \textit{int row}: Die Zeile des Elements
-		\item \textit{int column}: Die Spalte des Elements
+		\item \textit{Integer row}: Die Zeile des Elements
+		\item \textit{Integer column}: Die Spalte des Elements
 	\end{enumerate}
 	\vspace{-0.2cm}
 	
-	\item \textit{<{<abstract>}> getRowCount(): int} \\
+	\item \textit{<{<abstract>}> getRowCount(): Integer} \\
 	Gibt die Anzahl Zeilen zurück
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
-		\item \textit{int}: Die Anzahl Zeilen
+		\item \textit{Integer}: Die Anzahl Zeilen
 	\end{enumerate}
 
-	\item \textit{<{<abstract>}> getColumnCount(): int} \\
+	\item \textit{<{<abstract>}> getColumnCount(): Integer} \\
 	Gibt die Anzahl Spalten zurück
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
-		\item \textit{int}: Die Anzahl Spalten
+		\item \textit{Integer}: Die Anzahl Spalten
 	\end{enumerate}
 
 	\item \textit{<{<abstract>}> clone(): Table} \\
