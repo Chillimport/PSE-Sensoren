@@ -12,14 +12,14 @@ Die Grobarchitektur der Software besteht aus einem Frontend, einem Backend und e
 \paragraph{Frontend}
 Die Webseite wird mit einer Model-View-Controller-Architektur (MVC) modelliert.
 Das Model verarbeitet und speichert demnach die Daten die genutzt werden.
-Im Controller wird gemanagt, welche Datei gerade angezeigt werden soll, und die View zeigt die Webseiten letztlich an.
+Im Controller wird gemanagt, welche Datei gerade angezeigt werden soll, und das View zeigt die Webseiten letztlich an.
 
 \paragraph{Backend}
 Das Backend ist zentraler Bestandteil der Software und enthält die Anwendungslogik.
 Für die Kommunikation mit der Webseite stehen die Controller zur Verfügung.
 Diese sind dafür zuständig Anfragen anzunehmen, zu überprüfen und an die passenden internen Komponenten weiterzugeben, sowie das Ergebnis passend aufzubereiten.\\
 
-Im Konfigurationsmanagement werden Konfigurationen, die vom Benutzer über die GUI erstellt werden, gespeichert, geladen und für andere Komponenten zur Verfügung gestellt.\\
+Im Konfigurationsmanagement werden Konfigurationen, die vom Benutzer über die GUI erstellt wurden, gespeichert, geladen und für andere Komponenten zur Verfügung gestellt.\\
 
 Die Hauptfunktionalität der Software, das Hochladen von Daten auf den FROST-Server, läuft über die DataImport-Komponente.
 Diese kann zur Verarbeitung der Daten auf andere Komponenten wie das Konfigurationsmanagement, die Konvertierung in ein internes Datenformat und das Erstellen der Observations (der Messwerte) zugreifen.
