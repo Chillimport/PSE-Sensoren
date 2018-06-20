@@ -1,78 +1,155 @@
 \section{Klassenbeschreibung}
 \subsection{Übersicht}
-Die folgende Tabelle zeigt eine Übersicht aller Klassen des Klassendiagramms gruppiert nach den Blöcken im Architekturdiagramm.
+Die folgende Tabelle zeigt eine Übersicht aller Klassen des Klassendiagramms gruppiert nach inhaltlichen Blöcken.
 
 \begin{table}[htbp]
 \begin{tabular}{p{5cm} c | p{5cm} c}
 Frontend & Seite & Controller & Seite\\
 \hline
-\nameref{MainWindow} & \pageref{MainWindow}\\
-DatastreamWindow & \pageref{DatastreamWindow}\\
-ThingWindow & \pageref{ThingWindow}\\
-SensorWindow & \pageref{SensorWindow}\\
-LocationWindow & \pageref{LocationWindow}\\
-MagicWindow & \pageref{MagicWindow}\\
-PropertyWindow & \pageref{PropertyWindow}
-
-\end{tabular}
-\begin{tabular}{p{8cm}}
+\nameref{MainWindow} & \pageref{MainWindow} & \hyperref[entCon]{EntityController} & \pageref{entCon}\\
+\nameref{DatastreamWindow} & \pageref{DatastreamWindow} & \nameref{thingCon} & \pageref{thingCon}\\
+\nameref{ThingWindow} & \pageref{ThingWindow} & \nameref{dataCon} & \pageref{dataCon}\\
+\nameref{SensorWindow} & \pageref{SensorWindow} & \nameref{locCon} & \pageref{locCon}\\
+\nameref{LocationWindow} & \pageref{LocationWindow} & \nameref{sensCon} & \pageref{sensCon}\\
+\nameref{MagicWindow} & \pageref{MagicWindow} & \nameref{ObsPCon} & \pageref{ObsPCon}\\
+\nameref{PropertyWindow} & \pageref{PropertyWindow} & \nameref{ConCon} & \pageref{ConCon}\\
+\  &\  & \nameref{ImpCon} & \pageref{ImpCon}\\
+\  &\  & \nameref{srcCon} & \pageref{srcCon}\\
+\  &\  & \nameref{htmlCon} & \pageref{htmlCon}
 
 \end{tabular}
 \end{table}
-%& Controller & Model & Import & Fehler und Log
+
+\vspace{-0.5cm}
+\begin{table}[!h]
+\begin{tabular}{p{5cm} c | p{5cm} c}
+Entities & Seite & Datenimport & Seite\\
+\hline
+\hyperref[valCode]{ValueCode} & \pageref{valCode} &\nameref{uploadHandler} & \pageref{uploadHandler}\\
+\hyperref[ent]{Entity} & \pageref{ent} &\hyperref[Table]{Table (Interface)} & \pageref{Table}\\
+\nameref{prop} & \pageref{prop} &\hyperref[rowtable]{RowTable} & \pageref{rowtable}\\
+\nameref{thing} & \pageref{thing} &\hyperref[colTable]{ColumnTable} & \pageref{colTable}\\
+\nameref{data} & \pageref{data} &\hyperref[conv]{Converter (Interface)} & \pageref{conv}\\
+\nameref{loc} & \pageref{loc} &\hyperref[csvConv]{CSVConverter} & \pageref{csvConv}\\
+\nameref{sensor} & \pageref{sensor} &\hyperref[excelConv]{ExcelConverter} & \pageref{excelConv}\\
+\nameref{oprop} & \pageref{oprop} &\nameref{obsCreator} & \pageref{obsCreator}\\
+\nameref{uom} & \pageref{uom} &\nameref{dupl} & \pageref{dupl}\\
+\ & \ &\nameref{timeParser} & \pageref{timeParser}\\
+\ & \ &\nameref{tableParser} & \pageref{tableParser}
+\end{tabular}
+\end{table}
+
+\vspace{-0.5cm}
+\begin{table}[!h]
+\begin{tabular}{p{5cm} c | p{5cm} c}
+Konfiguration & Seite & Log- und ErrorHandling & Seite\\
+\hline
+\nameref{strCol} & \pageref{strCol} & \nameref{srow} & \pageref{srow}\\
+\nameref{strObs} & \pageref{strObs} & \nameref{error} & \pageref{error}\\
+\nameref{zoneCol} & \pageref{zoneCol} & \nameref{log} & \pageref{log}\\
+\nameref{config} & \pageref{config} & \nameref{fileman} & \pageref{fileman}\\
+\nameref{magic} & \pageref{magic} & \ & \ \\
+\nameref{magicMap} & \pageref{magicMap} & \ & \ \\
+\nameref{confman} & \pageref{confman} & \ & \ \\
+
+\end{tabular}
+\end{table}
+
 \clearpage
 \subsection{Frontend}
 \input{content/klassen/js}
 
+\clearpage
 \subsection{Controller}
-\input{content/klassen/configuration}
-\input{content/klassen/magicnumbers}
-\input{content/klassen/configmanagement}
+\input{content/klassen/Controller/EntityController}
+\clearpage
+\input{content/klassen/Controller/ThingController}
+\clearpage
+\input{content/klassen/Controller/DatastreamController}
+\clearpage
+\input{content/klassen/Controller/LocationController}
+\clearpage
+\input{content/klassen/Controller/SensorController}
+\clearpage
+\input{content/klassen/Controller/ObservedPropertyController}
+\clearpage
+
+\input{content/klassen/Controller/ConfigurationController}
+\clearpage
+\input{content/klassen/Controller/ImportController}
+\clearpage
+\input{content/klassen/Controller/SourceFileController}
+\clearpage
+\input{content/klassen/Controller/HTMLController}
+
+\clearpage
+\subsection{Entities}
+
+\input{content/klassen/Entities/ValueCode}
+\input{content/klassen/Entities/Entity}
+\clearpage
+\input{content/klassen/Entities/Property}
+\clearpage
+\input{content/klassen/Entities/Thing}
+\clearpage
+\input{content/klassen/Entities/Datastream}
+\clearpage
+\input{content/klassen/Entities/Location}
+\clearpage
+\input{content/klassen/Entities/Sensor}
+\clearpage
+\input{content/klassen/Entities/ObservedProperty}
+\clearpage
+\input{content/klassen/Entities/UnitOfMeasurement}
+
+\clearpage
+\subsection{Datenimport}
 
 \input{content/klassen/uploadHandler}
 
+\clearpage
 \input{content/klassen/Table/Interface-Table}
+\clearpage
 \input{content/klassen/Table/Row-Table}
+\clearpage
 \input{content/klassen/Table/Column-Table}
 
+\clearpage
 \input{content/klassen/Converter/interface_Converter}
+\clearpage
 \input{content/klassen/Converter/CSV_Converter}
+\clearpage
 \input{content/klassen/Converter/Excel_Converter}
 
+\clearpage
 \input{content/klassen/createObservations}
+\clearpage
 \input{content/klassen/duplikat}
+\clearpage
 \input{content/klassen/Parser/timeparser}
+\clearpage
 \input{content/klassen/Parser/TableDataTypeParser}
 
+\clearpage
+\subsection{Konfigurationen}
+
+
+\input{content/klassen/configuration}
+\clearpage
+\input{content/klassen/magicnumbers}
+\clearpage
+\input{content/klassen/configmanagement}
+
+
+\clearpage
+\subsection{Log- und ErrorHandling}
+
 \input{content/klassen/skippedRow}
+\clearpage
 \input{content/klassen/ErrorHandler}
+\clearpage
 \input{content/klassen/LogManager}
-
-\input{content/klassen/Entities/ValueCode}
-\input{content/klassen/Entities/Property}
-\input{content/klassen/Entities/Entity}
-\input{content/klassen/Entities/Thing}
-\input{content/klassen/Entities/Datastream}
-\input{content/klassen/Entities/Location}
-\input{content/klassen/Entities/Sensor}
-\input{content/klassen/Entities/ObservedProperty}
-\input{content/klassen/Entities/UnitOfMeasurement}
-
-
-
-
-
-\input{content/klassen/Controller/EntityController}
-\input{content/klassen/Controller/ThingController}
-\input{content/klassen/Controller/DatastreamController}
-\input{content/klassen/Controller/LocationController}
-\input{content/klassen/Controller/SensorController}
-\input{content/klassen/Controller/ObservedPropertyController}
-
-\input{content/klassen/Controller/ConfigurationController}
-\input{content/klassen/Controller/ImportController}
-\input{content/klassen/Controller/SourceFileController}
-\input{content/klassen/Controller/HTMLController}
+\clearpage
 \input{content/klassen/FileManager}
 
 
