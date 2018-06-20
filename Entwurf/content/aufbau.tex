@@ -12,8 +12,8 @@
 
 \paragraph{Frontend}
 Die Webseite wird mit einer Model-View-Controller-Architektur (MVC) modelliert.\\
-Das Model verarbeitet und speichert demnach die Daten die genutzt werden.\\
-Im Controller wird gemanagt, welche Datei gerade angezeigt werden soll, und das View zeigt die Webseiten letztlich an.
+Zum Einen stehen Skript-Klassen auf der Webseite zur Verfügung, die verschiedene Funtkionen realisieren und deren Daten speichern.
+Zum Anderen gibt es Anzeige-Klassen die eine interaktive graphische Oberfläche zu diesen Funktionen bereitstellen.Dabei existiert für jede Skript-Klasse genau eine Anzeigeklasse.
 
 \paragraph{Backend}
 Das Backend ist zentraler Bestandteil der Software und enthält die Anwendungslogik.\\
@@ -27,6 +27,8 @@ Diese kann zur Verarbeitung der Daten auf andere Komponenten wie das Konfigurati
 Mit der Duplikatsüberprüfung kann für eine gegebene Observation überprüft werden, ob diese schon auf dem Server existiert.\\
 Neben dem Hochladen der Daten lässt sich über die Preview-Komponente auch das Anwenden der bestehenden Konfiguration auf die Daten der Quelldatei ansehen.\\
 Sie muss im Gegensatz zum wirklichen Hochladen jedoch keine Observations auf dem FROST-Server erstellen.\\
+
+\noindent Fehler und Logmanagement sind von allen Klassen aus ansprechbar und halten aufgetretene Fehler oder Benachrichtigungen für den User fest.
 
 \noindent Zusätzlich besteht für die Controller noch Zugriff auf Komponenten zur Erstellung von Entities bzw. Abfragen von bestehenden Entities auf dem FROST-Server.\\
 Sämtliche Kommunikation mit dem FROST-Server läuft dabei über den FROST-Client, einer existierenden Bibliothek zur Vereinfachung der Kommunikation mit dem FROST-Server.\\
