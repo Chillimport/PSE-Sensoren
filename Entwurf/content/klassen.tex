@@ -1,6 +1,6 @@
 \section{Klassenbeschreibung}
 \subsection{Übersicht}
-Die folgende Tabelle zeigt eine Übersicht aller Klassen des Klassendiagramms gruppiert nach den Blöcken im Architekturdiagramm.
+Die folgende Tabelle zeigt eine Übersicht aller Klassen des Klassendiagramms gruppiert nach inhaltlichen Blöcken.
 
 \begin{table}[htbp]
 \begin{tabular}{p{5cm} c | p{5cm} c}
@@ -26,8 +26,8 @@ Frontend & Seite & Controller & Seite\\
 Entities & Seite & Datenimport & Seite\\
 \hline
 \hyperref[valCode]{ValueCode} & \pageref{valCode} &\nameref{uploadHandler} & \pageref{uploadHandler}\\
-\nameref{prop} & \pageref{prop} &\hyperref[Table]{Table (Interface)} & \pageref{Table}\\
-\hyperref[ent]{Entity} & \pageref{ent} &\hyperref[rowtable]{RowTable} & \pageref{rowtable}\\
+\hyperref[ent]{Entity} & \pageref{ent} &\hyperref[Table]{Table (Interface)} & \pageref{Table}\\
+\nameref{prop} & \pageref{prop} &\hyperref[rowtable]{RowTable} & \pageref{rowtable}\\
 \nameref{thing} & \pageref{thing} &\hyperref[colTable]{ColumnTable} & \pageref{colTable}\\
 \nameref{data} & \pageref{data} &\hyperref[conv]{Converter (Interface)} & \pageref{conv}\\
 \nameref{loc} & \pageref{loc} &\hyperref[csvConv]{CSVConverter} & \pageref{csvConv}\\
@@ -59,63 +59,97 @@ Konfiguration & Seite & Log- und ErrorHandling & Seite\\
 \subsection{Frontend}
 \input{content/klassen/js}
 
+\clearpage
 \subsection{Controller}
 \input{content/klassen/Controller/EntityController}
+\clearpage
 \input{content/klassen/Controller/ThingController}
+\clearpage
 \input{content/klassen/Controller/DatastreamController}
+\clearpage
 \input{content/klassen/Controller/LocationController}
+\clearpage
 \input{content/klassen/Controller/SensorController}
+\clearpage
 \input{content/klassen/Controller/ObservedPropertyController}
+\clearpage
 
 \input{content/klassen/Controller/ConfigurationController}
+\clearpage
 \input{content/klassen/Controller/ImportController}
+\clearpage
 \input{content/klassen/Controller/SourceFileController}
+\clearpage
 \input{content/klassen/Controller/HTMLController}
 
+\clearpage
 \subsection{Entities}
 
 \input{content/klassen/Entities/ValueCode}
-\input{content/klassen/Entities/Property}
 \input{content/klassen/Entities/Entity}
+\clearpage
+\input{content/klassen/Entities/Property}
+\clearpage
 \input{content/klassen/Entities/Thing}
+\clearpage
 \input{content/klassen/Entities/Datastream}
+\clearpage
 \input{content/klassen/Entities/Location}
+\clearpage
 \input{content/klassen/Entities/Sensor}
+\clearpage
 \input{content/klassen/Entities/ObservedProperty}
+\clearpage
 \input{content/klassen/Entities/UnitOfMeasurement}
 
-
+\clearpage
 \subsection{Datenimport}
 
 \input{content/klassen/uploadHandler}
 
+\clearpage
 \input{content/klassen/Table/Interface-Table}
+\clearpage
 \input{content/klassen/Table/Row-Table}
+\clearpage
 \input{content/klassen/Table/Column-Table}
 
+\clearpage
 \input{content/klassen/Converter/interface_Converter}
+\clearpage
 \input{content/klassen/Converter/CSV_Converter}
+\clearpage
 \input{content/klassen/Converter/Excel_Converter}
 
+\clearpage
 \input{content/klassen/createObservations}
+\clearpage
 \input{content/klassen/duplikat}
+\clearpage
 \input{content/klassen/Parser/timeparser}
+\clearpage
 \input{content/klassen/Parser/TableDataTypeParser}
 
-
+\clearpage
 \subsection{Konfigurationen}
 
 
 \input{content/klassen/configuration}
+\clearpage
 \input{content/klassen/magicnumbers}
+\clearpage
 \input{content/klassen/configmanagement}
 
 
+\clearpage
 \subsection{Log- und ErrorHandling}
 
 \input{content/klassen/skippedRow}
+\clearpage
 \input{content/klassen/ErrorHandler}
+\clearpage
 \input{content/klassen/LogManager}
+\clearpage
 \input{content/klassen/FileManager}
 
 
