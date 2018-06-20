@@ -1,4 +1,4 @@
-\subsection{Logmanager}
+\subsection{LogManager}
 
 \paragraph{Beschreibung}
 Diese Klasse implementiert das Log-Fenster und hält es auf dem Laufenden.
@@ -6,10 +6,10 @@ Außerdem werden alle Imports in ein permanentes (seperates) Log geschrieben.
 
 \paragraph{Attribute}
 \begin{enumerate}[$\bullet$]
-	\item \underline{\textit{final LogManager logManager}}  Die einzige LogManager-Instanz
-	\item \textit{Logger log} Die Java-Logger Instanz
-	\item \textit{FileHandler txtFile} Text-File in die geschrieben wird
-	\item \textit{SimpleFormatter formatter} Text-Formatter des Java logging Pakets
+	\item \underline{\textit{LOG_MANAGER: LogManager}}:  Die einzige LogManager-Instanz
+	\item \textit{log: Logger} Die Java-Logger Instanz
+	\item \textit{txtFile: FileHandler} Text-File in die geschrieben wird
+	\item \textit{formatter: SimpleFormatter} Text-Formatter des Java-Logging-Pakets
 \end{enumerate}
 
 \paragraph{Konstruktoren}
@@ -23,30 +23,33 @@ Außerdem werden alle Imports in ein permanentes (seperates) Log geschrieben.
 
 \begin{enumerate}[+]
 
-	\item \underline{\textit{getInstance() : LogManager}}  \\ Verweist auf den einmaligen LogManager
+	\item \underline{\textit{getInstance(): LogManager}} \\
+	Verweist auf den einmaligen LogManager
 	
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
-		\item \textit{LogManager} \\ Die LogManager-Instanz
+		\item \textit{LogManager} \\
+		Die LogManager-Instanz
 	\end{enumerate}
 
-\item \textit{writeToLog(String message, boolean severe)} \\ Schreibt <msg> als Info in das Log wenn <severe> false ist,
-sonst als severe.
-\begin{enumerate}[$\bullet$]
-\item \textit{String message} Die zu schreibende Nachricht
-\item \textit{boolean severe} Ob die Nachricht dringend ist oder nicht
-\end{enumerate}
+	\item \textit{writeToLog(String message, boolean severe)} \\
+	Schreibt <msg> als Info in das Log wenn <severe> false ist, sonst als severe.
+	\begin{enumerate}[$\bullet$]
+		\item \textit{String message} Die zu schreibende Nachricht
+		\item \textit{boolean severe} Ob die Nachricht dringend ist oder nicht
+	\end{enumerate}
 \end{enumerate}
 
 
 \begin{enumerate}[$-$]
 
-\item \textit{initLog()} \\ Initialisiert einen Java-Logger
-\vspace{-0.2cm}
+	\item \textit{initLog()} \\ Initialisiert einen neuen Java-Logger
+	\vspace{-0.2cm}
 
-\item \textit{getLogger() : Logger} \\ Gibt die Java-Logger-Instanz zurück
-\begin{enumerate}[$\circ$]
-	\item Logger
-\end{enumerate}
+	\item \textit{getLogger() : Logger} \\
+	Gibt die Java-Logger-Instanz zurück
+	\begin{enumerate}[$\circ$]
+		\item \textit{Logger}: Die Logger-Instanz
+	\end{enumerate}
 \end{enumerate}
 	
