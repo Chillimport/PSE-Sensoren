@@ -2,30 +2,29 @@
 \label{uploadHandler}
 Die Klasse UploadHandler ist für die Überwachung des Ablaufs eines Imports von Daten aus einem File auf den FROST-Server zuständig.
 
-\paragraph{Attribute}
 \paragraph{Methoden}
 \begin{enumerate}[+]
-\item \textit{upload(String filename, Configuration config) : int}
+\item \textit{upload(String filename, Configuration config) : Integer}
 Lädt die Quelldatei mit dem Namen filename über den FileManager und verwaltet den Upload von Daten auf den FROST-Server mithilfe der Konfiguration.
 \begin{enumerate}[$\bullet$]
-\item \textit{filename:} Name der Quelldatei
-\item \textit{config:} Konfiguration für die Quelldatei 
+\item \textit{String filename:} Name der Quelldatei
+\item \textit{COnfiguration config:} Konfiguration für die Quelldatei 
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]
-\item \textit{int:} StatusCode für die Methode
+\item \textit{Integer}: StatusCode für die Methode
 \end{enumerate}
 \end{enumerate}
 
 \begin{enumerate}[$-$]
-\item \textit{processTable(Configuration config, Table table, int amount) : int} Liest zeilenweise Daten aus der internen Table-Darstellung und verarbeitet sie zu Observations, um sie dann auf den FROST-Server hochzuladen. Prüft die Observations vorher auf Duplikate.
+\item \textit{processTable(Configuration config, Table table, Integer amount) : Integer} Liest zeilenweise Daten aus der internen Table-Darstellung und verarbeitet sie zu Observations, um sie dann auf den FROST-Server hochzuladen. Prüft die Observations vorher auf Duplikate.
 \begin{enumerate}[$\bullet$]
-\item \textit{config:} Konfiguration für die Verarbeitung
-\item \textit{table:} interne Darstellung der Daten aus der Quelldatei
-\item \textit{amount:} Anzahl gleichzeitig abzuarbeitender Zeilen
+\item \textit{Configuration config:} Konfiguration für die Verarbeitung
+\item \textit{Table table:} interne Darstellung der Daten aus der Quelldatei
+\item \textit{Integer amount:} Anzahl gleichzeitig abzuarbeitender Zeilen
 \end{enumerate}
 \vspace{-0.2cm}
 \begin{enumerate}[$\circ$]
-\item \textit{int:} StatusCode für den Erfolg dieser Operation
+\item \textit{Integer}: StatusCode für den Erfolg dieser Operation
 \end{enumerate}
 \end{enumerate}
