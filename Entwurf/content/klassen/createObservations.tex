@@ -7,74 +7,71 @@ Diese werden jedoch noch nicht auf den FROST-Server hochgeladen.
 \paragraph{Methoden}
 
 \begin{enumerate}[+]
-\item \underline{\textit{create(Datastream stream, Object result, ZonedDateTime time) : Observation}}\\
-Erstellt eine Observation aus Result und Beobachtungszeit für einen Datastream und gibt diese zurück
 
-\begin{enumerate}[$\bullet$]
-\item \textit{Datastream stream:} Datastream der Observation
-\item \textit{Object result:} Ergebnis/Wert der Observation
-\item \textit{ZonedDateTime time:} Beobachtungszeit der Observation
-\end{enumerate}
-\vspace{-0.2cm}
-\begin{enumerate}[$\circ$]
-\item \textit{Observation:} die erstellte Observation
-\end{enumerate}
-
-\item \underline{\textit{create(MultiDatastream stream, Object result, ZonedDateTime time) : Observation}}\\
-Erstellt eine Observation aus Result und Beobachtungszeit für einen MultiDatastream und gibt diese zurück
-
-\begin{enumerate}[$\bullet$]
-\item \textit{MultiDatastream stream:} MultiDatastream der Observation
-\item \textit{Object result:} Ergebnis/Wert der Observation
-\item \textit{ZonedDateTime time:} Beobachtungszeit der Observation
-\end{enumerate}
-\vspace{-0.2cm}
-\begin{enumerate}[$\circ$]
-\item \textit{Observation:} die erstellte Observation
-\end{enumerate}
-
-\item \underline{\textit{create(Datastream stream, Object result, ZonedDateTime pTime,}}\\
-\underline{\textit{ ZonedDateTime rTime) : Observation}}\\
-Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen Datastream und gibt diese zurück
-
-\begin{enumerate}[$\bullet$]
-\item \textit{Datastream stream:} Datastream der Observation
-\item \textit{Object result:} Ergebnis/Wert der Observation
-\item \textit{ZonedDateTime pTime:} Beobachtungszeit der Observation
-\item \textit{ZonedDateTime rTime:} Zeit, bei der das Ergebnis der Observation eingetragen wurde
-\end{enumerate}
-\vspace{-0.2cm}
-\begin{enumerate}[$\circ$]
-\item \textit{Observation:} die erstellte Observation
-\end{enumerate}
-
-
-\item \underline{\textit{create(MultiDatastream stream, Object result, ZonedDateTime pTime,}}\\
-\underline{\textit{ZonedDateTime rTime) : Observation}}\\
-Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen MultiDatastream und gibt diese zurück
-
-\begin{enumerate}[$\bullet$]
-\item \textit{MultiDatastream stream:} MultiDatastream der Observation
-\item \textit{Object result:} Ergebnis/Wert der Observation
-\item \textit{ZonedDateTime pTime:} Beobachtungszeit der Observation
-\item \textit{ZonedDateTime rTime:} Zeit, bei der das Ergebnis der Observation eingetragen wurde
-\end{enumerate}
-\vspace{-0.2cm}
-\begin{enumerate}[$\circ$]
-\item \textit{Observation:} die erstellte Observation
-\end{enumerate}
-
-\item \underline{\textit{combineResults(List<Object> results) : Object}}\\
-Erstellt aus mehreren Objects ein einzelnes, um es als Result für eine Observation verwenden zu können
-
-
-\begin{enumerate}[$\bullet$]
-\item \textit{List<Object> results:} Ergebnisse/Werte der Observation
-\end{enumerate}
-\vspace{-0.2cm}
-\begin{enumerate}[$\circ$]
-\item \textit{Object:} zu einem Object zusammengefasste Werte
-\end{enumerate}
-
-
+	\item \underline{\textit{create(Datastream stream, Object result, ZonedDateTime time) : Observation}} \\
+	Erstellt eine Observation aus Result und Beobachtungszeit für einen Datastream und gibt diese zurück	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{Datastream stream:} Datastream der Observation
+		\item \textit{Object result:} Ergebnis/Wert der Observation
+		\item \textit{ZonedDateTime time:} Beobachtungszeit der Observation
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{Observation:} die erstellte Observation
+	\end{enumerate}
+	
+	\item \underline{\textit{create(MultiDatastream stream, Object result, ZonedDateTime time) : Observation}} \\
+	Erstellt eine Observation aus Result und Beobachtungszeit für einen MultiDatastream und gibt diese zurück	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{MultiDatastream stream:} MultiDatastream der Observation
+		\item \textit{Object result:} Ergebnis/Wert der Observation
+		\item \textit{ZonedDateTime time:} Beobachtungszeit der Observation
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{Observation:} die erstellte Observation
+	\end{enumerate}
+	
+	\item \underline{\textit{create(Datastream stream, Object result, ZonedDateTime pTime,}} \\
+	\underline{\textit{ ZonedDateTime rTime) : Observation}}\\
+	Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen Datastream und gibt diese zurück
+	\begin{enumerate}[$\bullet$]
+		\item \textit{Datastream stream:} Datastream der Observation
+		\item \textit{Object result:} Ergebnis/Wert der Observation
+		\item \textit{ZonedDateTime pTime:} Beobachtungszeit der Observation
+		\item \textit{ZonedDateTime rTime:} Zeit, bei der das Ergebnis der Observation eingetragen wurde
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{Observation:} die erstellte Observation
+	\end{enumerate}
+	
+	
+	\item \underline{\textit{create(MultiDatastream stream, Object result, ZonedDateTime pTime,}}\\
+	\underline{\textit{ZonedDateTime rTime) : Observation}}\\
+	Erstellt eine Observation aus Result, Beobachtungszeit und Verarbeitungszeit für einen MultiDatastream und gibt diese zurück
+	\begin{enumerate}[$\bullet$]
+		\item \textit{MultiDatastream stream:} MultiDatastream der Observation
+		\item \textit{Object result:} Ergebnis/Wert der Observation
+		\item \textit{ZonedDateTime pTime:} Beobachtungszeit der Observation
+		\item \textit{ZonedDateTime rTime:} Zeit, bei der das Ergebnis der Observation eingetragen wurde
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{Observation:} die erstellte Observation
+	\end{enumerate}
+	
+	\item \underline{\textit{combineResults(List<Object> results) : Object}}\\
+	Erstellt aus mehreren Objects ein einzelnes, um es als Result für eine Observation verwenden zu können
+	
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{List<Object> results:} Ergebnisse/Werte der Observation
+	\end{enumerate}
+	\vspace{-0.2cm}
+	\begin{enumerate}[$\circ$]
+		\item \textit{Object:} zu einem Object zusammengefasste Werte
+	\end{enumerate}
+	
+	
 \end{enumerate}
