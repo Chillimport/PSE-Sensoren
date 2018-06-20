@@ -22,9 +22,9 @@ Diese sind dafür zuständig Anfragen anzunehmen, zu überprüfen und an die pas
 
 \noindent Im Konfigurationsmanagement werden Konfigurationen, die vom Benutzer über die GUI erstellt wurden, gespeichert, geladen und für andere Komponenten zur Verfügung gestellt.\\
 
-\noindent Die Hauptfunktionalität der Software, das Hochladen von Daten auf den FROST-Server, läuft über die DataImport-Komponente.\\
-Diese kann zur Verarbeitung der Daten auf andere Komponenten wie das Konfigurationsmanagement, die Konvertierung in ein internes Datenformat und das Erstellen der Observations (der Messwerte) zugreifen.\\
-Mit der Duplikatsüberprüfung kann für eine gegebene Entität überprüft werden, ob diese schon auf dem Server existiert.\\
+\noindent Die Hauptfunktionalität der Software, das Hochladen von Daten auf den FROST-Server, läuft über die UploadHandler-Komponente.\\
+Diese kann zur Verarbeitung der Daten auf andere Komponenten wie das Konfigurations- und das File-Management, die Konvertierung in ein internes Datenformat und das Erstellen der Observations (der Messwerte) zugreifen.\\
+Mit der Duplikatsüberprüfung kann für eine gegebene Observation überprüft werden, ob diese schon auf dem Server existiert.\\
 Neben dem Hochladen der Daten lässt sich über die Preview-Komponente auch das Anwenden der bestehenden Konfiguration auf die Daten der Quelldatei ansehen.\\
 Sie muss im Gegensatz zum wirklichen Hochladen jedoch keine Observations auf dem FROST-Server erstellen.\\
 
