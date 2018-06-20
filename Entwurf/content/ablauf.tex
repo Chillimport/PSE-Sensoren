@@ -16,6 +16,13 @@ Diese werden mit der CheckDuplicate-Klasse auf Duplikate im FROST-Server überpr
 \caption{Sequenzdiagramm zum Import von Daten auf den FROST-Server}
 \end{figure}
 
+\subsubsection{Zeilenverarbeitung}
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.4]{uml/SD_row.eps}
+\caption{Sequenzdiagramm für die Verarbeitung einer Zeile aus der internen Darstellung zu einer Observation}
+\end{figure}
+
 \clearpage
 \subsection{Konfiguration speichern}
 Das folgende Sequenzdiagramm beschreibt den Ablauf für das Speichern einer Konfiguration.
@@ -57,4 +64,23 @@ Dazu ruft er erneut den SensorThingsService auf und gibt nach Ausführung der Op
 \centering
 \includegraphics[scale=0.4]{uml/SD_createThing.eps}
 \caption{Sequenzdiagramm zum Erstellen eines Things auf dem FROST-Server}
+\end{figure}
+
+\clearpage
+\subsection{Quelldatei wählen}
+
+Das Sequenzdiagramm wird dargestellt, was beim Erstellen eines Things passiert.
+Das Erstellen anderer Entitities verläuft analog.
+Beim Klicken auf den "{Create Thing}"{-Button} reagiert das MainWindow und öffnet einen Dialog zum Erstellen des Things.
+Dort lassen sich die Eigenschaften des Things vom Benutzer festlegen.
+Beim Auswahl der Location werden die Vorschläge über die Funktion chooseLocation() aktualisiert.
+Dazu wird eine Anfrage an den SensorThingsService gestellt, um alle bestehenden Locations abzufragen.
+Mit diesen werden dem Benutzer Vorschläge für eine Location angezeigt.
+Nach dem der Benutzer eine Location gewählt und den den "{Create}"{-Button} gedrückt hat, wird der ThingController aufgerufen, um das Thing zu erstellen.
+Dazu ruft er erneut den SensorThingsService auf und gibt nach Ausführung der Operation einen StatusCode zurück, um das Ergebnis der Operation zu beschreiben.
+
+\begin{figure}[htbp]
+\centering
+\includegraphics[scale=0.4]{uml/SD_sourceFile.eps}
+\caption{Sequenzdiagramm zum Auswählen einer Quelldatei}
 \end{figure}
