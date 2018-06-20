@@ -3,17 +3,28 @@
 Die folgende Tabelle zeigt eine Übersicht aller Klassen des Klassendiagramms gruppiert nach den Blöcken im Architekturdiagramm.
 
 \begin{table}[htbp]
-\begin{tabular}{p{10cm} c | llll}
-Frontend & Seite & Controller & Model & Import & Fehler und Log\\
+\begin{tabular}{p{5cm} c | p{5cm} c}
+Frontend & Seite & Controller & Seite\\
 \hline
-uploadHandler & \pageref{uploadHandlt pull
-	 puler}\\
+\nameref{MainWindow} & \pageref{MainWindow}\\
+DatastreamWindow & \pageref{DatastreamWindow}\\
+ThingWindow & \pageref{ThingWindow}\\
+SensorWindow & \pageref{SensorWindow}\\
+LocationWindow & \pageref{LocationWindow}\\
+MagicWindow & \pageref{MagicWindow}\\
+PropertyWindow & \pageref{PropertyWindow}
+
+\end{tabular}
+\begin{tabular}{p{8cm}}
 
 \end{tabular}
 \end{table}
-
+%& Controller & Model & Import & Fehler und Log
+\clearpage
+\subsection{Frontend}
 \input{content/klassen/js}
 
+\subsection{Controller}
 \input{content/klassen/configuration}
 \input{content/klassen/magicnumbers}
 \input{content/klassen/configmanagement}
