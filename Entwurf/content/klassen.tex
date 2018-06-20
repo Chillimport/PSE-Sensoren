@@ -6,28 +6,86 @@ Die folgende Tabelle zeigt eine Übersicht aller Klassen des Klassendiagramms gr
 \begin{tabular}{p{5cm} c | p{5cm} c}
 Frontend & Seite & Controller & Seite\\
 \hline
-\nameref{MainWindow} & \pageref{MainWindow}\\
-DatastreamWindow & \pageref{DatastreamWindow}\\
-ThingWindow & \pageref{ThingWindow}\\
-SensorWindow & \pageref{SensorWindow}\\
-LocationWindow & \pageref{LocationWindow}\\
-MagicWindow & \pageref{MagicWindow}\\
-PropertyWindow & \pageref{PropertyWindow}
-
-\end{tabular}
-\begin{tabular}{p{8cm}}
+\nameref{MainWindow} & \pageref{MainWindow} & \hyperref[entCon]{EntityController} & \pageref{entCon}\\
+\nameref{DatastreamWindow} & \pageref{DatastreamWindow} & \nameref{thingCon} & \pageref{thingCon}\\
+\nameref{ThingWindow} & \pageref{ThingWindow} & \nameref{dataCon} & \pageref{dataCon}\\
+\nameref{SensorWindow} & \pageref{SensorWindow} & \nameref{locCon} & \pageref{locCon}\\
+\nameref{LocationWindow} & \pageref{LocationWindow} & \nameref{sensCon} & \pageref{sensCon}\\
+\nameref{MagicWindow} & \pageref{MagicWindow} & \nameref{ObsPCon} & \pageref{ObsPCon}\\
+\nameref{PropertyWindow} & \pageref{PropertyWindow} & \nameref{ConCon} & \pageref{ConCon}\\
+\  &\  & \nameref{ImpCon} & \pageref{ImpCon}\\
+\  &\  & \nameref{srcCon} & \pageref{srcCon}\\
+\  &\  & \nameref{htmlCon} & \pageref{htmlCon}
 
 \end{tabular}
 \end{table}
-%& Controller & Model & Import & Fehler und Log
+
+\vspace{-0.5cm}
+\begin{table}[!h]
+\begin{tabular}{p{5cm} c | p{5cm} c}
+Entities & Seite & Datenimport & Seite\\
+\hline
+\hyperref[valCode]{ValueCode} & \pageref{valCode} &\nameref{uploadHandler} & \pageref{uploadHandler}\\
+\nameref{prop} & \pageref{prop} &\hyperref[Table]{Table (Interface)} & \pageref{Table}\\
+\hyperref[ent]{Entity} & \pageref{ent} &\hyperref[rowtable]{RowTable} & \pageref{rowtable}\\
+\nameref{thing} & \pageref{thing} &\hyperref[colTable]{ColumnTable} & \pageref{colTable}\\
+\nameref{data} & \pageref{data} &\hyperref[conv]{Converter (Interface)} & \pageref{conv}\\
+\nameref{loc} & \pageref{loc} &\hyperref[csvConv]{CSVConverter} & \pageref{csvConv}\\
+\nameref{sensor} & \pageref{sensor} &\hyperref[excelConv]{ExcelConverter} & \pageref{excelConv}\\
+\nameref{oprop} & \pageref{oprop} &\nameref{obsCreator} & \pageref{obsCreator}\\
+\nameref{uom} & \pageref{uom} &\nameref{dupl} & \pageref{dupl}\\
+\ & \ &\nameref{timeParser} & \pageref{timeParser}\\
+\ & \ &\nameref{tableParser} & \pageref{tableParser}
+\end{tabular}
+\end{table}
+
+\vspace{-0.5cm}
+\begin{table}[!h]
+\begin{tabular}{p{5cm} c | p{5cm} c}
+Konfiguration & Seite & Log- und ErrorHandling & Seite\\
+\hline
+\nameref{strCol} & \pageref{strCol} & \nameref{srow} & \pageref{srow}\\
+\nameref{strObs} & \pageref{strObs} & \nameref{error} & \pageref{error}\\
+\nameref{zoneCol} & \pageref{zoneCol} & \nameref{log} & \pageref{log}\\
+\nameref{config} & \pageref{config} & \nameref{fileman} & \pageref{fileman}\\
+\nameref{magic} & \pageref{magic} & \ & \ \\
+\nameref{magicMap} & \pageref{magicMap} & \ & \ \\
+\nameref{confman} & \pageref{confman} & \ & \ \\
+
+\end{tabular}
+\end{table}
+
 \clearpage
 \subsection{Frontend}
 \input{content/klassen/js}
 
 \subsection{Controller}
-\input{content/klassen/configuration}
-\input{content/klassen/magicnumbers}
-\input{content/klassen/configmanagement}
+\input{content/klassen/Controller/EntityController}
+\input{content/klassen/Controller/ThingController}
+\input{content/klassen/Controller/DatastreamController}
+\input{content/klassen/Controller/LocationController}
+\input{content/klassen/Controller/SensorController}
+\input{content/klassen/Controller/ObservedPropertyController}
+
+\input{content/klassen/Controller/ConfigurationController}
+\input{content/klassen/Controller/ImportController}
+\input{content/klassen/Controller/SourceFileController}
+\input{content/klassen/Controller/HTMLController}
+
+\subsection{Entities}
+
+\input{content/klassen/Entities/ValueCode}
+\input{content/klassen/Entities/Property}
+\input{content/klassen/Entities/Entity}
+\input{content/klassen/Entities/Thing}
+\input{content/klassen/Entities/Datastream}
+\input{content/klassen/Entities/Location}
+\input{content/klassen/Entities/Sensor}
+\input{content/klassen/Entities/ObservedProperty}
+\input{content/klassen/Entities/UnitOfMeasurement}
+
+
+\subsection{Datenimport}
 
 \input{content/klassen/uploadHandler}
 
@@ -44,35 +102,20 @@ PropertyWindow & \pageref{PropertyWindow}
 \input{content/klassen/Parser/timeparser}
 \input{content/klassen/Parser/TableDataTypeParser}
 
+
+\subsection{Konfigurationen}
+
+
+\input{content/klassen/configuration}
+\input{content/klassen/magicnumbers}
+\input{content/klassen/configmanagement}
+
+
+\subsection{Log- und ErrorHandling}
+
 \input{content/klassen/skippedRow}
 \input{content/klassen/ErrorHandler}
 \input{content/klassen/LogManager}
-
-\input{content/klassen/Entities/ValueCode}
-\input{content/klassen/Entities/Property}
-\input{content/klassen/Entities/Entity}
-\input{content/klassen/Entities/Thing}
-\input{content/klassen/Entities/Datastream}
-\input{content/klassen/Entities/Location}
-\input{content/klassen/Entities/Sensor}
-\input{content/klassen/Entities/ObservedProperty}
-\input{content/klassen/Entities/UnitOfMeasurement}
-
-
-
-
-
-\input{content/klassen/Controller/EntityController}
-\input{content/klassen/Controller/ThingController}
-\input{content/klassen/Controller/DatastreamController}
-\input{content/klassen/Controller/LocationController}
-\input{content/klassen/Controller/SensorController}
-\input{content/klassen/Controller/ObservedPropertyController}
-
-\input{content/klassen/Controller/ConfigurationController}
-\input{content/klassen/Controller/ImportController}
-\input{content/klassen/Controller/SourceFileController}
-\input{content/klassen/Controller/HTMLController}
 \input{content/klassen/FileManager}
 
 
