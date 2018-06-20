@@ -7,13 +7,44 @@ Diese Klasse wird dazu verwendet eine DateTime anzugeben. Diese hat einen Regex-
 	\item \textit{column : Integer} Eine Spaltennummer
 \end{enumerate} 
 
+\paragraph{Konstruktoren}
+\begin{enumerate}[+]
+	\item \textit{StringColumn(String s, Integer column)} \\
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{String s}: 
+		\item \textit{Integer column}:
+	\end{enumerate}
+\end{enumerate}
+
+
+
+
+
+
+
 \subsection{StreamObservation}
 Diese Klasse speichert einen Datastream zusammen mit einer Liste aus Spaltenangaben, welche anzeigen, wo die Observations auszulesen sind.
 \paragraph{Attribute} 
 \begin{enumerate}[-]
-	\item \textit{dsID : Integer} ID eines (Multi-) Datastreams. 
-	\item \textit{observation : List<Integer>} Spaltenangaben.
+	\item \textit{dsID: Integer} ID eines (Multi-) Datastreams
+	\item \textit{observation: List<Integer>} Spaltenangaben
 \end{enumerate}
+
+\paragraph{Konstruktoren}
+\begin{enumerate}[+]
+	\item \textit{StreamObservation(Integer dsID, List<Integer> observation)} \\
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{Integer dsID}:
+		\item \textit{List<Integer> observation}:
+	\end{enumerate}
+\end{enumerate}
+
+
+
+
+
 
 \subsection{ZoneIdColumn}
 Diese Klasse stellt ein Tupel aus einer ZoneId und einer Spaltennummer dar.
@@ -21,32 +52,53 @@ Sie wird verwendet um die variableTimeZone mit der staticTimeZone zu verbinden, 
 
 \paragraph{Attribute}
 \begin{enumerate}[-]
-	\item \textit{zoneId : ZoneId} Die ID einer Zeitzone.
-	\item \textit{column : Integer} Spaltennummer.
+	\item \textit{zoneId : ZoneId} Die ID einer Zeitzone
+	\item \textit{column : Integer} Spaltennummer
 \end{enumerate}
 
+\paragraph{Konstruktoren}
+\begin{enumerate}[+]
+	\item \textit{ZoneIdColumn(ZoneId zoneId, Integer column)} \\
+	
+	\begin{enumerate}[$\bullet$]
+		\item \textit{ZoneId zoneId:} 
+		\item \textit{Integer column:} 
+	\end{enumerate}
+\end{enumerate}
+
+
+
+
+
+
+
+
+
+
+
+
 \subsection{Configuration}
-Diese Klasse stellt die Konfigurationen dar. 
-Sie speichert alle notwendigen Daten und stellt "{getter}"{-Methoden} für einen vereinfachten Zugriff auf Daten bereit.
+Diese Klasse stellt eine Nutzer-erstellte Konfiguration dar. 
+Sie speichert alle notwendigen Daten und stellt "{Getter}"{-Methoden} für einen vereinfachten Zugriff auf Daten bereit.
 
 \paragraph{Attribute}
 
 \begin{enumerate}[-]
-	\item \textit{id : Integer} Hier wird die ID der Konfiguration gespeichert. Die ID wird automatisch generiert.
+	\item \textit{id : Integer}: Hier wird die ID der Konfiguration gespeichert. Die ID wird automatisch generiert
 	
-	\item \textit{name : String} Hier wird der Name der Konfiguration gespeichert.
+	\item \textit{name : String}: Hier wird der Name der Konfiguration gespeichert
 	
-	\item \textit{delimiter : Character} Falls eine CSV-Datei importiert werden soll, muss ein Trennsymbol für die Spalten gewählt werden.
+	\item \textit{delimiter : Character}: Falls eine CSV-Datei importiert werden soll, muss ein Trennsymbol für die Spalten gewählt werden
 	
-	\item \textit{numberOfHeaderlines : Integer} In einem CSV-Dokument gibt es Kopfzeilen, welche für den Import irrelevant sind. Die Anzahl dieser Zeilen wird hier gespeichert.
+	\item \textit{numberOfHeaderlines : Integer}: In einem CSV-Dokument gibt es Kopfzeilen, welche für den Import irrelevant sind. Die Anzahl dieser Zeilen wird hier gespeichert
 	
-	\item \textit{timezone : ZoneIdColumn} Hier wird die Zeitzone gespeichert.
+	\item \textit{timezone : ZoneIdColumn}: Hier wird die Zeitzone gespeichert
 	
-	\item \textit{dateTime : List<StringColumn>} Hier wird eine Liste aus Datumsformaten mit einer zugehörigen Spalte gespeichert 
+	\item \textit{dateTime : List<StringColumn>}: Hier wird eine Liste aus Datumsformaten mit einer zugehörigen Spalte gespeichert 
 	
-	\item \textit{streamData : List<StreamObseration>} In dieser Liste werden die Datastreams zusammen mit den Spalten gespeichert, aus welchen die Daten extrahiert werden.
+	\item \textit{streamData : List<StreamObseration>}: In dieser Liste werden die Datastreams zusammen mit den Spalten gespeichert, aus welchen die Daten extrahiert werden
 	
-	\item \textit{mapOfMagicNumbers : MagicNumberMap} Hier wird das Mapping für Sonderzeichen gespeichert. Sonderzeichen sollen nicht auf dem FROST-Server gespeichert werden und haben eine spezielle Bedeutung.
+	\item \textit{mapOfMagicNumbers : MagicNumberMap}: Hier wird das Mapping für Sonderzeichen gespeichert. Sonderzeichen sollen nicht auf dem FROST-Server gespeichert werden und haben eine spezielle Bedeutung
 \end{enumerate}
 
 \paragraph{Konstruktoren}

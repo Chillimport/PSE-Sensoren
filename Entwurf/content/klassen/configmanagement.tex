@@ -10,30 +10,27 @@ Diese Klasse ist für die Verwaltung der Konfigurationen zuständig.
 
 \paragraph{Methoden}
 	
-	\begin{enumerate}[+]
-	\item \textit{loadConfig(Integer id) : Configuration} Diese Methode lädt eine Konfiguration und gibt diese zurück.
+\begin{enumerate}[+]
+	\item \textit{loadConfig(Integer id) : Configuration} Diese Methode lädt eine Konfiguration und gibt diese zurück
 		\begin{enumerate}[$\bullet$]
-			\item \textit{Integer id:} Die id der Konfiguration
+			\item \textit{Integer id:} Die ID der Konfiguration
 		\end{enumerate}
 		\vspace{-0.2cm}
 		\begin{enumerate}[$\circ$]
 			\item \textit{Configuration:} Die Konfiguration
 		\end{enumerate}
 	
-	\item \textit{saveConfig(Configuration cfg)} Diese Methode speichert die übergebene Konfiguration auf der Festplatte des Servers.
-	
+	\item \textit{saveConfig(Configuration cfg)} Diese Methode speichert die übergebene Konfiguration auf der Festplatte des Servers
 	\begin{enumerate}[$\bullet$]
 		\item \textit{Configuration cfg:} Die Konfiguration, die gespeichert werden soll
 	\end{enumerate}
 	
-	\item \textit{listAll() : List<Configuration>} Diese Methode gibt alle Konfigurationen in einer Liste zurück.
-	
+	\item \textit{listAll() : List<Configuration>} Diese Methode gibt alle Konfigurationen in einer Liste zurück	
 	\begin{enumerate}[$\circ$]
-		\item \textit{List<Configuration>:} Alle Konfigurationen in einer Liste.
+		\item \textit{List<Configuration>:} Alle Konfigurationen in einer Liste
 	\end{enumerate}
 	
-	\item \textit{getServer() : URL} Diese Methode gibt die URL zu dem Zielserver zurück.
-	
+	\item \textit{getServer() : URL} Diese Methode gibt die URL zu dem Ziel-FROST-Server zurück
 	\begin{enumerate}[$\circ$]
 		\item \textit{URL:} URL zu dem Zielserver
 	\end{enumerate}
