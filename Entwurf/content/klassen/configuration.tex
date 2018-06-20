@@ -12,8 +12,8 @@ Diese Klasse wird dazu verwendet eine DateTime anzugeben. \\Diese hat einen Rege
 	\item \textit{StringColumn(String s, Integer column)} \\
 	
 	\begin{enumerate}[$\bullet$]
-		\item \textit{String s}: 
-		\item \textit{Integer column}:
+		\item \textit{String s}: Ein String
+		\item \textit{Integer column}: Eine Spaltennummer
 	\end{enumerate}
 \end{enumerate}
 
@@ -36,8 +36,8 @@ Diese Klasse speichert einen Datastream zusammen mit einer Liste aus Spaltenanga
 	\item \textit{StreamObservation(Integer dsID, List<Integer> observation)} \\
 	
 	\begin{enumerate}[$\bullet$]
-		\item \textit{Integer dsID}:
-		\item \textit{List<Integer> observation}:
+		\item \textit{Integer dsID}: Eine ID eines (Multi-) Datastreams
+		\item \textit{List<Integer> observation}: Spaltenangaben der Observations 
 	\end{enumerate}
 \end{enumerate}
 
@@ -61,8 +61,8 @@ Sie wird verwendet um die variableTimeZone mit der staticTimeZone zu verbinden, 
 	\item \textit{ZoneIdColumn(ZoneId zoneId, Integer column)} \\
 	
 	\begin{enumerate}[$\bullet$]
-		\item \textit{ZoneId zoneId:} 
-		\item \textit{Integer column:} 
+		\item \textit{ZoneId zoneId:} ID einer Zeitzone
+		\item \textit{Integer column:} Spaltennummer einer Zeitzone
 	\end{enumerate}
 \end{enumerate}
 
@@ -103,34 +103,34 @@ Sie speichert alle notwendigen Daten und stellt "{Getter}"{-Methoden} für einen
 
 \paragraph{Konstruktoren}
 \begin{enumerate}[+]
-	\item \textit{Configuration(Integer id, String name, Character delimiter, Integer numberOfHeaderlines, ZoneIdColumn timezone, List<StringColumn> dateTime, List<StreamObservation> streamData, MagicNumberMap mapOfMagicNumbers)} Dieser Konstruktor erstellt aus den gegebenen Parametern eine vollständig ausgefüllte Configuration.
+	\item \textit{Configuration(Integer id, String name, Character delimiter, Integer numberOfHeaderlines, ZoneIdColumn timezone, List<StringColumn> dateTime, List<StreamObservation> streamData, MagicNumberMap mapOfMagicNumbers)} Dieser Konstruktor erstellt aus den gegebenen Parametern eine vollständig ausgefüllte Configuration
 	\begin{enumerate}[$\bullet$]
-		\item \textit{Integer id:} ID der Konfiguration.
-		\item \textit{String name:} Name der Konfiguration.
-		\item \textit{Character delimiter:} Spaltentrennsymbol.
-		\item \textit{Integer numberOfHeaderlines:} Anzahl der Kopfzeilen.
-		\item \textit{ZoneIdColumn timezone:} Zeitzone oder Splatennummer der Zone.
-		\item \textit{List<StringColumn> dateTime:} Liste für Zeitangaben.
-		\item \textit{List<StreamObservation> streamData:} Liste aus Streams mit dazugehörigen Spaltennummern für Observations.
-		\item \textit{MagicNumberMap mapOfMagicNumbers:} Mapping für Sonderzeichen.
+		\item \textit{Integer id}: ID der Konfiguration
+		\item \textit{String name}: Name der Konfiguration
+		\item \textit{Character delimiter}: Spaltentrennsymbol
+		\item \textit{Integer numberOfHeaderlines}: Anzahl der Kopfzeilen
+		\item \textit{ZoneIdColumn timezone}: Zeitzone oder Splatennummer der Zone
+		\item \textit{List<StringColumn> dateTime}: Liste für Zeitangaben
+		\item \textit{List<StreamObservation> streamData}: Liste aus Streams mit dazugehörigen Spaltennummern für Observations
+		\item \textit{MagicNumberMap mapOfMagicNumbers}: Mapping für Sonderzeichen
 	\end{enumerate}
 \end{enumerate}
 
 \paragraph{Methoden}
 \begin{enumerate}[+]
-	\item \textit{\underline{convertToJava(String jsonString) : Configuration}} Diese Methode generiert aus einem JSON-String eine Configuration.
+	\item \textit{\underline{convertToJava(String jsonString): Configuration}} Diese Methode generiert aus einem JSON-String eine Configuration
 	\begin{enumerate}[$\bullet$]
-		\item \textit{String jsonString:} Der String, in dem das JSON-Objekt kodiert ist.
+		\item \textit{String jsonString:} Der String, in dem das JSON-Objekt kodiert ist
 	\end{enumerate}
 	\begin{enumerate}[$\circ$]
-		\item \textit{String Configuration:} Die generierte Konfiguration.
+		\item \textit{Configuration}: Die generierte Konfiguration
 	\end{enumerate}
 	
-	\item \textit{\underline{serialize(Configuration config) : String}} Diese Methode generiert aus einer Konfiguration ein JSON-String.
+	\item \textit{\underline{serialize(Configuration config): String}} Diese Methode generiert aus einer Konfiguration ein JSON-String
 	\begin{enumerate}[$\bullet$]
-		\item \textit{Configuration config:} Die Konfiguration, welche in einen String überführt werden soll.
+		\item \textit{Configuration config}: Die Konfiguration, welche in einen String überführt werden soll
 	\end{enumerate}
 	\begin{enumerate}[$\circ$]
-		\item \textit{String:} Das generierte JSON-Objekt als String.
+		\item \textit{String:} Das generierte JSON-Objekt als String
 	\end{enumerate}
 \end{enumerate}
