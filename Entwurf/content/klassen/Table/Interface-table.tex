@@ -11,46 +11,38 @@
 \paragraph{Methoden}
 
 \begin{enumerate}[+]
-	\item \textit{<{<abstract>}> getElement(Integer row, Integer column): Object} \\
+	\item \textit{<{<abstract>}> getElement(int row, int column): Object} \\
 	Gibt ein einzelnes Element der Tabelle an der angegebenen Stelle zurück
 	\begin{enumerate}[$\bullet$]
-		\item \textit{Integer row}: Die Zeile an der das Element liegt, darf nicht NULL sein
-		\item \textit{Integer column}: Die Spalte an der das Element liegt, darf nicht NULL sein
+		\item \textit{int row}: Die Zeile an der das Element liegt, darf nicht NULL sein
+		\item \textit{int column}: Die Spalte an der das Element liegt, darf nicht NULL sein
 	\end{enumerate}
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
 		\item \textit{Object}: Das Element an der Stelle
 	\end{enumerate}
 	
-	\item \textit{<{<abstract>}> setElement(Object o, Integer row, Integer column): void} \\
+	\item \textit{<{<abstract>}> setElement(Object o, int row, int column): void} \\
 	Ersetzt ein Element der Tabelle mit einem neuen Element
 	\begin{enumerate}[$\bullet$]
 		\item \textit{Object o}: Das neue Element, darf NULL sein
-		\item \textit{Integer row}: Die Zeile des Elements
-		\item \textit{Integer column}: Die Spalte des Elements
+		\item \textit{int row}: Die Zeile des Elements
+		\item \textit{int column}: Die Spalte des Elements
 	\end{enumerate}
 	\vspace{-0.2cm}
 	
-	\item \textit{<{<abstract>}> remove(Integer row, Integer column): void} \\
-	Ersetzt ein Element mit NULL
-	\begin{enumerate}[$\bullet$]
-		\item \textit{Integer row}: Die Zeile des Elements
-		\item \textit{Integer column}: Die Spalte des Elements
-	\end{enumerate}
-	\vspace{-0.2cm}
-	
-	\item \textit{<{<abstract>}> getRowCount(): Integer} \\
+	\item \textit{<{<abstract>}> getRowCount(): int} \\
 	Gibt die Anzahl Zeilen zurück
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
-		\item \textit{Integer}: Die Anzahl Zeilen
+		\item \textit{int}: Die Anzahl Zeilen
 	\end{enumerate}
 
-	\item \textit{<{<abstract>}> getColumnCount(): Integer} \\
+	\item \textit{<{<abstract>}> getColumnCount(): int} \\
 	Gibt die Anzahl Spalten zurück
 	\vspace{-0.2cm}
 	\begin{enumerate}[$\circ$]
-		\item \textit{Integer}: Die Anzahl Spalten
+		\item \textit{int}: Die Anzahl Spalten
 	\end{enumerate}
 
 	\item \textit{<{<abstract>}> clone(): Table} \\
