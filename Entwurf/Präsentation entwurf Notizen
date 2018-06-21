@@ -1,0 +1,17 @@
+Präsentation entwurf
+
+Max Gesicht beim Klassendiagramm UNBEZAHLBAR 
+Adrian redet wieder mit 200% geschwindigkeit
+
+Metriken für Evaluation (Testabdeckung, Verhältnis Methoden in klassen etc, Mit leeren Methodenrümpfen quantitative Sachen testen)
+Auf Kommazahlen achten (international Komme/punkt bei zahlen etc unterschiede)
+Umkopieren von Tables(?)
+Dateien nach Nutzung / oder falls abgebrochen löschen
+Checken auf Duplicates (über Netzwerkverbindung) dauert länger als alle anderen Operationen zusammen (Auf einen Schlag laden und überprüfen?) (Batch Requests möglich?)
+Wenn nicht möglich hier (bei find) Parallelisieren oder asynchron laufen lassen
+Configurationen vom Benutzer(GUI) und vom Administrator(Server URL) Trennen (Bisher in einer Config gespeichert)
+
+Remove aus Table entfernen, Tablefunktionen Table rein Table raus.
+Primitives int statt Integer
+Bei Config wenn null Exceptions werfen
+Datenfluss bei Abfrage von fremdem FROST-Server? 
