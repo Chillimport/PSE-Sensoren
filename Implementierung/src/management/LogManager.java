@@ -9,16 +9,8 @@ public class LogManager {
     private FileHandler txtFile;
     private SimpleFormatter formatterTxt;
 
-    private LogManager () {
-    	try{
+    private LogManager () throws SecurityException, IOException {
     	setup();
-    	}
-    	catch(SecurityException e){
-    		ErrorHandler.getInstance().addRows(-1, e);
-    	}
-    	catch(IOException e){
-    		ErrorHandler.getInstance().addRows(-1,e);
-    	}
     }
     
 	private void setup() throws SecurityException, IOException{
@@ -39,7 +31,7 @@ public class LogManager {
 		}
 	}
 	
-	public static LogManager getInstance() {
+	public static LogManager getInstance() throws SecurityException, IOException {
 		if(logManager == null){
 			logManager = new LogManager();
 		}
