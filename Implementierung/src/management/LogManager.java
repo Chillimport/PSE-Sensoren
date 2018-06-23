@@ -14,12 +14,11 @@ public class LogManager {
     	setup();
     	}
     	catch(SecurityException e){
-    		System.out.println("Something went wrong while initializing the Log");
-    		// Wo hin?
+    		ErrorHandler.getInstance().addRows(-1, e);
+    		
     	}
     	catch(IOException e){
-    		System.out.println("Something went wrong while initializing the Log");
-    		// Wo hin?
+    		ErrorHandler.getInstance().addRows(-1,e);
     	}
     }
     
@@ -41,7 +40,7 @@ public class LogManager {
 		}
 	}
 	
-	public LogManager getInstance() {
+	public static LogManager getInstance() {
 		if(logManager == null){
 			logManager = new LogManager();
 		}
