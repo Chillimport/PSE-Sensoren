@@ -1,5 +1,6 @@
 package management;
 
+import java.io.File;
 import java.util.List;
 
 public class ErrorHandler {
@@ -23,5 +24,13 @@ public class ErrorHandler {
 		skippedRows.add(new SkippedRows(row,error));
 		
 		// Zeile -1 Für Programmfehler
+	}
+	
+	private void write() {
+		File file = new File(path);
+		for(SkippedRows skip : skippedRows){
+			// file.write Integer.toString(skip.getRow()) + skip.getError().toString()
+		}
+		//
 	}
 }
