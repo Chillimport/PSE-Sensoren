@@ -1,6 +1,9 @@
 package management;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintWriter;
+import java.io.UnsupportedEncodingException;
 import java.util.List;
 
 public class ErrorHandler {
@@ -10,7 +13,6 @@ public class ErrorHandler {
 	List<SkippedRows> skippedRows;
 
 	private ErrorHandler() {
-		
 	}
 	
 	public static ErrorHandler getInstance() {
@@ -22,15 +24,15 @@ public class ErrorHandler {
 	
 	public void addRows (int row, Exception error) {
 		skippedRows.add(new SkippedRows(row,error));
-		
 		// Zeile -1 Für Programmfehler
 	}
 	
-	private void write() {
-		File file = new File(path);
+	public void write() throws FileNotFoundException, UnsupportedEncodingException{
+		PrintWriter writer;
+		writer = new PrintWriter(path, "UTF-8");
 		for(SkippedRows skip : skippedRows){
-			// file.write Integer.toString(skip.getRow()) + skip.getError().toString()
+			writer.println(Integer.toString(skip.getRow()) + skip.getError().toString());
 		}
-		//
+		writer.close();
 	}
 }

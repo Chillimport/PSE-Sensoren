@@ -15,7 +15,6 @@ public class LogManager {
     	}
     	catch(SecurityException e){
     		ErrorHandler.getInstance().addRows(-1, e);
-    		
     	}
     	catch(IOException e){
     		ErrorHandler.getInstance().addRows(-1,e);
